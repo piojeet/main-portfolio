@@ -114,7 +114,7 @@ function HomeHero() {
             </span>
           </div>
 
-          <p className='md:text-[26px] font-TTCPro font-medium max-w-[500px] w-full m-auto text-center text-[20px] px-8 md:px-0'>Wondermake is a digital-first creative studio bringing brands to life online and IRL</p>
+          <p className='md:text-[26px] font-TTCPro font-medium max-w-[500px] w-full m-auto text-center text-[20px] px-8 md:px-0'>Priyajeet is a digital-first creative studio bringing brands to life online and IRL</p>
         </div>
 
       </div>
