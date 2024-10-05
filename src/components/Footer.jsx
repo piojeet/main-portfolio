@@ -435,8 +435,8 @@ function Footer() {
         </div>
 
         <div className='lg:absolute xl:top-[40px] lg:top-[10px] md:w-[60%] left-1/2 -translate-x-1/2 flex-shrink-0 block text-[14px] text-center relative lg:p-0 py-14 w-full px-4 md:px-0'>
-          <p className='pb-1'>All work © Wondermake 2022-24. All rights reserved</p>
-          <p>Wondermake Ltd, Registered in England and Wales No. 14713347. 27 Old Gloucester St, Holborn, London WC1N 3AX</p>
+          <p className='pb-1'>All work © Priyajeet Majhi 2022-24. All rights reserved</p>
+          <p>Priyajeet Ltd, Registered in England and Wales No. 14713347. 27 Old Gloucester St, Holborn, London WC1N 3AX</p>
         </div>
 
       </div>

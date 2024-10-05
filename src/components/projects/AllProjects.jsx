@@ -45,15 +45,17 @@ function AllProjects() {
     ];
 
     const items2 = [
-        { name: 'div 1', route: '/page1' },
-        { name: 'div 2', route: '/page2' },
+        { name: 'Tech Educators', route: '/page1' },
+        { name: 'Tech Centre', route: '/page2' },
         { name: 'div 3', route: '/page3' },
     ];
 
     const items3 = [
-        { name: 'div 1', route: '/page1' },
-        { name: 'div 2', route: '/page2' },
-        { name: 'div 3', route: '/page3' },
+        { name: 'Tech Educators', route: '/page1' },
+        { name: 'Tech Educators', route: '/page2' },
+        { name: 'Tech Educators', route: '/page3' },
+        { name: 'Tech Educators', route: '/page3' },
+        { name: 'Tech Educators', route: '/page3' },
     ];
 
 
@@ -129,7 +131,7 @@ function AllProjects() {
         <>
             <div>
                 {/* dgra functionality baki hai  */}
-                <div className="h-fit bg-red-400 !overflow-visible">
+                <div className="h-fit !overflow-visible">
                     <div className='mySwiper !overflow-visible'>
                    <div className='flex items-start'>
                    
@@ -185,7 +187,7 @@ function AllProjects() {
                 {/* dgra functionality baki hai  */}
 
                 <div className={`main-project-con flex`} onMouseEnter={mouseenter} onMouseLeave={mouseleave}>
-                    <div className='w-full'>
+                    <div className='w-full relative z-20'>
 
                         {/* Toggle 1 */}
                         <div
@@ -197,7 +199,7 @@ function AllProjects() {
                                     <NavLink
                                         to={item.route}  // Use the route for each item
                                         key={index}
-                                        className={`group relative block w-full border border-blackColor transform box min-h-[110px] px-8 overflow-hidden ${hoveredIndex === index || hoveredIndex === null ? 'text-blackColor' : 'text-gray-400'} ${toggle === 0 ? 'tab-ani' : ''}`}
+                                        className={`group relative block w-full border border-blackColor transform box bg-blackColor ${hoveredIndex === index || hoveredIndex === null ? 'text-blackColor' : 'text-gray-400'} ${toggle === 0 ? 'tab-ani' : ''}`}
                                         onMouseEnter={() => {
                                             setActiveIndex(index);
                                             setHoveredIndex(index);
@@ -208,12 +210,16 @@ function AllProjects() {
                                         }}
                                     >
 
-                                        {svgIcon.map((itemsvg) => (
+                                        <div className="magnetic-btn  relative w-full h-full block">
+                                            <div className='bg-bodyColor min-h-[110px] w-full h-full relative px-8 left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor overflow-hidden'>
+                                            {svgIcon.map((itemsvg) => (
                                             <span key={itemsvg.id} className='absolute -left-14 top-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out group-hover:left-8 z-20 pointer-events-none'>{itemsvg.svg}</span>
                                         ))}
 
                                         <span className='text-[60px] top-1/2 -translate-y-1/2 font-TTCPro font-bold absolute left-8 z-20 transition-all duration-300 ease-in-out group-hover:left-24'>{item.name}</span>
                                         <span className={`absolute top-0 left-0 h-full w-full bg-gray-300 origin-left scale-x-0 ${activeIndex === index && mouseActive && toggle === 0 ? "animate-moveto" : ""}`}></span>
+                                            </div>
+                                        </div>
                                     </NavLink>
                                 ))}
                             </div>
@@ -221,13 +227,13 @@ function AllProjects() {
 
                         {/* Toggle 2 */}
                         <div
-                            className={`border border-blackColor relative transition-all duration-300 transform ${toggle === 1 ? 'block tab-ani' : 'hidden'}`}
+                            className={`border border-blackColor relative transition-all duration-300 transform bg-blackColor ${toggle === 1 ? 'block tab-ani' : 'hidden'}`}
                         >
                             {items2.map((items2, index) => (
                                 <NavLink
                                     to={items2.route}
                                     key={index}
-                                    className={`group relative block w-full border border-blackColor transform box min-h-[110px] px-8 overflow-hidden ${hoveredIndex === index || hoveredIndex === null ? 'text-blackColor' : 'text-gray-400'} ${toggle === 1 ? 'tab-ani' : ''}`}
+                                    className={`group relative block w-full border border-blackColor transform box min-h-[110px] ${hoveredIndex === index || hoveredIndex === null ? 'text-blackColor' : 'text-gray-400'} ${toggle === 1 ? 'tab-ani' : ''}`}
                                     onMouseEnter={() => {
                                         setActiveIndex(index);
                                         setHoveredIndex(index);
@@ -238,7 +244,9 @@ function AllProjects() {
                                     }}
                                 >
 
-                                    {svgIcon.map((itemsvg) => (
+                                    <div className="magnetic-btn  relative w-full h-full block">
+                                        <div className='bg-bodyColor min-h-[110px] w-full h-full relative px-8 left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor overflow-hidden'>
+                                        {svgIcon.map((itemsvg) => (
                                         <span key={itemsvg.id} className='absolute -left-14 top-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out group-hover:left-8 z-20 pointer-events-none'>{itemsvg.svg}</span>
                                     ))}
 
@@ -246,6 +254,8 @@ function AllProjects() {
                                     <span
                                         className={`absolute top-0 left-0 h-full w-full bg-gray-300 scale-x-0 origin-left ${activeIndex === index && mouseActive && toggle === 1 ? "animate-moveto" : ""}`}
                                     ></span>
+                                        </div>
+                                    </div>
 
                                 </NavLink>
                             ))}
@@ -259,7 +269,7 @@ function AllProjects() {
                                 <NavLink
                                     to={items3.route}
                                     key={index}
-                                    className={`group relative block w-full border border-blackColor transform box min-h-[110px] px-8 overflow-hidden ${hoveredIndex === index || hoveredIndex === null ? 'text-blackColor' : 'text-gray-400'} ${toggle === 2 ? 'tab-ani' : ''}`}
+                                    className={`group relative block w-full border border-blackColor transform box min-h-[110px] bg-blackColor ${hoveredIndex === index || hoveredIndex === null ? 'text-blackColor' : 'text-gray-400'} ${toggle === 2 ? 'tab-ani' : ''}`}
                                     onMouseEnter={() => {
                                         setActiveIndex(index);
                                         setHoveredIndex(index);
@@ -270,6 +280,8 @@ function AllProjects() {
                                     }}
                                 >
 
+                                   <div className="magnetic-btn  relative w-full h-full block">
+                                    <div className='bg-bodyColor min-h-[110px] w-full h-full relative px-8 left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor overflow-hidden'>
                                     {svgIcon.map((itemsvg) => (
                                         <span key={itemsvg.id} className='absolute -left-14 top-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out group-hover:left-8 z-20 pointer-events-none'>{itemsvg.svg}</span>
                                     ))}
@@ -278,13 +290,15 @@ function AllProjects() {
                                     <span
                                         className={`absolute top-0 left-0 h-full w-full bg-gray-300 scale-x-0 origin-left ${activeIndex === index && mouseActive && toggle === 2 ? "animate-moveto" : ""}`}
                                     ></span>
+                                    </div>
+                                   </div>
                                 </NavLink>
                             ))}
                         </div>
 
                     </div>
 
-                    <div className='w-full'>
+                    <div className='w-full relative z-10'>
                         {/* Toggle 1 cont */}
                     <div className={` w-full ${toggle === 0 ? 'block' : 'hidden'}`}>
                         {/* Update rendering based on activeIndex */}
@@ -324,7 +338,7 @@ function AllProjects() {
                             <EcommerceWorks activeIndex={activeIndex} />
                         </div>
                         <div className={`${activeIndex === 2 && toggle === 1 ? 'block' : 'hidden'}`}>
-                            chang every 10s 3
+                            <EcommerceWorks activeIndex={activeIndex} />
                         </div>
                     </div>
 
@@ -338,7 +352,13 @@ function AllProjects() {
                             <PortfolioWorks activeIndex={activeIndex} />
                         </div>
                         <div className={`${activeIndex === 2 && toggle === 2 ? 'block' : 'hidden'}`}>
-                            chang every 10s 3
+                            <PortfolioWorks activeIndex={activeIndex} />
+                        </div>
+                        <div className={`${activeIndex === 3 && toggle === 2 ? 'block' : 'hidden'}`}>
+                            <PortfolioWorks activeIndex={activeIndex} />
+                        </div>
+                        <div className={`${activeIndex === 4 && toggle === 2 ? 'block' : 'hidden'}`}>
+                            <PortfolioWorks activeIndex={activeIndex} />
                         </div>
                     </div>
                     </div>
