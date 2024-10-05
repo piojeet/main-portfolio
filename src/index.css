@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: TTCPro;
+  src: url('./assets/ttcpro/TTCPro-ed9ac02e.woff2');
+}
+
+@layer base {
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  .normal-point {
+    cursor: url('/src/assets/default-b2d72215.svg'), pointer;
+  }
+
+  .pointer-cursor {
+    cursor: url('/src/assets/pointer-84176aa3.svg'), pointer;
+  }
+
+
+  .pointer-cursor:active {
+    cursor: url('/src/assets/active-1352ec3e.svg'), pointer;
+  }
+
+  .animate-spiner {
+    animation: spin 6s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .specal {
+    cursor: url('/src/assets/special.svg'), pointer;
+  }
+
+  .cards-icon svg {
+    width: 3.5rem;
+  }
+
+  .groups-m:hover .video-bg {
+    @apply scale-95 rounded-lg;
+  }
+
+  .groups-m:hover .video-bg video {
+    @apply scale-110;
+  }
+
+  .groups-m:hover {
+    @apply bg-blackColor;
+  }
+
+  .groups-m:hover .ink-btn {
+    @apply text-bodyColor bg-blackColor;
+  }
+
+  /* .groups-m, */
+  /* .ink-btn, */
+  .video-bg video,
+  .video-bg {
+    transition: all .3s ease-in-out;
+  }
+
+  .pree-check:checked+span .pree-bg {
+    bottom: 0;
+  }
+
+  .pree-check:checked+span .pree-icon {
+    opacity: 1;
+  }
+
+  .qcheck:checked+span.bgqcheck {
+    @apply bg-blackColor;
+  }
+
+  .qcheck:checked+span .qcirclecheck {
+    @apply left-[4.9rem] bg-bodyColor rotate-0;
+  }
+
+  .navlinks.active {
+    left: -100%;
+  }
+
+  .navlinks.unactive {
+    left: 0;
+  }
+
+  .tab-ani {
+    animation: tab-moving .5s ease;
+  }
+
+  @keyframes tab-moving {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+
+
+
