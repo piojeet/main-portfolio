@@ -1,218 +1,88 @@
-import React from 'react'
-import DesignOne from '../../assets/homedesign3.mp4'
-import DesignTwo from '../../assets/homedesign1.mp4'
-import DesignThree from '../../assets/homedesign2.mp4'
-import DesignFour from '../../assets/homedesign4.mp4'
-import DesignFive from '../../assets/homedesign5.webp'
-import Designsixe from '../../assets/homedesign6.webp'
-import Designseven from '../../assets/homedesign7.webp'
-import Designeight from '../../assets/homedesign8.webp'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { useProjectAllContext } from '../../context/ProjectAllContext';
+import DesignOne from '../../assets/project1.webp';
+import DesignTwo from '../../assets/project2.webp';
+import DesignThree from '../../assets/project1.webp';
+import DesignFour from '../../assets/project1.webp';
+import DesignFive from '../../assets/project1.webp';
+import Designsixe from '../../assets/project1.webp';
+import Designseven from '../../assets/project1.webp';
+import Designeight from '../../assets/project1.webp';
+import { NavLink } from 'react-router-dom';
 
-function AllWorks({ activeIndex }) {
+const works = [
+    { id: 0, title: 'Ink of Violet', media: DesignOne, type: 'image', buttonText: 'Web Design & Development', toggleType: 0, link: 'https://ochi99.netlify.app/' },
+    { id: 1, title: 'Creative Ink', media: DesignTwo, type: 'image', buttonText: 'UI/UX Design', toggleType: 1, link: 'https://priyajeetportfolio.netlify.app/sundownstudio.com/' },
+    { id: 2, title: 'Creative Ink', media: DesignThree, type: 'image', buttonText: 'Branding & Identity', toggleType: 2, link: '/' },
+    { id: 3, title: 'Creative Ink', media: DesignFour, type: 'image', buttonText: 'Mobile App Design', toggleType: 0, link: 'https://magnificent-smakager-29d9e5.netlify.app/' },
+    { id: 4, title: 'Creative Ink', media: DesignFive, type: 'image', buttonText: 'E-commerce Solutions', toggleType: 1, link: '/' },
+    { id: 5, title: 'Creative Ink', media: Designsixe, type: 'image', buttonText: 'Digital Marketing', toggleType: 2, link: '/' },
+    { id: 6, title: 'Creative Ink', media: Designseven, type: 'image', buttonText: 'Content Creation', toggleType: 0, link: '/' },
+    { id: 7, title: 'Creative Ink', media: Designeight, type: 'image', buttonText: 'SEO Optimization', toggleType: 1, link: '/' },
+];
+
+const WorkItem = ({ title, media, type, isVisible, buttonText, toggleType, link }) => {
+    const { updateToggle } = useProjectAllContext();
 
     return (
+        <div className={`${isVisible ? 'block' : 'hidden'}`}>
+            <div className='w-full'>
+                <NavLink to={link} className='groups-m !bg-blackColor pointer-cursor block'>
+                    <div className='w-full video-bg overflow-hidden lg:h-[25vw] sm:h-[52vw] h-[52vw] border border-blackColor border-b-0 border-l-0'>
+                        {type === 'video' ? (
+                            <video autoPlay loop muted className='w-full h-full object-cover'>
+                                <source src={media} />
+                            </video>
+                        ) : (
+                            <img src={media} alt={title} className='w-full h-full object-cover' />
+                        )}
+                    </div>
+                    <div className='lg:h-[100px] md:h-[90px] h-[80px] w-full md:text-[37px] lg:text-[40px] bg-bodyColor ink-btn font-TTCPro font-semibold content-center px-6 border border-blackColor groups-hover:bg-blackColor'>
+                        {title}
+                    </div>
+                </NavLink>
+                <div className='group pointer-cursor h-[80px] xl:w-[20vw] lg:w-[28vw] flex-shrink-0 border border-blackColor bg-blackColor hidden lg:flex justify-start items-center border-t-0 ml-auto pointer-cursor' onClick={() => updateToggle(toggleType)}>
+                    <div className='magnetic-btn relative w-full h-full'>
+                        <span
+                            className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 group-hover:border group-hover:border-blackColor bg-bodyColor font-TTCPro md:text-[19px] lg:text-[20px] tracking-[2px] inline-block font-semibold content-center group-active:left-0 group-active:bottom-0'
+                            style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
+                        >
+                            <span className='text-center w-full block'>{buttonText}</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+WorkItem.propTypes = {
+    title: PropTypes.string.isRequired,
+    media: PropTypes.string.isRequired,
+    type: PropTypes.oneOf(['video', 'image']).isRequired,
+    isVisible: PropTypes.bool.isRequired,
+    buttonText: PropTypes.string.isRequired,
+    toggleType: PropTypes.number.isRequired,
+    link: PropTypes.string.isRequired,
+};
+
+function AllWorks({ activeIndex }) {
+    return (
         <>
-            {/* Pehla work */}
-            <div className={`${activeIndex === 0 ? 'block' : 'hidden'}`}>
-                <div className='w-full'>
-                    <div className='groups-m bg-blackColor'>
-                        <div className='w-full video-bg overflow-hidden h-[40vw]'>
-                            <video autoPlay loop muted className='w-full h-full object-cover'>
-                                <source src={DesignOne} />
-                            </video>
-                        </div>
-                        <div className='h-[100px] w-full md:text-[37px] lg:text-[40px] bg-bodyColor ink-btn font-TTCPro font-semibold content-center px-6 border border-blackColor groups-hover:bg-blackColor'>
-                            Ink of Violet
-                        </div>
-                    </div>
-                    <div className='group pointer-cursor h-[80px] xl:w-[20vw] lg:w-[28vw] flex-shrink-0 border border-blackColor bg-blackColor lg:flex justify-start items-center border-t-0 ml-auto hidden'>
-                        <div className='magnetic-btn relative w-full h-full'>
-                            <span
-                                className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 group-hover:border group-hover:border-blackColor bg-bodyColor  font-TTCPro md:text-[19px] lg:text-[20px] tracking-[2px] inline-block font-semibold content-center'
-                                style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
-                            >
-                                <span className='text-center w-full block'>Web Design & Build</span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {/* Doosra work */}
-            <div className={`${activeIndex === 1 ? 'block' : 'hidden'}`}>
-                <div className='w-full'>
-                    <div className='groups-m bg-blackColor'>
-                        <div className='w-full video-bg overflow-hidden h-[40vw]'>
-                            <video autoPlay loop muted className='w-full h-full object-cover'>
-                                <source src={DesignTwo} />
-                            </video>
-                        </div>
-                        <div className='h-[100px] w-full md:text-[37px] lg:text-[40px] bg-bodyColor ink-btn font-TTCPro font-semibold content-center px-6 border border-blackColor groups-hover:bg-blackColor'>
-                            Creative Ink
-                        </div>
-                    </div>
-                    <div className='group pointer-cursor h-[80px] xl:w-[20vw] lg:w-[28vw] flex-shrink-0 border border-blackColor bg-blackColor hidden lg:flex justify-start items-center border-t-0 ml-auto'>
-                        <div className='magnetic-btn relative w-full h-full'>
-                            <span
-                                className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 group-hover:border group-hover:border-blackColor bg-bodyColor  font-TTCPro md:text-[19px] lg:text-[20px] tracking-[2px] inline-block font-semibold content-center'
-                                style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
-                            >
-                                <span className='text-center w-full block'>Web Design & Build</span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {/* Third work */}
-            <div className={`${activeIndex === 2 ? 'block' : 'hidden'}`}>
-                <div className='w-full'>
-                    <div className='groups-m bg-blackColor'>
-                        <div className='w-full video-bg overflow-hidden h-[40vw]'>
-                            <video autoPlay loop muted className='w-full h-full object-cover'>
-                                <source src={DesignThree} />
-                            </video>
-                        </div>
-                        <div className='h-[100px] w-full md:text-[37px] lg:text-[40px] bg-bodyColor ink-btn font-TTCPro font-semibold content-center px-6 border border-blackColor groups-hover:bg-blackColor'>
-                            Creative Ink
-                        </div>
-                    </div>
-                    <div className='group pointer-cursor h-[80px] xl:w-[20vw] lg:w-[28vw] flex-shrink-0 border border-blackColor bg-blackColor hidden lg:flex justify-start items-center border-t-0 ml-auto'>
-                        <div className='magnetic-btn relative w-full h-full'>
-                            <span
-                                className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 group-hover:border group-hover:border-blackColor bg-bodyColor  font-TTCPro md:text-[19px] lg:text-[20px] tracking-[2px] inline-block font-semibold content-center'
-                                style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
-                            >
-                                <span className='text-center w-full block'>Web Design & Build</span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {/* Fourth work */}
-            <div className={`${activeIndex === 3 ? 'block' : 'hidden'}`}>
-                <div className='w-full'>
-                    <div className='groups-m bg-blackColor'>
-                        <div className='w-full video-bg overflow-hidden h-[40vw]'>
-                            <video autoPlay loop muted className='w-full h-full object-cover'>
-                                <source src={DesignFour} />
-                            </video>
-                        </div>
-                        <div className='h-[100px] w-full md:text-[37px] lg:text-[40px] bg-bodyColor ink-btn font-TTCPro font-semibold content-center px-6 border border-blackColor groups-hover:bg-blackColor'>
-                            Creative Ink
-                        </div>
-                    </div>
-                    <div className='group pointer-cursor h-[80px] xl:w-[20vw] lg:w-[28vw] flex-shrink-0 border border-blackColor bg-blackColor hidden lg:flex justify-start items-center border-t-0 ml-auto'>
-                        <div className='magnetic-btn relative w-full h-full'>
-                            <span
-                                className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 group-hover:border group-hover:border-blackColor bg-bodyColor  font-TTCPro md:text-[19px] lg:text-[20px] tracking-[2px] inline-block font-semibold content-center'
-                                style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
-                            >
-                                <span className='text-center w-full block'>Web Design & Build</span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {/* Five work */}
-            <div className={`${activeIndex === 4 ? 'block' : 'hidden'}`}>
-                <div className='w-full'>
-                    <div className='groups-m bg-blackColor'>
-                    <div className='w-full video-bg overflow-hidden h-[40vw]'>
-                            <img src={DesignFive} alt="" className='w-full h-full object-cover' />
-                        </div>
-                        <div className='h-[100px] w-full md:text-[37px] lg:text-[40px] bg-bodyColor ink-btn font-TTCPro font-semibold content-center px-6 border border-blackColor groups-hover:bg-blackColor'>
-                            Creative Ink
-                        </div>
-                    </div>
-                    <div className='group pointer-cursor h-[80px] xl:w-[20vw] lg:w-[28vw] flex-shrink-0 border border-blackColor bg-blackColor hidden lg:flex justify-start items-center border-t-0 ml-auto'>
-                        <div className='magnetic-btn relative w-full h-full'>
-                            <span
-                                className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 group-hover:border group-hover:border-blackColor bg-bodyColor  font-TTCPro md:text-[19px] lg:text-[20px] tracking-[2px] inline-block font-semibold content-center'
-                                style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
-                            >
-                                <span className='text-center w-full block'>Web Design & Build</span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {/* Sixe work */}
-            <div className={`${activeIndex === 5 ? 'block' : 'hidden'}`}>
-                <div className='w-full'>
-                    <div className='groups-m bg-blackColor'>
-                    <div className='w-full video-bg overflow-hidden h-[40vw]'>
-                            <img src={Designsixe} alt="" className='w-full h-full object-cover' />
-                        </div>
-                        <div className='h-[100px] w-full md:text-[37px] lg:text-[40px] bg-bodyColor ink-btn font-TTCPro font-semibold content-center px-6 border border-blackColor groups-hover:bg-blackColor'>
-                            Creative Ink
-                        </div>
-                    </div>
-                    <div className='group pointer-cursor h-[80px] xl:w-[20vw] lg:w-[28vw] flex-shrink-0 border border-blackColor bg-blackColor hidden lg:flex justify-start items-center border-t-0 ml-auto'>
-                        <div className='magnetic-btn relative w-full h-full'>
-                            <span
-                                className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 group-hover:border group-hover:border-blackColor bg-bodyColor  font-TTCPro md:text-[19px] lg:text-[20px] tracking-[2px] inline-block font-semibold content-center'
-                                style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
-                            >
-                                <span className='text-center w-full block'>Web Design & Build</span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {/* Seven work */}
-            <div className={`${activeIndex === 6 ? 'block' : 'hidden'}`}>
-                <div className='w-full'>
-                    <div className='groups-m bg-blackColor'>
-                    <div className='w-full video-bg overflow-hidden h-[40vw]'>
-                            <img src={Designseven} alt="" className='w-full h-full object-cover' />
-                        </div>
-                        <div className='h-[100px] w-full md:text-[37px] lg:text-[40px] bg-bodyColor ink-btn font-TTCPro font-semibold content-center px-6 border border-blackColor groups-hover:bg-blackColor'>
-                            Creative Ink
-                        </div>
-                    </div>
-                    <div className='group pointer-cursor h-[80px] xl:w-[20vw] lg:w-[28vw] flex-shrink-0 border border-blackColor bg-blackColor hidden lg:flex justify-start items-center border-t-0 ml-auto'>
-                        <div className='magnetic-btn relative w-full h-full'>
-                            <span
-                                className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 group-hover:border group-hover:border-blackColor bg-bodyColor  font-TTCPro md:text-[19px] lg:text-[20px] tracking-[2px] inline-block font-semibold content-center'
-                                style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
-                            >
-                                <span className='text-center w-full block'>Web Design & Build</span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {/* eight work */}
-            <div className={`${activeIndex === 7 ? 'block' : 'hidden'}`}>
-                <div className='w-full'>
-                    <div className='groups-m bg-blackColor'>
-                    <div className='w-full video-bg overflow-hidden h-[40vw]'>
-                            <img src={Designeight} alt="" className='w-full h-full object-cover' />
-                        </div>
-                        <div className='h-[100px] w-full md:text-[37px] lg:text-[40px] bg-bodyColor ink-btn font-TTCPro font-semibold content-center px-6 border border-blackColor groups-hover:bg-blackColor'>
-                            Creative Ink
-                        </div>
-                    </div>
-                    <div className='group pointer-cursor h-[80px] xl:w-[20vw] lg:w-[28vw] flex-shrink-0 border border-blackColor bg-blackColor hidden lg:flex justify-start items-center border-t-0 ml-auto'>
-                        <div className='magnetic-btn relative w-full h-full'>
-                            <span
-                                className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 group-hover:border group-hover:border-blackColor bg-bodyColor  font-TTCPro md:text-[19px] lg:text-[20px] tracking-[2px] inline-block font-semibold content-center'
-                                style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
-                            >
-                                <span className='text-center w-full block'>Web Design & Build</span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {works.map((work) => (
+                <WorkItem
+                    key={work.id}
+                    {...work}
+                    isVisible={activeIndex === work.id}
+                />
+            ))}
         </>
-    )
+    );
 }
 
-export default AllWorks
+AllWorks.propTypes = {
+    activeIndex: PropTypes.number.isRequired,
+};
+
+export default AllWorks;

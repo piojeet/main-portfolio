@@ -58,7 +58,7 @@ function HomeHero() {
 
   return (
     <>
-      <div className='w-full md:h-[87vh] h-auto min-h-[70vh] border border-blackColor flex items-center justify-center'>
+      <div className='w-full md:h-[87vh] h-auto min-h-[70vh] border border-blackColor flex items-center justify-center backdrop-blur-sm'>
         <div>
           <div className='flex items-center text-[17px] uppercase font-TTCPro font-semibold justify-center gap-6'>
             <p className='md:block hidden'>Creative services</p>

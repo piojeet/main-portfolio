@@ -9,8 +9,11 @@ import RocketWhite from '../assets/rocket-white.svg'
 import RightArrow from '../assets/right-arrow.svg'
 import RightArroWhite from '../assets/right-arrow-white.svg'
 import NavLinks from './NavLinks'
+import { NavLink, useLocation } from 'react-router-dom';
 
 function Nav() {
+
+  const location = useLocation();
 
   const [leftPosition, setLeftPosition] = useState(false);
 
@@ -111,12 +114,12 @@ function Nav() {
 
   const [menuPath, setMenuPath] = useState('inset(-1px 100% -1px -1px)'); // Initial clip-path for closed menu
   const [isOpen, setIsOpen] = useState(false); // Track open/close state
-  
+
   // Toggle function for opening and closing the menu
   const toggleMenu = () => {
     setIsOpen(prevState => !prevState);
   };
-  
+
   useEffect(() => {
     if (isOpen) {
       setMenuPath('inset(-1px -1px -1px -1px)'); // Fully open (visible)
@@ -126,7 +129,7 @@ function Nav() {
       document.body.style.overflow = ''; // Restore scrolling
     }
   }, [isOpen]);
-  
+
 
 
   return (
@@ -181,7 +184,7 @@ function Nav() {
                           <div className='flex items-start justify-between pt-7'>
                             <div className='flex items-center md:pl-[80px] pl-[70px] md:w-[50%] flex-shrink-0'>
                               {/* Close Menu Button */}
-                              
+
 
                               {/* Logo Area */}
                               <div className='pointer-cursor clip-logo lg:w-[250px] md:w-[100%] md:h-[80px] w-full h-[70px] md:flex-shrink-0 border border-gray-600 border-b-0 bg-blackColor border-l-0 flex items-center justify-center whitespace-nowrap flex-nowrap relative origin-right overflow-hidden z-0'>
@@ -190,6 +193,8 @@ function Nav() {
                                 </span>
                               </div>
                             </div>
+
+
 
                             <div className='group pointer-cursor h-[80px] lg:w-[25%] md:w-[50%] flex-shrink-0 bg-gray-800 md:flex justify-start items-center hidden'>
                               {/* Magnetic effect on wrapper div */}
@@ -244,19 +249,40 @@ function Nav() {
             </div>
 
 
+
           </div>
-          <div className='group pointer-cursor h-[80px] lg:w-[22.6vw] md:w-[45vw] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 md:flex justify-start items-center hidden'>
-            {/* Magnetic effect on wrapper div */}
-            <div className='magnetic-btn relative w-full h-full'>
-              {/* Hover transition on inner span */}
-              <span
-                className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 bg-bodyColor border group-hover:border-blackColor font-TTCPro uppercase text-[15px] tracking-[2px] inline-block font-bold content-center transition-all duration-500'
-                style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
-              >
-                <span className='absolute left-[-1.5rem] w-6 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-5'><img src={RightArrow} alt="" className='w-full' /></span>
-                <span className='absolute left-5 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-12'>Get Started</span>
-                <span className='group-hover:animate-bounce-on absolute right-5 top-1/2 -translate-y-1/2'><img src={Rocket} alt="" className='w-8' /></span>
-              </span>
+
+          <div className='flex items-center justify-end flex-shrink-0 w-1/2'>
+            {location.pathname === '/work-personation' && (
+              <NavLink to='/projects' className='group pointer-cursor h-[80px] lg:w-[50%] md:w-[45vw] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 border-r-0 justify-start items-center block relative z-20'>
+                {/* Magnetic effect on wrapper div */}
+                <div className='magnetic-btn relative w-full h-full'>
+                  {/* Hover transition on inner span */}
+                  <span
+                  className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 bg-bodyColor border group-hover:border-blackColor font-TTCPro uppercase text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 inline-flex items-center justify-center'
+                  style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
+                >
+                  <span className='w-6 absolute top-1/2 -translate-y-1/2 left-[8%] rotate-180'><img src={RightArrow} alt="" className='w-full' /></span>
+                  <span className=''>All Works</span>
+
+                </span>
+              </div>
+            </NavLink>
+            )}
+
+            <div className='group pointer-cursor h-[80px] lg:w-[50%] md:w-[45vw] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 md:flex justify-start items-center hidden relative z-10'>
+              {/* Magnetic effect on wrapper div */}
+              <div className='magnetic-btn relative w-full h-full'>
+                {/* Hover transition on inner span */}
+                <span
+                  className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 bg-bodyColor border group-hover:border-blackColor font-TTCPro uppercase text-[15px] tracking-[2px] inline-block font-bold content-center transition-all duration-500'
+                  style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
+                >
+                  <span className='absolute left-[-1.5rem] w-6 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-5'><img src={RightArrow} alt="" className='w-full' /></span>
+                  <span className='absolute left-5 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-12'>Get Started</span>
+                  <span className='group-hover:animate-bounce-on absolute right-5 top-1/2 -translate-y-1/2'><img src={Rocket} alt="" className='w-8' /></span>
+                </span>
+              </div>
             </div>
           </div>
 

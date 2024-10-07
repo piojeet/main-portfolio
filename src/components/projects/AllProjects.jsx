@@ -1,13 +1,29 @@
-import React, { useEffect, useRef, useState } from 'react';
+// eslint-disable-next-line no-unused-vars
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import EcommerceWorks from '../all-works/EcommerceWorks';
 import AllWorks from '../all-works/AllWorks';
 import PortfolioWorks from '../all-works/PortfolioWorks';
-
-
+import { useProjectAllContext } from '../../context/ProjectAllContext';
 
 
 function AllProjects() {
+
+    const {
+        hoveredIndex,
+        setHoveredIndex,
+        toggle,
+        updateToggle,
+        activeIndex,
+        mouseActive,
+        mouseenter,
+        mouseleave,
+        items,
+        items2,
+        items3,
+        handleMouseLeave,
+        setActiveIndex
+    } = useProjectAllContext();
 
     const svgIcon = [
         {
@@ -31,118 +47,23 @@ function AllProjects() {
             )
         }
     ];
-
-    // Items array with routes
-    const items = [
-        { name: 'Tech Educators', route: '/' },
-        { name: 'Ink Of Violet', route: '/route2' },
-        { name: 'HMM', route: '/route3' },
-        { name: 'The Breedling', route: '/route4' },
-        { name: 'Tech Centre', route: '/route4' },
-        { name: 'Concept Capers', route: '/route4' },
-        { name: 'Downstream', route: '/route4' },
-        { name: 'Tonic University', route: '/route4' },
-    ];
-
-    const items2 = [
-        { name: 'Tech Educators', route: '/page1' },
-        { name: 'Tech Centre', route: '/page2' },
-        { name: 'div 3', route: '/page3' },
-    ];
-
-    const items3 = [
-        { name: 'Tech Educators', route: '/page1' },
-        { name: 'Tech Educators', route: '/page2' },
-        { name: 'Tech Educators', route: '/page3' },
-        { name: 'Tech Educators', route: '/page3' },
-        { name: 'Tech Educators', route: '/page3' },
-    ];
-
-
-    const [hoveredIndex, setHoveredIndex] = useState(null);
-    const [toggle, setToggle] = useState(0);
-    const [activeIndex, setActiveIndex] = useState(0);
-    const [routActive, setRoutActive] = useState(0);
-    const [mouseActive, setMouseActive] = useState(true);
-    let intervalRef = useRef(null); // Use a ref to keep track of the interval
-
-    const updateToggle = (id) => {
-        setToggle(id);
-    };
-
-    // Update routActive when the mouse leaves a div
-    const handleMouseLeave = (index) => {
-        setActiveIndex(index);   // Set the activeIndex to the current index
-        setRoutActive(index);    // Update routActive to the current index
-    };
-
-    // Function to start the interval timer
-    const startTimer = () => {
-        intervalRef.current = setInterval(() => {
-            let itemCount;
-
-            // Toggle ke hisaab se items count calculate karo
-            if (toggle === 0) {
-                itemCount = items.length; // toggle 0 ke liye items array
-            } else if (toggle === 1) {
-                itemCount = items2.length; // toggle 1 ke liye items2 array
-            } else if (toggle === 2) {
-                itemCount = items3.length; // toggle 2 ke liye items3 array
-            }
-
-            // Wrap around activeIndex based on itemCount
-            setActiveIndex((prevIndex) => (prevIndex + 1) % itemCount);
-            setRoutActive((prevIndex) => (prevIndex + 1) % itemCount);
-        }, 10000);
-    };
-
-    // Function to clear the interval timer
-    const clearTimer = () => {
-        if (intervalRef.current) {
-            clearInterval(intervalRef.current);
-            intervalRef.current = null;
-        }
-    };
-
-    useEffect(() => {
-        setActiveIndex(0);
-        setRoutActive(0);
-        startTimer(); // Start the timer on mount
-
-        return () => clearTimer(); // Clear the timer when the component unmounts
-    }, [toggle]);
-
-    const mouseenter = () => {
-        setMouseActive(false);
-        clearTimer(); // Pause and reset the timer on mouse enter
-    };
-
-    const mouseleave = () => {
-        setMouseActive(true);
-        startTimer(); // Restart the timer on mouse leave
-    };
-
-
-    // conatiner dragable logic
     
-
-
     return (
         <>
             <div>
-                {/* dgra functionality baki hai  */}
-                <div className="h-fit !overflow-visible">
-                    <div className='mySwiper !overflow-visible'>
-                   <div className='flex items-start'>
+                {/* drag functionality baki hai  */}
+                <div className="h-fit mt-16">
+                    <div className='mySwiper'>
+                   <div className='flex items-start md:flex-row flex-col'>
                    
                    <button
-                        className={`group cursor-pointer h-[80px] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 md:flex justify-start items-center pointer-cursor ${toggle === 0 ? 'bg-gray-800' : ''
-                            }`}
+                        className={`group h-[80px] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 md:flex justify-start items-center pointer-cursor pointer-cursor relative md:z-30 z-10 ${toggle === 0 ? 'bg-gray-800' : ''
+                            } `}
                         onClick={() => updateToggle(0)}
                     >
                         <div className="magnetic-btn relative w-full h-full">
                             <span
-                                className={`relative overflow-hidden w-full h-full block left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor font-TTCPro text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 px-10 ${toggle === 0 ? 'bg-blackColor' : 'bg-bodyColor'}`}
+                                className={`relative overflow-hidden w-full h-full block left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor font-TTCPro text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 px-10 group-active:left-0 group-active:bottom-0 ${toggle === 0 ? 'bg-blackColor' : 'bg-bodyColor'}`}
                             >
                                 <span className={`text-[21px] font-TTCPro font-semibold ${toggle === 0 ? 'text-bodyColor' : 'text-blackColor'}`}>
                                     All <sup>08</sup>
@@ -153,12 +74,12 @@ function AllProjects() {
                   
                    
                     <button
-                        className="group cursor-pointer h-[80px] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 md:flex justify-start items-center"
+                        className={`group h-[80px] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 md:flex justify-start items-center pointer-cursor pointer-cursor relative md:z-20 z-20 ${toggle === 1 ? 'bg-gray-800' : ''}`}
                         onClick={() => updateToggle(1)}
                     >
                         <div className="magnetic-btn relative w-full h-full">
                             <span
-                                className={`relative overflow-hidden w-full h-full block left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor font-TTCPro text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 px-10 ${toggle === 1 ? 'bg-blackColor' : 'bg-bodyColor'}`}
+                                className={`relative overflow-hidden w-full h-full block left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor font-TTCPro text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 px-10 group-active:left-0 group-active:bottom-0 ${toggle === 1 ? 'bg-blackColor' : 'bg-bodyColor'}`}
                             >
                                 <span className={`text-[21px] font-TTCPro font-semibold ${toggle === 1 ? 'text-bodyColor' : 'text-blackColor'}`}>
                                     Branding <sup>03</sup>
@@ -168,15 +89,15 @@ function AllProjects() {
                     </button>
                     
                     <button
-                        className="group cursor-pointer h-[80px] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 md:flex justify-start items-center"
+                        className={`group h-[80px] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 md:flex justify-start items-center pointer-cursor relative md:z-10 z-30 ${toggle === 2 ? 'bg-gray-800' : ''}`}
                         onClick={() => updateToggle(2)}
                     >
                         <div className="magnetic-btn relative w-full h-full">
                             <span
-                                className={`relative overflow-hidden w-full h-full block left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor font-TTCPro text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 px-10 ${toggle === 2 ? 'bg-blackColor' : 'bg-bodyColor'}`}
+                                className={`relative overflow-hidden w-full h-full block left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor font-TTCPro text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 px-10 group-active:left-0 group-active:bottom-0 ${toggle === 2 ? 'bg-blackColor' : 'bg-bodyColor'}`}
                             >
                                 <span className={`text-[21px] font-TTCPro font-semibold ${toggle === 2 ? 'text-bodyColor' : 'text-blackColor'}`}>
-                                    Web Design & Build <sup>05</sup>
+                                    Bussinuss <sup>05</sup>
                                 </span>
                             </span>
                         </div>
@@ -184,9 +105,9 @@ function AllProjects() {
                    </div>
                     </div>
                 </div>
-                {/* dgra functionality baki hai  */}
+                {/* drag functionality baki hai  */}
 
-                <div className={`main-project-con flex`} onMouseEnter={mouseenter} onMouseLeave={mouseleave}>
+                <div className={`main-project-con relative flex lg:flex-row flex-col`} onMouseEnter={mouseenter} onMouseLeave={mouseleave}>
                     <div className='w-full relative z-20'>
 
                         {/* Toggle 1 */}
@@ -199,7 +120,7 @@ function AllProjects() {
                                     <NavLink
                                         to={item.route}  // Use the route for each item
                                         key={index}
-                                        className={`group relative block w-full border border-blackColor transform box bg-blackColor ${hoveredIndex === index || hoveredIndex === null ? 'text-blackColor' : 'text-gray-400'} ${toggle === 0 ? 'tab-ani' : ''}`}
+                                        className={`group relative block w-full border border-blackColor transform box bg-blackColor pointer-cursor ${hoveredIndex === index || hoveredIndex === null ? 'text-blackColor' : 'text-gray-400'} ${toggle === 0 ? 'tab-ani' : ''}`}
                                         onMouseEnter={() => {
                                             setActiveIndex(index);
                                             setHoveredIndex(index);
@@ -211,12 +132,12 @@ function AllProjects() {
                                     >
 
                                         <div className="magnetic-btn  relative w-full h-full block">
-                                            <div className='bg-bodyColor min-h-[110px] w-full h-full relative px-8 left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor overflow-hidden'>
+                                            <div className='bg-bodyColor lg:min-h-[110px] sm:min-h-[90px] min-h-[80px] w-full h-full relative px-8 left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor overflow-hidden group-active:left-0 group-active:bottom-0'>
                                             {svgIcon.map((itemsvg) => (
                                             <span key={itemsvg.id} className='absolute -left-14 top-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out group-hover:left-8 z-20 pointer-events-none'>{itemsvg.svg}</span>
                                         ))}
 
-                                        <span className='text-[60px] top-1/2 -translate-y-1/2 font-TTCPro font-bold absolute left-8 z-20 transition-all duration-300 ease-in-out group-hover:left-24'>{item.name}</span>
+                                        <span className='lg:text-[60px] sm:text-[40px] text-[30px] top-1/2 -translate-y-1/2 font-TTCPro font-bold absolute left-8 z-20 transition-all duration-300 ease-in-out group-hover:left-24'>{item.name}</span>
                                         <span className={`absolute top-0 left-0 h-full w-full bg-gray-300 origin-left scale-x-0 ${activeIndex === index && mouseActive && toggle === 0 ? "animate-moveto" : ""}`}></span>
                                             </div>
                                         </div>
@@ -233,7 +154,7 @@ function AllProjects() {
                                 <NavLink
                                     to={items2.route}
                                     key={index}
-                                    className={`group relative block w-full border border-blackColor transform box min-h-[110px] ${hoveredIndex === index || hoveredIndex === null ? 'text-blackColor' : 'text-gray-400'} ${toggle === 1 ? 'tab-ani' : ''}`}
+                                    className={`group relative block w-full border border-blackColor transform box min-h-[110px] pointer-cursor ${hoveredIndex === index || hoveredIndex === null ? 'text-blackColor' : 'text-gray-400'} ${toggle === 1 ? 'tab-ani' : ''}`}
                                     onMouseEnter={() => {
                                         setActiveIndex(index);
                                         setHoveredIndex(index);
@@ -245,7 +166,7 @@ function AllProjects() {
                                 >
 
                                     <div className="magnetic-btn  relative w-full h-full block">
-                                        <div className='bg-bodyColor min-h-[110px] w-full h-full relative px-8 left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor overflow-hidden'>
+                                        <div className='bg-bodyColor min-h-[110px] w-full h-full relative px-8 left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor overflow-hidden group-active:left-0 group-active:bottom-0'>
                                         {svgIcon.map((itemsvg) => (
                                         <span key={itemsvg.id} className='absolute -left-14 top-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out group-hover:left-8 z-20 pointer-events-none'>{itemsvg.svg}</span>
                                     ))}
@@ -269,7 +190,7 @@ function AllProjects() {
                                 <NavLink
                                     to={items3.route}
                                     key={index}
-                                    className={`group relative block w-full border border-blackColor transform box min-h-[110px] bg-blackColor ${hoveredIndex === index || hoveredIndex === null ? 'text-blackColor' : 'text-gray-400'} ${toggle === 2 ? 'tab-ani' : ''}`}
+                                    className={`group relative block w-full border border-blackColor transform box min-h-[110px] bg-blackColor  pointer-cursor ${hoveredIndex === index || hoveredIndex === null ? 'text-blackColor' : 'text-gray-400'} ${toggle === 2 ? 'tab-ani' : ''}`}
                                     onMouseEnter={() => {
                                         setActiveIndex(index);
                                         setHoveredIndex(index);
@@ -281,7 +202,7 @@ function AllProjects() {
                                 >
 
                                    <div className="magnetic-btn  relative w-full h-full block">
-                                    <div className='bg-bodyColor min-h-[110px] w-full h-full relative px-8 left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor overflow-hidden'>
+                                    <div className='bg-bodyColor min-h-[110px] w-full h-full relative px-8 left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor overflow-hidden group-active:left-0 group-active:bottom-0'>
                                     {svgIcon.map((itemsvg) => (
                                         <span key={itemsvg.id} className='absolute -left-14 top-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out group-hover:left-8 z-20 pointer-events-none'>{itemsvg.svg}</span>
                                     ))}
@@ -298,9 +219,9 @@ function AllProjects() {
 
                     </div>
 
-                    <div className='w-full relative z-10'>
+                    <div className='w-full z-10 relative'>
                         {/* Toggle 1 cont */}
-                    <div className={` w-full ${toggle === 0 ? 'block' : 'hidden'}`}>
+                    <div className={` w-full sticky top-[5%] ${toggle === 0 ? 'block' : 'hidden'}`}>
                         {/* Update rendering based on activeIndex */}
                         <div className={`${activeIndex === 0 && toggle === 0 ? 'block' : 'hidden'}`}>
                             <AllWorks activeIndex={activeIndex} />
@@ -329,7 +250,7 @@ function AllProjects() {
                     </div>
 
                     {/* Toggle 2 cont */}
-                    <div className={` w-full ${toggle === 1 ? 'block' : 'hidden'}`}>
+                    <div className={` w-full sticky top-[5%] ${toggle === 1 ? 'block' : 'hidden'}`}>
                         {/* Update rendering based on activeIndex */}
                         <div className={`${activeIndex === 0 && toggle === 1 ? 'block' : 'hidden'}`}>
                             <EcommerceWorks activeIndex={activeIndex} />
@@ -343,7 +264,7 @@ function AllProjects() {
                     </div>
 
                     {/* Toggle 3 cont */}
-                    <div className={` w-full ${toggle === 2 ? 'block' : 'hidden'}`}>
+                    <div className={` w-full sticky top-[5%] ${toggle === 2 ? 'block' : 'hidden'}`}>
                         {/* Update rendering based on activeIndex */}
                         <div className={`${activeIndex === 0 && toggle === 2 ? 'block' : 'hidden'}`}>
                             <PortfolioWorks activeIndex={activeIndex} />

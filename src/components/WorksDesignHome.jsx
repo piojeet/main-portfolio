@@ -183,7 +183,7 @@ function WorksDesignHome() {
                     </div>
                 </div>
 
-                <div className='group pointer-cursor h-[80px] md:w-[45vw] lg:w-[22.5vw] flex-shrink-0 border border-blackColor bg-blackColor flex justify-start items-center ml-auto relative top-[-80px] md:mt-[160px] lg:mt-0'>
+                <div className='group pointer-cursor h-[80px] md:w-[45vw] lg:w-[22.5vw] flex-shrink-0 border border-blackColor bg-blackColor flex justify-start items-center ml-auto relative md:top-[-80px] md:mt-[160px] lg:mt-0 top-[10px] '>
                     {/* Magnetic effect on wrapper div */}
                     <div className='magnetic-btn relative w-full h-full'>
                         {/* Hover transition on inner span */}
