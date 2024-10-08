@@ -7,28 +7,32 @@ const ProjectAllContext = createContext();
 
 // `items`, `items2`, aur `items3` ko define kar rahe hain
 const items = [
-    { name: 'Tech Educators', route: '/' },
-    { name: 'Ink Of Violet', route: '/route2' },
-    { name: 'HMM', route: '/route3' },
-    { name: 'The Breedling', route: '/route4' },
-    { name: 'Tech Centre', route: '/route5' },
-    { name: 'Concept Capers', route: '/route6' },
-    { name: 'Downstream', route: '/route7' },
-    { name: 'Tonic University', route: '/route8' },
+    { name: 'Ochi', route: 'https://ochi99.netlify.app/' },
+    { name: 'Sundown Studio', route: 'https://magnificent-smakager-29d9e5.netlify.app/' },
+    { name: 'Header Goes', route: 'https://glittering-marshmallow-440edb.netlify.app/' },
+    { name: 'Sharad Sahu', route: 'https://sharadsportfolio.netlify.app/' },
+    { name: 'I am William', route: 'https://vocal-chimera-107087.netlify.app/' },
+    { name: 'Fix Computers', route: 'https://gleeful-fenglisu-06cdc4.netlify.app/' },
+    { name: 'MantaTrade', route: 'https://ornate-gelato-b0fa21.netlify.app/' },
+    { name: 'Oraman', route: 'https://gregarious-syrniki-7b45c9.netlify.app/' },
+    { name: 'Growing Logistics', route: 'https://lucent-boba-5f2a5f.netlify.app/' },
+    { name: 'Julia Noam', route: 'https://grand-jalebi-65aa54.netlify.app/' },
 ];
 
 const items2 = [
-    { name: 'Tech Educators', route: '/page1' },
-    { name: 'Tech Centre', route: '/page2' },
-    { name: 'div 3', route: '/page3' },
+    { name: 'Sharad Sahu', route: 'https://sharadsportfolio.netlify.app/' },
+    { name: 'I am William', route: 'https://vocal-chimera-107087.netlify.app/' },
+    { name: 'Oraman', route: 'https://gregarious-syrniki-7b45c9.netlify.app/' },
 ];
 
 const items3 = [
-    { name: 'Tech Educators 1', route: '/page1' },
-    { name: 'Tech Educators 2', route: '/page2' },
-    { name: 'Tech Educators 3', route: '/page3' },
-    { name: 'Tech Educators 4', route: '/page4' },
-    { name: 'Tech Educators 5', route: '/page5' },
+    { name: 'Ochi', route: 'https://ochi99.netlify.app/' },
+    { name: 'Sundown Studio', route: 'https://magnificent-smakager-29d9e5.netlify.app/' },
+    { name: 'Header Goes', route: 'https://glittering-marshmallow-440edb.netlify.app/' },
+    { name: 'Fix Computers', route: 'https://gleeful-fenglisu-06cdc4.netlify.app/' },
+    { name: 'MantaTrade', route: 'https://ornate-gelato-b0fa21.netlify.app/' },
+    { name: 'Growing Logistics', route: 'https://lucent-boba-5f2a5f.netlify.app/' },
+    { name: 'Julia Noam', route: 'https://grand-jalebi-65aa54.netlify.app/' },
 ];
 
 export const ProjectAllProvider = ({ children }) => {

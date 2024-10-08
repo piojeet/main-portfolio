@@ -1,17 +1,19 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import PropTypes from 'prop-types';
-import DesignTwo from '../../assets/homedesign1.mp4';
+import Designeight from '../../assets/project8.webp';
+import DesignFour from '../../assets/project4.webp';
+import DesignFive from '../../assets/project5.webp';
 import { useProjectAllContext } from '../../context/ProjectAllContext';
 import { NavLink } from 'react-router-dom';
 
 const workItems = [
-    { id: 0, title: 'Ink of Violet e-commerce', videoSrc: DesignTwo, type: 'video', buttonText: 'Branding & Identity', toggleType: 2, link: '/' },
-    { id: 1, title: 'Creative Ink', videoSrc: DesignTwo, type: 'video', buttonText: 'Branding & Identity', toggleType: 2, link: '/' },
-    { id: 2, title: 'Creative Ink', videoSrc: DesignTwo, type: 'video', buttonText: 'Branding & Identity', toggleType: 0, link: '/' },
+    { id: 0, title: 'Sharad Sahu', media: DesignFour, type: 'image', buttonText: 'Business', toggleType: 2, link: 'https://sharadsportfolio.netlify.app/' },
+    { id: 1, title: 'I am William', media: DesignFive, type: 'image', buttonText: 'Business', toggleType: 2, link: 'https://vocal-chimera-107087.netlify.app/' },
+    { id: 2, title: 'Oraman', media: Designeight, type: 'image', buttonText: 'Business', toggleType: 2, link: 'https://gregarious-syrniki-7b45c9.netlify.app/' },
 ];
 
-const WorkItem = ({ title, videoSrc, isVisible, buttonText, toggleType, link }) => {
+const WorkItem = ({ title, media, type, isVisible, buttonText, toggleType, link }) => {
     const {
         updateToggle,
     } = useProjectAllContext();
@@ -19,11 +21,15 @@ const WorkItem = ({ title, videoSrc, isVisible, buttonText, toggleType, link }) 
     return (
         <div className={`${isVisible ? 'block' : 'hidden'}`}>
             <div className='w-full'>
-                <NavLink to={link} className='groups-m bg-blackColor'>
-                    <div className='w-full video-bg overflow-hidden'>
-                        <video autoPlay loop muted className='w-full'>
-                            <source src={videoSrc} />
-                        </video>
+                <NavLink to={link} className='groups-m !bg-blackColor pointer-cursor block'>
+                    <div className='w-full video-bg overflow-hidden lg:h-[25vw] sm:h-[52vw] h-[52vw] border border-blackColor border-b-0 border-l-0'>
+                    {type === 'video' ? (
+                            <video autoPlay loop muted className='w-full h-full object-cover'>
+                                <source src={media} />
+                            </video>
+                        ) : (
+                            <img src={media} alt={title} className='w-full h-full object-cover' />
+                        )}
                     </div>
                     <div className='h-[100px] w-full md:text-[37px] lg:text-[40px] bg-bodyColor ink-btn font-TTCPro font-semibold content-center px-6 border border-blackColor groups-hover:bg-blackColor'>
                         {title}
@@ -46,7 +52,8 @@ const WorkItem = ({ title, videoSrc, isVisible, buttonText, toggleType, link }) 
 
 WorkItem.propTypes = {
     title: PropTypes.string.isRequired,
-    videoSrc: PropTypes.string.isRequired,
+    media: PropTypes.string.isRequired,
+    type: PropTypes.oneOf(['video', 'image']).isRequired,
     isVisible: PropTypes.bool.isRequired,
     buttonText: PropTypes.string.isRequired,
     toggleType: PropTypes.number.isRequired,

@@ -82,7 +82,7 @@ function AllProjects() {
                                 className={`relative overflow-hidden w-full h-full block left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor font-TTCPro text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 px-10 group-active:left-0 group-active:bottom-0 ${toggle === 1 ? 'bg-blackColor' : 'bg-bodyColor'}`}
                             >
                                 <span className={`text-[21px] font-TTCPro font-semibold ${toggle === 1 ? 'text-bodyColor' : 'text-blackColor'}`}>
-                                    Branding <sup>03</sup>
+                                    Portfolio <sup>03</sup>
                                 </span>
                             </span>
                         </div>
@@ -97,7 +97,7 @@ function AllProjects() {
                                 className={`relative overflow-hidden w-full h-full block left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor font-TTCPro text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 px-10 group-active:left-0 group-active:bottom-0 ${toggle === 2 ? 'bg-blackColor' : 'bg-bodyColor'}`}
                             >
                                 <span className={`text-[21px] font-TTCPro font-semibold ${toggle === 2 ? 'text-bodyColor' : 'text-blackColor'}`}>
-                                    Bussinuss <sup>05</sup>
+                                    Bussinuss <sup>07</sup>
                                 </span>
                             </span>
                         </div>
@@ -247,6 +247,12 @@ function AllProjects() {
                         <div className={`${activeIndex === 7 && toggle === 0 ? 'block' : 'hidden'}`}>
                         <AllWorks activeIndex={activeIndex} />
                         </div>
+                        <div className={`${activeIndex === 8 && toggle === 0 ? 'block' : 'hidden'}`}>
+                        <AllWorks activeIndex={activeIndex} />
+                        </div>
+                        <div className={`${activeIndex === 9 && toggle === 0 ? 'block' : 'hidden'}`}>
+                        <AllWorks activeIndex={activeIndex} />
+                        </div>
                     </div>
 
                     {/* Toggle 2 cont */}
@@ -279,6 +285,12 @@ function AllProjects() {
                             <PortfolioWorks activeIndex={activeIndex} />
                         </div>
                         <div className={`${activeIndex === 4 && toggle === 2 ? 'block' : 'hidden'}`}>
+                            <PortfolioWorks activeIndex={activeIndex} />
+                        </div>
+                        <div className={`${activeIndex === 5 && toggle === 2 ? 'block' : 'hidden'}`}>
+                            <PortfolioWorks activeIndex={activeIndex} />
+                        </div>
+                        <div className={`${activeIndex === 6 && toggle === 2 ? 'block' : 'hidden'}`}>
                             <PortfolioWorks activeIndex={activeIndex} />
                         </div>
                     </div>

@@ -1,20 +1,27 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import PropTypes from 'prop-types';
-import DesignTwo from '../../assets/homedesign3.mp4';
+import DesignTwo from '../../assets/project2.webp';
+import DesignOne from '../../assets/project1.webp';
+import DesignThree from '../../assets/project3.webp';
+import Designsixe from '../../assets/project6.webp';
+import Designseven from '../../assets/project7.webp';
+import Designnine from '../../assets/project9.webp';
+import DesignTen from '../../assets/project10.webp';
 import { useProjectAllContext } from '../../context/ProjectAllContext';
 import { NavLink } from 'react-router-dom';
 
 const workItems = [
-    { id: 0, title: 'Ink of Violet', videoSrc: DesignTwo, type: 'video', buttonText: 'Branding & Identity1', toggleType: 0, link: '/'  },
-    { id: 1, title: 'Creative Ink', videoSrc: DesignTwo, type: 'video', buttonText: 'Branding & Identity', toggleType: 1, link: '/'  },
-    { id: 2, title: 'Creative Ink', videoSrc: DesignTwo, type: 'video', buttonText: 'Branding & Identity', toggleType: 0, link: '/'  },
-    { id: 3, title: 'Creative Ink', videoSrc: DesignTwo, type: 'video', buttonText: 'Branding & Identity', toggleType: 1, link: '/'  },
-    { id: 4, title: 'Creative Ink', videoSrc: DesignTwo, type: 'video', buttonText: 'Branding & Identity', toggleType: 2, link: '/'  },
+    { id: 0, title: 'Ochi', media: DesignOne, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://ochi99.netlify.app/' },
+    { id: 1, title: 'Sundown Studio', media: DesignTwo, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://magnificent-smakager-29d9e5.netlify.app/' },
+    { id: 2, title: 'Header Goes', media: DesignThree, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://magnificent-smakager-29d9e5.netlify.app/' },
+    { id: 3, title: 'Fix Computers', media: Designsixe, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://gleeful-fenglisu-06cdc4.netlify.app/' },
+    { id: 4, title: 'MantaTrade', media: Designseven, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://ornate-gelato-b0fa21.netlify.app/' },
+    { id: 5, title: 'Growing Logistics', media: Designnine, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://lucent-boba-5f2a5f.netlify.app/' },
+    { id: 6, title: 'Julia Noam', media: DesignTen, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://grand-jalebi-65aa54.netlify.app/' },
 ];
 
-const WorkItem = ({ title, videoSrc, isVisible, buttonText, toggleType, link }) => {
-
+const WorkItem = ({ title, media, type, isVisible, buttonText, toggleType, link }) => {
     const { updateToggle } = useProjectAllContext();
 
     return (
@@ -22,9 +29,13 @@ const WorkItem = ({ title, videoSrc, isVisible, buttonText, toggleType, link }) 
             <div className='w-full'>
                 <NavLink to={link} className='groups-m bg-blackColor'>
                     <div className='w-full video-bg overflow-hidden'>
-                        <video autoPlay loop muted className='w-full'>
-                            <source src={videoSrc} />
-                        </video>
+                    {type === 'video' ? (
+                            <video autoPlay loop muted className='w-full h-full object-cover'>
+                                <source src={media} />
+                            </video>
+                        ) : (
+                            <img src={media} alt={title} className='w-full h-full object-cover' />
+                        )}
                     </div>
                     <div className='h-[100px] w-full md:text-[37px] lg:text-[40px] bg-bodyColor ink-btn font-TTCPro font-semibold content-center px-6 border border-blackColor groups-hover:bg-blackColor'>
                         {title}
@@ -47,7 +58,8 @@ const WorkItem = ({ title, videoSrc, isVisible, buttonText, toggleType, link }) 
 
 WorkItem.propTypes = {
     title: PropTypes.string.isRequired,
-    videoSrc: PropTypes.string.isRequired,
+    media: PropTypes.string.isRequired,
+    type: PropTypes.oneOf(['video', 'image']).isRequired,
     isVisible: PropTypes.bool.isRequired,
     buttonText: PropTypes.string.isRequired,
     toggleType: PropTypes.number.isRequired,
@@ -60,12 +72,8 @@ function PortfolioWorks({ activeIndex }) {
             {workItems.map(item => (
                 <WorkItem
                     key={item.id}
-                    title={item.title}
-                    videoSrc={item.videoSrc}
+                    {...item}
                     isVisible={activeIndex === item.id}
-                    buttonText={item.buttonText}
-                    toggleType={item.toggleType}
-                    link={item.link}
                 />
             ))}
         </>

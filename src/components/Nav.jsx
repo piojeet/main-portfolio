@@ -181,8 +181,8 @@ function Nav() {
                         </div>
 
                         <div className='relative z-[1000]'>
-                          <div className='flex items-start justify-between pt-7'>
-                            <div className='flex items-center md:pl-[80px] pl-[70px] md:w-[50%] flex-shrink-0'>
+                          <div className='flex items-start justify-between pt-7 w-full'>
+                            <div className='flex items-center md:pl-[80px] pl-[70px] md:w-[50%] flex-shrink-0 w-full'>
                               {/* Close Menu Button */}
 
 
@@ -240,10 +240,10 @@ function Nav() {
             </div>
 
             <div
-              className='pointer-cursor clip-logo lg:w-[250px] md:w-[34.55vw] md:h-[80px] w-full h-[70px] md:flex-shrink-0 border border-blackColor bg-blackColor flex items-center justify-center md:ml-[80px] ml-[70px] whitespace-nowrap flex-nowrap relative origin-right overflow-hidden z-0'
+              className='pointer-cursor clip-logo lg:w-[250px] md:w-[34.57vw] md:h-[80px] w-full h-[70px] md:flex-shrink-0 border border-blackColor bg-blackColor inline-flex items-center justify-center md:ml-[80px] ml-[70px] whitespace-nowrap flex-nowrap relative origin-right overflow-hidden z-0'
               style={{ clipPath: clipPath, transition: 'clip-path 0.3s ease' }} // Apply clip-path and transition
             >
-              <span className='block'>
+              <span className='w-full h-full inline-flex items-center justify-center'>
                 <img src={Logo} className='md:h-[1.5rem] h-[1.3rem]' alt='image' />
               </span>
             </div>
@@ -252,9 +252,10 @@ function Nav() {
 
           </div>
 
-          <div className='flex items-center justify-end flex-shrink-0 w-1/2'>
+          <div className='items-center justify-end flex-shrink-0 w-1/2 md:flex hidden'>
+          {/* Feature plane */}
             {location.pathname === '/work-personation' && (
-              <NavLink to='/projects' className='group pointer-cursor h-[80px] lg:w-[50%] md:w-[45vw] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 border-r-0 justify-start items-center block relative z-20'>
+              <NavLink to='/projects' className='group pointer-cursor h-[80px] lg:w-[50%] md:w-[45vw] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 border-r-0 justify-start items-center hidden relative z-20 lg:block'>
                 {/* Magnetic effect on wrapper div */}
                 <div className='magnetic-btn relative w-full h-full'>
                   {/* Hover transition on inner span */}
@@ -269,6 +270,7 @@ function Nav() {
               </div>
             </NavLink>
             )}
+            {/* Feature plane */}
 
             <div className='group pointer-cursor h-[80px] lg:w-[50%] md:w-[45vw] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 md:flex justify-start items-center hidden relative z-10'>
               {/* Magnetic effect on wrapper div */}

@@ -3,23 +3,27 @@ import PropTypes from 'prop-types';
 import { useProjectAllContext } from '../../context/ProjectAllContext';
 import DesignOne from '../../assets/project1.webp';
 import DesignTwo from '../../assets/project2.webp';
-import DesignThree from '../../assets/project1.webp';
-import DesignFour from '../../assets/project1.webp';
-import DesignFive from '../../assets/project1.webp';
-import Designsixe from '../../assets/project1.webp';
-import Designseven from '../../assets/project1.webp';
-import Designeight from '../../assets/project1.webp';
+import DesignThree from '../../assets/project3.webp';
+import DesignFour from '../../assets/project4.webp';
+import DesignFive from '../../assets/project5.webp';
+import Designsixe from '../../assets/project6.webp';
+import Designseven from '../../assets/project7.webp';
+import Designeight from '../../assets/project8.webp';
+import Designnine from '../../assets/project9.webp';
+import DesignTen from '../../assets/project10.webp';
 import { NavLink } from 'react-router-dom';
 
 const works = [
-    { id: 0, title: 'Ink of Violet', media: DesignOne, type: 'image', buttonText: 'Web Design & Development', toggleType: 0, link: 'https://ochi99.netlify.app/' },
-    { id: 1, title: 'Creative Ink', media: DesignTwo, type: 'image', buttonText: 'UI/UX Design', toggleType: 1, link: 'https://priyajeetportfolio.netlify.app/sundownstudio.com/' },
-    { id: 2, title: 'Creative Ink', media: DesignThree, type: 'image', buttonText: 'Branding & Identity', toggleType: 2, link: '/' },
-    { id: 3, title: 'Creative Ink', media: DesignFour, type: 'image', buttonText: 'Mobile App Design', toggleType: 0, link: 'https://magnificent-smakager-29d9e5.netlify.app/' },
-    { id: 4, title: 'Creative Ink', media: DesignFive, type: 'image', buttonText: 'E-commerce Solutions', toggleType: 1, link: '/' },
-    { id: 5, title: 'Creative Ink', media: Designsixe, type: 'image', buttonText: 'Digital Marketing', toggleType: 2, link: '/' },
-    { id: 6, title: 'Creative Ink', media: Designseven, type: 'image', buttonText: 'Content Creation', toggleType: 0, link: '/' },
-    { id: 7, title: 'Creative Ink', media: Designeight, type: 'image', buttonText: 'SEO Optimization', toggleType: 1, link: '/' },
+    { id: 0, title: 'Ochi', media: DesignOne, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://ochi99.netlify.app/' },
+    { id: 1, title: 'Sundown Studio', media: DesignTwo, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://magnificent-smakager-29d9e5.netlify.app/' },
+    { id: 2, title: 'Header Goes', media: DesignThree, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://magnificent-smakager-29d9e5.netlify.app/' },
+    { id: 3, title: 'Sharad Sahu', media: DesignFour, type: 'image', buttonText: 'Business', toggleType: 2, link: 'https://sharadsportfolio.netlify.app/' },
+    { id: 4, title: 'I am William', media: DesignFive, type: 'image', buttonText: 'Business', toggleType: 2, link: 'https://vocal-chimera-107087.netlify.app/' },
+    { id: 5, title: 'Fix Computers', media: Designsixe, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://gleeful-fenglisu-06cdc4.netlify.app/' },
+    { id: 6, title: 'MantaTrade', media: Designseven, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://ornate-gelato-b0fa21.netlify.app/' },
+    { id: 7, title: 'Oraman', media: Designeight, type: 'image', buttonText: 'Business', toggleType: 2, link: 'https://gregarious-syrniki-7b45c9.netlify.app/' },
+    { id: 8, title: 'Growing Logistics', media: Designnine, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://lucent-boba-5f2a5f.netlify.app/' },
+    { id: 9, title: 'Julia Noam', media: DesignTen, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://grand-jalebi-65aa54.netlify.app/' },
 ];
 
 const WorkItem = ({ title, media, type, isVisible, buttonText, toggleType, link }) => {

@@ -10,7 +10,7 @@ import WorkPersonationOchi from './components/WorkPersonation/WorkPersonationOch
 function App() {
   return (
     <>
-      <div className='bg-bodyColor h-full w-full normal-point overflow-x-hidden'>
+      <div className='bg-bodyColor h-full w-full normal-point'>
         <div>
           <div className='fixed w-full h-full top-0 left-0 z-0'>
             <div className='h-full w-full max-w-[90vw] m-auto flex justify-between'>

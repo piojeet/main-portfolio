@@ -11,7 +11,7 @@ import AllProjects from './AllProjects'
 function ProjectHome() {
   return (
     <>
-      <div>
+      
         <Nav />
         <ProjectHero />
         <AllProjects />
@@ -24,7 +24,7 @@ function ProjectHome() {
         <ContactHome />
         </div>
         <Footer />
-      </div>
+
     </>
   )
 }
