@@ -211,7 +211,7 @@ function ContactGenral() {
                                 <div>
                                     <label htmlFor="agreeg" className='cursor-pointer inline-flex items-center w-full'>
                                         <input type="checkbox" id='agreeg' className='pree-check appearance-none' />
-                                        <span className='group border border-blackColor inline-block lg:w-14 lg:h-14 md:w-[50px] md:h-[50px] relative overflow-hidden hover:bg-gray-200 flex-shrink-0'>
+                                        <span className='group border border-blackColor inline-block lg:w-14 lg:h-14 md:w-[50px] md:h-[50px] h-[40px] w-[40px] relative overflow-hidden hover:bg-gray-200 flex-shrink-0'>
                                             <span className='absolute w-full h-full bg-blackColor -bottom-16 group-hover:-bottom-12 transition-all duration-200 pree-bg'></span>
                                             <span className='absolute w-full h-full text-bodyColor flex items-center justify-center opacity-0 transition-all duration-200 pree-icon'>
                                                 <CheckIcon />

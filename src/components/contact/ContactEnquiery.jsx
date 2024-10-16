@@ -209,7 +209,7 @@ function ContactEnquiery() {
                                             {field.id === 'name' && isFieldEmpty('name') && <p className='text-[#FF2E79] text-[15px] font-normal normal-case tracking-normal absolute bottom-[-25px]'>This field is required</p>}
                                             {field.id === 'email' && isFieldEmpty('email') && <p className='text-[#FF2E79] text-[15px] font-normal normal-case tracking-normal absolute bottom-[-25px]'>This field is required</p>}
                                             {field.id === 'timeline' && isFieldEmpty('timeline') && <p className='text-[#FF2E79] text-[15px] font-normal normal-case tracking-normal absolute bottom-[-25px]'>This field is required</p>}
-                                            {field.id === 'budget' && isFieldEmpty('budget') && <p className='text-[#FF2E79] text-[15px] font-normal normal-case tracking-normal absolute bottom-[0px]'>This field is required</p>}
+                                            {field.id === 'budget' && isFieldEmpty('budget') && <p className='text-[#FF2E79] text-[15px] font-normal normal-case tracking-normal absolute bottom-[-25px]'>This field is required</p>}
                                         </div>
                                     ))}
                                 </div>
@@ -266,7 +266,7 @@ function ContactEnquiery() {
                                 <div>
                                     <label htmlFor="agree" className='cursor-pointer inline-flex items-center w-full'>
                                         <input type="checkbox" id='agree' className='pree-check appearance-none' />
-                                        <span className='group border border-blackColor inline-block lg:w-14 lg:h-14 md:w-[50px] md:h-[50px] relative overflow-hidden hover:bg-gray-200 flex-shrink-0'>
+                                        <span className='group border border-blackColor inline-block lg:w-14 lg:h-14 md:w-[50px] md:h-[50px] h-[40px] w-[40px] relative overflow-hidden hover:bg-gray-200 flex-shrink-0'>
                                             <span className='absolute w-full h-full bg-blackColor -bottom-16 group-hover:-bottom-12 transition-all duration-200 pree-bg'></span>
                                             <span className='absolute w-full h-full text-bodyColor flex items-center justify-center opacity-0 transition-all duration-200 pree-icon'>
                                                 <CheckIcon />
