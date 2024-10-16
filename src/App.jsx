@@ -8,6 +8,7 @@ import { ProjectAllProvider } from './context/ProjectAllContext';
 import WorkPersonationOchi from './components/WorkPersonation/WorkPersonationOchi';
 import AboutHome from './components/about/AboutHome';
 import ContactHome from './components/contact/ContactHome';
+import ServicesHome from './components/services/ServicesHome';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
                   <Route path='projects' element={<ProjectHome />} />
                   <Route path='work-personation' element={<WorkPersonationOchi />} />
                   <Route path='about' element={<AboutHome />} />
+                  <Route path='services' element={<ServicesHome />} />
                   <Route path='contact' element={<ContactHome />} />
                 </Routes>
               </ProjectAllProvider>

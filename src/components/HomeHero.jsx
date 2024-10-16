@@ -90,8 +90,8 @@ function HomeHero() {
               <span>n</span>
               <span>d</span>
               <span>s</span>
-            </span>
-            <br />
+            </span> &nbsp;
+             <br />
             <span>
               <span>t</span>
               <span>h</span>
