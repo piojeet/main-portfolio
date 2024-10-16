@@ -118,8 +118,8 @@ function ContactHome() {
                             <p className='text-[17px] font-TTCPro text-blackColor font-semibold uppercase tracking-widest mb-4'>What are you looking for?</p>
                             <div className='flex items-start justify-between gap-x-10'>
                                 <div className='w-full flex flex-col gap-4'>
-                                    <label htmlFor="branding" className='pointer-cursor inline-flex items-center'>
-                                        <input type="checkbox" id='branding' className='pree-check appearance-none' />
+                                    <label htmlFor="websiteDesign" className='pointer-cursor inline-flex items-center'>
+                                        <input type="checkbox" id='websiteDesign' className='pree-check appearance-none' />
                                         <span className='group border border-blackColor inline-block lg:w-14 lg:h-14 md:w-[50px] md:h-[50px] relative overflow-hidden hover:bg-gray-200'>
                                             <span className='absolute w-full h-full bg-blackColor -bottom-16 group-hover:-bottom-12 transition-all duration-200 pree-bg'></span>
                                             <span className='absolute w-full h-full text-bodyColor flex items-center justify-center opacity-0 transition-all duration-200 pree-icon'>
@@ -142,7 +142,7 @@ function ContactHome() {
 
                                             </span>
                                         </span>
-                                        <span className='inline-block ml-6 font-TTCPro text-[17px] font-medium text-blackColor'>Branding</span>
+                                        <span className='inline-block ml-6 font-TTCPro text-[17px] font-medium text-blackColor'>Website Design</span>
                                     </label>
 
                                     <label htmlFor="bdevelop" className='pointer-cursor  inline-flex items-center'>
@@ -172,8 +172,8 @@ function ContactHome() {
                                         <span className='capitalize inline-block ml-6 font-TTCPro text-[17px] font-medium text-blackColor'>webside development</span>
                                     </label>
 
-                                    <label htmlFor="dsupport" className='pointer-cursor  inline-flex items-center'>
-                                        <input type="checkbox" id='dsupport' className='pree-check appearance-none' />
+                                    <label htmlFor="frontoptmz" className='pointer-cursor  inline-flex items-center'>
+                                        <input type="checkbox" id='frontoptmz' className='pree-check appearance-none' />
                                         <span className='group border border-blackColor inline-block lg:w-14 lg:h-14 md:w-[50px] md:h-[50px] relative overflow-hidden hover:bg-gray-200 flex-shrink-0'>
                                             <span className='absolute w-full h-full bg-blackColor -bottom-16 group-hover:-bottom-12 transition-all duration-200 pree-bg'></span>
                                             <span className='absolute w-full h-full text-bodyColor flex items-center justify-center opacity-0 transition-all duration-200 pree-icon'>
@@ -196,13 +196,13 @@ function ContactHome() {
 
                                             </span>
                                         </span>
-                                        <span className='capitalize inline-block ml-6 font-TTCPro text-[17px] font-medium text-blackColor'>design support</span>
+                                        <span className='capitalize inline-block ml-6 font-TTCPro text-[17px] font-medium text-blackColor'>Frontend Optimization</span>
                                     </label>
                                 </div>
 
                                 <div className='w-full flex flex-col gap-4'>
-                                    <label htmlFor="webside" className='pointer-cursor inline-flex items-center'>
-                                        <input type="checkbox" id='webside' className='pree-check appearance-none' />
+                                    <label htmlFor="respodesign" className='pointer-cursor inline-flex items-center'>
+                                        <input type="checkbox" id='respodesign' className='pree-check appearance-none' />
                                         <span className='group border border-blackColor inline-block lg:w-14 lg:h-14 md:w-[50px] md:h-[50px] relative overflow-hidden hover:bg-gray-200 flex-shrink-0'>
                                             <span className='absolute w-full h-full bg-blackColor -bottom-16 group-hover:-bottom-12 transition-all duration-200 pree-bg'></span>
                                             <span className='absolute w-full h-full text-bodyColor flex items-center justify-center opacity-0 transition-all duration-200 pree-icon'>
@@ -225,11 +225,11 @@ function ContactHome() {
 
                                             </span>
                                         </span>
-                                        <span className='capitalize inline-block ml-6 font-TTCPro text-[17px] font-medium text-blackColor'>webside design</span>
+                                        <span className='capitalize inline-block ml-6 font-TTCPro text-[17px] font-medium text-blackColor'>Responsive Design</span>
                                     </label>
 
-                                    <label htmlFor="product" className='pointer-cursor inline-flex items-center'>
-                                        <input type="checkbox" id='product' className='pree-check appearance-none' />
+                                    <label htmlFor="uiuximplimetion" className='pointer-cursor inline-flex items-center'>
+                                        <input type="checkbox" id='uiuximplimetion' className='pree-check appearance-none' />
                                         <span className='group border border-blackColor inline-block lg:w-14 lg:h-14 md:w-[50px] md:h-[50px] relative overflow-hidden hover:bg-gray-200 flex-shrink-0'>
                                             <span className='absolute w-full h-full bg-blackColor -bottom-16 group-hover:-bottom-12 transition-all duration-200 pree-bg'></span>
                                             <span className='absolute w-full h-full text-bodyColor flex items-center justify-center opacity-0 transition-all duration-200 pree-icon'>
@@ -252,7 +252,7 @@ function ContactHome() {
 
                                             </span>
                                         </span>
-                                        <span className='capitalize inline-block ml-6 font-TTCPro text-[17px] font-medium text-blackColor'>product design</span>
+                                        <span className='capitalize inline-block ml-6 font-TTCPro text-[17px] font-medium text-blackColor'>UI/UX Implementation</span>
                                     </label>
 
                                     <label htmlFor="something" className='pointer-cursor inline-flex items-center'>
@@ -348,6 +348,7 @@ function ContactHome() {
                                 </div>
 
                                 <div className='my-10 flex items-start justify-between gap-x-10 md:flex-wrap md:gap-y-10 lg:gap-y-0 lg:flex-nowrap'>
+                                    <div className='w-full'>
                                     <label htmlFor="timeline" className='text-[17px] font-TTCPro text-blackColor font-semibold uppercase tracking-widest w-full pointer-cursor'><span className='mb-3 inline-block w-full'>What’s your timeline?<span>*</span></span>
                                         <div className='relative group overflow-hidden'>
                                             <input
@@ -366,7 +367,10 @@ function ContactHome() {
                                             ></span>
                                         </div>
                                     </label>
+                                    <p className='text-[15px] font-TTCPro text-blackColor font-medium mt-2'>Knowing your deadline helps us to organise a realistic timeline</p>
+                                    </div>
 
+                                    <div className='w-full'>
                                     <label htmlFor="budget" className='text-[17px] font-TTCPro text-blackColor font-semibold uppercase tracking-widest w-full pointer-cursor'><span className='mb-3 inline-block w-full'>What’s your estimated budget?<span>*</span></span>
                                         <div className='relative group overflow-hidden'>
                                             <input
@@ -385,6 +389,8 @@ function ContactHome() {
                                             ></span>
                                         </div>
                                     </label>
+                                    <p className='text-[15px] font-TTCPro text-blackColor font-medium mt-2'>Providing a budget estimate helps me create a more tailored and accurate proposal for your project.</p>
+                                    </div>
                                 </div>
 
                                 <div className='my-10'>
@@ -393,7 +399,7 @@ function ContactHome() {
                                     <label htmlFor="message" className='text-[17px] font-TTCPro text-blackColor font-semibold uppercase tracking-widest w-full pointer-cursor'>
                                         {/* Conditionally change background based on placeholder focus */}
                                         <span className={`mb-3 inline-block w-full transition-all`}>
-                                            What’s your email address? <span>*</span>
+                                        Tell us about your project <span>*</span>
                                         </span>
                                         <div className='relative group overflow-hidden flex'>
                                             <textarea

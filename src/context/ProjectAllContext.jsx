@@ -110,6 +110,21 @@ export const ProjectAllProvider = ({ children }) => {
         startTimer();
     };
 
+
+
+     // State to keep track of which form is visible
+  const [showFirstForm, setShowFirstForm] = useState(true);
+
+  // Function to handle switching to the first form
+  const handleFirstForm = () => {
+    setShowFirstForm(true);
+  };
+
+  // Function to handle switching to the second form
+  const handleSecondForm = () => {
+    setShowFirstForm(false);
+  };
+
     return (
         // ProjectAllContext.Provider ke andar state aur functions ko provide karte hain
         <ProjectAllContext.Provider
@@ -129,6 +144,9 @@ export const ProjectAllProvider = ({ children }) => {
                 items2,
                 items3,
                 handleMouseLeave, // Adding handleMouseLeave to the context
+                showFirstForm,
+                handleFirstForm,
+                handleSecondForm,
             }}
         >
             {children}

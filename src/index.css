@@ -38,7 +38,7 @@
     }
 
     100% {
-      transform: rotate(360deg);
+      transform: rotate(-360deg);
     }
   }
 
@@ -110,6 +110,15 @@
       transform: translateY(0);
       opacity: 1;
     }
+  }
+
+  .animate-spin-watch {
+    animation: spin-watch 5s linear infinite;
+  }
+
+  @keyframes spin-watch {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
 }
 

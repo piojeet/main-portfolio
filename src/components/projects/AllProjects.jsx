@@ -57,48 +57,51 @@ function AllProjects() {
                    <div className='flex items-start md:flex-row flex-col'>
                    
                    <button
-                        className={`group h-[80px] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 md:flex justify-start items-center pointer-cursor pointer-cursor relative md:z-30 z-10 ${toggle === 0 ? 'bg-gray-800' : ''
+                        className={`group h-[80px] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 md:flex justify-start items-center pointer-cursor pointer-cursor relative border-r-0 md:z-30 z-10 ${toggle === 0 ? 'bg-gray-800' : ''
                             } `}
                         onClick={() => updateToggle(0)}
                     >
                         <div className="magnetic-btn relative w-full h-full">
                             <span
-                                className={`relative overflow-hidden w-full h-full block left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor font-TTCPro text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 px-10 group-active:left-0 group-active:bottom-0 ${toggle === 0 ? 'bg-blackColor' : 'bg-bodyColor'}`}
+                                className={`relative bg-blackColor overflow-hidden w-full h-full block left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor font-TTCPro text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 px-10 group-active:left-0 group-active:bottom-0 border-b-0 hover:border-b hover:border-t`}
                             >
-                                <span className={`text-[21px] font-TTCPro font-semibold ${toggle === 0 ? 'text-bodyColor' : 'text-blackColor'}`}>
+                                <span className={`text-[21px] font-TTCPro font-semibold relative z-20 ${toggle === 0 ? 'text-bodyColor' : 'text-blackColor'}`}>
                                     All <sup>08</sup>
                                 </span>
+                                <span className={`absolute top-0 right-0 w-full h-full bg-bodyColor z-10 origin-right scale-x-0 transition-all duration-500 ${toggle === 0 ? 'scale-x-0' : 'scale-x-100'}`}></span>
                             </span>
                         </div>
                     </button>
                   
                    
                     <button
-                        className={`group h-[80px] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 md:flex justify-start items-center pointer-cursor pointer-cursor relative md:z-20 z-20 ${toggle === 1 ? 'bg-gray-800' : ''}`}
+                        className={`group h-[80px] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 md:flex justify-start items-center pointer-cursor pointer-cursor relative md:z-20 z-20 border-r-0 ${toggle === 1 ? 'bg-gray-800' : ''}`}
                         onClick={() => updateToggle(1)}
                     >
                         <div className="magnetic-btn relative w-full h-full">
                             <span
-                                className={`relative overflow-hidden w-full h-full block left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor font-TTCPro text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 px-10 group-active:left-0 group-active:bottom-0 ${toggle === 1 ? 'bg-blackColor' : 'bg-bodyColor'}`}
+                                className={`relative bg-blackColor overflow-hidden w-full h-full block left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor font-TTCPro text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 px-10 group-active:left-0 group-active:bottom-0 border-b-0 border-t-0 hover:border-b hover:border-t`}
                             >
-                                <span className={`text-[21px] font-TTCPro font-semibold ${toggle === 1 ? 'text-bodyColor' : 'text-blackColor'}`}>
+                                <span className={`text-[21px] font-TTCPro font-semibold relative z-20 ${toggle === 1 ? 'text-bodyColor' : 'text-blackColor'}`}>
                                     Portfolio <sup>03</sup>
                                 </span>
+                                <span className={`absolute top-0 right-0 w-full h-full bg-bodyColor z-10 origin-right scale-x-0 transition-all duration-500 ${toggle === 1 ? 'scale-x-0' : 'scale-x-100'}`}></span>
                             </span>
                         </div>
                     </button>
                     
                     <button
-                        className={`group h-[80px] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 md:flex justify-start items-center pointer-cursor relative md:z-10 z-30 ${toggle === 2 ? 'bg-gray-800' : ''}`}
+                        className={`group h-[80px] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 md:flex justify-start items-center pointer-cursor relative md:z-10 z-30 border-l-0 ${toggle === 2 ? 'bg-gray-800' : ''}`}
                         onClick={() => updateToggle(2)}
                     >
                         <div className="magnetic-btn relative w-full h-full">
                             <span
-                                className={`relative overflow-hidden w-full h-full block left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor font-TTCPro text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 px-10 group-active:left-0 group-active:bottom-0 ${toggle === 2 ? 'bg-blackColor' : 'bg-bodyColor'}`}
+                                className={`relative bg-blackColor overflow-hidden w-full h-full block left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor font-TTCPro text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 px-10 group-active:left-0 group-active:bottom-0 border-b-0 border-t-0 hover:border-b hover:border-t`}
                             >
-                                <span className={`text-[21px] font-TTCPro font-semibold ${toggle === 2 ? 'text-bodyColor' : 'text-blackColor'}`}>
+                                <span className={`text-[21px] font-TTCPro font-semibold relative z-20 ${toggle === 2 ? 'text-bodyColor' : 'text-blackColor'}`}>
                                     Bussinuss <sup>07</sup>
                                 </span>
+                                <span className={`absolute top-0 right-0 w-full h-full bg-bodyColor z-10 origin-right scale-x-0 transition-all duration-500 ${toggle === 2 ? 'scale-x-0' : 'scale-x-100'}`}></span>
                             </span>
                         </div>
                     </button>

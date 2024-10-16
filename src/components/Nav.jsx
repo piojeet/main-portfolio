@@ -5,13 +5,22 @@ import Menu from '../assets/menu.svg'
 import Close from '../assets/close.svg'
 import ShortLogo from '../assets/shortlogo.svg'
 import Rocket from '../assets/rocket.svg'
+import downArrow from '../assets/chevron-down.svg'
 import RocketWhite from '../assets/rocket-white.svg'
 import RightArrow from '../assets/right-arrow.svg'
 import RightArroWhite from '../assets/right-arrow-white.svg'
 import NavLinks from './NavLinks'
 import { NavLink, useLocation } from 'react-router-dom';
+import { useProjectAllContext } from '../context/ProjectAllContext';
 
 function Nav() {
+
+  const {
+    handleFirstForm,
+    handleSecondForm,
+    showFirstForm,
+  } = useProjectAllContext();
+
 
   const location = useLocation();
 
@@ -272,7 +281,8 @@ function Nav() {
             )}
             {/* Feature plane */}
 
-            <div className='group pointer-cursor h-[80px] lg:w-[50%] md:w-[45vw] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 md:flex justify-start items-center hidden relative z-10'>
+            
+              <div className={`group pointer-cursor h-[80px] lg:w-[50%] md:w-[45vw] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 md:flex justify-start items-center hidden relative z-10 ${location.pathname === "/contact" ? 'block lg:hidden' : ''}`}>
               {/* Magnetic effect on wrapper div */}
               <div className='magnetic-btn relative w-full h-full'>
                 {/* Hover transition on inner span */}
@@ -286,6 +296,44 @@ function Nav() {
                 </span>
               </div>
             </div>
+
+
+            
+              {location.pathname === "/contact" && (
+                <div className={`lg:flex items-center justify-end w-full hidden`}>
+                <div className='group relative z-20 pointer-cursor h-[80px] lg:w-[50%] md:w-[45vw] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 md:flex justify-start items-center hidden' onClick={handleFirstForm}>
+              {/* Magnetic effect on wrapper div */}
+              <div className='magnetic-btn relative w-full h-full'>
+                {/* Hover transition on inner span */}
+                <span
+                  className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 bg-blackColor group-hover:border group-hover:border-blackColor font-TTCPro uppercase text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 inline-flex items-center justify-around'
+                  style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
+                >
+                 
+                  <span className={`relative z-20 ${showFirstForm ? 'text-bodyColor' : 'text-blackColor'}`}>Enquiry</span>
+                  <span className='relative z-20'><img src={downArrow} alt="" className={`w-8 ${showFirstForm ? 'invert' : ''}`} /></span>
+                  <span className={`absolute top-0 right-0 origin-right w-full h-full bg-bodyColor transition-all duration-300 z-10 ${showFirstForm ? 'scale-x-0' : 'scale-x-100'}`}></span>
+                </span>
+              </div>
+            </div>
+
+            <div className='group pointer-cursor h-[80px] lg:w-[50%] md:w-[45vw] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 md:flex justify-start items-center hidden relative z-10' onClick={handleSecondForm}>
+              {/* Magnetic effect on wrapper div */}
+              <div className='magnetic-btn relative w-full h-full'>
+                {/* Hover transition on inner span */}
+                <span
+                  className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 bg-blackColor group-hover:border group-hover:border-blackColor font-TTCPro uppercase text-[15px] tracking-[2px] inline-flex font-bold content-center transition-all duration-500 items-center justify-around'
+                  style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
+                >
+                 <span className={`relative z-20 ${showFirstForm ? 'text-blackColor' : 'text-bodyColor'}`}>General</span>
+                  <span className='relative z-20'><img src={downArrow} alt="" className={`w-8 ${showFirstForm ? 'invert-0' : 'invert'}`} /></span>
+                  <span className={`absolute top-0 right-0 origin-right w-full h-full bg-bodyColor transition-all duration-300 z-10 ${showFirstForm ? 'scale-x-100' : 'scale-x-0'}`}></span>
+                </span>
+              </div>
+            </div>
+              </div>
+              )}
+
           </div>
 
         </header>

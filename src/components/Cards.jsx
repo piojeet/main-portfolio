@@ -55,7 +55,7 @@ function Cards() {
                             </div>
                             <div className='absolute bottom-[0] md:translate-y-[63%] left-0 w-full px-6 py-3 transition-all duration-500 group-hover:translate-y-[0]'>
                                 <h3 className='font-TTCPro sm:text-[32px] text-[27px] font-[500] mb-2 group-hover:text-bodyColor'>Branding</h3>
-                                <p className='font-TTCPro text-[21px] font[450] group-hover:text-bodyColor'>Create or refine a visual identity to celebrate your unique personality and proposition.</p>
+                                <p className='font-TTCPro md:text-[21px] text-[18px] font[450] group-hover:text-bodyColor'>Create or refine a visual identity to celebrate your unique personality and proposition.</p>
                             </div>
                         </div>
                     </div>
@@ -107,7 +107,7 @@ function Cards() {
                             </div>
                             <div className='absolute bottom-[0] md:translate-y-[65%] left-0 w-full px-6 py-3 transition-all duration-500 group-hover:translate-y-[0]'>
                                 <h3 className='font-TTCPro sm:text-[32px] text-[27px] font-[500] mb-2 group-hover:text-bodyColor'>Website Design</h3>
-                                <p className='font-TTCPro text-[21px] font[450] group-hover:text-bodyColor'>Amplify your brands presence and engage your audience with an impactful and interactive website.</p>
+                                <p className='font-TTCPro md:text-[21px] text-[18px] font[450] group-hover:text-bodyColor'>Amplify your brands presence and engage your audience with an impactful and interactive website.</p>
                             </div>
                         </div>
                     </div>
@@ -161,7 +161,7 @@ function Cards() {
                             </div>
                             <div className='absolute bottom-[0] lg:translate-y-[65%] md:translate-y-[70%] left-0 w-full px-6 py-3 transition-all duration-500 md:group-hover:translate-y-[0]'>
                                 <h3 className='font-TTCPro sm:text-[32px] text-[27px] font-[500] mb-2 group-hover:text-bodyColor'>Front-End</h3>
-                                <p className='font-TTCPro text-[21px] font[450] group-hover:text-bodyColor'>I build efficient, responsive websites using modern web technologies and best design principles.</p>
+                                <p className='font-TTCPro md:text-[21px] text-[18px] font[450] group-hover:text-bodyColor'>I build efficient, responsive websites using modern web technologies and best design principles.</p>
                             </div>
                         </div>
                     </div>
@@ -214,7 +214,7 @@ function Cards() {
                             </div>
                             <div className='absolute bottom-[0] md:translate-y-[65%] left-0 w-full px-6 py-3 transition-all duration-500 group-hover:translate-y-[0]'>
                                 <h3 className='font-TTCPro sm:text-[32px] text-[27px] font-[500] mb-2 group-hover:text-bodyColor'>Design Support</h3>
-                                <p className='font-TTCPro text-[21px] font[450] group-hover:text-bodyColor'>An ongoing engagement to help with your regular or ad-hoc creative requirements and output.</p>
+                                <p className='font-TTCPro md:text-[21px] text-[18px] font[450] group-hover:text-bodyColor'>An ongoing engagement to help with your regular or ad-hoc creative requirements and output.</p>
                             </div>
                         </div>
                     </div>

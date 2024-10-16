@@ -92,7 +92,7 @@ function NavLinks() {
                 </NavLink>
 
                 {/* contact Link */}
-                <NavLink to="/services" className="block overflow-hidden uppercase border border-gray-600 pointer-cursor">
+                <NavLink to="/contact" className="block overflow-hidden uppercase border border-gray-600 pointer-cursor">
                     <div
                         className="group w-full h-[80px] inline-flex relative"
                         onMouseEnter={(e) => handleMouseEvent(e, 'contact')}

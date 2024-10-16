@@ -267,7 +267,7 @@ function Footer() {
               style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
             >
               <span className='absolute left-[-1.5rem] w-6 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-5'><img src={RightArrow} alt="" className='w-full' /></span>
-              <span className='absolute left-5 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-14'>Linkedun</span>
+              <span className='absolute left-5 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-14'>Linkedin</span>
               <span className='group-hover:animate-bounce-on absolute right-5 top-1/2 -translate-y-1/2'><img src={LinkArrow} alt="" className='w-6' /></span>
             </span>
           </div>
