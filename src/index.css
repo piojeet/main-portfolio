@@ -120,6 +120,22 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+
+  .clickRotate {
+    animation: rotateAnimation .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes rotateAnimation {
+    from {
+        transform: rotate(0deg);
+        transform-origin: center;
+    }
+    to {
+        transform: rotate(180deg);
+        transform-origin: center;
+    }
+}
+
 }
 
 

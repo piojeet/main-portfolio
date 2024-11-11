@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Star from '../assets/starg.svg'
 import RightArrow from '../assets/right-arrow.svg'
+import { useLocation } from 'react-router-dom';
 
 function Expertic() {
 
@@ -54,22 +55,56 @@ function Expertic() {
     });
   }, [isMagnetic]);
 
+  const location = useLocation()
+
     return (
         <>
             <div className='md:flex items-center justify-between lg:h-[80vh] md:h-[60vh] content-center flex-col lg:flex-row py-12'>
                 <div className='flex-1 pl-4'>
-                    <h2 className='uppercase font-TTCPro font-[900] text-blackColor xl:text-[95px] lg:text-[84px] sm:text-[63px] text-[10vw]'>
-                        <span>E</span>
-                        <span>x</span>
-                        <span>p</span>
-                        <span>e</span>
-                        <span>r</span>
-                        <span>t</span>
-                        <span>i</span>
-                        <span>s</span>
-                        <span>e</span>
-                    </h2>
-                    <p className='lg:text-[26px] md:text-[24px] font-TTCPro font-semibold'>Physical, digital, meta-physical – We’ll find a creative solution for all your business problems</p>
+                    {location.pathname !== '/services' && (
+                      <h2 className='uppercase font-TTCPro font-[900] text-blackColor xl:text-[95px] lg:text-[84px] sm:text-[63px] text-[10vw]'>
+                      <span>E</span>
+                      <span>x</span>
+                      <span>p</span>
+                      <span>e</span>
+                      <span>r</span>
+                      <span>t</span>
+                      <span>i</span>
+                      <span>s</span>
+                      <span>e</span>
+                  </h2>
+                    )}
+
+                    {location.pathname === "/services" && (
+                      <h2 className='uppercase font-TTCPro font-[900] text-blackColor xl:text-[95px] lg:text-[84px] sm:text-[63px] text-[10vw] leading-none mb-4'>
+                      <span>w</span>
+                      <span>h</span>
+                      <span>a</span>
+                      <span>t</span>
+                      &nbsp;
+                      <span>a</span>
+                      <span>r</span>
+                      <span>e</span>
+                      &nbsp;
+                      <span>y</span>
+                      <span>o</span>
+                      <span>u</span><br />
+                      <span>l</span>
+                      <span>o</span>
+                      <span>o</span>
+                      <span>k</span>
+                      <span>i</span>
+                      <span>n</span>
+                      <span>g</span>
+                      &nbsp;
+                      <span>f</span>
+                      <span>o</span>
+                      <span>r</span>
+                      <span>?</span>
+                  </h2>
+                    )}
+
+                    <p className='lg:text-[26px] md:text-[24px] font-TTCPro font-medium'>Physical, digital, meta-physical – We’ll find a creative solution for all your business problems</p>
                 </div>
 
                 <div className='md:flex-1 md:inline-flex md:justify-end pt-8 sm:w-full lg:w-fit w-full'>
