@@ -6,6 +6,7 @@ import BrandingHowWeWork from './BrandingHowWeWork'
 import ReletiveWork from '../ReletiveWork'
 import ServicesBrandindFAQ from './ServicesBrandindFAQ'
 import BrandingGlowUp from './BrandingGlowUp'
+import Footer from '../../Footer'
 
 function ServicesBrandingHome() {
 
@@ -18,6 +19,7 @@ function ServicesBrandingHome() {
     <ReletiveWork />
     <ServicesBrandindFAQ />
     <BrandingGlowUp />
+    <Footer />
     </>
   )
 }

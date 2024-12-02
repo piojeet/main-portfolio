@@ -9,8 +9,11 @@ import ProjectTell from './ProjectTell'
 import ContactHome from './ContactHome'
 import Testimonials from './Testimonials'
 import Footer from './Footer'
+import ShowWorksMarquee from './marquee/ShowWorksMarquee'
 
 function Home() {
+
+
   return (
     <div>
         <Nav />
@@ -22,6 +25,7 @@ function Home() {
         <ProjectTell />
         <ContactHome />
         <Testimonials />
+        <ShowWorksMarquee />
         <Footer />
     </div>
   )

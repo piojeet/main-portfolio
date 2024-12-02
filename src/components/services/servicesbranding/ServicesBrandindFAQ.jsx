@@ -81,9 +81,9 @@ function ServicesBrandindFAQ() {
     return (
         <>
             <div className='mt-[180px]'>
-                <div className='flex'>
+                <div className='flex lg:flex-row flex-col-reverse'>
                     <div className='w-full border-b border-blackColor h-fit'>
-                        <div className='w-[80px] h-[80px] border border-blackColor ml-auto border-b-0 flex items-center justify-center'>
+                        <div className='w-[80px] h-[80px] border border-blackColor ml-auto border-b-0 lg:flex hidden items-center justify-center'>
                             <div className='w-14'><SvgIcon /></div>
                         </div>
                         {accordionData.map((item, index) => {
@@ -102,18 +102,18 @@ function ServicesBrandindFAQ() {
                                             onClick={() => handleToggle(index)}
                                         >
                                             <span className={`transition-all duration-500 inline-block ${isOpen === index ? '-rotate-[135deg]' : ''}`}>
-                                                <img src={item.icon} alt="img" className='w-8' />
+                                                <img src={item.icon} alt="img" className='lg:w-8 w-6' />
                                             </span>
                                         </div>
                                         <div className='w-full'>
                                             <div
-                                                className={`text-[32px] font-medium font-TTCPro text-blackColor px-6 py-4 content-center pointer-cursor select-none`}
+                                                className={`lg:text-[32px] md:text-[28px] text-[25px] font-medium font-TTCPro text-blackColor px-6 py-4 content-center pointer-cursor select-none`}
                                                 onClick={() => handleToggle(index)}
                                             >
                                                 {item.title}
                                             </div>
                                             <div className={`transition-[max-height] duration-500 ease-linear overflow-hidden ${isOpen === index ? 'max-h-[500px]' : 'max-h-0'}`}>
-                                                <div className='p-6 pt-0 text-[17px] font-TTCPro font-medium text-blackColor'>
+                                                <div className='p-6 pt-0 lg:text-[17px] text-[15px] font-TTCPro font-medium text-blackColor'>
                                                     {item.shortPara && <p className='pb-6'>{item.shortPara}</p>}
                                                     <p>{formattedPara}</p>
                                                 </div>
@@ -124,8 +124,8 @@ function ServicesBrandindFAQ() {
                             );
                         })}
                     </div>
-                    <div className='w-full sticky top-[80px] h-fit'>
-                        <div className='w-full border border-blackColor border-l-0 h-fit pb-6 backdrop-blur-[2px]'>
+                    <div className='w-full lg:sticky top-[80px] h-fit'>
+                        <div className='w-full border border-blackColor lg:border-l-0 border-b-0 h-fit pb-6 backdrop-blur-[2px] relative -z-10 lg:border-b'>
                             <div className='lg:text-[60px] sm:text-[45px] text-[10vw] uppercase font-TTCPro font-[900] text-center leading-[.9] my-6 md:block flex items-start flex-wrap justify-center text-blackColor'>
                                 <span>
                                     <span>C</span>

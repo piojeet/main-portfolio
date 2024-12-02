@@ -32,10 +32,16 @@ function ReletiveWork() {
             { title: 'Work 4: Create team profiles', image: 'https://via.placeholder.com/100' },
         ],
         '/frontend-design': [
-            { title: 'Work 1: Implement a contact form', image: 'https://via.placeholder.com/100' },
-            { title: 'Work 2: Set up email notifications', image: 'https://via.placeholder.com/100' },
-            { title: 'Work 3: Set up email notifications', image: 'https://via.placeholder.com/100' },
-            { title: 'Work 4: Set up email notifications', image: 'https://via.placeholder.com/100' },
+            { title: 'Work 1: Implement a contact', image: 'https://via.placeholder.com/100' },
+            { title: 'Work 2: Set up email', image: 'https://via.placeholder.com/100' },
+            { title: 'Work 3: Set up email', image: 'https://via.placeholder.com/100' },
+            { title: 'Work 4: Set up email', image: 'https://via.placeholder.com/100' },
+        ],
+        '/design-support': [
+            { title: 'Work 1: Implement a contact', image: 'https://via.placeholder.com/100' },
+            { title: 'Work 2: Set up email', image: 'https://via.placeholder.com/100' },
+            { title: 'Work 3: Set up email', image: 'https://via.placeholder.com/100' },
+            { title: 'Work 4: Set up email', image: 'https://via.placeholder.com/100' },
         ],
     };
 
@@ -59,12 +65,12 @@ function ReletiveWork() {
 
 
     return (
-        <div className='mt-[160px]'>
+        <div className='lg:mt-[160px] mt-[100px]'>
             <div>
-                <div className='flex items-end'>
+                <div className='flex items-end lg:flex-row flex-col'>
 
                     <div className='w-full'>
-                        <div className={`group pointer-cursor h-[80px] w-[80px] flex-shrink-0 border border-blackColor bg-blackColor hidden lg:flex justify-start items-center border-r-0 ml-auto`} onClick={refreshWorks}>
+                        <div className={`group pointer-cursor h-[80px] w-[80px] flex-shrink-0 border border-blackColor bg-blackColor flex justify-start items-center lg:border-r-0 ml-auto`} onClick={refreshWorks}>
                             <div className='magnetic-btn relative w-full h-full'>
                                 <span
                                     className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 group-hover:border group-hover:border-blackColor bg-bodyColor font-TTCPro lg:text-[20px] md:text-[19px] tracking-[2px] font-semibold content-center inline-flex items-center justify-center'
@@ -76,7 +82,7 @@ function ReletiveWork() {
                         </div>
                     </div>
 
-                    <div className='lg:text-[94px] sm:text-[45px] text-[10vw] uppercase font-TTCPro font-[900] text-center leading-[.9] md:block flex items-start flex-wrap justify-center text-blackColor w-[67.5vw] border border-blackColor flex-shrink-0 py-4'>
+                    <div className='lg:text-[84px] sm:text-[45px] text-[10vw] uppercase font-TTCPro font-[900] text-center leading-[.9] md:block flex items-start flex-wrap justify-center text-blackColor lg:w-[67.5vw] w-full border border-blackColor flex-shrink-0 py-4'>
                         <span>
                             <span>R</span>
                             <span>e</span>
@@ -95,10 +101,10 @@ function ReletiveWork() {
                     </div>
                 </div>
 
-                <div className='w-full flex'>
+                <div className='w-full flex lg:flex-row flex-col'>
                     {works.map((work, index) => (
                         <div key={index}>
-                            <div className='xl:w-full lg:w-[67.5vw] w-full lg:ml-auto ml-0'>
+                            <div className=' w-full lg:ml-auto ml-0'>
                                 <div className='w-full'>
                                     <div className='groups-m bg-blackColor'>
                                         <div className='w-full video-bg overflow-hidden lg:h-[28vw] h-full'>
@@ -106,7 +112,7 @@ function ReletiveWork() {
                                                 <source src={work.image} /> {/* 8. Displaying dynamic image/video */}
                                             </video>
                                         </div>
-                                        <div className='h-[100px] w-full md:text-[37px] lg:text-[40px] bg-bodyColor ink-btn font-TTCPro font-semibold content-center px-6 border border-blackColor groups-hover:bg-blackColor'>
+                                        <div className='h-[100px] w-full md:text-[37px] lg:text-[40px] text-[31px] bg-bodyColor ink-btn font-TTCPro font-semibold content-center px-6 border border-blackColor groups-hover:bg-blackColor'>
                                             {work.title}
                                         </div>
                                     </div>

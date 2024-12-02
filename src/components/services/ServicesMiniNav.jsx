@@ -22,8 +22,8 @@ function ServicesMiniNav() {
     return (
         <>
             {['/services', '/branding', '/website-design', '/frontend-design', '/design-support'].includes(location.pathname) && (
-                <div className='fixed left-1/2 top-[76.8vh] -translate-x-1/2 bg-bodyColor p-4 rounded-full border-2 border-blackColor z-50'>
-                    <div className='flex items-center gap-4'>
+                <div className='fixed left-1/2 top-[76.8vh] -translate-x-1/2 bg-bodyColor md:p-4 p-2 rounded-full border-2 border-blackColor z-50'>
+                    <div className='flex items-center md:gap-4 gap-3'>
                         {navLinks.map((link) => (
                             <NavLink
                                 key={link.path}
@@ -35,17 +35,17 @@ function ServicesMiniNav() {
                                     )
                                 }
                             >
-                                <span className='inline-flex flex-shrink-0 w-14 h-14 bg-red-400 items-center justify-center rounded-full'>
+                                <span className='inline-flex flex-shrink-0 md:w-14 md:h-14 size-11 bg-red-400 items-center justify-center rounded-full'>
                                     <img
                                         src={link.icon}
                                         alt=""
                                         className={classNames(
-                                            'w-8',
+                                            'md:w-8 w-6',
                                             location.pathname === link.path ? 'invert' : 'invert-0'
                                         )}
                                     />
                                 </span>
-                                <span className='block px-4 flex-shrink-0 whitespace-nowrap overflow-hidden'>{link.text}</span>
+                                <span className='md:block hidden px-4 flex-shrink-0 whitespace-nowrap overflow-hidden'>{link.text}</span>
                             </NavLink>
                         ))}
                     </div>

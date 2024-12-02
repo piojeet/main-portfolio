@@ -82,15 +82,15 @@ function ServicesOverview() {
   return (
     <>
       <div className='relative z-10'>
-        <div className='flex'>
-          <div className='w-[67.5vw] relative z-50'>
+        <div className='flex lg:flex-row flex-col-reverse'>
+          <div className='lg:w-[67.5vw] relative z-50'>
             <div className='bg-blackColor group'>
               <div
                 className={`magnetic-btn border border-blackColor bg-bodyColor p-2 relative overflow-hidden transition-all duration-500 
       group-hover:left-2 group-hover:bottom-2 left-0 bottom-0`}
               >
-                <div className='flex items-center gap-8 relative transition-all duration-500 left-[-260px] group-hover:left-0'>
-                  <div>
+                <div className='flex items-center gap-8 lg:relative transition-all duration-500 left-[-260px] group-hover:left-0'>
+                  <div className='lg:block hidden'>
                     <div className="carousel carousel-1 relative w-[250px] h-[150px] overflow-hidden rounded-md">
                       {images1.map((src, index) => (
                         <img
@@ -103,11 +103,11 @@ function ServicesOverview() {
                       ))}
                     </div>
                   </div>
-                  <div className='flex gap-6'>
+                  <div className='flex gap-6 py-4 lg:py-0 px-2'>
                     <span className='text-[17px] font-TTCPro text-gray-500 font-bold'>01</span>
                     <div>
-                      <div className='text-[50px] font-TTCPro font-bold text-blackColor leading-none'>Frontend Development</div>
-                      <p className='font-TTCPro font-medium text-[17px] whitespace-nowrap text-blackColor mt-1'>
+                      <div className='lg:text-[50px] md:text-[40px] text-[30px] font-TTCPro font-bold text-blackColor leading-none'>Frontend Development</div>
+                      <p className='font-TTCPro font-medium text-[17px] lg:whitespace-nowrap text-blackColor mt-1'>
                         Responsive Websites • Interactive Components • Single-Page Applications • Cross-Browser Compatibility
                       </p>
                     </div>
@@ -121,10 +121,10 @@ function ServicesOverview() {
                 className={`magnetic-btn border border-blackColor bg-bodyColor p-2 relative overflow-hidden transition-all duration-500 
       group-hover:left-2 group-hover:bottom-2 left-0 bottom-0`}
               >
-                <div className='flex items-center gap-8 relative transition-all duration-500 left-[-260px] group-hover:left-0'>
-                  <div>
+                <div className='flex items-center gap-8 lg:relative transition-all duration-500 left-[-260px] group-hover:left-0'>
+                  <div className='lg:block hidden'>
                     <div className="carousel carousel-2 relative w-[250px] h-[150px] overflow-hidden rounded-md">
-                      {images2.map((src, index) => (
+                    {images2.map((src, index) => (
                         <img
                           key={index}
                           src={src}
@@ -135,11 +135,11 @@ function ServicesOverview() {
                       ))}
                     </div>
                   </div>
-                  <div className='flex gap-6'>
+                  <div className='flex gap-6 py-4 lg:py-0 px-2'>
                     <span className='text-[17px] font-TTCPro text-gray-500 font-bold'>02</span>
                     <div>
-                      <div className='text-[50px] font-TTCPro font-bold text-blackColor leading-none'>UI Development</div>
-                      <p className='font-TTCPro font-medium text-[17px] whitespace-nowrap text-blackColor mt-1'>
+                      <div className='lg:text-[50px] md:text-[40px] text-[30px] font-TTCPro font-bold text-blackColor leading-none'>UI Development</div>
+                      <p className='font-TTCPro font-medium text-[17px] lg:whitespace-nowrap text-blackColor mt-1'>
                       User-Centric Designs • Interactive Prototyping • Pixel-Perfect UI Implementation • Accessibility
                       </p>
                     </div>
@@ -153,10 +153,10 @@ function ServicesOverview() {
                 className={`magnetic-btn border border-blackColor bg-bodyColor p-2 relative overflow-hidden transition-all duration-500 
       group-hover:left-2 group-hover:bottom-2 left-0 bottom-0`}
               >
-                <div className='flex items-center gap-8 relative transition-all duration-500 left-[-260px] group-hover:left-0'>
-                  <div>
+                <div className='flex items-center gap-8 lg:relative transition-all duration-500 left-[-260px] group-hover:left-0'>
+                  <div className='lg:block hidden'>
                     <div className="carousel carousel-3 relative w-[250px] h-[150px] overflow-hidden rounded-md">
-                      {images3.map((src, index) => (
+                    {images3.map((src, index) => (
                         <img
                           key={index}
                           src={src}
@@ -167,11 +167,11 @@ function ServicesOverview() {
                       ))}
                     </div>
                   </div>
-                  <div className='flex gap-6'>
+                  <div className='flex gap-6 py-4 lg:py-0 px-2'>
                     <span className='text-[17px] font-TTCPro text-gray-500 font-bold'>03</span>
                     <div>
-                      <div className='text-[50px] font-TTCPro font-bold text-blackColor leading-none'>Performance Optimization</div>
-                      <p className='font-TTCPro font-medium text-[17px] whitespace-nowrap text-blackColor mt-1'>
+                      <div className='lg:text-[50px] md:text-[40px] text-[30px] font-TTCPro font-bold text-blackColor leading-none'>Performance Optimization</div>
+                      <p className='font-TTCPro font-medium text-[17px] lg:whitespace-nowrap text-blackColor mt-1'>
                       Fast Loading Times • Code Minification • Lazy Loading • Optimized Asset Management
                       </p>
                     </div>
@@ -185,10 +185,10 @@ function ServicesOverview() {
                 className={`magnetic-btn border border-blackColor bg-bodyColor p-2 relative overflow-hidden transition-all duration-500 
       group-hover:left-2 group-hover:bottom-2 left-0 bottom-0`}
               >
-                <div className='flex items-center gap-8 relative transition-all duration-500 left-[-260px] group-hover:left-0'>
-                  <div>
+                <div className='flex items-center gap-8 lg:relative transition-all duration-500 left-[-260px] group-hover:left-0'>
+                  <div className='lg:block hidden'>
                     <div className="carousel carousel-4 relative w-[250px] h-[150px] overflow-hidden rounded-md">
-                      {images3.map((src, index) => (
+                    {images3.map((src, index) => (
                         <img
                           key={index}
                           src={src}
@@ -199,11 +199,11 @@ function ServicesOverview() {
                       ))}
                     </div>
                   </div>
-                  <div className='flex gap-6'>
+                  <div className='flex gap-6 py-4 lg:py-0 px-2'>
                     <span className='text-[17px] font-TTCPro text-gray-500 font-bold'>04</span>
                     <div>
-                      <div className='text-[50px] font-TTCPro font-bold text-blackColor leading-none'>JavaScript Development</div>
-                      <p className='font-TTCPro font-medium text-[17px] whitespace-nowrap text-blackColor mt-1'>
+                      <div className='lg:text-[50px] md:text-[40px] text-[30px] font-TTCPro font-bold text-blackColor leading-none'>JavaScript Development</div>
+                      <p className='font-TTCPro font-medium text-[17px] lg:whitespace-nowrap text-blackColor mt-1'>
                       Dynamic Content • API Integration • Frontend Logic • Real-Time Interactions
                       </p>
                     </div>
@@ -217,10 +217,10 @@ function ServicesOverview() {
                 className={`magnetic-btn border border-blackColor bg-bodyColor p-2 relative overflow-hidden transition-all duration-500 
       group-hover:left-2 group-hover:bottom-2 left-0 bottom-0`}
               >
-                <div className='flex items-center gap-8 relative transition-all duration-500 left-[-260px] group-hover:left-0'>
-                  <div>
+                <div className='flex items-center gap-8 lg:relative transition-all duration-500 left-[-260px] group-hover:left-0'>
+                  <div className='lg:block hidden'>
                     <div className="carousel carousel-5 relative w-[250px] h-[150px] overflow-hidden rounded-md">
-                      {images3.map((src, index) => (
+                    {images3.map((src, index) => (
                         <img
                           key={index}
                           src={src}
@@ -231,11 +231,11 @@ function ServicesOverview() {
                       ))}
                     </div>
                   </div>
-                  <div className='flex gap-6'>
+                  <div className='flex gap-6 py-4 lg:py-0 px-2'>
                     <span className='text-[17px] font-TTCPro text-gray-500 font-bold'>05</span>
                     <div>
-                      <div className='text-[50px] font-TTCPro font-bold text-blackColor leading-none'>CSS Animations</div>
-                      <p className='font-TTCPro font-medium text-[17px] whitespace-nowrap text-blackColor mt-1'>
+                      <div className='lg:text-[50px] md:text-[40px] text-[30px] font-TTCPro font-bold text-blackColor leading-none'>CSS Animations</div>
+                      <p className='font-TTCPro font-medium text-[17px] lg:whitespace-nowrap text-blackColor mt-1'>
                       Smooth Transitions • Micro-Interactions • Scroll Animations • Hover Effects
                       </p>
                     </div>
@@ -243,11 +243,14 @@ function ServicesOverview() {
                 </div>
               </div>
             </div>
+      
+
+           
 
           </div>
-          <div className='w-[22.5vw] flex-shrink-0 h-fit sticky top-[80px]'>
+          <div className='lg:w-[22.5vw] md:w-[45vw] flex-shrink-0 h-fit lg:sticky lg:top-[80px] lg:mb-0 mb-[80px]'>
             <div className='p-6 bg-blackColor'>
-            <p className='text-[40px] font-TTCPro font-black text-bodyColor uppercase'>Services Snapshot</p>
+            <p className='lg:text-[3vw] font-TTCPro font-black text-bodyColor uppercase text-[30px]'>Services Snapshot</p>
             <p className='text-[20px] font-TTCPro font-medium text-bodyColor mt-8'>A summary of the tasks we handle and the types of projects they support</p>
             </div>
 

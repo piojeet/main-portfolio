@@ -1,11 +1,9 @@
-/* eslint-disable react/no-unescaped-entities */
 import React from 'react'
-import Paint from '../../../assets/paint.svg';
+import Paint from '../../../assets/webdesign.svg';
 
-const BrandingHero = () => {
+function WebSiteDesignHero() {
   return (
-    <>
-        <div className='border border-blackColor p-4'>
+    <div className='border border-blackColor p-4'>
         <div className='w-full md:min-h-[60vh] min-h-[40vh] h-auto border border-blackColor flex items-center justify-center backdrop-blur-sm bg-blackColor rounded-lg p-2 py-4'>
         <div>
           <div className='flex items-center text-[17px] uppercase font-TTCPro font-semibold justify-center gap-3'>
@@ -17,25 +15,31 @@ const BrandingHero = () => {
           </div>
 
           <div className='lg:text-[95px] sm:text-[63px] text-[10vw] uppercase font-TTCPro font-[900] text-center leading-[.9] my-6 md:block flex items-start flex-wrap justify-center text-bodyColor'>
-            <span>
+          <span>
+              <span>w</span>
+              <span>e</span>
               <span>b</span>
-              <span>r</span>
-              <span>a</span>
-              <span>n</span>
-              <span>d</span>
+              <span>s</span>
               <span>i</span>
-              <span>n</span>
+              <span>t</span>
+              <span>e</span>
+            </span>&nbsp;
+            <span>
+              <span>d</span>
+              <span>e</span>
+              <span>s</span>
+              <span>i</span>
               <span>g</span>
+              <span>n</span>
             </span>
           </div>
 
-          <p className='md:text-[26px] font-TTCPro font-medium max-w-[800px] w-full m-auto text-center text-[20px] lg:px-8 px-2 md:px-0 text-bodyColor'>Transforming brand visions into dynamic, responsive websites that captivate users with clean, impactful front-end development</p>
+          <p className='md:text-[26px] font-TTCPro font-medium max-w-[800px] w-full m-auto text-center text-[20px] lg:px-8 px-2 md:px-0 text-bodyColor'>I design and develop interactive websites that captivate users and bring ideas to life with clean, efficient code</p>
         </div>
 
       </div>
         </div>
-    </>
   )
 }
 
-export default BrandingHero
+export default WebSiteDesignHero

@@ -140,6 +140,12 @@ function Nav() {
   }, [isOpen]);
 
 
+  const handleClick = (e) => {
+    if (location.pathname === "/") {
+      e.preventDefault(); // Prevent the link from working
+    }
+  };
+
 
   return (
     <>
@@ -196,11 +202,11 @@ function Nav() {
 
 
                               {/* Logo Area */}
-                              <div className='pointer-cursor clip-logo lg:w-[250px] md:w-[100%] md:h-[80px] w-full h-[70px] md:flex-shrink-0 border border-gray-600 border-b-0 bg-blackColor border-l-0 flex items-center justify-center whitespace-nowrap flex-nowrap relative origin-right overflow-hidden z-0'>
+                              <NavLink to="/" onClick={handleClick} className='pointer-cursor clip-logo lg:w-[250px] md:w-[100%] md:h-[80px] w-full h-[70px] md:flex-shrink-0 border border-gray-600 border-b-0 bg-blackColor border-l-0 flex items-center justify-center whitespace-nowrap flex-nowrap relative origin-right overflow-hidden z-0'>
                                 <span className='block'>
                                   <img src={Logo} className='md:h-[1.5rem] h-[1.3rem]' alt='logo' />
                                 </span>
-                              </div>
+                              </NavLink>
                             </div>
 
 
@@ -248,14 +254,14 @@ function Nav() {
               </div>
             </div>
 
-            <div
+            <NavLink to="/" onClick={handleClick}
               className='pointer-cursor clip-logo lg:w-[250px] md:w-[34.57vw] md:h-[80px] w-full h-[70px] md:flex-shrink-0 border border-blackColor bg-blackColor inline-flex items-center justify-center md:ml-[80px] ml-[70px] whitespace-nowrap flex-nowrap relative origin-right overflow-hidden z-0'
               style={{ clipPath: clipPath, transition: 'clip-path 0.3s ease' }} // Apply clip-path and transition
             >
               <span className='w-full h-full inline-flex items-center justify-center'>
                 <img src={Logo} className='md:h-[1.5rem] h-[1.3rem]' alt='image' />
               </span>
-            </div>
+            </NavLink>
 
 
 
