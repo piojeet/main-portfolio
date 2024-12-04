@@ -268,27 +268,47 @@ function Nav() {
           </div>
 
           <div className='items-center justify-end flex-shrink-0 w-1/2 md:flex hidden'>
-          {/* Feature plane */}
+            {/* Feature plane */}
             {location.pathname === '/work-personation' && (
               <NavLink to='/projects' className='group pointer-cursor h-[80px] lg:w-[50%] md:w-[45vw] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 border-r-0 justify-start items-center hidden relative z-20 lg:block'>
                 {/* Magnetic effect on wrapper div */}
                 <div className='magnetic-btn relative w-full h-full'>
                   {/* Hover transition on inner span */}
                   <span
-                  className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 bg-bodyColor border group-hover:border-blackColor font-TTCPro uppercase text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 inline-flex items-center justify-center'
-                  style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
-                >
-                  <span className='w-6 absolute top-1/2 -translate-y-1/2 left-[8%] rotate-180'><img src={RightArrow} alt="" className='w-full' /></span>
-                  <span className=''>All Works</span>
+                    className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 bg-bodyColor border group-hover:border-blackColor font-TTCPro uppercase text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 inline-flex items-center justify-center'
+                    style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
+                  >
+                    <span className='w-6 absolute top-1/2 -translate-y-1/2 left-[8%] rotate-180'><img src={RightArrow} alt="" className='w-full' /></span>
+                    <span className=''>All Works</span>
 
-                </span>
-              </div>
-            </NavLink>
+                  </span>
+                </div>
+              </NavLink>
             )}
             {/* Feature plane */}
 
-            
-              <div className={`group pointer-cursor h-[80px] lg:w-[50%] md:w-[45vw] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 md:flex justify-start items-center hidden relative z-10 ${location.pathname === "/contact" ? 'block lg:hidden' : ''}`}>
+
+            {(location.pathname === "/branding" ||
+              location.pathname === "/website-design" ||
+              location.pathname === "/frontend-design" ||
+              location.pathname === "/design-support") && (
+                <NavLink to="/services" className={`group pointer-cursor h-[80px] lg:w-[50%] md:w-[45vw] flex-shrink-0 border border-r-0 border-blackColor bg-blackColor border-b-0 lg:flex hidden justify-start items-center relative z-20`}>
+                  {/* Magnetic effect on wrapper div */}
+                  <div className='magnetic-btn relative w-full h-full'>
+                    {/* Hover transition on inner span */}
+                    <span
+                      className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 bg-bodyColor border group-hover:border-blackColor font-TTCPro uppercase text-[15px] tracking-[2px] inline-flex items-center justify-center gap-4 font-bold content-center transition-all duration-500'
+                      style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
+                    >
+                      <span className='w-6 block relative -left-8 rotate-180'><img src={RightArrow} alt="" className='w-full' /></span>
+                      <span className='block uppercase'>all services</span>
+                    </span>
+                  </div>
+                </NavLink>
+              )}
+
+
+            <div className={`group pointer-cursor h-[80px] lg:w-[50%] md:w-[45vw] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 md:flex justify-start items-center hidden relative z-10 ${location.pathname === "/contact" ? 'block lg:hidden' : ''}`}>
               {/* Magnetic effect on wrapper div */}
               <div className='magnetic-btn relative w-full h-full'>
                 {/* Hover transition on inner span */}
@@ -304,41 +324,43 @@ function Nav() {
             </div>
 
 
-            
-              {location.pathname === "/contact" && (
-                <div className={`lg:flex items-center justify-end w-full hidden`}>
-                <div className='group relative z-20 pointer-cursor h-[80px] lg:w-[50%] md:w-[45vw] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 md:flex justify-start items-center hidden' onClick={handleFirstForm}>
-              {/* Magnetic effect on wrapper div */}
-              <div className='magnetic-btn relative w-full h-full'>
-                {/* Hover transition on inner span */}
-                <span
-                  className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 bg-blackColor group-hover:border group-hover:border-blackColor font-TTCPro uppercase text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 inline-flex items-center justify-around'
-                  style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
-                >
-                 
-                  <span className={`relative z-20 ${showFirstForm ? 'text-bodyColor' : 'text-blackColor'}`}>Enquiry</span>
-                  <span className='relative z-20'><img src={downArrow} alt="" className={`w-8 ${showFirstForm ? 'invert' : ''}`} /></span>
-                  <span className={`absolute top-0 right-0 origin-right w-full h-full bg-bodyColor transition-all duration-300 z-10 ${showFirstForm ? 'scale-x-0' : 'scale-x-100'}`}></span>
-                </span>
-              </div>
-            </div>
 
-            <div className='group pointer-cursor h-[80px] lg:w-[50%] md:w-[45vw] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 md:flex justify-start items-center hidden relative z-10' onClick={handleSecondForm}>
-              {/* Magnetic effect on wrapper div */}
-              <div className='magnetic-btn relative w-full h-full'>
-                {/* Hover transition on inner span */}
-                <span
-                  className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 bg-blackColor group-hover:border group-hover:border-blackColor font-TTCPro uppercase text-[15px] tracking-[2px] inline-flex font-bold content-center transition-all duration-500 items-center justify-around'
-                  style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
-                >
-                 <span className={`relative z-20 ${showFirstForm ? 'text-blackColor' : 'text-bodyColor'}`}>General</span>
-                  <span className='relative z-20'><img src={downArrow} alt="" className={`w-8 ${showFirstForm ? 'invert-0' : 'invert'}`} /></span>
-                  <span className={`absolute top-0 right-0 origin-right w-full h-full bg-bodyColor transition-all duration-300 z-10 ${showFirstForm ? 'scale-x-100' : 'scale-x-0'}`}></span>
-                </span>
+
+
+            {location.pathname === "/contact" && (
+              <div className={`lg:flex items-center justify-end w-full hidden`}>
+                <div className='group relative z-20 pointer-cursor h-[80px] lg:w-[50%] md:w-[45vw] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 md:flex justify-start items-center hidden' onClick={handleFirstForm}>
+                  {/* Magnetic effect on wrapper div */}
+                  <div className='magnetic-btn relative w-full h-full'>
+                    {/* Hover transition on inner span */}
+                    <span
+                      className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 bg-blackColor group-hover:border group-hover:border-blackColor font-TTCPro uppercase text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 inline-flex items-center justify-around'
+                      style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
+                    >
+
+                      <span className={`relative z-20 ${showFirstForm ? 'text-bodyColor' : 'text-blackColor'}`}>Enquiry</span>
+                      <span className='relative z-20'><img src={downArrow} alt="" className={`w-8 ${showFirstForm ? 'invert' : ''}`} /></span>
+                      <span className={`absolute top-0 right-0 origin-right w-full h-full bg-bodyColor transition-all duration-300 z-10 ${showFirstForm ? 'scale-x-0' : 'scale-x-100'}`}></span>
+                    </span>
+                  </div>
+                </div>
+
+                <div className='group pointer-cursor h-[80px] lg:w-[50%] md:w-[45vw] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 md:flex justify-start items-center hidden relative z-10' onClick={handleSecondForm}>
+                  {/* Magnetic effect on wrapper div */}
+                  <div className='magnetic-btn relative w-full h-full'>
+                    {/* Hover transition on inner span */}
+                    <span
+                      className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 bg-blackColor group-hover:border group-hover:border-blackColor font-TTCPro uppercase text-[15px] tracking-[2px] inline-flex font-bold content-center transition-all duration-500 items-center justify-around'
+                      style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
+                    >
+                      <span className={`relative z-20 ${showFirstForm ? 'text-blackColor' : 'text-bodyColor'}`}>General</span>
+                      <span className='relative z-20'><img src={downArrow} alt="" className={`w-8 ${showFirstForm ? 'invert-0' : 'invert'}`} /></span>
+                      <span className={`absolute top-0 right-0 origin-right w-full h-full bg-bodyColor transition-all duration-300 z-10 ${showFirstForm ? 'scale-x-100' : 'scale-x-0'}`}></span>
+                    </span>
+                  </div>
+                </div>
               </div>
-            </div>
-              </div>
-              )}
+            )}
 
           </div>
 
