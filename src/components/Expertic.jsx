@@ -59,7 +59,7 @@ function Expertic() {
 
     return (
         <>
-            <div className='md:flex items-center justify-between lg:h-[80vh] md:h-[60vh] content-center flex-col lg:flex-row py-12'>
+            <div className='md:flex items-center justify-between lg:min-h-[80vh] md:min-h-[60vh] content-center flex-col lg:flex-row py-12'>
                 <div className='flex-1 pl-4'>
                     {location.pathname !== '/services' && (
                       <h2 className='uppercase font-TTCPro font-[900] text-blackColor xl:text-[95px] lg:text-[84px] sm:text-[63px] text-[10vw]'>
@@ -109,7 +109,7 @@ function Expertic() {
 
                 {location.pathname !== '/services' && (
                   <div className='md:flex-1 md:inline-flex md:justify-end pt-8 sm:w-full lg:w-fit w-full'>
-                  <div className='md:flex items-start lg:justify-between sm:justify-end h-[240px]'>
+                  <div className='md:flex items-start lg:justify-between sm:justify-end lg:h-[240px]'>
                       <span className='lg:block hidden'></span>
                       <div className='group pointer-cursor md:h-[80px] h-[70px] lg:w-[22.5vw] md:w-[45vw] flex-shrink-0 border border-blackColor bg-blackColor inline-flex justify-start items-center w-full'>
                           {/* Magnetic effect on wrapper div */}

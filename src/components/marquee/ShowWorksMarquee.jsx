@@ -36,12 +36,12 @@ function ShowWorksMarquee() {
     const shuffledImageData = shuffleArray([...imageData]);
 
     return (
-        <div className='mb-[160px] flex items-center justify-center border border-blackColor py-[50px]'>
+        <div className='lg:mb-[160px] mb-[80px] flex items-center justify-center border border-blackColor lg:py-[50px] py-4'>
             <div className='w-[95vw] space-y-4 mx-auto'>
                 <div>
                     <Marquee autoFill={true} speed={60} direction='right'>
                         {shuffledImageData.map((images, i) => (
-                            <div key={i.id} className='border border-blackColor w-[25vw] mx-2'>
+                            <div key={i.id} className='border border-blackColor lg:w-[25vw] w-[12rem] mx-2'>
                                 <img src={images.img} alt={images.name} className='w-full object-cover' />
                             </div>
                         ))}
@@ -50,7 +50,7 @@ function ShowWorksMarquee() {
                 <div>
                     <Marquee autoFill={true} speed={60}>
                         {shuffledImageData.map((images, i) => (
-                            <div key={i} className='border border-blackColor w-[25vw] mx-2'>
+                            <div key={i} className='border border-blackColor lg:w-[25vw] w-[12rem] mx-2'>
                                 <img src={images.img} alt={images.name} className='w-full object-cover' />
                             </div>
                         ))}

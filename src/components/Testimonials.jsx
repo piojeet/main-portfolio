@@ -80,7 +80,7 @@ function Testimonials() {
 
   return (
     <>
-      <div className='py-32'>
+      <div className='lg:py-32 py-16'>
         <div className='flex items-center justify-center text-[17px] font-TTCPro font-semibold uppercase -tracking-tight text-blackColor gap-2'>
           <span>Five Star</span>
           <span>

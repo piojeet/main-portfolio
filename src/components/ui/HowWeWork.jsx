@@ -45,7 +45,7 @@ function HowWeWork({ title, subtitle, strategyData }) {
                         {strategyData && strategyData.length > 0 ? (
                             strategyData.map((data, index) => (
                                 <React.Fragment key={data.id}>
-                                    <div className="p-14 border border-blackColor flex gap-4 border-t-0 lg:border-t">
+                                    <div className="lg:p-14 p-4 border border-blackColor flex gap-4 border-t-0 lg:border-t">
                                         <div className="lg:text-[18px] font-TTCPro text-blackColor font-semibold">
                                             0{index + 1}
                                         </div>
