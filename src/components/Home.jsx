@@ -25,8 +25,12 @@ function Home() {
         <ProjectTell />
         <ContactHome />
         <Testimonials />
+        <div>
         <ShowWorksMarquee />
+        </div>
+        <div>
         <Footer />
+        </div>
     </div>
   )
 }

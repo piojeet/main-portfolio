@@ -1,7 +1,18 @@
 import React from 'react'
 import Project from '../../assets/projecthero.svg'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 
 function ProjectHero() {
+
+    useGSAP(()=> {
+        gsap.from(".letter span", {
+          y: 100,
+          duration: 0.5,
+          stagger: 0.1,
+        })
+      })
+
     return (
         <>
             <div>
@@ -18,18 +29,18 @@ function ProjectHero() {
                         <div className='lg:text-[95px] sm:text-[63px] text-[10vw] uppercase font-TTCPro font-[900] text-center leading-[.9] my-6 md:block flex items-start flex-wrap justify-center'>
 
                             &nbsp;
-                            <span>
-                                <span>y</span>
-                                <span>o</span>
-                                <span>u</span>
-                                <span>r</span>
+                            <span className='letter overflow-hidden inline-block'>
+                                <span className='inline-block'>y</span>
+                                <span className='inline-block'>o</span>
+                                <span className='inline-block'>u</span>
+                                <span className='inline-block'>r</span>
                             </span>
                             &nbsp;
-                            <span>
-                                <span>w</span>
-                                <span>o</span>
-                                <span>r</span>
-                                <span>k</span>
+                            <span className='letter overflow-hidden inline-block'>
+                                <span className='inline-block'>w</span>
+                                <span className='inline-block'>o</span>
+                                <span className='inline-block'>r</span>
+                                <span className='inline-block'>k</span>
                             </span>
                             <br />
 

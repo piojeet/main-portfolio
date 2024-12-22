@@ -1,11 +1,39 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 function Cards() {
+
+
+  const cardRef = useRef(null);
+useGSAP(()=> {
+    gsap.fromTo(
+        ".card",
+        { y: "100%" },
+        {
+          y: "0%",
+          stagger: 0.1,
+          duration: 2.5,
+          ease: "elastic.out(1,0.3)",
+          scrollTrigger: {
+            start: "0% 80%",
+          end: "50% 50%",
+            trigger: cardRef.current,
+            // markers: "true",
+          }
+        }
+      )
+})
+
     return (
         <>
-            <div className='md:flex items-start justify-between md:flex-wrap lg:flex-nowrap grid grid-cols-1 mb-20 md:mb-0'>
-                <div className='group lg:w-[100%] border border-blackColor bg-bodyColor border-b-0 md:border-b lg:h-[32vw] sm:h-[50vw] h-[90vw] md:w-[45vw]'>
+            <div ref={cardRef} className='md:flex items-start justify-between md:flex-wrap lg:flex-nowrap grid grid-cols-1 mb-20 md:mb-0'>
+
+                <div className='card relative group lg:w-[100%] border border-blackColor bg-bodyColor border-b-0 md:border-b lg:h-[32vw] sm:h-[50vw] h-[90vw] md:w-[45vw]'>
                     <div className='transition-all duration-300 group-hover:p-2 h-full'>
                         <div className='relative h-full group-hover:bg-blackColor group-hover:rounded-lg overflow-hidden pt-7'>
                             <div className='relative'>
@@ -61,7 +89,7 @@ function Cards() {
                     </div>
                 </div>
 
-                <div className='group lg:w-[100%] border border-blackColor border-b-0 md:border-b bg-bodyColor lg:h-[32vw] sm:h-[50vw] h-[90vw] relative md:top-12 lg:mt-16 md:w-[45vw]'>
+                <div className='card relative group lg:w-[100%] border border-blackColor border-b-0 md:border-b bg-bodyColor lg:h-[32vw] sm:h-[50vw] h-[90vw] md:top-12 lg:mt-16 md:w-[45vw]'>
                     <div className='transition-all duration-300 group-hover:p-2 h-full'>
                         <div className='relative h-full group-hover:bg-blackColor group-hover:rounded-lg overflow-hidden pt-7'>
                             <div className='relative'>
@@ -113,7 +141,7 @@ function Cards() {
                     </div>
                 </div>
 
-                <div className='group lg:w-[100%] border border-blackColor border-b-0 md:border-b bg-bodyColor lg:h-[32vw] sm:h-[50vw] h-[90vw] lg:mt-7 md:w-[45vw]'>
+                <div className='card relative group lg:w-[100%] border border-blackColor border-b-0 md:border-b bg-bodyColor lg:h-[32vw] sm:h-[50vw] h-[90vw] lg:mt-7 md:w-[45vw]'>
                     <div className='transition-all duration-300 group-hover:p-2 h-full'>
                         <div className='relative h-full group-hover:bg-blackColor group-hover:rounded-lg overflow-hidden pt-7'>
                             <div className='relative'>
@@ -167,7 +195,7 @@ function Cards() {
                     </div>
                 </div>
 
-                <div className='group lg:w-[100%] border border-blackColor relative md:top-12 bg-bodyColor lg:h-[32vw] sm:h-[50vw] h-[90vw] md:w-[45vw]'>
+                <div className='card group lg:w-[100%] border border-blackColor relative md:top-12 bg-bodyColor lg:h-[32vw] sm:h-[50vw] h-[90vw] md:w-[45vw]'>
                     <div className='transition-all duration-300 group-hover:p-2 h-full'>
                         <div className='relative h-full group-hover:bg-blackColor group-hover:rounded-lg overflow-hidden pt-7'>
                             <div className='relative'>

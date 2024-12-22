@@ -1,9 +1,30 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from 'react'
+import React, { useRef } from 'react'
 import Chat from '../assets/chat.svg'
 import Message from '../assets/message.svg'
 
+import gsap from 'gsap'
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(ScrollTrigger);
+
 function ProjectTell() {
+
+  const latterRef = useRef(null);
+  useGSAP(() => {
+    gsap.from(".lettert span", {
+      y: 110,
+      duration: 0.4,
+      stagger: 0.1,
+      scrollTrigger: {
+        trigger: latterRef.current,
+        start: "0% 80%",
+          end: "50% 50%",
+      }
+    })
+  })
+
   return (
     <>
       <div className='lg:flex justify-between items-start hidden'>
@@ -25,40 +46,40 @@ function ProjectTell() {
             <span>ends with us</span>
           </div>
 
-          <div className='lg:text-[95px] md:text-[84px] uppercase font-TTCPro font-[900] text-center leading-[.9] my-6 md:flex flex-wrap items-center justify-center lg:block'>
-            <span>
-              <span>t</span>
-              <span>e</span>
-              <span>l</span>
-              <span>l</span>
+          <div ref={latterRef} className='lg:text-[95px] md:text-[84px] uppercase font-TTCPro font-[900] text-center leading-[.9] my-6 md:flex flex-wrap items-center justify-center lg:block'>
+            <span className='lettert inline-block overflow-hidden'>
+              <span className='inline-block'>t</span>
+              <span className='inline-block'>e</span>
+              <span className='inline-block'>l</span>
+              <span className='inline-block'>l</span>
             </span>
             &nbsp;
-            <span>
-              <span>u</span>
-              <span>s</span>
+            <span className='lettert inline-block overflow-hidden'>
+              <span className='inline-block'>u</span>
+              <span className='inline-block'>s</span>
             </span>
             &nbsp;
-            <span>
-              <span>a</span>
-              <span>b</span>
-              <span>o</span>
-              <span>u</span>
-              <span>t</span>
+            <span className='lettert inline-block overflow-hidden'>
+              <span className='inline-block'>a</span>
+              <span className='inline-block'>b</span>
+              <span className='inline-block'>o</span>
+              <span className='inline-block'>u</span>
+              <span className='inline-block'>t</span>
             </span>
             <br />
-            <span>
-              <span>y</span>
-              <span>o</span>
-              <span>r</span>
+            <span className='lettert inline-block overflow-hidden'>
+              <span className='inline-block'>y</span>
+              <span className='inline-block'>o</span>
+              <span className='inline-block'>r</span>
             </span>
             &nbsp;
-            <span className='text-[#bebebe] [text-shadow:-5px_2px_0px_black] specal'>
-              <span className='custom-strok'>p</span>
-              <span className='custom-strok'>r</span>
-              <span className='custom-strok'>o</span>
-              <span className='custom-strok'>j</span>
-              <span className='custom-strok'>e</span>
-              <span className='custom-strok'>t</span>
+            <span className='lettert text-[#bebebe] [text-shadow:-5px_2px_0px_black] specal inline-block overflow-hidden'>
+              <span className='custom-strok inline-block'>p</span>
+              <span className='custom-strok inline-block'>r</span>
+              <span className='custom-strok inline-block'>o</span>
+              <span className='custom-strok inline-block'>j</span>
+              <span className='custom-strok inline-block'>e</span>
+              <span className='custom-strok inline-block'>t</span>
             </span>
           </div>
 

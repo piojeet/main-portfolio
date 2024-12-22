@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Glob from '../assets/glob.svg'
 import GlobC from '../assets/globc.svg'
 import Start from '../assets/starg.svg'
 import RightArrow from '../assets/right-arrow.svg'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
+
 
 function HomeHero() {
 
@@ -56,6 +59,16 @@ function HomeHero() {
     });
   }, [isMagnetic]);
 
+
+  
+  useGSAP(()=> {
+    gsap.from(".letter span", {
+      y: 100,
+      duration: 0.5,
+      stagger: 0.1,
+    })
+  })
+
   return (
     <>
       <div className='w-full md:h-[87vh] h-auto min-h-[70vh] border border-blackColor flex items-center justify-center backdrop-blur-sm'>
@@ -70,47 +83,47 @@ function HomeHero() {
           </div>
 
           <div className='lg:text-[95px] sm:text-[63px] text-[10vw] uppercase font-TTCPro font-[900] text-center leading-[.9] my-6 md:block flex items-start flex-wrap justify-center'>
-            <span>
-              <span>W</span>
-              <span>e</span>
+            <span className='letter inline-block overflow-hidden'>
+              <span className='inline-block'>W</span>
+              <span className='inline-block'>e</span>
             </span>
             &nbsp;
-            <span>
-              <span>b</span>
-              <span>u</span>
-              <span>i</span>
-              <span>l</span>
-              <span>d</span>
+            <span className='letter inline-block overflow-hidden'>
+              <span className='inline-block'>b</span>
+              <span className='inline-block'>u</span>
+              <span className='inline-block'>i</span>
+              <span className='inline-block'>l</span>
+              <span className='inline-block'>d</span>
             </span>
             &nbsp;
-            <span>
-              <span>b</span>
-              <span>r</span>
-              <span>a</span>
-              <span>n</span>
-              <span>d</span>
-              <span>s</span>
+            <span className='letter inline-block overflow-hidden'>
+              <span className='inline-block'>b</span>
+              <span className='inline-block'>r</span>
+              <span className='inline-block'>a</span>
+              <span className='inline-block'>n</span>
+              <span className='inline-block'>d</span>
+              <span className='inline-block'>s</span>
             </span> &nbsp;
              <br />
-            <span>
-              <span>t</span>
-              <span>h</span>
-              <span>a</span>
-              <span>t</span>
+            <span className='letter inline-block overflow-hidden'>
+              <span className='inline-block'>t</span>
+              <span className='inline-block'>h</span>
+              <span className='inline-block'>a</span>
+              <span className='inline-block'>t</span>
             </span>
             &nbsp;
-            <span className='text-[#bebebe] [text-shadow:-5px_2px_0px_black] specal'>
-              <span className='custom-strok'>s</span>
-              <span className='custom-strok'>t</span>
-              <span className='custom-strok'>a</span>
-              <span className='custom-strok'>n</span>
-              <span className='custom-strok'>d</span>
+            <span className='letter inline-block overflow-hidden text-[#bebebe] [text-shadow:-5px_2px_0px_black] specal'>
+              <span className='custom-strok inline-block'>s</span>
+              <span className='custom-strok inline-block'>t</span>
+              <span className='custom-strok inline-block'>a</span>
+              <span className='custom-strok inline-block'>n</span>
+              <span className='custom-strok inline-block'>d</span>
             </span>
             &nbsp;
-            <span>
-              <span>o</span>
-              <span>u</span>
-              <span>t</span>
+            <span className='letter inline-block overflow-hidden'>
+              <span className='inline-block'>o</span>
+              <span className='inline-block'>u</span>
+              <span className='inline-block'>t</span>
             </span>
           </div>
 

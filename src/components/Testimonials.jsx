@@ -7,6 +7,12 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 // import InfiniteScrollImg from './InfiniteScrollImg';
 
+import gsap from 'gsap'
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(ScrollTrigger);
+
 function Testimonials() {
   const swiperRef = useRef(null); // Reference for Swiper instance
   const [isEnd, setIsEnd] = useState(false); // Track if we're at the end
@@ -77,6 +83,20 @@ function Testimonials() {
   }, [isMagnetic, isBeginning]); // Reinitialize whenever `isMagnetic` or `isBeginning` changes
 
 
+  const lattermRef = useRef(null);
+  useGSAP(() => {
+    gsap.from(".letterem span", {
+      y: 110,
+      duration: 0.3,
+      stagger: 0.1,
+      scrollTrigger: {
+        trigger: lattermRef.current,
+        start: "0% 80%",
+          end: "50% 50%",
+      }
+    })
+  })
+
 
   return (
     <>
@@ -96,19 +116,19 @@ function Testimonials() {
         </div>
 
         <div className='lg:text-[95px] md:text-[84px] text-[10vw] uppercase font-TTCPro font-[900] text-center leading-[.9] my-6'>
-          <span className='text-[#bebebe] [text-shadow:-5px_2px_0px_black] specal'>
-            <span className='custom-strok'>t</span>
-            <span className='custom-strok'>e</span>
-            <span className='custom-strok'>s</span>
-            <span className='custom-strok'>t</span>
-            <span className='custom-strok'>i</span>
-            <span className='custom-strok'>m</span>
-            <span className='custom-strok'>o</span>
-            <span className='custom-strok'>n</span>
-            <span className='custom-strok'>i</span>
-            <span className='custom-strok'>a</span>
-            <span className='custom-strok'>l</span>
-            <span className='custom-strok'>s</span>
+          <span ref={lattermRef} className='letterem text-[#bebebe] [text-shadow:-5px_2px_0px_black] specal inline-block overflow-hidden'>
+            <span className='custom-strok inline-block'>t</span>
+            <span className='custom-strok inline-block'>e</span>
+            <span className='custom-strok inline-block'>s</span>
+            <span className='custom-strok inline-block'>t</span>
+            <span className='custom-strok inline-block'>i</span>
+            <span className='custom-strok inline-block'>m</span>
+            <span className='custom-strok inline-block'>o</span>
+            <span className='custom-strok inline-block'>n</span>
+            <span className='custom-strok inline-block'>i</span>
+            <span className='custom-strok inline-block'>a</span>
+            <span className='custom-strok inline-block'>l</span>
+            <span className='custom-strok inline-block'>s</span>
           </span>
         </div>
 
@@ -212,11 +232,11 @@ function Testimonials() {
                 slidesPerView: 1.3,
               },
             }}
-            className="border border-blackColor bg-blackColor"
+            className="border border-blackColor bg-blackColor !items-stretch"
           >
-            <SwiperSlide className='border-r border-blackColor bg-bodyColor'
+            <SwiperSlide className='border-r border-blackColor bg-bodyColor !h-auto'
             >
-              <div className='md:p-16 lg:min-h-[95vh] md:min-h-[90vh] min-h-[60vh] h-auto p-4'>
+              <div className='md:p-16 p-4'>
                 <div className='text-[25px] font-TTCPro font-extrabold'>John Doe</div>
                 <p className='lg:text-[40px] sm:text-[30px] text-[20px] font-TTCPro font-normal text-blackColor lg:leading-[1.3] leading-[1] py-4'>
                   Working with the developer has been a fantastic experience! They transformed our outdated website into a modern, responsive platform that has improved our user engagement. Their attention to detail and creativity is unmatched.
@@ -224,8 +244,8 @@ function Testimonials() {
                 <div className='lg:text-[30px] md:text-[25px] font-TTCPro text-gray-500'>Tech Company CEO</div>
               </div>
             </SwiperSlide>
-            <SwiperSlide className='border-blackColor border-r bg-bodyColor'>
-              <div className='md:p-16 lg:min-h-[95vh] md:min-h-[90vh] min-h-[60vh] h-auto p-4'>
+            <SwiperSlide className='border-blackColor border-r bg-bodyColor !h-auto'>
+              <div className='md:p-16 p-4'>
                 <div className='text-[25px] font-TTCPro font-extrabold'>Jane Smith</div>
                 <p className='lg:text-[40px] sm:text-[30px] text-[20px] font-TTCPro font-normal text-blackColor lg:leading-[1.3] leading-[1] py-4'>
                   The developer is incredibly talented. They delivered the project on time, and their design ideas were innovative and user-friendly. Our website looks great, and we’ve seen an increase in conversions!
@@ -233,8 +253,8 @@ function Testimonials() {
                 <div className='lg:text-[30px] md:text-[25px] font-TTCPro text-gray-500'>Marketing Manager</div>
               </div>
             </SwiperSlide>
-            <SwiperSlide className='border-blackColor border-r bg-bodyColor'>
-              <div className='md:p-16 lg:min-h-[95vh] md:min-h-[90vh] min-h-[60vh] h-auto p-4'>
+            <SwiperSlide className='border-blackColor border-r bg-bodyColor !h-auto'>
+              <div className='md:p-16 p-4'>
                 <div className='text-[25px] font-TTCPro font-extrabold'>Michael Lee</div>
                 <p className='lg:text-[40px] sm:text-[30px] text-[20px] font-TTCPro font-normal text-blackColor lg:leading-[1.3] leading-[1] py-4'>
                 This developer is a true professional. Their coding skills and creativity brought our vision to life. The new site is fast, responsive, and visually appealing. Highly recommend!
@@ -242,8 +262,8 @@ function Testimonials() {
                 <div className='lg:text-[30px] md:text-[25px] font-TTCPro text-gray-500'>Startup Founder</div>
               </div>
             </SwiperSlide>
-            <SwiperSlide className='border-blackColor border-r bg-bodyColor'>
-              <div className='md:p-16 lg:min-h-[95vh] md:min-h-[90vh] min-h-[60vh] h-auto p-4'>
+            <SwiperSlide className='border-blackColor border-r bg-bodyColor !h-auto'>
+              <div className='md:p-16 p-4'>
                 <div className='text-[25px] font-TTCPro font-extrabold'>David Kim</div>
                 <p className='lg:text-[40px] sm:text-[30px] text-[20px] font-TTCPro font-normal text-blackColor lg:leading-[1.3] leading-[1] py-4'>
                 Fantastic experience working with this developer! They are proactive, efficient, and have a deep understanding of front-end technologies. Our website now has a clean, modern look and functions perfectly on all platforms.
@@ -251,9 +271,9 @@ function Testimonials() {
                 <div className='lg:text-[30px] md:text-[25px] font-TTCPro text-gray-500'>Product Manager</div>
               </div>
             </SwiperSlide>
-            <SwiperSlide className='border-r-0 border-blackColor bg-bodyColor'
+            <SwiperSlide className='border-r-0 border-blackColor bg-bodyColor !h-auto'
             >
-              <div className='md:p-16 lg:min-h-[95vh] md:min-h-[90vh] min-h-[60vh] h-auto p-4'>
+              <div className='md:p-16 p-4'>
                 <div className='text-[25px] font-TTCPro font-extrabold'>Emily Johnson</div>
                 <p className='lg:text-[40px] sm:text-[30px] text-[20px] font-TTCPro font-normal text-blackColor lg:leading-[1.3] leading-[1] py-4'>
                 I am very impressed with the work. The developer understood our requirements perfectly and built a stunning website. Our customers are loving the new interface, and it’s running smoothly across all devices.
