@@ -1,6 +1,17 @@
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 import React from 'react'
 
 function AboutHero() {
+
+  useGSAP(()=> {
+    gsap.from(".letter span", {
+      y: 100,
+      duration: 0.3,
+      stagger: 0.05,
+    })
+  })
+
   return (
     <div>
         <div>
@@ -14,26 +25,26 @@ function AboutHero() {
             <p className='md:block hidden'>Developers</p>
           </div>
 
-          <div className='lg:text-[95px] sm:text-[63px] text-[10vw] uppercase font-TTCPro font-[900] text-center leading-[.9] my-6 md:block flex items-start flex-wrap justify-center'>
-            <span className='text-[#bebebe] [text-shadow:-5px_2px_0px_black] specal pl-5'>
-              <span className='custom-strok'>F</span>
-              <span className='custom-strok'>r</span>
-              <span className='custom-strok'>o</span>
-              <span className='custom-strok'>n</span>
-              <span className='custom-strok'>t</span>
-              <span className='custom-strok'>e</span>
-              <span className='custom-strok'>n</span>
-              <span className='custom-strok'>d</span>
+          <div className='lg:text-[95px] sm:text-[63px] text-[10vw] uppercase font-TTCPro font-[900] text-center leading-[.9] my-6 md:block flex items-start flex-wrap justify-center overflow-hidden'>
+            <span className='letter text-[#bebebe] [text-shadow:-5px_2px_0px_black] specal pl-5 overflow-hidden inline-block'>
+              <span className='custom-strok inline-block'>F</span>
+              <span className='custom-strok inline-block'>r</span>
+              <span className='custom-strok inline-block'>o</span>
+              <span className='custom-strok inline-block'>n</span>
+              <span className='custom-strok inline-block'>t</span>
+              <span className='custom-strok inline-block'>e</span>
+              <span className='custom-strok inline-block'>n</span>
+              <span className='custom-strok inline-block'>d</span>
             </span>
             &nbsp;<br />
-            <span>
-              <span>E</span>
-              <span>x</span>
-              <span>p</span>
-              <span>e</span>
-              <span>r</span>
-              <span>t</span>
-              <span>s</span>
+            <span className='letter overflow-hidden inline-block'>
+              <span className='inline-block'>E</span>
+              <span className='inline-block'>x</span>
+              <span className='inline-block'>p</span>
+              <span className='inline-block'>e</span>
+              <span className='inline-block'>r</span>
+              <span className='inline-block'>t</span>
+              <span className='inline-block'>s</span>
             </span>
           </div>
 

@@ -1,7 +1,24 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Alertb from '../../../assets/alertb.svg'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 
 const BrandingStandout = () => {
+
+  const textbRef = useRef(null);
+  useGSAP(() => {
+    gsap.from(".lettereb span", {
+      y: 110,
+      duration: 0.3,
+      stagger: 0.1,
+      scrollTrigger: {
+        trigger: textbRef.current,
+        start: "0% 80%",
+          end: "50% 50%",
+      }
+    })
+  })
+
   return (
     <>
       <div className='mt-[80px]'>
@@ -11,44 +28,44 @@ const BrandingStandout = () => {
         <div className='w-full min-h-[40vh] h-auto flex items-center justify-center backdrop-blur-sm border border-blackColor'>
           <div>
 
-            <div className='lg:text-[90px] sm:text-[63px] text-[10vw] uppercase font-TTCPro font-[900] text-center leading-[.9] my-6 md:block flex items-start flex-wrap justify-center text-blackColor'>
-              <span>
-                <span>s</span>
-                <span>t</span>
-                <span>a</span>
-                <span>n</span>
-                <span>d</span>
+            <div className='lg:text-[90px] sm:text-[63px] text-[10vw] uppercase font-TTCPro font-[900] text-center leading-[.9] my-6 md:block flex items-start flex-wrap justify-center text-blackColor' ref={textbRef}>
+              <span className='lettereb inline-block overflow-hidden'>
+                <span className='inline-block'>s</span>
+                <span className='inline-block'>t</span>
+                <span className='inline-block'>a</span>
+                <span className='inline-block'>n</span>
+                <span className='inline-block'>d</span>
               </span>&nbsp;
-              <span>
-                <span>o</span>
-                <span>u</span>
-                <span>t</span>
+              <span className='lettereb inline-block overflow-hidden'>
+                <span className='inline-block'>o</span>
+                <span className='inline-block'>u</span>
+                <span className='inline-block'>t</span>
               </span>&nbsp;
-              <span>
-                <span>i</span>
-                <span>n</span>
+              <span className='lettereb inline-block overflow-hidden'>
+                <span className='inline-block'>i</span>
+                <span className='inline-block'>n</span>
               </span>&nbsp;
-              <span>
-                <span>a</span>
-              </span>
-              <span>
-                <span>s</span>
-                <span>e</span>
-                <span>a</span>
+              <span className='lettereb inline-block overflow-hidden'>
+                <span className='inline-block'>a</span>
+              </span>&nbsp;
+              <span className='lettereb inline-block overflow-hidden'>
+                <span className='inline-block'>s</span>
+                <span className='inline-block'>e</span>
+                <span className='inline-block'>a</span>
               </span><br />
-              <span>
-                <span>o</span>
-                <span>f</span>
+              <span className='lettereb inline-block overflow-hidden'>
+                <span className='inline-block'>o</span>
+                <span className='inline-block'>f</span>
               </span>&nbsp;
-              <span className='text-[#bebebe] [text-shadow:-5px_2px_0px_black] specal'>
-                <span className='custom-strok'>s</span>
-                <span className='custom-strok'>a</span>
-                <span className='custom-strok'>m</span>
-                <span className='custom-strok'>e</span>
-                <span className='custom-strok'>n</span>
-                <span className='custom-strok'>e</span>
-                <span className='custom-strok'>s</span>
-                <span className='custom-strok'>s</span>
+              <span className='text-[#bebebe] [text-shadow:-5px_2px_0px_black] specal lettereb inline-block overflow-hidden'>
+                <span className='custom-strok inline-block'>s</span>
+                <span className='custom-strok inline-block'>a</span>
+                <span className='custom-strok inline-block'>m</span>
+                <span className='custom-strok inline-block'>e</span>
+                <span className='custom-strok inline-block'>n</span>
+                <span className='custom-strok inline-block'>e</span>
+                <span className='custom-strok inline-block'>s</span>
+                <span className='custom-strok inline-block'>s</span>
               </span>
             </div>
 

@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Rocket from '../../assets/chevron-down.svg'
 import Mail from '../../assets/mail.svg'
 import { useProjectAllContext } from '../../context/ProjectAllContext';
 import ContactEnquiery from './ContactEnquiery';
 import ContactGenral from './ContactGenral';
 import downArrow from '../../assets/chevron-down.svg'
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 function ContactHero() {
 
     const {
@@ -24,6 +26,29 @@ function ContactHero() {
         return () => clearInterval(timer);
     }, []);
 
+    useGSAP(() => {
+      gsap.from(".letterec span", {
+        y: 110,
+        duration: 0.3,
+        stagger: 0.1,
+      })
+    })
+
+
+    const textscRef = useRef(null);
+    useGSAP(() => {
+      gsap.from(".letteresc span", {
+        y: 110,
+        duration: 0.3,
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: textscRef.current,
+          start: "0% 90%",
+            end: "50% 50%",
+        }
+      })
+    })
+
     return (
         <div className='lg:border-t border-blackColor border-b-0 border-l-0  border-r-0 grid lg:grid-cols-2 grid-cols-1 items-start justify-between mb-40'>
             <div className='w-[100%] h-full'>
@@ -33,14 +58,14 @@ function ContactHero() {
                         <img src={Mail} alt="" className='w-16' />
                         <span>Invitation</span>
                     </div>
-                    <div className='flex items-center uppercase mx-auto w-fit lg:text-[60px] md:text-[50px] text-[40px] font-TTCPro font-bold'>
-                        <span>c</span>
-                        <span>o</span>
-                        <span>n</span>
-                        <span>t</span>
-                        <span>a</span>
-                        <span>c</span>
-                        <span>t</span>
+                    <div className='flex items-center uppercase mx-auto w-fit lg:text-[60px] md:text-[50px] text-[40px] font-TTCPro font-black letterec overflow-hidden'>
+                        <span className='relative inline-block'>c</span>
+                        <span className='relative inline-block'>o</span>
+                        <span className='relative inline-block'>n</span>
+                        <span className='relative inline-block'>t</span>
+                        <span className='relative inline-block'>a</span>
+                        <span className='relative inline-block'>c</span>
+                        <span className='relative inline-block'>t</span>
                     </div>
                     <p className='lg:text-[26px] text-[22px] font-TTCPro font-normal text-center text-blackColor lg:max-w-[350px] max-w-[500px] w-full mx-auto'>Get in touch, drop us a line, give us a bell and let’s make something wonderful together</p>
                 </div>
@@ -67,16 +92,16 @@ function ContactHero() {
                             </div>
                             <div className='h-[150px] text-center content-center font-TTCPro bg-blackColor'>
                                 <p className='text-[20px] font-medium text-bodyColor uppercase -tracking-tighter'>The Developer is</p>
-                                <div className='flex items-center justify-center uppercase text-[60px] font-extrabold text-bodyColor leading-[1]'>
-                                    <span>A</span>
-                                    <span>b</span>
-                                    <span>a</span>
-                                    <span>i</span>
-                                    <span>l</span>
-                                    <span>a</span>
-                                    <span>b</span>
-                                    <span>l</span>
-                                    <span>e</span>
+                                <div className='flex items-center justify-center uppercase text-[60px] font-extrabold text-bodyColor leading-[1] letteresc overflow-hidden' ref={textscRef}>
+                                    <span className='relative inline-block'>A</span>
+                                    <span className='relative inline-block'>b</span>
+                                    <span className='relative inline-block'>a</span>
+                                    <span className='relative inline-block'>i</span>
+                                    <span className='relative inline-block'>l</span>
+                                    <span className='relative inline-block'>a</span>
+                                    <span className='relative inline-block'>b</span>
+                                    <span className='relative inline-block'>l</span>
+                                    <span className='relative inline-block'>e</span>
                                 </div>
                             </div>
                             <div className='text-[21px] font-TTCPro font-extrabold uppercase text-blackColor h-[80px] text-center content-center border border-blackColor mt-8 border-b-0'>

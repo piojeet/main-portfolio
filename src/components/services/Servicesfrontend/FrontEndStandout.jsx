@@ -1,8 +1,25 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from 'react'
+import React, { useRef } from 'react'
 import Alertb from '../../../assets/alertb.svg'
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 function FrontEndStandout() {
+
+  const texteRef = useRef(null);
+    useGSAP(() => {
+      gsap.from(".letterese span", {
+        y: 110,
+        duration: 0.3,
+        stagger: 0.05,
+        scrollTrigger: {
+          trigger: texteRef.current,
+          start: "0% 80%",
+            end: "50% 50%",
+        }
+      })
+    })
+
   return (
     <>
       <div className='mt-[80px]'>
@@ -12,41 +29,41 @@ function FrontEndStandout() {
         <div className='w-full min-h-[40vh] h-auto flex items-center justify-center backdrop-blur-sm border border-blackColor'>
           <div>
 
-            <div className='lg:text-[90px] sm:text-[63px] text-[10vw] uppercase font-TTCPro font-[900] text-center leading-[.9] my-6 md:block flex items-start flex-wrap justify-center text-blackColor'>
-              <span>
-                <span>f</span>
-                <span>u</span>
-                <span>n</span>
-                <span>c</span>
-                <span>t</span>
-                <span>i</span>
-                <span>o</span>
-                <span>n</span>
-                <span>a</span>
-                <span>l</span>
-                <span>i</span>
-                <span>t</span>
-                <span>y</span>
+            <div className='lg:text-[90px] sm:text-[63px] text-[10vw] uppercase font-TTCPro font-[900] text-center leading-[.9] my-6 md:block flex items-start flex-wrap justify-center text-blackColor' ref={texteRef}>
+              <span className='letterese inline-block overflow-hidden'>
+                <span className='inline-block relative'>f</span>
+                <span className='inline-block relative'>u</span>
+                <span className='inline-block relative'>n</span>
+                <span className='inline-block relative'>c</span>
+                <span className='inline-block relative'>t</span>
+                <span className='inline-block relative'>i</span>
+                <span className='inline-block relative'>o</span>
+                <span className='inline-block relative'>n</span>
+                <span className='inline-block relative'>a</span>
+                <span className='inline-block relative'>l</span>
+                <span className='inline-block relative'>i</span>
+                <span className='inline-block relative'>t</span>
+                <span className='inline-block relative'>y</span>
               </span><br />
-              <span>
-                <span>f</span>
-                <span>u</span>
-                <span>s</span>
-                <span>e</span>
-                <span>d</span>
+              <span className='letterese inline-block overflow-hidden'>
+                <span className='inline-block relative'>f</span>
+                <span className='inline-block relative'>u</span>
+                <span className='inline-block relative'>s</span>
+                <span className='inline-block relative'>e</span>
+                <span className='inline-block relative'>d</span>
               </span>&nbsp;
 
-              <span className='text-[#bebebe] [text-shadow:-5px_2px_0px_black] specal'>
-                <span className='custom-strok'>c</span>
-                <span className='custom-strok'>r</span>
-                <span className='custom-strok'>e</span>
-                <span className='custom-strok'>a</span>
-                <span className='custom-strok'>t</span>
-                <span className='custom-strok'>i</span>
-                <span className='custom-strok'>v</span>
-                <span className='custom-strok'>i</span>
-                <span className='custom-strok'>t</span>
-                <span className='custom-strok'>y</span>
+              <span className='text-[#bebebe] [text-shadow:-5px_2px_0px_black] specal letterese inline-block overflow-hidden'>
+                <span className='custom-strok inline-block relative'>c</span>
+                <span className='custom-strok inline-block relative'>r</span>
+                <span className='custom-strok inline-block relative'>e</span>
+                <span className='custom-strok inline-block relative'>a</span>
+                <span className='custom-strok inline-block relative'>t</span>
+                <span className='custom-strok inline-block relative'>i</span>
+                <span className='custom-strok inline-block relative'>v</span>
+                <span className='custom-strok inline-block relative'>i</span>
+                <span className='custom-strok inline-block relative'>t</span>
+                <span className='custom-strok inline-block relative'>y</span>
               </span>
               
             </div>

@@ -1,8 +1,25 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from 'react'
+import React, { useRef } from 'react'
 import Alertb from '../../../assets/alertb.svg'
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 function DesignSupportStandout() {
+
+  const textbsRef = useRef(null);
+  useGSAP(() => {
+    gsap.from(".letterebs span", {
+      y: 110,
+      duration: 0.3,
+      stagger: 0.1,
+      scrollTrigger: {
+        trigger: textbsRef.current,
+        start: "0% 80%",
+          end: "50% 50%",
+      }
+    })
+  })
+
   return (
     <>
       <div className='mt-[80px]'>
@@ -13,35 +30,35 @@ function DesignSupportStandout() {
           <div>
 
             <div className='lg:text-[90px] sm:text-[63px] text-[10vw] uppercase font-TTCPro font-[900] text-center leading-[.9] my-6 md:block flex items-start flex-wrap justify-center text-blackColor'>
-              <span>
-                <span>y</span>
-                <span>o</span>
-                <span>u</span>
-                <span>r</span>&nbsp;
-                <span>n</span>
-                <span>e</span>
-                <span>w</span>
+              <span className='letterebs inline-block overflow-hidden'>
+                <span className='inline-block relative'>y</span>
+                <span className='inline-block relative'>o</span>
+                <span className='inline-block relative'>u</span>
+                <span className='inline-block relative'>r</span>&nbsp;
+                <span className='inline-block relative'>n</span>
+                <span className='inline-block relative'>e</span>
+                <span className='inline-block relative'>w</span>
               </span>&nbsp;
-              <span className='text-[#bebebe] [text-shadow:-5px_2px_0px_black] specal'>
-              <span className='custom-strok'>c</span>
-                <span className='custom-strok'>r</span>
-                <span className='custom-strok'>e</span>
-                <span className='custom-strok'>a</span>
-                <span className='custom-strok'>t</span>
-                <span className='custom-strok'>i</span>
-                <span className='custom-strok'>v</span>
-                <span className='custom-strok'>i</span>
-                <span className='custom-strok'>t</span>
-                <span className='custom-strok'>y</span>
+              <span className='text-[#bebebe] [text-shadow:-5px_2px_0px_black] specal letterebs inline-block overflow-hidden'>
+              <span className='custom-strok inline-block relative'>c</span>
+                <span className='custom-strok inline-block relative'>r</span>
+                <span className='custom-strok inline-block relative'>e</span>
+                <span className='custom-strok inline-block relative'>a</span>
+                <span className='custom-strok inline-block relative'>t</span>
+                <span className='custom-strok inline-block relative'>i</span>
+                <span className='custom-strok inline-block relative'>v</span>
+                <span className='custom-strok inline-block relative'>i</span>
+                <span className='custom-strok inline-block relative'>t</span>
+                <span className='custom-strok inline-block relative'>y</span>
               </span><br />
-              <span>
-                <span>p</span>
-                <span>a</span>
-                <span>r</span>
-                <span>t</span>
-                <span>n</span>
-                <span>e</span>
-                <span>r</span>
+              <span className='letterebs inline-block overflow-hidden'>
+                <span className='inline-block relative'>p</span>
+                <span className='inline-block relative'>a</span>
+                <span className='inline-block relative'>r</span>
+                <span className='inline-block relative'>t</span>
+                <span className='inline-block relative'>n</span>
+                <span className='inline-block relative'>e</span>
+                <span className='inline-block relative'>r</span>
               </span>&nbsp;
 
               

@@ -1,6 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Plus from '../../../assets/plus.svg';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 
 
@@ -78,6 +80,21 @@ function ServicesBrandindFAQ() {
     );
 
 
+    const textqRef = useRef(null);
+    useGSAP(() => {
+      gsap.from(".letteresq span", {
+        y: 110,
+        duration: 0.3,
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: textqRef.current,
+          start: "0% 80%",
+            end: "50% 50%",
+        }
+      })
+    })
+
+
     return (
         <>
             <div className='mt-[180px]'>
@@ -126,28 +143,28 @@ function ServicesBrandindFAQ() {
                     </div>
                     <div className='w-full lg:sticky top-[80px] h-fit'>
                         <div className='w-full border border-blackColor lg:border-l-0 border-b-0 h-fit pb-6 backdrop-blur-[2px] relative -z-10 lg:border-b'>
-                            <div className='lg:text-[60px] sm:text-[45px] text-[10vw] uppercase font-TTCPro font-[900] text-center leading-[.9] my-6 md:block flex items-start flex-wrap justify-center text-blackColor'>
-                                <span>
-                                    <span>C</span>
-                                    <span>O</span>
-                                    <span>M</span>
-                                    <span>M</span>
-                                    <span>O</span>
-                                    <span>N</span>
+                            <div className='lg:text-[60px] sm:text-[45px] text-[10vw] uppercase font-TTCPro font-[900] text-center leading-[.9] my-6 md:block flex items-start flex-wrap justify-center text-blackColor' ref={textqRef}>
+                                <span className='letteresq inline-block overflow-hidden'>
+                                    <span className='inline-block relative'>C</span>
+                                    <span className='inline-block relative'>O</span>
+                                    <span className='inline-block relative'>M</span>
+                                    <span className='inline-block relative'>M</span>
+                                    <span className='inline-block relative'>O</span>
+                                    <span className='inline-block relative'>N</span>
                                 </span>
                                 &nbsp;
                                 <br />
-                                <span>
-                                    <span>Q</span>
-                                    <span>U</span>
-                                    <span>E</span>
-                                    <span>S</span>
-                                    <span>T</span>
-                                    <span>i</span>
-                                    <span>O</span>
-                                    <span>N</span>
-                                    <span>E</span>
-                                    <span>s</span>
+                                <span className='letteresq inline-block overflow-hidden'>
+                                    <span className='inline-block relative'>Q</span>
+                                    <span className='inline-block relative'>U</span>
+                                    <span className='inline-block relative'>E</span>
+                                    <span className='inline-block relative'>S</span>
+                                    <span className='inline-block relative'>T</span>
+                                    <span className='inline-block relative'>i</span>
+                                    <span className='inline-block relative'>O</span>
+                                    <span className='inline-block relative'>N</span>
+                                    <span className='inline-block relative'>E</span>
+                                    <span className='inline-block relative'>s</span>
                                 </span>
                             </div>
                             <p className='max-w-[350px] mx-auto text-[21px] font-TTCPro font-medium text-center'>

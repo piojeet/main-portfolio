@@ -1,9 +1,24 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { NavLink } from 'react-router-dom'
 import Paint from "../../../assets/paint.svg"
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 function BrandingGlowUp() {
 
+  const textgRef = useRef(null);
+    useGSAP(() => {
+      gsap.from(".letteresg span", {
+        y: 110,
+        duration: 0.3,
+        stagger: 0.05,
+        scrollTrigger: {
+          trigger: textgRef.current,
+          start: "0% 80%",
+            end: "50% 50%",
+        }
+      })
+    })
 
   return (
     <>
@@ -13,41 +28,41 @@ function BrandingGlowUp() {
         <div>
           <div><img src={Paint} alt="IMG" className='lg:w-20 w-16 block mx-auto invert' /></div>
 
-          <div className='lg:text-[61px] sm:text-[40px] text-[10vw] font-TTCPro text-center leading-[.9] my-6 md:block flex items-start flex-wrap justify-center text-bodyColor font-semibold'>
-            <span>
-              <span>L</span>
-              <span>o</span>
-              <span>o</span>
-              <span>k</span>
-              <span>i</span>
-              <span>n</span>
-              <span>g</span>
+          <div className='lg:text-[61px] sm:text-[40px] text-[10vw] font-TTCPro text-center leading-[.9] my-6 md:block flex items-start flex-wrap justify-center text-bodyColor font-semibold' ref={textgRef}>
+            <span className='letteresg inline-block overflow-hidden'>
+              <span className='inline-block relative'>L</span>
+              <span className='inline-block relative'>o</span>
+              <span className='inline-block relative'>o</span>
+              <span className='inline-block relative'>k</span>
+              <span className='inline-block relative'>i</span>
+              <span className='inline-block relative'>n</span>
+              <span className='inline-block relative'>g</span>
             </span>&nbsp;
-            <span>
-              <span>f</span>
-              <span>o</span>
-              <span>r</span>
+            <span className='letteresg inline-block overflow-hidden'>
+              <span className='inline-block relative'>f</span>
+              <span className='inline-block relative'>o</span>
+              <span className='inline-block relative'>r</span>
             </span>&nbsp;
-            <span>
-              <span>a</span>
+            <span className='letteresg inline-block overflow-hidden'>
+              <span className='inline-block relative'>a</span>
             </span>&nbsp;
-            <span>
-              <span>b</span>
-              <span>r</span>
-              <span>a</span>
-              <span>n</span>
-              <span>d</span>
+            <span className='letteresg inline-block overflow-hidden'>
+              <span className='inline-block relative'>b</span>
+              <span className='inline-block relative'>r</span>
+              <span className='inline-block relative'>a</span>
+              <span className='inline-block relative'>n</span>
+              <span className='inline-block relative'>d</span>
             </span>&nbsp;
-            <span>
-              <span>g</span>
-              <span>l</span>
-              <span>o</span>
-              <span>w</span>
+            <span className='letteresg inline-block overflow-hidden'>
+              <span className='inline-block relative'>g</span>
+              <span className='inline-block relative'>l</span>
+              <span className='inline-block relative'>o</span>
+              <span className='inline-block relative'>w</span>
             </span>&nbsp;
-            <span>
-              <span>u</span>
-              <span>p</span>
-              <span>?</span>
+            <span className='letteresg inline-block overflow-hidden'>
+              <span className='inline-block relative'>u</span>
+              <span className='inline-block relative'>p</span>
+              <span className='inline-block relative'>?</span>
             </span>
           </div>
 

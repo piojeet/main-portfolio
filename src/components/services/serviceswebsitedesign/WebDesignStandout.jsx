@@ -1,7 +1,24 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Alertb from '../../../assets/alertb.svg'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 
 function WebDesignStandout() {
+
+  const textwdRef = useRef(null);
+    useGSAP(() => {
+      gsap.from(".lettereswd span", {
+        y: 110,
+        duration: 0.3,
+        stagger: 0.05,
+        scrollTrigger: {
+          trigger: textwdRef.current,
+          start: "0% 80%",
+            end: "50% 50%",
+        }
+      })
+    })
+
   return (
     <>
       <div className='mt-[80px]'>
@@ -11,37 +28,37 @@ function WebDesignStandout() {
         <div className='w-full min-h-[40vh] h-auto flex items-center justify-center backdrop-blur-sm border border-blackColor'>
           <div>
 
-            <div className='lg:text-[90px] sm:text-[63px] text-[10vw] uppercase font-TTCPro font-[900] text-center leading-[.9] my-6 md:block flex items-start flex-wrap justify-center text-blackColor'>
-              <span>
-                <span>d</span>
-                <span>e</span>
-                <span>s</span>
-                <span>i</span>
-                <span>g</span>
-                <span>n</span>
+            <div className='lg:text-[90px] sm:text-[63px] text-[10vw] uppercase font-TTCPro font-[900] text-center leading-[.9] my-6 md:block flex items-start flex-wrap justify-center text-blackColor' ref={textwdRef}>
+              <span className='lettereswd inline-block overflow-hidden'>
+                <span className='inline-block relative'>d</span>
+                <span className='inline-block relative'>e</span>
+                <span className='inline-block relative'>s</span>
+                <span className='inline-block relative'>i</span>
+                <span className='inline-block relative'>g</span>
+                <span className='inline-block relative'>n</span>
               </span>&nbsp;
-              <span>
-                <span>y</span>
-                <span>o</span>
-                <span>u</span>
-                <span>r</span>
+              <span className='lettereswd inline-block overflow-hidden'>
+                <span className='inline-block relative'>y</span>
+                <span className='inline-block relative'>o</span>
+                <span className='inline-block relative'>u</span>
+                <span className='inline-block relative'>r</span>
               </span><br />
 
-              <span className='text-[#bebebe] [text-shadow:-5px_2px_0px_black] specal'>
-                <span className='custom-strok'>d</span>
-                <span className='custom-strok'>r</span>
-                <span className='custom-strok'>e</span>
-                <span className='custom-strok'>a</span>
-                <span className='custom-strok'>m</span>
+              <span className='text-[#bebebe] [text-shadow:-5px_2px_0px_black] specal lettereswd inline-block overflow-hidden'>
+                <span className='custom-strok inline-block relative'>d</span>
+                <span className='custom-strok inline-block relative'>r</span>
+                <span className='custom-strok inline-block relative'>e</span>
+                <span className='custom-strok inline-block relative'>a</span>
+                <span className='custom-strok inline-block relative'>m</span>
               </span>&nbsp;
-              <span>
-                <span>w</span>
-                <span>e</span>
-                <span>b</span>
-                <span>s</span>
-                <span>i</span>
-                <span>t</span>
-                <span>e</span>
+              <span className='lettereswd inline-block overflow-hidden'>
+                <span className='inline-block relative'>w</span>
+                <span className='inline-block relative'>e</span>
+                <span className='inline-block relative'>b</span>
+                <span className='inline-block relative'>s</span>
+                <span className='inline-block relative'>i</span>
+                <span className='inline-block relative'>t</span>
+                <span className='inline-block relative'>e</span>
               </span>
             </div>
 

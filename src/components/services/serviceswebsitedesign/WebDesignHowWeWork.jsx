@@ -1,20 +1,36 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import HowWeWork from '../../ui/HowWeWork';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 function WebDesignHowWeWork() {
 
+    const textwgRef = useRef(null);
+    useGSAP(() => {
+      gsap.from(".lettereswg span", {
+        y: 110,
+        duration: 0.3,
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: textwgRef.current,
+          start: "0% 80%",
+            end: "50% 50%",
+        }
+      })
+    })
+
     const title = (
-        <>
-            <span>h</span>
-            <span>o</span>
-            <span>w</span>&nbsp;
-            <span>w</span>
-            <span>e</span><br />
-            <span>w</span>
-            <span>o</span>
-            <span>r</span>
-            <span>k</span>
-        </>
+        <div className='lettereswg overflow-hidden' ref={textwgRef}>
+            <span className='inline-block relative'>h</span>
+            <span className='inline-block relative'>o</span>
+            <span className='inline-block relative'>w</span>&nbsp;
+            <span className='inline-block relative'>w</span>
+            <span className='inline-block relative'>e</span><br />
+            <span className='inline-block relative'>w</span>
+            <span className='inline-block relative'>o</span>
+            <span className='inline-block relative'>r</span>
+            <span className='inline-block relative'>k</span>
+        </div>
     );
 
     const subtitle = "Branding Process for Lasting Impact";

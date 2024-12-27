@@ -1,8 +1,19 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react'
 import Paint from '../../../assets/paint.svg';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 const BrandingHero = () => {
+
+  useGSAP(()=> {
+    gsap.from(".letterb span", {
+      y: 100,
+      duration: 0.5,
+      stagger: 0.1,
+    })
+  })
+
   return (
     <>
         <div className='border border-blackColor p-4'>
@@ -17,15 +28,15 @@ const BrandingHero = () => {
           </div>
 
           <div className='lg:text-[95px] sm:text-[63px] text-[10vw] uppercase font-TTCPro font-[900] text-center leading-[.9] my-6 md:block flex items-start flex-wrap justify-center text-bodyColor'>
-            <span>
-              <span>b</span>
-              <span>r</span>
-              <span>a</span>
-              <span>n</span>
-              <span>d</span>
-              <span>i</span>
-              <span>n</span>
-              <span>g</span>
+            <span className='letterb inline-block overflow-hidden'>
+              <span className='relative inline-block'>b</span>
+              <span className='relative inline-block'>r</span>
+              <span className='relative inline-block'>a</span>
+              <span className='relative inline-block'>n</span>
+              <span className='relative inline-block'>d</span>
+              <span className='relative inline-block'>i</span>
+              <span className='relative inline-block'>n</span>
+              <span className='relative inline-block'>g</span>
             </span>
           </div>
 

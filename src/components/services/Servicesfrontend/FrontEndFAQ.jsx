@@ -1,33 +1,51 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import FAQAccordion from '../../ui/FAQAccordion';
 import Plus from '../../../assets/plus.svg';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 function FrontEndFAQ() {
+
+    const textfeRef = useRef(null);
+    useGSAP(() => {
+      gsap.from(".letteresef span", {
+        y: 110,
+        duration: 0.3,
+        stagger: 0.05,
+        scrollTrigger: {
+          trigger: textfeRef.current,
+          start: "0% 80%",
+            end: "50% 50%",
+        }
+      })
+    })
+
+
     const title = (
-        <>
-            <span>
-                <span>C</span>
-                <span>O</span>
-                <span>M</span>
-                <span>M</span>
-                <span>O</span>
-                <span>N</span>
+        <div ref={textfeRef}>
+            <span className='letteresef inline-block overflow-hidden'>
+                <span className='inline-block relative'>C</span>
+                <span className='inline-block relative'>O</span>
+                <span className='inline-block relative'>M</span>
+                <span className='inline-block relative'>M</span>
+                <span className='inline-block relative'>O</span>
+                <span className='inline-block relative'>N</span>
             </span>
-            &nbsp;
+            
             <br />
-            <span>
-                <span>Q</span>
-                <span>U</span>
-                <span>E</span>
-                <span>S</span>
-                <span>T</span>
-                <span>i</span>
-                <span>O</span>
-                <span>N</span>
-                <span>E</span>
-                <span>s</span>
+            <span className='letteresef inline-block overflow-hidden'>
+                <span className='inline-block relative'>Q</span>
+                <span className='inline-block relative'>U</span>
+                <span className='inline-block relative'>E</span>
+                <span className='inline-block relative'>S</span>
+                <span className='inline-block relative'>T</span>
+                <span className='inline-block relative'>i</span>
+                <span className='inline-block relative'>O</span>
+                <span className='inline-block relative'>N</span>
+                <span className='inline-block relative'>E</span>
+                <span className='inline-block relative'>s</span>
             </span>
-        </>
+        </div>
     );
     const subTitle ="We're Always Happy to talk about our process in more detail so feel free to reach out";
 

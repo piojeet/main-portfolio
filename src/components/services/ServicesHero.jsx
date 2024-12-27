@@ -1,8 +1,19 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react'
 import Flag from '../../assets/flag.svg'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 
 function ServicesHero() {
+
+  useGSAP(()=> {
+    gsap.from(".letters span", {
+      y: 100,
+      duration: 0.5,
+      stagger: 0.1,
+    })
+  })
+
   return (
     <>
  <div className='w-full md:min-h-[60vh] min-h-[40vh] p-2 h-auto border border-blackColor flex items-center justify-center backdrop-blur-sm'>
@@ -16,21 +27,21 @@ function ServicesHero() {
           </div>
 
           <div className='lg:text-[95px] sm:text-[63px] text-[10vw] uppercase font-TTCPro font-[900] text-center leading-[.9] my-6 md:block flex items-start flex-wrap justify-center'>
-            <span>
-              <span>O</span>
-              <span>u</span>
-              <span>r</span>
+            <span className='letters inline-block overflow-hidden'>
+              <span className='relative inline-block'>O</span>
+              <span className='relative inline-block'>u</span>
+              <span className='relative inline-block'>r</span>
             </span>
             &nbsp;
-            <span>
-              <span>s</span>
-              <span>e</span>
-              <span>r</span>
-              <span>v</span>
-              <span>i</span>
-              <span>c</span>
-              <span>e</span>
-              <span>s</span>
+            <span className='letters relative inline-block overflow-hidden'>
+              <span className='relative inline-block'>s</span>
+              <span className='relative inline-block'>e</span>
+              <span className='relative inline-block'>r</span>
+              <span className='relative inline-block'>v</span>
+              <span className='relative inline-block'>i</span>
+              <span className='relative inline-block'>c</span>
+              <span className='relative inline-block'>e</span>
+              <span className='relative inline-block'>s</span>
             </span>
           </div>
 

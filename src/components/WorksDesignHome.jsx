@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import DesignOne from '../assets/homedesign1.mp4'
-import DesignTwo from '../assets/homedesign2.mp4'
-import DesignThree from '../assets/homedesign3.mp4'
+import DesignOne from '../assets/project10.webp'
+import DesignTwo from '../assets/project4.webp'
+import DesignThree from '../assets/project11.webp'
 import VideoIcon from '../assets/video-icon.svg'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { useProjectAllContext } from '../context/ProjectAllContext'
 
 function WorksDesignHome() {
 
@@ -56,24 +58,40 @@ function WorksDesignHome() {
         });
     }, [isMagnetic]);
 
+
+    const { updateToggle } = useProjectAllContext();
+    const navigate = useNavigate();
+    const openTab1 = () => {
+        updateToggle(0)
+        navigate(`/projects`)
+    }
+    const openTab2 = () => {
+        updateToggle(1)
+        navigate(`/projects`)
+    }
+    const openTab3 = () => {
+        updateToggle(2)
+        navigate(`/projects`)
+    }
+
     return (
         <>
             <div className='lg:py-[8rem] md:pb-0 md:pt-[5rem]'>
                 <div className='flex lg:items-start justify-start flex-col-reverse lg:flex-row'>
                     <div className='lg:w-[67.5vw] w-full'>
-                        <div className='groups-m bg-blackColor'>
-                            <div className='w-full video-bg overflow-hidden'>
-                                <video autoPlay loop muted className='w-full'>
-                                    <source src={DesignOne} />
-                                </video>
+                        <NavLink to="https://grand-jalebi-65aa54.netlify.app/" className='groups-m pointer-cursor block bg-blackColor'>
+                            <div className='border border-black border-b-0'>
+                                <div className='w-full video-bg overflow-hidden'>
+                                    <img src={DesignOne} alt="img" className='scal-up' />
+                                </div>
                             </div>
 
                             <div className='h-[100px] w-full md:text-[37px] lg:text-[40px] bg-bodyColor ink-btn font-TTCPro font-semibold content-center px-6 border border-blackColor groups-hover:bg-blackColor'>
-                                Ink of Violet
+                                Julia Noam
                             </div>
-                        </div>
+                        </NavLink>
 
-                        <div className='group pointer-cursor h-[80px] xl:w-[20vw] lg:w-[28vw] flex-shrink-0 border border-blackColor bg-blackColor hidden lg:flex justify-start items-center border-t-0'>
+                        <div className='group pointer-cursor h-[80px] xl:w-[20vw] lg:w-[28vw] flex-shrink-0 border border-blackColor bg-blackColor hidden lg:flex justify-start items-center border-t-0' onClick={openTab1}>
                             {/* Magnetic effect on wrapper div */}
                             <div className='magnetic-btn relative w-full h-full'>
                                 {/* Hover transition on inner span */}
@@ -106,19 +124,20 @@ function WorksDesignHome() {
                 <div className='flex items-start justify-between lg:mt-[100px] flex-wrap lg:flex-nowrap'>
                     <div className='xl:w-full lg:w-[67.5vw] w-full lg:ml-auto ml-0'>
                         <div className='w-full'>
-                            <div className='groups-m bg-blackColor'>
-                                <div className='w-full video-bg overflow-hidden lg:h-[35vw] h-full'>
-                                    <video autoPlay loop muted className='w-full h-full object-cover'>
-                                        <source src={DesignTwo} />
-                                    </video>
+                            <NavLink to="https://sharadsportfolio.netlify.app/" className='groups-m pointer-cursor block bg-blackColor'>
+                                <div className='border border-black border-b-0'>
+                                    <div className='w-full video-bg overflow-hidden lg:h-[28vw] h-full'>
+                                        <img src={DesignTwo} alt="img" className='scal-up h-full' />
+                                    </div>
                                 </div>
+
 
                                 <div className='h-[100px] w-full md:text-[37px] lg:text-[40px] bg-bodyColor ink-btn font-TTCPro font-semibold content-center px-6 border border-blackColor groups-hover:bg-blackColor'>
-                                    Ink of Violet
+                                    Sharad Sahu
                                 </div>
-                            </div>
+                            </NavLink>
 
-                            <div className='group pointer-cursor h-[80px] xl:w-[15vw] lg:w-[22.5vw] flex-shrink-0 border border-blackColor bg-blackColor hidden lg:flex justify-start items-center border-t-0'>
+                            <div className='group pointer-cursor h-[80px] xl:w-[15vw] lg:w-[22.5vw] flex-shrink-0 border border-blackColor bg-blackColor hidden lg:flex justify-start items-center border-t-0' onClick={openTab2}>
                                 {/* Magnetic effect on wrapper div */}
                                 <div className='magnetic-btn relative w-full h-full'>
                                     {/* Hover transition on inner span */}
@@ -126,7 +145,7 @@ function WorksDesignHome() {
                                         className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 group-hover:border group-hover:border-blackColor bg-bodyColor  font-TTCPro lg:text-[20px] md:text-[19px] tracking-[2px] inline-block font-semibold content-center'
                                         style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
                                     >
-                                        <span className='text-center w-full block'>Web Design</span>
+                                        <span className='text-center w-full block'>Portfolio</span>
 
                                     </span>
                                 </div>
@@ -138,19 +157,19 @@ function WorksDesignHome() {
 
                     <div className='xl:w-full lg:w-[67.5vw] w-full relative lg:top-[-280px]'>
                         <div className='w-full'>
-                            <div className='groups-m bg-blackColor'>
-                                <div className='w-full video-bg overflow-hidden lg:h-[35vw] h-full'>
-                                    <video autoPlay loop muted className='w-full h-full object-cover'>
-                                        <source src={DesignThree} />
-                                    </video>
+                            <NavLink to="https://fancy-empanada-211970.netlify.app/" className='groups-m pointer-cursor block bg-blackColor'>
+                                <div className='border border-black border-b-0'>
+                                    <div className='w-full video-bg overflow-hidden lg:h-[28vw] h-full'>
+                                        <img src={DesignThree} alt="img" className='scal-up w-full h-full' />
+                                    </div>
                                 </div>
 
                                 <div className='h-[100px] w-full md:text-[37px] lg:text-[40px] bg-bodyColor ink-btn font-TTCPro font-semibold content-center px-6 border border-blackColor groups-hover:bg-blackColor'>
                                     Ink of Violet
                                 </div>
-                            </div>
+                            </NavLink>
 
-                            <div className='group pointer-cursor h-[80px] lg:w-[15vw] md:w-[22.5vw] flex-shrink-0 border border-blackColor bg-blackColor hidden lg:inline-flex justify-start items-center border-t-0 relative z-20 border-r-0'>
+                            <div className='group pointer-cursor h-[80px] lg:w-[15vw] md:w-[22.5vw] flex-shrink-0 border border-blackColor bg-blackColor hidden lg:inline-flex justify-start items-center border-t-0 relative z-20 border-r-0' onClick={openTab3}>
                                 {/* Magnetic effect on wrapper div */}
                                 <div className='magnetic-btn relative w-full h-full'>
                                     {/* Hover transition on inner span */}
@@ -158,13 +177,13 @@ function WorksDesignHome() {
                                         className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 group-hover:border group-hover:border-blackColor bg-bodyColor  font-TTCPro lg:text-[20px] md:text-[19px] tracking-[2px] inline-block font-semibold content-center'
                                         style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
                                     >
-                                        <span className='text-center w-full block'>Web Design</span>
+                                        <span className='text-center w-full block'>Bussiness</span>
 
                                     </span>
                                 </div>
                             </div>
 
-                            <div className='group pointer-cursor h-[80px] lg:w-[13vw] md:w-[22.5vw] flex-shrink-0 border border-blackColor bg-blackColor hidden lg:inline-flex justify-start items-center border-t-0 relative z-10'>
+                            <div className='group pointer-cursor h-[80px] lg:w-[13vw] md:w-[22.5vw] flex-shrink-0 border border-blackColor bg-blackColor hidden lg:inline-flex justify-start items-center border-t-0 relative z-10' onClick={openTab2}>
                                 {/* Magnetic effect on wrapper div */}
                                 <div className='magnetic-btn relative w-full h-full'>
                                     {/* Hover transition on inner span */}
@@ -172,7 +191,7 @@ function WorksDesignHome() {
                                         className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 group-hover:border group-hover:border-blackColor bg-bodyColor  font-TTCPro lg:text-[20px] md:text-[19px] tracking-[2px] inline-block font-semibold content-center'
                                         style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
                                     >
-                                        <span className='text-center w-full block'>Branding</span>
+                                        <span className='text-center w-full block'>Portfolio</span>
 
                                     </span>
                                 </div>

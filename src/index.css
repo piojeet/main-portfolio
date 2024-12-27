@@ -54,7 +54,7 @@
     @apply scale-95 rounded-lg;
   }
 
-  .groups-m:hover .video-bg video {
+  .groups-m:hover .video-bg .scal-up {
     @apply scale-110;
   }
 
@@ -68,7 +68,7 @@
 
   /* .groups-m, */
   /* .ink-btn, */
-  .video-bg video,
+  .video-bg .scal-up,
   .video-bg {
     transition: all .3s ease-in-out;
   }
@@ -137,7 +137,3 @@
 }
 
 }
-
-
-
-

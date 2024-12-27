@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import Star from '../../assets/starg.svg'
 import RightArrow from '../../assets/right-arrow.svg'
+import { useGSAP } from '@gsap/react';
 
 const images1 = [
   "https://plus.unsplash.com/premium_photo-1664201890375-f8fa405cdb7d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -44,10 +45,10 @@ function ServicesOverview() {
       timeline
         .set(imagesElements[currentIndex], { zIndex: imagesLength + 1, left: "-100%" })
         .to(imagesElements[currentIndex], {
-          duration: 1,
+          duration: 0.7,
           left: "0%",
-          ease: "power2.out",
-          delay: isFirstCycle ? 2 : 0
+          ease: "circ.out",
+          delay: isFirstCycle ? 0.5 : 0
         })
         .add(() => {
           gsap.set(imagesElements[currentIndex], { zIndex: imagesLength });
@@ -56,10 +57,10 @@ function ServicesOverview() {
           gsap.set(imagesElements[previousIndex], { left: "0%", zIndex: 0 });
         })
         .to(imagesElements[(currentIndex - 1 + imagesLength) % imagesLength], {
-          duration: 1,
+          duration: 0.7,
           left: "-100%",
-          ease: "power2.in"
-        }, "+=0.5");
+          ease: "circ.out",
+        }, "+=0.1");
     }
 
     currentIndex = 1;
@@ -76,6 +77,19 @@ function ServicesOverview() {
 
 
 
+  const textsvRef = useRef(null);
+  useGSAP(() => {
+    gsap.from(".letteresv span", {
+      y: 110,
+      duration: 0.3,
+      stagger: 0.1,
+      scrollTrigger: {
+        trigger: textsvRef.current,
+        start: "0% 80%",
+          end: "50% 50%",
+      }
+    })
+  })
 
 
 
@@ -250,7 +264,30 @@ function ServicesOverview() {
           </div>
           <div className='lg:w-[22.5vw] md:w-[45vw] flex-shrink-0 h-fit lg:sticky lg:top-[80px] lg:mb-0 mb-[80px]'>
             <div className='p-6 bg-blackColor'>
-            <p className='lg:text-[3vw] font-TTCPro font-black text-bodyColor uppercase text-[30px]'>Services Snapshot</p>
+            <h2 className='uppercase font-TTCPro font-[900] text-white text-[30px] sm:text-[3vw] leading-none mb-4' ref={textsvRef}>
+              <span className='letteresv inline-block overflow-hidden'>
+                <span className='inline-block'>s</span>
+                <span className='inline-block'>e</span>
+                <span className='inline-block'>r</span>
+                <span className='inline-block'>v</span>
+                <span className='inline-block'>i</span>
+                <span className='inline-block'>c</span>
+                <span className='inline-block'>e</span>
+                <span className='inline-block'>s</span>
+              </span>
+              &nbsp;
+              <span className='letteresv inline-block overflow-hidden'>
+                <span className='inline-block'>s</span>
+                <span className='inline-block'>n</span>
+                <span className='inline-block'>a</span>
+                <span className='inline-block'>p</span>
+                <span className='inline-block'>s</span>
+                <span className='inline-block'>h</span>
+                <span className='inline-block'>o</span>
+                <span className='inline-block'>t</span>
+              </span>
+              
+            </h2>
             <p className='text-[20px] font-TTCPro font-medium text-bodyColor mt-8'>A summary of the tasks we handle and the types of projects they support</p>
             </div>
 

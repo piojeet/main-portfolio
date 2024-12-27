@@ -73,7 +73,8 @@ function Footer() {
     timeline.from(".flatter", {
       top: 250,
       duration: 0.5,
-      stagger: 0.1,
+      stagger: 0.05,
+      ease: "elastic.out(2,3.4)",
     });
   
     ScrollTrigger.create({

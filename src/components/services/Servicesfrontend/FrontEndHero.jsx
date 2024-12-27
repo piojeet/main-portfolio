@@ -1,7 +1,18 @@
 import React from 'react'
 import Front from '../../../assets/frontenddesign.svg'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 
 function FrontEndHero() {
+
+  useGSAP(()=> {
+    gsap.from(".letterf span", {
+      y: 100,
+      duration: 0.5,
+      stagger: 0.1,
+    })
+  })
+
   return (
     <div className='border border-blackColor p-4'>
         <div className='w-full md:min-h-[60vh] min-h-[40vh] h-auto border border-blackColor flex items-center justify-center backdrop-blur-sm bg-blackColor rounded-lg p-2 py-4'>
@@ -15,23 +26,23 @@ function FrontEndHero() {
           </div>
 
           <div className='lg:text-[95px] sm:text-[63px] text-[10vw] uppercase font-TTCPro font-[900] text-center leading-[.9] my-6 md:block flex items-start flex-wrap justify-center text-bodyColor'>
-          <span>
-              <span>f</span>
-              <span>r</span>
-              <span>o</span>
-              <span>n</span>
-              <span>t</span>
-              <span>e</span>
-              <span>n</span>
-              <span>d</span>
+          <span className='letterf inline-block overflow-hidden'>
+              <span className='inline-block relative'>f</span>
+              <span className='inline-block relative'>r</span>
+              <span className='inline-block relative'>o</span>
+              <span className='inline-block relative'>n</span>
+              <span className='inline-block relative'>t</span>
+              <span className='inline-block relative'>e</span>
+              <span className='inline-block relative'>n</span>
+              <span className='inline-block relative'>d</span>
             </span>&nbsp;
-            <span>
-              <span>d</span>
-              <span>e</span>
-              <span>s</span>
-              <span>i</span>
-              <span>g</span>
-              <span>n</span>
+            <span className='letterf inline-block overflow-hidden'>
+              <span className='inline-block relative'>d</span>
+              <span className='inline-block relative'>e</span>
+              <span className='inline-block relative'>s</span>
+              <span className='inline-block relative'>i</span>
+              <span className='inline-block relative'>g</span>
+              <span className='inline-block relative'>n</span>
             </span>
           </div>
 

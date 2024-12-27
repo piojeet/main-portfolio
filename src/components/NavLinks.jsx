@@ -36,7 +36,7 @@ function NavLinks() {
                         </span>
                         <span
                             className={`w-full h-full bg-bodyColor absolute left-0 z-10 transition-all duration-200 top-[-100%] ${hoverDirection['work'] === 'top'
-                                    ? 'top-[-100%] group-hover:top-0'
+                                    ? 'top-[-100%] group-hover:top-0 group-active:scale-y-75'
                                     : hoverDirection['work'] === 'bottom'
                                         ? 'top-[100%] group-hover:top-0'
                                         : ''
@@ -57,7 +57,7 @@ function NavLinks() {
                         </span>
                         <span
                             className={`w-full h-full bg-bodyColor absolute left-0 z-10 transition-all duration-200 top-[-100%] first ${hoverDirection['about'] === 'top'
-                                    ? 'top-[-100%] group-hover:top-0'
+                                    ? 'top-[-100%] group-hover:top-0 group-active:scale-y-75'
                                     : hoverDirection['about'] === 'bottom'
                                         ? 'top-[100%] group-hover:top-0'
                                         : ''
@@ -80,7 +80,7 @@ function NavLinks() {
                         </span>
                         <span
                             className={`w-full h-full bg-bodyColor absolute left-0 z-10 transition-all duration-200 top-[-100%] first ${hoverDirection['services'] === 'top'
-                                    ? 'top-[-100%] group-hover:top-0'
+                                    ? 'top-[-100%] group-hover:top-0 group-active:scale-y-75'
                                     : hoverDirection['services'] === 'bottom'
                                         ? 'top-[100%] group-hover:top-0'
                                         : ''
@@ -103,7 +103,7 @@ function NavLinks() {
                         </span>
                         <span
                             className={`w-full h-full bg-bodyColor absolute left-0 z-10 transition-all duration-200 top-[-100%] first ${hoverDirection['contact'] === 'top'
-                                    ? 'top-[-100%] group-hover:top-0'
+                                    ? 'top-[-100%] group-hover:top-0 group-active:scale-y-75'
                                     : hoverDirection['contact'] === 'bottom'
                                         ? 'top-[100%] group-hover:top-0'
                                         : ''

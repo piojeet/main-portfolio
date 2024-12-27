@@ -31,11 +31,11 @@ function ServicesMiniNav() {
                                 className={({ isActive }) =>
                                     classNames(
                                         'font-TTCPro font-semibold inline-flex items-center text-[19px] rounded-full flex-nowrap transition-width duration-[1s] ease-linear overflow-hidden',
-                                        isActive ? 'text-red-400 bg-blackColor max-w-full' : 'text-blackColor max-w-14'
+                                        isActive ? 'text-white bg-blackColor max-w-full' : 'text-blackColor max-w-14'
                                     )
                                 }
                             >
-                                <span className='inline-flex flex-shrink-0 md:w-14 md:h-14 size-11 bg-red-400 items-center justify-center rounded-full'>
+                                <span className='inline-flex flex-shrink-0 md:w-14 md:h-14 size-11 items-center justify-center rounded-full'>
                                     <img
                                         src={link.icon}
                                         alt=""

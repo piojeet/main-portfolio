@@ -112,7 +112,7 @@ function Expertic() {
                 <span className='inline-block'>e</span>
               </span>
               &nbsp;
-              <span className='lettere overflow-hidden'>
+              <span className='lettere inline-block overflow-hidden'>
                 <span className='inline-block'>y</span>
                 <span className='inline-block'>o</span>
                 <span className='inline-block'>u</span>
@@ -136,7 +136,7 @@ function Expertic() {
             </h2>
           )}
 
-          <p className='lg:text-[26px] md:text-[24px] font-TTCPro font-medium'>Physical, digital, meta-physical – We’ll find a creative solution for all your business problems</p>
+          <p className='lg:text-[26px] md:text-[24px] font-TTCPro font-medium max-w-[40ch] w-full'>Physical, digital, meta-physical – We’ll find a creative solution for all your business problems</p>
         </div>
 
         {location.pathname !== '/services' && (

@@ -1,26 +1,42 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import HowWeWork from '../../ui/HowWeWork';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 function BrandingHowWeWork() {
 
+    const textbwRef = useRef(null);
+    useGSAP(() => {
+      gsap.from(".letteresbw span", {
+        y: 110,
+        duration: 0.3,
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: textbwRef.current,
+          start: "0% 80%",
+            end: "50% 50%",
+        }
+      })
+    })
+
     const title = (
-        <>
-            <span>
-                <span>H</span>
-                <span>o</span>
-                <span>w</span>
+        <div className='overflow-hidden' ref={textbwRef}>
+            <span className='letteresbw inline-block overflow-hidden'>
+                <span className='inline-block relative'>H</span>
+                <span className='inline-block relative'>o</span>
+                <span className='inline-block relative'>w</span>
             </span>&nbsp;
-            <span>
-                <span>w</span>
-                <span>e</span>
+            <span className='letteresbw inline-block overflow-hidden'>
+                <span className='inline-block relative'>w</span>
+                <span className='inline-block relative'>e</span>
             </span><br />
-            <span>
-                <span>w</span>
-                <span>o</span>
-                <span>r</span>
-                <span>k</span>
+            <span className='letteresbw inline-block overflow-hidden'>
+                <span className='inline-block relative'>w</span>
+                <span className='inline-block relative'>o</span>
+                <span className='inline-block relative'>r</span>
+                <span className='inline-block relative'>k</span>
             </span>
-        </>
+        </div>
     )
 
     const subtitle = "Here’s how I can support you and bring your vision to life.";
