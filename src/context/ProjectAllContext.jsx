@@ -8,7 +8,7 @@ const ProjectAllContext = createContext();
 // `items`, `items2`, aur `items3` ko define kar rahe hain
 const items = [
     { name: 'Ochi', route: 'https://ochi99.netlify.app/' },
-    { name: 'Sundown Studio', route: 'https://magnificent-smakager-29d9e5.netlify.app/' },
+    { name: 'Redefine', route: 'https://redefine-three.vercel.app/' },
     { name: 'Header Goes', route: 'https://glittering-marshmallow-440edb.netlify.app/' },
     { name: 'Sharad Sahu', route: 'https://sharadsportfolio.netlify.app/' },
     { name: 'I am William', route: 'https://vocal-chimera-107087.netlify.app/' },
@@ -17,6 +17,7 @@ const items = [
     { name: 'Oraman', route: 'https://gregarious-syrniki-7b45c9.netlify.app/' },
     { name: 'Growing Logistics', route: 'https://lucent-boba-5f2a5f.netlify.app/' },
     { name: 'Julia Noam', route: 'https://grand-jalebi-65aa54.netlify.app/' },
+    { name: 'Sukri', route: 'https://prismatic-klepon-2c9dcc.netlify.app/' },
 ];
 
 const items2 = [
@@ -27,12 +28,13 @@ const items2 = [
 
 const items3 = [
     { name: 'Ochi', route: 'https://ochi99.netlify.app/' },
-    { name: 'Sundown Studio', route: 'https://magnificent-smakager-29d9e5.netlify.app/' },
+    { name: 'Redefine', route: 'https://redefine-three.vercel.app/' },
     { name: 'Header Goes', route: 'https://glittering-marshmallow-440edb.netlify.app/' },
     { name: 'Fix Computers', route: 'https://gleeful-fenglisu-06cdc4.netlify.app/' },
     { name: 'MantaTrade', route: 'https://ornate-gelato-b0fa21.netlify.app/' },
     { name: 'Growing Logistics', route: 'https://lucent-boba-5f2a5f.netlify.app/' },
     { name: 'Julia Noam', route: 'https://grand-jalebi-65aa54.netlify.app/' },
+    { name: 'Sukri', route: 'https://prismatic-klepon-2c9dcc.netlify.app/' },
 ];
 
 export const ProjectAllProvider = ({ children }) => {

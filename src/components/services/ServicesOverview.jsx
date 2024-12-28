@@ -3,27 +3,65 @@ import gsap from 'gsap';
 import Star from '../../assets/starg.svg'
 import RightArrow from '../../assets/right-arrow.svg'
 import { useGSAP } from '@gsap/react';
+import img1 from '../../assets/project2.webp';
+import img2 from '../../assets/img1.webp';
+import img3 from '../../assets/img2.webp';
+import img4 from '../../assets/img3.webp';
+import img5 from '../../assets/img4.webp';
+import img6 from '../../assets/img5.webp';
+import img7 from '../../assets/img6.webp';
+import img8 from '../../assets/img7.webp';
+import img9 from '../../assets/img8.webp';
+import img10 from '../../assets/img9.webp';
+import img11 from '../../assets/img10.webp';
+import img12 from '../../assets/img11.webp';
+import img13 from '../../assets/img12.webp';
+import img14 from '../../assets/img13.webp';
+import img15 from '../../assets/img14.webp';
+import img16 from '../../assets/img15.webp';
+import img17 from '../../assets/img16.webp';
+import img18 from '../../assets/img17.webp';
+import img19 from '../../assets/img18.webp';
+import img20 from '../../assets/img19.webp';
+import img21 from '../../assets/img20.webp';
+import img22 from '../../assets/img21.webp';
 
 const images1 = [
-  "https://plus.unsplash.com/premium_photo-1664201890375-f8fa405cdb7d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1688561808434-886a6dd97b8c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1669003153444-a1de1357f488?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1695527081782-c4ad3005417e?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  img1,
+  img2,
+  img3,
+  img4,
+  img5
 ];
 
 const images2 = [
-  "https://plus.unsplash.com/premium_photo-1664201890375-f8fa405cdb7d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1688561808434-886a6dd97b8c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1669003153444-a1de1357f488?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1695527081782-c4ad3005417e?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  img6,
+  img7,
+  img8,
+  img9,
+  img10,
 ];
 
 const images3 = [
-  "https://plus.unsplash.com/premium_photo-1664201890375-f8fa405cdb7d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1688561808434-886a6dd97b8c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1669003153444-a1de1357f488?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1695527081782-c4ad3005417e?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  img11,
+  img12,
+  img13,
+  img14,
 ];
+
+const images4 = [
+  img15,
+  img16,
+  img17,
+  img18,
+];
+
+const images5 = [
+  img19,
+  img20,
+  img21,
+  img22,
+]
 
 function ServicesOverview() {
   const setupCarousel = (carouselSelector, imagesLength) => {
@@ -86,7 +124,7 @@ function ServicesOverview() {
       scrollTrigger: {
         trigger: textsvRef.current,
         start: "0% 80%",
-          end: "50% 50%",
+        end: "50% 50%",
       }
     })
   })
@@ -138,7 +176,7 @@ function ServicesOverview() {
                 <div className='flex items-center gap-8 lg:relative transition-all duration-500 left-[-260px] group-hover:left-0'>
                   <div className='lg:block hidden'>
                     <div className="carousel carousel-2 relative w-[250px] h-[150px] overflow-hidden rounded-md">
-                    {images2.map((src, index) => (
+                      {images2.map((src, index) => (
                         <img
                           key={index}
                           src={src}
@@ -154,7 +192,7 @@ function ServicesOverview() {
                     <div>
                       <div className='lg:text-[50px] md:text-[40px] text-[30px] font-TTCPro font-bold text-blackColor leading-none'>UI Development</div>
                       <p className='font-TTCPro font-medium text-[17px] lg:whitespace-nowrap text-blackColor mt-1'>
-                      User-Centric Designs • Interactive Prototyping • Pixel-Perfect UI Implementation • Accessibility
+                        User-Centric Designs • Interactive Prototyping • Pixel-Perfect UI Implementation • Accessibility
                       </p>
                     </div>
                   </div>
@@ -170,7 +208,7 @@ function ServicesOverview() {
                 <div className='flex items-center gap-8 lg:relative transition-all duration-500 left-[-260px] group-hover:left-0'>
                   <div className='lg:block hidden'>
                     <div className="carousel carousel-3 relative w-[250px] h-[150px] overflow-hidden rounded-md">
-                    {images3.map((src, index) => (
+                      {images3.map((src, index) => (
                         <img
                           key={index}
                           src={src}
@@ -186,7 +224,7 @@ function ServicesOverview() {
                     <div>
                       <div className='lg:text-[50px] md:text-[40px] text-[30px] font-TTCPro font-bold text-blackColor leading-none'>Performance Optimization</div>
                       <p className='font-TTCPro font-medium text-[17px] lg:whitespace-nowrap text-blackColor mt-1'>
-                      Fast Loading Times • Code Minification • Lazy Loading • Optimized Asset Management
+                        Fast Loading Times • Code Minification • Lazy Loading • Optimized Asset Management
                       </p>
                     </div>
                   </div>
@@ -202,7 +240,7 @@ function ServicesOverview() {
                 <div className='flex items-center gap-8 lg:relative transition-all duration-500 left-[-260px] group-hover:left-0'>
                   <div className='lg:block hidden'>
                     <div className="carousel carousel-4 relative w-[250px] h-[150px] overflow-hidden rounded-md">
-                    {images3.map((src, index) => (
+                      {images4.map((src, index) => (
                         <img
                           key={index}
                           src={src}
@@ -218,7 +256,7 @@ function ServicesOverview() {
                     <div>
                       <div className='lg:text-[50px] md:text-[40px] text-[30px] font-TTCPro font-bold text-blackColor leading-none'>JavaScript Development</div>
                       <p className='font-TTCPro font-medium text-[17px] lg:whitespace-nowrap text-blackColor mt-1'>
-                      Dynamic Content • API Integration • Frontend Logic • Real-Time Interactions
+                        Dynamic Content • API Integration • Frontend Logic • Real-Time Interactions
                       </p>
                     </div>
                   </div>
@@ -234,7 +272,7 @@ function ServicesOverview() {
                 <div className='flex items-center gap-8 lg:relative transition-all duration-500 left-[-260px] group-hover:left-0'>
                   <div className='lg:block hidden'>
                     <div className="carousel carousel-5 relative w-[250px] h-[150px] overflow-hidden rounded-md">
-                    {images3.map((src, index) => (
+                      {images5.map((src, index) => (
                         <img
                           key={index}
                           src={src}
@@ -248,61 +286,61 @@ function ServicesOverview() {
                   <div className='flex gap-6 py-4 lg:py-0 px-2'>
                     <span className='text-[17px] font-TTCPro text-gray-500 font-bold'>05</span>
                     <div>
-                      <div className='lg:text-[50px] md:text-[40px] text-[30px] font-TTCPro font-bold text-blackColor leading-none'>CSS Animations</div>
+                      <div className='lg:text-[50px] md:text-[40px] text-[30px] font-TTCPro font-bold text-blackColor leading-none'>Motion & Animations</div>
                       <p className='font-TTCPro font-medium text-[17px] lg:whitespace-nowrap text-blackColor mt-1'>
-                      Smooth Transitions • Micro-Interactions • Scroll Animations • Hover Effects
+                        Smooth Transitions • Micro-Interactions • Scroll Animations • Hover Effects
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-      
 
-           
+
+
 
           </div>
           <div className='lg:w-[22.5vw] md:w-[45vw] flex-shrink-0 h-fit lg:sticky lg:top-[80px] lg:mb-0 mb-[80px]'>
             <div className='p-6 bg-blackColor'>
-            <h2 className='uppercase font-TTCPro font-[900] text-white text-[30px] sm:text-[3vw] leading-none mb-4' ref={textsvRef}>
-              <span className='letteresv inline-block overflow-hidden'>
-                <span className='inline-block'>s</span>
-                <span className='inline-block'>e</span>
-                <span className='inline-block'>r</span>
-                <span className='inline-block'>v</span>
-                <span className='inline-block'>i</span>
-                <span className='inline-block'>c</span>
-                <span className='inline-block'>e</span>
-                <span className='inline-block'>s</span>
-              </span>
-              &nbsp;
-              <span className='letteresv inline-block overflow-hidden'>
-                <span className='inline-block'>s</span>
-                <span className='inline-block'>n</span>
-                <span className='inline-block'>a</span>
-                <span className='inline-block'>p</span>
-                <span className='inline-block'>s</span>
-                <span className='inline-block'>h</span>
-                <span className='inline-block'>o</span>
-                <span className='inline-block'>t</span>
-              </span>
-              
-            </h2>
-            <p className='text-[20px] font-TTCPro font-medium text-bodyColor mt-8'>A summary of the tasks we handle and the types of projects they support</p>
+              <h2 className='uppercase font-TTCPro font-[900] text-white text-[30px] sm:text-[3vw] leading-none mb-4' ref={textsvRef}>
+                <span className='letteresv inline-block overflow-hidden'>
+                  <span className='inline-block'>s</span>
+                  <span className='inline-block'>e</span>
+                  <span className='inline-block'>r</span>
+                  <span className='inline-block'>v</span>
+                  <span className='inline-block'>i</span>
+                  <span className='inline-block'>c</span>
+                  <span className='inline-block'>e</span>
+                  <span className='inline-block'>s</span>
+                </span>
+                &nbsp;
+                <span className='letteresv inline-block overflow-hidden'>
+                  <span className='inline-block'>s</span>
+                  <span className='inline-block'>n</span>
+                  <span className='inline-block'>a</span>
+                  <span className='inline-block'>p</span>
+                  <span className='inline-block'>s</span>
+                  <span className='inline-block'>h</span>
+                  <span className='inline-block'>o</span>
+                  <span className='inline-block'>t</span>
+                </span>
+
+              </h2>
+              <p className='text-[20px] font-TTCPro font-medium text-bodyColor mt-8'>A summary of the tasks we handle and the types of projects they support</p>
             </div>
 
             <div className='group pointer-cursor md:h-[80px] h-[70px] lg:w-[22.5vw] md:w-[45vw] flex-shrink-0 border border-blackColor bg-blackColor w-full'>
-                            <div className='magnetic-btn relative w-full h-full'>
-                                <span
-                                    className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 group-hover:border group-hover:border-blackColor bg-bodyColor  font-TTCPro uppercase text-[15px] tracking-[2px] inline-block font-semibold content-center transition-all duration-500'
-                                    style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
-                                >
-                                    <span className='absolute left-[-1.5rem] w-6 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-5'><img src={RightArrow} alt="" className='w-full' /></span>
-                                    <span className='absolute left-5 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-12 font-bold'>View Our Work</span>
-                                    <span className='group-hover:animate-bounce-on absolute right-5 top-1/2 -translate-y-1/2'><img src={Star} alt="" className='w-8' /></span>
-                                </span>
-                            </div>
-                        </div>
+              <div className='magnetic-btn relative w-full h-full'>
+                <span
+                  className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 group-hover:border group-hover:border-blackColor bg-bodyColor  font-TTCPro uppercase text-[15px] tracking-[2px] inline-block font-semibold content-center transition-all duration-500'
+                  style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
+                >
+                  <span className='absolute left-[-1.5rem] w-6 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-5'><img src={RightArrow} alt="" className='w-full' /></span>
+                  <span className='absolute left-5 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-12 font-bold'>View Our Work</span>
+                  <span className='group-hover:animate-bounce-on absolute right-5 top-1/2 -translate-y-1/2'><img src={Star} alt="" className='w-8' /></span>
+                </span>
+              </div>
+            </div>
 
           </div>
         </div>

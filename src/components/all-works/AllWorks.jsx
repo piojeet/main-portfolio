@@ -16,14 +16,15 @@ import Designseven from '../../assets/project7.webp';
 import Designeight from '../../assets/project8.webp';
 import Designnine from '../../assets/project9.webp';
 import DesignTen from '../../assets/project10.webp';
+import DesignEleven from '../../assets/project12.webp';
 
 // NavLink ko import kar rahe hain jo React Router se aata hai aur links banane mein madad karta hai
 import { NavLink } from 'react-router-dom';
 
 // Projects ka data ek array mein define kar rahe hain jisme id, title, media, type, buttonText, toggleType aur link hain
 const works = [
-    { id: 0, title: 'Ochi', media: DesignOne, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://ochi99.netlify.app/' },
-    { id: 1, title: 'Sundown Studio', media: DesignTwo, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://magnificent-smakager-29d9e5.netlify.app/' },
+    { id: 0, title: 'Ochi', media: DesignOne, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://redefine-n9wq7itw1-priyajeets-projects.vercel.app/' },
+    { id: 1, title: 'Redefine', media: DesignTwo, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://redefine-three.vercel.app/' },
     { id: 2, title: 'Header Goes', media: DesignThree, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://magnificent-smakager-29d9e5.netlify.app/' },
     { id: 3, title: 'Sharad Sahu', media: DesignFour, type: 'image', buttonText: 'Business', toggleType: 2, link: 'https://sharadsportfolio.netlify.app/' },
     { id: 4, title: 'I am William', media: DesignFive, type: 'image', buttonText: 'Business', toggleType: 2, link: 'https://vocal-chimera-107087.netlify.app/' },
@@ -32,6 +33,7 @@ const works = [
     { id: 7, title: 'Oraman', media: Designeight, type: 'image', buttonText: 'Business', toggleType: 2, link: 'https://gregarious-syrniki-7b45c9.netlify.app/' },
     { id: 8, title: 'Growing Logistics', media: Designnine, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://lucent-boba-5f2a5f.netlify.app/' },
     { id: 9, title: 'Julia Noam', media: DesignTen, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://grand-jalebi-65aa54.netlify.app/' },
+    { id: 10, title: 'Sukri', media: DesignEleven, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://prismatic-klepon-2c9dcc.netlify.app/' },
 ];
 
 // WorkItem component ko define kar rahe hain jo ek single project item ko render karega
@@ -44,16 +46,16 @@ const WorkItem = ({ title, media, type, isVisible, buttonText, toggleType, link 
         <div className={`${isVisible ? 'block' : 'hidden'}`}>
             <div className='w-full'>
                 {/* Project ke link ke liye NavLink component use kar rahe hain */}
-                <NavLink to={link} className='groups-m !bg-blackColor pointer-cursor block'>
+                <NavLink to={link} className='groups-m pointer-cursor !bg-blackColor pointer-cursor block'>
                     {/* Media ko show karne ke liye agar type 'video' hai toh video element use karenge */}
                     <div className='w-full video-bg overflow-hidden lg:h-[25vw] sm:h-[52vw] h-[52vw] border border-blackColor border-b-0 border-l-0'>
                         {type === 'video' ? (
-                            <video autoPlay loop muted className='w-full h-full object-cover'>
+                            <video autoPlay loop muted className='scal-up w-full h-full object-cover'>
                                 <source src={media} />
                             </video>
                         ) : (
                             // Agar type 'image' hai toh img element use karenge
-                            <img src={media} alt={title} className='w-full h-full object-cover' />
+                            <img src={media} alt={title} className='scal-up w-full h-full object-cover' />
                         )}
                     </div>
                     {/* Project ka title yaha show ho raha hai */}

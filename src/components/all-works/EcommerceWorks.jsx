@@ -21,14 +21,14 @@ const WorkItem = ({ title, media, type, isVisible, buttonText, toggleType, link 
     return (
         <div className={`${isVisible ? 'block' : 'hidden'}`}>
             <div className='w-full'>
-                <NavLink to={link} className='groups-m !bg-blackColor pointer-cursor block'>
+                <NavLink to={link} className='groups-m pointer-cursor !bg-blackColor pointer-cursor block'>
                     <div className='w-full video-bg overflow-hidden lg:h-[25vw] sm:h-[52vw] h-[52vw] border border-blackColor border-b-0 border-l-0'>
                     {type === 'video' ? (
-                            <video autoPlay loop muted className='w-full h-full object-cover'>
+                            <video autoPlay loop muted className='scal-up w-full h-full object-cover'>
                                 <source src={media} />
                             </video>
                         ) : (
-                            <img src={media} alt={title} className='w-full h-full object-cover' />
+                            <img src={media} alt={title} className='scal-up w-full h-full object-cover' />
                         )}
                     </div>
                     <div className='h-[100px] w-full md:text-[37px] lg:text-[40px] bg-bodyColor ink-btn font-TTCPro font-semibold content-center px-6 border border-blackColor groups-hover:bg-blackColor'>

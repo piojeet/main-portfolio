@@ -16,10 +16,12 @@ function Video() {
             // repeat: -1,
             // yoyo: true,
             scrollTrigger: {
-                start: "0% 90%",
-                end: "50% 50%",
                 trigger: ".scale-vide",
-                scrub: true,
+                start: "center center",
+                end: "+=800 center",
+                scrub: 0.5,
+                pin: true,
+                pinSpacing: true,
             }
         })
     })

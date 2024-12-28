@@ -66,7 +66,7 @@ function AllProjects() {
                                 className={`relative bg-blackColor overflow-hidden w-full h-full block left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor font-TTCPro text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 px-10 group-active:left-0 group-active:bottom-0 border-b-0 hover:border-b hover:border-t`}
                             >
                                 <span className={`text-[21px] font-TTCPro font-semibold relative z-20 ${toggle === 0 ? 'text-bodyColor' : 'text-blackColor'}`}>
-                                    All <sup>08</sup>
+                                    All <sup>11</sup>
                                 </span>
                                 <span className={`absolute top-0 right-0 w-full h-full bg-bodyColor z-10 origin-right scale-x-0 transition-all duration-500 ${toggle === 0 ? 'scale-x-0' : 'scale-x-100'}`}></span>
                             </span>
@@ -99,7 +99,7 @@ function AllProjects() {
                                 className={`relative bg-blackColor overflow-hidden w-full h-full block left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor font-TTCPro text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 px-10 group-active:left-0 group-active:bottom-0 border-b-0 border-t-0 hover:border-b hover:border-t`}
                             >
                                 <span className={`text-[21px] font-TTCPro font-semibold relative z-20 ${toggle === 2 ? 'text-bodyColor' : 'text-blackColor'}`}>
-                                    Bussinuss <sup>07</sup>
+                                    Bussinuss <sup>08</sup>
                                 </span>
                                 <span className={`absolute top-0 right-0 w-full h-full bg-bodyColor z-10 origin-right scale-x-0 transition-all duration-500 ${toggle === 2 ? 'scale-x-0' : 'scale-x-100'}`}></span>
                             </span>
@@ -256,6 +256,9 @@ function AllProjects() {
                         <div className={`${activeIndex === 9 && toggle === 0 ? 'block' : 'hidden'}`}>
                         <AllWorks activeIndex={activeIndex} />
                         </div>
+                        <div className={`${activeIndex === 10 && toggle === 0 ? 'block' : 'hidden'}`}>
+                        <AllWorks activeIndex={activeIndex} />
+                        </div>
                     </div>
 
                     {/* Toggle 2 cont */}
@@ -294,6 +297,9 @@ function AllProjects() {
                             <PortfolioWorks activeIndex={activeIndex} />
                         </div>
                         <div className={`${activeIndex === 6 && toggle === 2 ? 'block' : 'hidden'}`}>
+                            <PortfolioWorks activeIndex={activeIndex} />
+                        </div>
+                        <div className={`${activeIndex === 7 && toggle === 2 ? 'block' : 'hidden'}`}>
                             <PortfolioWorks activeIndex={activeIndex} />
                         </div>
                     </div>

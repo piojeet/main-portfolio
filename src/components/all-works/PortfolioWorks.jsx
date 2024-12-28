@@ -8,17 +8,19 @@ import Designsixe from '../../assets/project6.webp';
 import Designseven from '../../assets/project7.webp';
 import Designnine from '../../assets/project9.webp';
 import DesignTen from '../../assets/project10.webp';
+import DesignEleven from '../../assets/project12.webp';
 import { useProjectAllContext } from '../../context/ProjectAllContext';
 import { NavLink } from 'react-router-dom';
 
 const workItems = [
     { id: 0, title: 'Ochi', media: DesignOne, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://ochi99.netlify.app/' },
-    { id: 1, title: 'Sundown Studio', media: DesignTwo, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://magnificent-smakager-29d9e5.netlify.app/' },
+    { id: 1, title: 'Redefine', media: DesignTwo, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://redefine-three.vercel.app/' },
     { id: 2, title: 'Header Goes', media: DesignThree, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://magnificent-smakager-29d9e5.netlify.app/' },
     { id: 3, title: 'Fix Computers', media: Designsixe, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://gleeful-fenglisu-06cdc4.netlify.app/' },
     { id: 4, title: 'MantaTrade', media: Designseven, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://ornate-gelato-b0fa21.netlify.app/' },
     { id: 5, title: 'Growing Logistics', media: Designnine, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://lucent-boba-5f2a5f.netlify.app/' },
     { id: 6, title: 'Julia Noam', media: DesignTen, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://grand-jalebi-65aa54.netlify.app/' },
+    { id: 7, title: 'Sukri', media: DesignEleven, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://prismatic-klepon-2c9dcc.netlify.app/' },
 ];
 
 const WorkItem = ({ title, media, type, isVisible, buttonText, toggleType, link }) => {
@@ -27,14 +29,14 @@ const WorkItem = ({ title, media, type, isVisible, buttonText, toggleType, link 
     return (
         <div className={`${isVisible ? 'block' : 'hidden'}`}>
             <div className='w-full'>
-                <NavLink to={link} className='groups-m bg-blackColor'>
+                <NavLink to={link} className='groups-m pointer-cursor block bg-blackColor'>
                     <div className='w-full video-bg overflow-hidden'>
                     {type === 'video' ? (
-                            <video autoPlay loop muted className='w-full h-full object-cover'>
+                            <video autoPlay loop muted className='scal-up w-full h-full object-cover'>
                                 <source src={media} />
                             </video>
                         ) : (
-                            <img src={media} alt={title} className='w-full h-full object-cover' />
+                            <img src={media} alt={title} className='scal-up w-full h-full object-cover' />
                         )}
                     </div>
                     <div className='h-[100px] w-full md:text-[37px] lg:text-[40px] bg-bodyColor ink-btn font-TTCPro font-semibold content-center px-6 border border-blackColor groups-hover:bg-blackColor'>
