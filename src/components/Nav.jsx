@@ -147,6 +147,9 @@ function Nav() {
   };
 
 
+  const {isHovered, handleHover} = useProjectAllContext();
+
+
   return (
     <>
       <div>
@@ -162,8 +165,12 @@ function Nav() {
                   <div className="magnetic-btn h-full w-full  flex items-center justify-center relative z-20">
                     {/* Hover transition on inner span */}
                     <span
-                      className={`h-full w-full bg-blackColor flex items-center justify-center relative left-0 bottom-0 group-hover:left-2 group-hover:bottom-2 z-20 border group-hover:border-blackColor transition-all duration-300 group-active:left-0 group-active:bottom-0 ${isOpen ? 'border-gray-600 group-hover:border-gray-600 border-b-0 group-hover:border-b' : ''}`}
+                      className={`h-full w-full bg-blackColor flex items-center justify-center relative left-0 bottom-0 group-hover:bottom-2 z-20 border group-hover:border-blackColor transition-all duration-300 group-active:left-0 group-active:bottom-0 ${isOpen ? 'border-gray-600 group-hover:border-gray-600 border-b-0 group-hover:border-b' : ''} ${isHovered ? 'left-2' : ''}`}
                       style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
+                      onMouseEnter={() => handleHover(true)}
+                      onMouseLeave={() => handleHover(false)}
+                      onTouchStart={() => handleHover(true)}
+                      onTouchEnd={() => handleHover(false)}
                     >
 
                       {isOpen ? (

@@ -14,7 +14,7 @@ function ServicesMiniNav() {
     const navLinks = [
         { path: '/services', icon: Alert, text: 'services' },
         { path: '/branding', icon: Paint, text: 'branding' },
-        { path: '/website-design', icon: WebDesign, text: 'branding' },
+        { path: '/website-design', icon: WebDesign, text: 'website design' },
         { path: '/frontend-design', icon: FrontDesign, text: 'frontend design' },
         { path: '/design-support', icon: DesignSupport, text: 'design support' },
     ];

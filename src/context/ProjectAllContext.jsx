@@ -127,6 +127,13 @@ export const ProjectAllProvider = ({ children }) => {
     setShowFirstForm(false);
   };
 
+
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleHover = (status) => {
+    setIsHovered(status);
+  };
+
     return (
         // ProjectAllContext.Provider ke andar state aur functions ko provide karte hain
         <ProjectAllContext.Provider
@@ -149,6 +156,8 @@ export const ProjectAllProvider = ({ children }) => {
                 showFirstForm,
                 handleFirstForm,
                 handleSecondForm,
+                isHovered,
+                handleHover, // Adding handleHover to the context
             }}
         >
             {children}
