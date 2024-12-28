@@ -147,7 +147,27 @@ function Nav() {
   };
 
 
-  const {isHovered, handleHover} = useProjectAllContext();
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    if (!isMobile()) setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    if (!isMobile()) setIsHovered(false);
+  };
+
+  const handleTouchStart = () => {
+    setIsHovered(true);
+  };
+
+  const handleTouchEnd = () => {
+    setIsHovered(false);
+  };
+
+  const isMobile = () => {
+    return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  };
 
 
   return (
@@ -167,10 +187,10 @@ function Nav() {
                     <span
                       className={`h-full w-full bg-blackColor flex items-center justify-center relative left-0 bottom-0 group-hover:bottom-2 z-20 border group-hover:border-blackColor transition-all duration-300 group-active:left-0 group-active:bottom-0 ${isOpen ? 'border-gray-600 group-hover:border-gray-600 border-b-0 group-hover:border-b' : ''} ${isHovered ? 'left-2' : ''}`}
                       style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
-                      onMouseEnter={() => handleHover(true)}
-                      onMouseLeave={() => handleHover(false)}
-                      onTouchStart={() => handleHover(true)}
-                      onTouchEnd={() => handleHover(false)}
+                      onMouseEnter={handleMouseEnter}
+                      onMouseLeave={handleMouseLeave}
+                      onTouchStart={handleTouchStart}
+                      onTouchEnd={handleTouchEnd}
                     >
 
                       {isOpen ? (
