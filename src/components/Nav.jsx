@@ -72,52 +72,95 @@ function Nav() {
   const [isMagnetic, setIsMagnetic] = useState(false);
 
   useEffect(() => {
-    const buttons = document.querySelectorAll('.magnetic-btn');
+    const isMouseDevice = () => window.matchMedia('(pointer: fine)').matches;
+  
+    // Function to handle magnetic effect logic
+    const handleMagneticEffect = () => {
+      if (!isMouseDevice() || window.innerWidth < 1024) {
+        const buttons = document.querySelectorAll('.magnetic-btn');
+  
+        buttons.forEach((button) => {
+          let isClicked = false;
+  
+          const handleMouseEnter = () => {
+            if (!isClicked) setIsMagnetic(true);
+          };
+  
+          const handleMouseLeave = () => {
+            if (!isClicked) {
+              setIsMagnetic(false);
+              button.style.transition = 'transform .4s linear'; // Smooth return
+              button.style.transform = 'translate(0, 0)'; // Reset position
+            }
+          };
+  
+          const handleMouseMove = (e) => {
+            if (!isMagnetic || isClicked) return;
+  
+            const { left, top, width, height } = button.getBoundingClientRect();
+            const buttonCenterX = left + width / 2;
+            const buttonCenterY = top + height / 2;
+  
+            const deltaX = e.clientX - buttonCenterX;
+            const deltaY = e.clientY - buttonCenterY;
+  
+            const limitedDeltaX = Math.max(-12, Math.min(12, deltaX * 0.1));
+            const limitedDeltaY = Math.max(-12, Math.min(12, deltaY * 0.1));
+  
+            if (Math.sqrt(deltaX ** 2 + deltaY ** 2) < 150) {
+              button.style.transition = 'transform 0.1s ease-out'; // Smooth movement
+              button.style.transform = `translate(${limitedDeltaX}px, ${limitedDeltaY}px)`;
+            }
+          };
+  
+          const handleMouseDown = () => {
+            isClicked = true;
+            button.style.transition = 'transform 0.3s ease-out'; // Smooth return on click
+            button.style.transform = 'translate(0, 0)'; // Reset position
+          };
+  
+          const handleMouseUp = () => {
+            isClicked = false;
+            setTimeout(() => setIsMagnetic(true), 300); // Re-enable magnetic effect after a delay
+          };
+  
+          button.addEventListener('mouseenter', handleMouseEnter);
+          button.addEventListener('mouseleave', handleMouseLeave);
+          button.addEventListener('mousemove', handleMouseMove);
+          button.addEventListener('mousedown', handleMouseDown);
+          button.addEventListener('mouseup', handleMouseUp);
+  
+          // Cleanup event listeners on unmount
+          return () => {
+            button.removeEventListener('mouseenter', handleMouseEnter);
+            button.removeEventListener('mouseleave', handleMouseLeave);
+            button.removeEventListener('mousemove', handleMouseMove);
+            button.removeEventListener('mousedown', handleMouseDown);
+            button.removeEventListener('mouseup', handleMouseUp);
+          };
+        });
+      }
+    };
+  
+    // Initial check
+    handleMagneticEffect();
+  
+    // Re-run effect on window resize
+    const handleResize = () => {
+      handleMagneticEffect();
+    };
+  
+    window.addEventListener('resize', handleResize);
+  
+    // Cleanup resize event listener
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []); // Dependency array is empty so this will run once on mount
+  
+  
 
-    buttons.forEach((button) => {
-      const handleMouseEnter = () => {
-        setIsMagnetic(true);
-      };
-
-      const handleMouseLeave = () => {
-        setIsMagnetic(false);
-        button.style.transition = 'transform .4s linear'; // Smooth return on leave
-        button.style.transform = 'translate(0, 0)'; // Reset position
-      };
-
-      const handleMouseMove = (e) => {
-        if (!isMagnetic) return;
-
-        const { left, top, width, height } = button.getBoundingClientRect();
-        const buttonCenterX = left + width / 2;
-        const buttonCenterY = top + height / 2;
-
-        const deltaX = e.clientX - buttonCenterX;
-        const deltaY = e.clientY - buttonCenterY;
-
-        // Apply limit of 12px in any direction and slow down movement
-        const limitedDeltaX = Math.max(-12, Math.min(12, deltaX * 0.1));
-        const limitedDeltaY = Math.max(-12, Math.min(12, deltaY * 0.1));
-
-        const distance = Math.sqrt(deltaX ** 2 + deltaY ** 2);
-
-        if (distance < 150) {
-          button.style.transition = 'transform 0.1s ease-out'; // Smoother, shorter transition on hover
-          button.style.transform = `translate(${limitedDeltaX}px, ${limitedDeltaY}px)`; // Magnetic effect
-        }
-      };
-
-      button.addEventListener('mouseenter', handleMouseEnter);
-      button.addEventListener('mouseleave', handleMouseLeave);
-      button.addEventListener('mousemove', handleMouseMove);
-
-      return () => {
-        button.removeEventListener('mouseenter', handleMouseEnter);
-        button.removeEventListener('mouseleave', handleMouseLeave);
-        button.removeEventListener('mousemove', handleMouseMove);
-      };
-    });
-  }, [isMagnetic]);
+  
 
 
 
@@ -147,28 +190,6 @@ function Nav() {
   };
 
 
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleMouseEnter = () => {
-    if (!isMobile()) setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    if (!isMobile()) setIsHovered(false);
-  };
-
-  const handleTouchStart = () => {
-    setIsHovered(true);
-  };
-
-  const handleTouchEnd = () => {
-    setIsHovered(false);
-  };
-
-  const isMobile = () => {
-    return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-  };
-
 
   return (
     <>
@@ -185,12 +206,8 @@ function Nav() {
                   <div className="magnetic-btn h-full w-full  flex items-center justify-center relative z-20">
                     {/* Hover transition on inner span */}
                     <span
-                      className={`h-full w-full bg-blackColor flex items-center justify-center relative left-0 bottom-0 group-hover:bottom-2 z-20 border group-hover:border-blackColor transition-all duration-300 group-active:left-0 group-active:bottom-0 ${isOpen ? 'border-gray-600 group-hover:border-gray-600 border-b-0 group-hover:border-b' : ''} ${isHovered ? 'left-2' : ''}`}
+                      className={`h-full w-full bg-blackColor flex items-center justify-center relative left-0 bottom-0 z-20 border lg:group-hover:border-blackColor transition-all duration-300 group-active:left-0 group-active:bottom-0 lg:group-hover:left-2 lg:group-hover:bottom-2 ${isOpen ? 'border-gray-600 group-hover:border-gray-600 border-b-0 group-hover:border-b' : ''}`}
                       style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
-                      onMouseEnter={handleMouseEnter}
-                      onMouseLeave={handleMouseLeave}
-                      onTouchStart={handleTouchStart}
-                      onTouchEnd={handleTouchEnd}
                     >
 
                       {isOpen ? (
@@ -243,7 +260,7 @@ function Nav() {
                               <div className='magnetic-btn relative w-full h-full'>
                                 {/* Hover transition on inner span */}
                                 <span
-                                  className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 group-hover:border-l bg-blackColor border border-gray-600 border-l-0 font-TTCPro uppercase text-[15px] tracking-[2px] inline-block font-bold content-center transition-all duration-500'
+                                  className='relative overflow-hidden w-full h-full left-0 bottom-0 lg:group-hover:left-4 lg:group-hover:bottom-2 group-hover:border-l bg-blackColor border border-gray-600 border-l-0 font-TTCPro uppercase text-[15px] tracking-[2px] inline-block font-bold content-center transition-all duration-500'
                                   style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
                                 >
                                   <span className='absolute left-[-1.5rem] w-6 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-5'><img src={RightArroWhite} alt="" className='w-full' /></span>
@@ -302,7 +319,7 @@ function Nav() {
                 <div className='magnetic-btn relative w-full h-full'>
                   {/* Hover transition on inner span */}
                   <span
-                    className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 bg-bodyColor border group-hover:border-blackColor font-TTCPro uppercase text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 inline-flex items-center justify-center'
+                    className='relative overflow-hidden w-full h-full left-0 bottom-0 lg:group-hover:left-4 lg:group-hover:bottom-2 bg-bodyColor border group-hover:border-blackColor font-TTCPro uppercase text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 inline-flex items-center justify-center'
                     style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
                   >
                     <span className='w-6 absolute top-1/2 -translate-y-1/2 left-[8%] rotate-180'><img src={RightArrow} alt="" className='w-full' /></span>
@@ -324,7 +341,7 @@ function Nav() {
                   <div className='magnetic-btn relative w-full h-full'>
                     {/* Hover transition on inner span */}
                     <span
-                      className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 bg-bodyColor border group-hover:border-blackColor font-TTCPro uppercase text-[15px] tracking-[2px] inline-flex items-center justify-center gap-4 font-bold content-center transition-all duration-500'
+                      className='relative overflow-hidden w-full h-full left-0 bottom-0 lg:group-hover:left-4 lg:group-hover:bottom-2 bg-bodyColor border group-hover:border-blackColor font-TTCPro uppercase text-[15px] tracking-[2px] inline-flex items-center justify-center gap-4 font-bold content-center transition-all duration-500'
                       style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
                     >
                       <span className='w-6 block relative -left-8 rotate-180'><img src={RightArrow} alt="" className='w-full' /></span>
@@ -340,7 +357,7 @@ function Nav() {
               <div className='magnetic-btn relative w-full h-full'>
                 {/* Hover transition on inner span */}
                 <span
-                  className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 bg-bodyColor border group-hover:border-blackColor font-TTCPro uppercase text-[15px] tracking-[2px] inline-block font-bold content-center transition-all duration-500'
+                  className='relative overflow-hidden w-full h-full left-0 bottom-0 lg:group-hover:left-4 lg:group-hover:bottom-2 bg-bodyColor border lg:group-hover:border-blackColor font-TTCPro uppercase text-[15px] tracking-[2px] inline-block font-bold content-center transition-all duration-500'
                   style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
                 >
                   <span className='absolute left-[-1.5rem] w-6 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-5'><img src={RightArrow} alt="" className='w-full' /></span>
@@ -361,7 +378,7 @@ function Nav() {
                   <div className='magnetic-btn relative w-full h-full'>
                     {/* Hover transition on inner span */}
                     <span
-                      className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 bg-blackColor group-hover:border group-hover:border-blackColor font-TTCPro uppercase text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 inline-flex items-center justify-around'
+                      className='relative overflow-hidden w-full h-full left-0 bottom-0 lg:group-hover:left-4 lg:group-hover:bottom-2 bg-blackColor group-hover:border lg:group-hover:border-blackColor font-TTCPro uppercase text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 inline-flex items-center justify-around'
                       style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
                     >
 
@@ -377,7 +394,7 @@ function Nav() {
                   <div className='magnetic-btn relative w-full h-full'>
                     {/* Hover transition on inner span */}
                     <span
-                      className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 bg-blackColor group-hover:border group-hover:border-blackColor font-TTCPro uppercase text-[15px] tracking-[2px] inline-flex font-bold content-center transition-all duration-500 items-center justify-around'
+                      className='relative overflow-hidden w-full h-full left-0 bottom-0 lg:group-hover:left-4 lg:group-hover:bottom-2 bg-blackColor group-hover:border lg:group-hover:border-blackColor font-TTCPro uppercase text-[15px] tracking-[2px] inline-flex font-bold content-center transition-all duration-500 items-center justify-around'
                       style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
                     >
                       <span className={`relative z-20 ${showFirstForm ? 'text-blackColor' : 'text-bodyColor'}`}>General</span>

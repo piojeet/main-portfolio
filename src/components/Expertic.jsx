@@ -10,55 +10,7 @@ import { useGSAP } from '@gsap/react';
 
 function Expertic() {
 
-  const [isMagnetic, setIsMagnetic] = useState(false);
 
-  useEffect(() => {
-    const buttons = document.querySelectorAll('.magnetic-btn');
-
-    buttons.forEach((button) => {
-      const handleMouseEnter = () => {
-        setIsMagnetic(true);
-      };
-
-      const handleMouseLeave = () => {
-        setIsMagnetic(false);
-        button.style.transition = 'transform .4s linear'; // Smooth return on leave
-        button.style.transform = 'translate(0, 0)'; // Reset position
-      };
-
-      const handleMouseMove = (e) => {
-        if (!isMagnetic) return;
-
-        const { left, top, width, height } = button.getBoundingClientRect();
-        const buttonCenterX = left + width / 2;
-        const buttonCenterY = top + height / 2;
-
-        const deltaX = e.clientX - buttonCenterX;
-        const deltaY = e.clientY - buttonCenterY;
-
-        // Apply limit of 12px (0.75rem) in any direction and slow down movement
-        const limitedDeltaX = Math.max(-12, Math.min(12, deltaX * 0.1)); // Slower, smoother scaling factor (0.1)
-        const limitedDeltaY = Math.max(-12, Math.min(12, deltaY * 0.1));
-
-        const distance = Math.sqrt(deltaX ** 2 + deltaY ** 2);
-
-        if (distance < 150) {
-          button.style.transition = 'transform 0.1s ease-out'; // Smoother, shorter transition on hover
-          button.style.transform = `translate(${limitedDeltaX}px, ${limitedDeltaY}px)`; // Magnetic effect with limits
-        }
-      };
-
-      button.addEventListener('mouseenter', handleMouseEnter);
-      button.addEventListener('mouseleave', handleMouseLeave);
-      button.addEventListener('mousemove', handleMouseMove);
-
-      return () => {
-        button.removeEventListener('mouseenter', handleMouseEnter);
-        button.removeEventListener('mouseleave', handleMouseLeave);
-        button.removeEventListener('mousemove', handleMouseMove);
-      };
-    });
-  }, [isMagnetic]);
 
   const location = useLocation()
 
@@ -148,7 +100,7 @@ function Expertic() {
                 <div className='magnetic-btn relative w-full h-full'>
                   {/* Hover transition on inner span */}
                   <span
-                    className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 group-hover:border group-hover:border-blackColor bg-bodyColor  font-TTCPro uppercase text-[15px] tracking-[2px] inline-block font-semibold content-center transition-all duration-500'
+                    className='relative overflow-hidden w-full h-full left-0 bottom-0 lg:group-hover:left-4 lg:group-hover:bottom-2 group-hover:border lg:group-hover:border-blackColor bg-bodyColor font-TTCPro uppercase text-[15px] tracking-[2px] inline-block font-semibold content-center transition-all duration-500'
                     style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
                   >
                     <span className='absolute left-[-1.5rem] w-6 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-5'><img src={RightArrow} alt="" className='w-full' /></span>
