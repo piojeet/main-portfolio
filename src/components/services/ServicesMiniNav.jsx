@@ -30,7 +30,7 @@ function ServicesMiniNav() {
                                 to={link.path}
                                 className={({ isActive }) =>
                                     classNames(
-                                        'font-TTCPro font-semibold inline-flex items-center text-[19px] rounded-full flex-nowrap transition-width duration-[1s] ease-linear overflow-hidden',
+                                        'pointer-cursor font-TTCPro font-semibold inline-flex items-center text-[19px] rounded-full flex-nowrap transition-width duration-[1s] ease-linear overflow-hidden',
                                         isActive ? 'text-white bg-blackColor max-w-full' : 'text-blackColor max-w-14'
                                     )
                                 }
