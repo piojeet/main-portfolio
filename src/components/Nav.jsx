@@ -287,7 +287,7 @@ function Nav() {
               </div>
 
 
-              <div className={`pointer-cursor md:w-[80px] md:h-[80px] h-[70px] w-[70px] flex-shrink-0 bg-blackColor border border-blackColor flex items-center justify-center relative md:left-[-80px] left-[-70px] ${isOpen ? 'hidden active' : ''}`}
+              <NavLink to="/" onClick={handleClick} className={`pointer-cursor md:w-[80px] md:h-[80px] h-[70px] w-[70px] flex-shrink-0 bg-blackColor border border-blackColor flex items-center justify-center relative md:left-[-80px] left-[-70px] ${isOpen ? 'hidden active' : ''}`}
                 style={{
                   left: leftPosition, // Dynamic left position based on scroll
                   transition: "left 0.3s ease",
@@ -295,7 +295,7 @@ function Nav() {
                 }}
               >
                 <img src={ShortLogo} className='md:w-[3rem] w-[2.5rem]' alt="image" />
-              </div>
+              </NavLink>
             </div>
 
             <NavLink to="/" onClick={handleClick}

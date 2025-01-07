@@ -202,19 +202,19 @@ function WorksDesignHome() {
                     </div>
                 </div>
 
-                <div className='group pointer-cursor h-[80px] md:w-[45vw] lg:w-[22.5vw] flex-shrink-0 border border-blackColor bg-blackColor flex justify-start items-center ml-auto relative md:top-[-80px] md:mt-[160px] lg:mt-0 top-[10px] '>
+                <NavLink to="/projects" className='group pointer-cursor h-[80px] md:w-[45vw] lg:w-[22.5vw] flex-shrink-0 border border-blackColor bg-blackColor flex justify-start items-center ml-auto relative md:top-[-80px] md:mt-[160px] lg:mt-0 top-[10px] '>
                     {/* Magnetic effect on wrapper div */}
                     <div className='magnetic-btn relative w-full h-full'>
                         {/* Hover transition on inner span */}
                         <span
-                            className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 group-hover:border group-hover:border-blackColor bg-bodyColor  font-TTCPro lg:text-[20px] md:text-[19px] tracking-[2px] inline-block font-semibold content-center'
+                            className='relative overflow-hidden w-full h-full left-0 bottom-0 lg:group-hover:left-4 lg:group-hover:bottom-2 lg:group-hover:border lg:group-hover:border-blackColor bg-bodyColor  font-TTCPro lg:text-[20px] md:text-[19px] tracking-[2px] inline-block font-semibold content-center'
                             style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
                         >
                             <span className='text-center w-full block uppercase'>View our work</span>
 
                         </span>
                     </div>
-                </div>
+                </NavLink>
             </div>
         </>
     )

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Star from '../assets/starg.svg'
 import RightArrow from '../assets/right-arrow.svg'
-import { useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
@@ -95,7 +95,7 @@ function Expertic() {
           <div className='md:flex-1 md:inline-flex md:justify-end pt-8 sm:w-full lg:w-fit w-full'>
             <div className='md:flex items-start lg:justify-between sm:justify-end lg:h-[240px]'>
               <span className='lg:block hidden'></span>
-              <div className='group pointer-cursor md:h-[80px] h-[70px] lg:w-[22.5vw] md:w-[45vw] flex-shrink-0 border border-blackColor bg-blackColor inline-flex justify-start items-center w-full'>
+              <NavLink to="/services" className='group pointer-cursor md:h-[80px] h-[70px] lg:w-[22.5vw] md:w-[45vw] flex-shrink-0 border border-blackColor bg-blackColor inline-flex justify-start items-center w-full'>
                 {/* Magnetic effect on wrapper div */}
                 <div className='magnetic-btn relative w-full h-full'>
                   {/* Hover transition on inner span */}
@@ -108,7 +108,7 @@ function Expertic() {
                     <span className='group-hover:animate-bounce-on absolute right-5 top-1/2 -translate-y-1/2'><img src={Star} alt="" className='w-8' /></span>
                   </span>
                 </div>
-              </div>
+              </NavLink>
               <span></span>
               <span></span>
             </div>

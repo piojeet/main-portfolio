@@ -5,10 +5,13 @@ import RightArrow from '../assets/right-arrow.svg';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from '@gsap/react';
+import { NavLink, useLocation } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
 function SendMessageBox() {
+
+    const location = useLocation();
 
     const lattersRef = useRef(null);
     useGSAP(() => {
@@ -26,7 +29,9 @@ function SendMessageBox() {
       })
 
     return (
-        <div className='w-full'>
+        <>
+        {location.pathname !== "/contact" && (
+            <div className='w-full'>
             <div className='w-full border border-blackColor bg-blackColor'>
                 <div className='md:p-8 p-4'>
                     <span className='text-bodyColor block w-fit m-auto'>
@@ -64,12 +69,12 @@ function SendMessageBox() {
                     </div>
                     <p className='md:text-[26px] text-[22px] font-TTCPro font-normal text-bodyColor text-center leading-[1.6]'>Let's work together!</p>
 
-                    <div className='group pointer-cursor h-[80px] w-[100%] flex-shrink-0 border border-blackColor bg-gray-800 flex justify-start items-center mt-10'>
+                    <NavLink to="/contact" className='group pointer-cursor h-[80px] w-[100%] flex-shrink-0 border border-blackColor bg-gray-800 flex justify-start items-center mt-10'>
                         {/* Magnetic effect on wrapper div */}
                         <div className='magnetic-btn relative w-full h-full'>
                             {/* Hover transition on inner span */}
                             <span
-                                className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 group-hover:border group-hover:border-blackColor bg-bodyColor  font-TTCPro uppercase text-[15px] tracking-[2px] inline-block font-semibold content-center transition-all duration-500'
+                                className='relative overflow-hidden w-full h-full left-0 bottom-0 lg:group-hover:left-4 lg:group-hover:bottom-2 group-hover:border lg:group-hover:border-blackColor bg-bodyColor  font-TTCPro uppercase text-[15px] tracking-[2px] inline-block font-semibold content-center transition-all duration-500'
                                 style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
                             >
                                 <span className='absolute left-[-1.5rem] w-6 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-5'><img src={RightArrow} alt="" className='w-full' /></span>
@@ -82,10 +87,13 @@ function SendMessageBox() {
                                 </span>
                             </span>
                         </div>
-                    </div>
+                    </NavLink>
                 </div>
             </div>
         </div>
+        )}
+        </>
+        
     );
 }
 

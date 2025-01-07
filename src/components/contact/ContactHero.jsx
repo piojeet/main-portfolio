@@ -124,7 +124,7 @@ function ContactHero() {
                         <div className='magnetic-btn relative w-full h-full'>
                             {/* Hover transition on inner span */}
                             <span
-                                className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 bg-blackColor group-hover:border group-hover:border-blackColor font-TTCPro uppercase text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 inline-flex items-center justify-around'
+                                className='relative overflow-hidden w-full h-full left-0 bottom-0 lg:group-hover:left-4 lg:group-hover:bottom-2 bg-blackColor lg:group-hover:border lg:group-hover:border-blackColor font-TTCPro uppercase text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 inline-flex items-center justify-around'
                                 style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
                             >
 
@@ -140,7 +140,7 @@ function ContactHero() {
                         <div className='magnetic-btn relative w-full h-full'>
                             {/* Hover transition on inner span */}
                             <span
-                                className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 bg-blackColor group-hover:border group-hover:border-blackColor font-TTCPro uppercase text-[15px] tracking-[2px] inline-flex font-bold content-center transition-all duration-500 items-center justify-around'
+                                className='relative overflow-hidden w-full h-full left-0 bottom-0 lg:group-hover:left-4 lg:group-hover:bottom-2 bg-blackColor lg:group-hover:border lg:group-hover:border-blackColor font-TTCPro uppercase text-[15px] tracking-[2px] inline-flex font-bold content-center transition-all duration-500 items-center justify-around'
                                 style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
                             >
                                 <span className={`relative z-20 ${showFirstForm ? 'text-blackColor' : 'text-bodyColor'}`}>General</span>
