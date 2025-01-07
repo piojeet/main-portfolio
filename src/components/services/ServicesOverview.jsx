@@ -25,6 +25,7 @@ import img19 from '../../assets/img18.webp';
 import img20 from '../../assets/img19.webp';
 import img21 from '../../assets/img20.webp';
 import img22 from '../../assets/img21.webp';
+import { NavLink } from 'react-router-dom';
 
 const images1 = [
   img1,
@@ -329,10 +330,10 @@ function ServicesOverview() {
               <p className='text-[20px] font-TTCPro font-medium text-bodyColor mt-8'>A summary of the tasks we handle and the types of projects they support</p>
             </div>
 
-            <div className='group pointer-cursor md:h-[80px] h-[70px] lg:w-[22.5vw] md:w-[45vw] flex-shrink-0 border border-blackColor bg-blackColor w-full'>
+            <NavLink to="/projects" className='group pointer-cursor md:h-[80px] h-[70px] lg:w-[22.5vw] md:w-[45vw] flex-shrink-0 border border-blackColor bg-blackColor w-full block'>
               <div className='magnetic-btn relative w-full h-full'>
                 <span
-                  className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 group-hover:border group-hover:border-blackColor bg-bodyColor  font-TTCPro uppercase text-[15px] tracking-[2px] inline-block font-semibold content-center transition-all duration-500'
+                  className='relative overflow-hidden w-full h-full left-0 bottom-0 lg:group-hover:left-4 lg:group-hover:bottom-2 lg:group-hover:border lg:group-hover:border-blackColor bg-bodyColor  font-TTCPro uppercase text-[15px] tracking-[2px] inline-block font-semibold content-center transition-all duration-500'
                   style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
                 >
                   <span className='absolute left-[-1.5rem] w-6 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-5'><img src={RightArrow} alt="" className='w-full' /></span>
@@ -340,7 +341,7 @@ function ServicesOverview() {
                   <span className='group-hover:animate-bounce-on absolute right-5 top-1/2 -translate-y-1/2'><img src={Star} alt="" className='w-8' /></span>
                 </span>
               </div>
-            </div>
+            </NavLink>
 
           </div>
         </div>

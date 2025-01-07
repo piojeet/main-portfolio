@@ -8,6 +8,7 @@ import WebDesignIcon from '../icons/WebDesignIcon';
 import FronEndIcon from '../icons/FronEndIcon';
 import DesignSupportIcon from '../icons/DesignSupportIcon';
 import RightArrowIcon from '../icons/RightArrowIcon';
+import { NavLink } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -38,7 +39,7 @@ function Cards() {
         <>
             <div ref={cardRef} className='xl:flex items-start justify-between md:flex-wrap lg:flex-nowrap grid grid-cols-2 mb-28 md:mb-0'>
 
-                <div className='card relative group lg:w-[100%] border border-blackColor bg-bodyColor border-b-0 md:border-b lg:h-[32vw] sm:h-[50vw] h-[55vw] md:w-[45vw]'>
+                <NavLink to="/branding" className='card relative group lg:w-[100%] border border-blackColor bg-bodyColor border-b-0 md:border-b lg:h-[32vw] sm:h-[50vw] h-[55vw] md:w-[45vw] block'>
                     <div className='transition-all duration-300 group-hover:p-2 h-full'>
                         <div className='relative h-full group-hover:bg-blackColor group-hover:rounded-lg overflow-hidden pt-7 flex flex-col justify-between md:block select-none'>
                             <div className='relative'>
@@ -56,9 +57,9 @@ function Cards() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </NavLink>
 
-                <div className='card relative group lg:w-[100%] border border-blackColor border-b-0 md:border-b bg-bodyColor lg:h-[32vw] sm:h-[50vw] h-[55vw] top-12 lg:mt-16 md:w-[45vw]'>
+                <NavLink to="/website-design" className='card relative group lg:w-[100%] border border-blackColor border-b-0 md:border-b bg-bodyColor lg:h-[32vw] sm:h-[50vw] h-[55vw] top-12 lg:mt-16 md:w-[45vw] block'>
                     <div className='transition-all duration-300 group-hover:p-2 h-full'>
                         <div className='relative h-full group-hover:bg-blackColor group-hover:rounded-lg overflow-hidden pt-7 flex flex-col justify-between md:block select-none'>
                             <div className='relative'>
@@ -76,9 +77,9 @@ function Cards() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </NavLink>
 
-                <div className='card relative group lg:w-[100%] border border-blackColor md:border-b bg-bodyColor lg:h-[32vw] sm:h-[50vw] h-[55vw] lg:mt-7 md:w-[45vw]'>
+                <NavLink to="/frontend-design" className='card relative group lg:w-[100%] border border-blackColor md:border-b bg-bodyColor lg:h-[32vw] sm:h-[50vw] h-[55vw] lg:mt-7 md:w-[45vw] block'>
                     <div className='transition-all duration-300 group-hover:p-2 h-full'>
                         <div className='relative h-full group-hover:bg-blackColor group-hover:rounded-lg overflow-hidden pt-7 flex flex-col justify-between md:block select-none'>
                             <div className='relative'>
@@ -97,9 +98,9 @@ function Cards() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </NavLink>
 
-                <div className='card group lg:w-[100%] border border-blackColor relative top-12 bg-bodyColor lg:h-[32vw] sm:h-[50vw] h-[55vw] md:w-[45vw]'>
+                <NavLink to="/design-support" className='card group lg:w-[100%] border border-blackColor relative top-12 bg-bodyColor lg:h-[32vw] sm:h-[50vw] h-[55vw] md:w-[45vw] block'>
                     <div className='transition-all duration-300 group-hover:p-2 h-full'>
                         <div className='relative h-full group-hover:bg-blackColor group-hover:rounded-lg overflow-hidden pt-7 flex flex-col justify-between md:block'>
                             <div className='relative select-none'>
@@ -118,7 +119,7 @@ function Cards() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </NavLink>
 
             </div>
         </>
