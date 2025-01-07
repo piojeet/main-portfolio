@@ -8,6 +8,7 @@ import ReletiveWork from '../ReletiveWork'
 import Footer from '../../Footer'
 import FrontEndFAQ from './FrontEndFAQ'
 import FrontendGlowUp from './FrontendGlowUp'
+import ServicesMiniNav from '../ServicesMiniNav'
 
 function ServicesFrontEndHome() {
   return (
@@ -20,6 +21,7 @@ function ServicesFrontEndHome() {
       <ReletiveWork />
       <FrontEndFAQ />
       <FrontendGlowUp />
+      <ServicesMiniNav />
       <Footer />
     </div>
   )

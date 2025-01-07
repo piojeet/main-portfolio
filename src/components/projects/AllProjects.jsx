@@ -63,10 +63,10 @@ function AllProjects() {
                     >
                         <div className="magnetic-btn relative w-full h-full">
                             <span
-                                className={`relative bg-blackColor overflow-hidden w-full h-full block left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor font-TTCPro text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 px-10 group-active:left-0 group-active:bottom-0 border-b-0 hover:border-b hover:border-t`}
+                                className={`relative bg-blackColor overflow-hidden w-full h-full block left-0 bottom-0 lg:group-hover:left-4 lg:group-hover:bottom-2 border border-transparent lg:group-hover:border-blackColor font-TTCPro text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 px-10 group-active:left-0 group-active:bottom-0 border-b-0 hover:border-b hover:border-t`}
                             >
                                 <span className={`text-[21px] font-TTCPro font-semibold relative z-20 ${toggle === 0 ? 'text-bodyColor' : 'text-blackColor'}`}>
-                                    All <sup>11</sup>
+                                    All <sup>13</sup>
                                 </span>
                                 <span className={`absolute top-0 right-0 w-full h-full bg-bodyColor z-10 origin-right scale-x-0 transition-all duration-500 ${toggle === 0 ? 'scale-x-0' : 'scale-x-100'}`}></span>
                             </span>
@@ -80,7 +80,7 @@ function AllProjects() {
                     >
                         <div className="magnetic-btn relative w-full h-full">
                             <span
-                                className={`relative bg-blackColor overflow-hidden w-full h-full block left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor font-TTCPro text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 px-10 group-active:left-0 group-active:bottom-0 border-b-0 border-t-0 hover:border-b hover:border-t`}
+                                className={`relative bg-blackColor overflow-hidden w-full h-full block left-0 bottom-0 lg:group-hover:left-4 lg:group-hover:bottom-2 border border-transparent lg:group-hover:border-blackColor font-TTCPro text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 px-10 group-active:left-0 group-active:bottom-0 border-b-0 border-t-0 hover:border-b hover:border-t`}
                             >
                                 <span className={`text-[21px] font-TTCPro font-semibold relative z-20 ${toggle === 1 ? 'text-bodyColor' : 'text-blackColor'}`}>
                                     Portfolio <sup>03</sup>
@@ -96,10 +96,10 @@ function AllProjects() {
                     >
                         <div className="magnetic-btn relative w-full h-full">
                             <span
-                                className={`relative bg-blackColor overflow-hidden w-full h-full block left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor font-TTCPro text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 px-10 group-active:left-0 group-active:bottom-0 border-b-0 border-t-0 hover:border-b hover:border-t`}
+                                className={`relative bg-blackColor overflow-hidden w-full h-full block left-0 bottom-0 lg:group-hover:left-4 lg:group-hover:bottom-2 border border-transparent lg:group-hover:border-blackColor font-TTCPro text-[15px] tracking-[2px] font-bold content-center transition-all duration-500 px-10 group-active:left-0 group-active:bottom-0 border-b-0 border-t-0 hover:border-b hover:border-t`}
                             >
                                 <span className={`text-[21px] font-TTCPro font-semibold relative z-20 ${toggle === 2 ? 'text-bodyColor' : 'text-blackColor'}`}>
-                                    Bussinuss <sup>08</sup>
+                                    Bussinuss <sup>10</sup>
                                 </span>
                                 <span className={`absolute top-0 right-0 w-full h-full bg-bodyColor z-10 origin-right scale-x-0 transition-all duration-500 ${toggle === 2 ? 'scale-x-0' : 'scale-x-100'}`}></span>
                             </span>
@@ -135,7 +135,7 @@ function AllProjects() {
                                     >
 
                                         <div className="magnetic-btn  relative w-full h-full block">
-                                            <div className='bg-bodyColor lg:min-h-[110px] sm:min-h-[90px] min-h-[80px] w-full h-full relative px-8 left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor overflow-hidden group-active:left-0 group-active:bottom-0'>
+                                            <div className='bg-bodyColor lg:min-h-[110px] sm:min-h-[90px] min-h-[80px] w-full h-full relative px-8 left-0 bottom-0 lg:group-hover:left-4 lg:group-hover:bottom-2 border border-transparent lg:group-hover:border-blackColor overflow-hidden group-active:left-0 group-active:bottom-0'>
                                             {svgIcon.map((itemsvg) => (
                                             <span key={itemsvg.id} className='absolute -left-14 top-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out group-hover:left-8 z-20 pointer-events-none'>{itemsvg.svg}</span>
                                         ))}
@@ -169,7 +169,7 @@ function AllProjects() {
                                 >
 
                                     <div className="magnetic-btn  relative w-full h-full block">
-                                        <div className='bg-bodyColor min-h-[110px] w-full h-full relative px-8 left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor overflow-hidden group-active:left-0 group-active:bottom-0'>
+                                        <div className='bg-bodyColor min-h-[110px] w-full h-full relative px-8 left-0 bottom-0 lg:group-hover:left-4 lg:group-hover:bottom-2 border border-transparent lg:group-hover:border-blackColor overflow-hidden group-active:left-0 group-active:bottom-0'>
                                         {svgIcon.map((itemsvg) => (
                                         <span key={itemsvg.id} className='absolute -left-14 top-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out group-hover:left-8 z-20 pointer-events-none'>{itemsvg.svg}</span>
                                     ))}
@@ -205,7 +205,7 @@ function AllProjects() {
                                 >
 
                                    <div className="magnetic-btn  relative w-full h-full block">
-                                    <div className='bg-bodyColor min-h-[110px] w-full h-full relative px-8 left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 border border-transparent group-hover:border-blackColor overflow-hidden group-active:left-0 group-active:bottom-0'>
+                                    <div className='bg-bodyColor min-h-[110px] w-full h-full relative px-8 left-0 bottom-0 lg:group-hover:left-4 lg:group-hover:bottom-2 border border-transparent lg:group-hover:border-blackColor overflow-hidden group-active:left-0 group-active:bottom-0'>
                                     {svgIcon.map((itemsvg) => (
                                         <span key={itemsvg.id} className='absolute -left-14 top-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out group-hover:left-8 z-20 pointer-events-none'>{itemsvg.svg}</span>
                                     ))}
@@ -259,6 +259,12 @@ function AllProjects() {
                         <div className={`${activeIndex === 10 && toggle === 0 ? 'block' : 'hidden'}`}>
                         <AllWorks activeIndex={activeIndex} />
                         </div>
+                        <div className={`${activeIndex === 11 && toggle === 0 ? 'block' : 'hidden'}`}>
+                        <AllWorks activeIndex={activeIndex} />
+                        </div>
+                        <div className={`${activeIndex === 12 && toggle === 0 ? 'block' : 'hidden'}`}>
+                        <AllWorks activeIndex={activeIndex} />
+                        </div>
                     </div>
 
                     {/* Toggle 2 cont */}
@@ -300,6 +306,12 @@ function AllProjects() {
                             <PortfolioWorks activeIndex={activeIndex} />
                         </div>
                         <div className={`${activeIndex === 7 && toggle === 2 ? 'block' : 'hidden'}`}>
+                            <PortfolioWorks activeIndex={activeIndex} />
+                        </div>
+                        <div className={`${activeIndex === 8 && toggle === 2 ? 'block' : 'hidden'}`}>
+                            <PortfolioWorks activeIndex={activeIndex} />
+                        </div>
+                        <div className={`${activeIndex === 9 && toggle === 2 ? 'block' : 'hidden'}`}>
                             <PortfolioWorks activeIndex={activeIndex} />
                         </div>
                     </div>

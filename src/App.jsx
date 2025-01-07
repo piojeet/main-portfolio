@@ -9,7 +9,6 @@ import WorkPersonationOchi from './components/WorkPersonation/WorkPersonationOch
 import AboutHome from './components/about/AboutHome';
 import ContactHome from './components/contact/ContactHome';
 import ServicesHome from './components/services/ServicesHome';
-import ServicesMiniNav from './components/services/ServicesMiniNav';
 import ServicesBrandingHome from './components/services/servicesbranding/ServicesBrandingHome';
 import ServicesWebDesignHome from './components/services/serviceswebsitedesign/ServicesWebDesignHome';
 import ServicesFrontEndHome from './components/services/Servicesfrontend/ServicesFrontEndHome';
@@ -78,9 +77,7 @@ function App() {
                   <Route path='design-support' element={<ServicesDesignSupportHome />} />
                   <Route path='contact' element={<ContactHome />} />
                 </Routes>
-                <div>
-                  <ServicesMiniNav />
-                </div>
+                
               </ProjectAllProvider>
             </AuthProvider>
           </div>

@@ -8,6 +8,7 @@ import ReletiveWork from '../ReletiveWork'
 import WebDesignFAQ from './WebDesignFAQ'
 import WebDesignGlowUp from './WebDesignGlowUp'
 import Footer from '../../Footer'
+import ServicesMiniNav from '../ServicesMiniNav'
 
 function ServicesWebDesignHome() {
   return (
@@ -20,6 +21,7 @@ function ServicesWebDesignHome() {
       <ReletiveWork />
       <WebDesignFAQ />
       <WebDesignGlowUp />
+      <ServicesMiniNav />
       <Footer />
     </div>
   )

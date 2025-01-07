@@ -17,6 +17,8 @@ import Designeight from '../../assets/project8.webp';
 import Designnine from '../../assets/project9.webp';
 import DesignTen from '../../assets/project10.webp';
 import DesignEleven from '../../assets/project12.webp';
+import DesignTwelve from '../../assets/project11.webp';
+import DesignThirten from '../../assets/project13.webp';
 
 // NavLink ko import kar rahe hain jo React Router se aata hai aur links banane mein madad karta hai
 import { NavLink } from 'react-router-dom';
@@ -34,6 +36,8 @@ const works = [
     { id: 8, title: 'Growing Logistics', media: Designnine, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://lucent-boba-5f2a5f.netlify.app/' },
     { id: 9, title: 'Julia Noam', media: DesignTen, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://grand-jalebi-65aa54.netlify.app/' },
     { id: 10, title: 'Sukri', media: DesignEleven, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://prismatic-klepon-2c9dcc.netlify.app/' },
+    { id: 11, title: 'Doctor', media: DesignTwelve, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://fancy-empanada-211970.netlify.app/' },
+    { id: 12, title: 'Health-Plus', media: DesignThirten, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://health-plus-brown.vercel.app/' },
 ];
 
 // WorkItem component ko define kar rahe hain jo ek single project item ko render karega

@@ -7,6 +7,7 @@ import ReletiveWork from '../ReletiveWork'
 import ServicesBrandindFAQ from './ServicesBrandindFAQ'
 import BrandingGlowUp from './BrandingGlowUp'
 import Footer from '../../Footer'
+import ServicesMiniNav from '../ServicesMiniNav'
 
 function ServicesBrandingHome() {
 
@@ -19,6 +20,7 @@ function ServicesBrandingHome() {
     <ReletiveWork />
     <ServicesBrandindFAQ />
     <BrandingGlowUp />
+    <ServicesMiniNav />
     <Footer />
     </>
   )

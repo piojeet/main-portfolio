@@ -9,6 +9,8 @@ import Designseven from '../../assets/project7.webp';
 import Designnine from '../../assets/project9.webp';
 import DesignTen from '../../assets/project10.webp';
 import DesignEleven from '../../assets/project12.webp';
+import DesignTwelve from '../../assets/project11.webp';
+import DesignThirten from '../../assets/project13.webp';
 import { useProjectAllContext } from '../../context/ProjectAllContext';
 import { NavLink } from 'react-router-dom';
 
@@ -21,6 +23,8 @@ const workItems = [
     { id: 5, title: 'Growing Logistics', media: Designnine, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://lucent-boba-5f2a5f.netlify.app/' },
     { id: 6, title: 'Julia Noam', media: DesignTen, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://grand-jalebi-65aa54.netlify.app/' },
     { id: 7, title: 'Sukri', media: DesignEleven, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://prismatic-klepon-2c9dcc.netlify.app/' },
+    { id: 8, title: 'Doctor', media: DesignTwelve, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://fancy-empanada-211970.netlify.app/' },
+        { id: 9, title: 'Health-Plus', media: DesignThirten, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://health-plus-brown.vercel.app/' },
 ];
 
 const WorkItem = ({ title, media, type, isVisible, buttonText, toggleType, link }) => {

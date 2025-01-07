@@ -6,6 +6,7 @@ import ServicesOverview from './ServicesOverview'
 import Expertic from '../Expertic'
 import Cards from '../Cards'
 import Footer from '../Footer'
+import ServicesMiniNav from './ServicesMiniNav'
 
 function ServicesHome() {
   return (
@@ -16,6 +17,7 @@ function ServicesHome() {
       <ServicesOverview />
       <Expertic />
       <Cards />
+      <ServicesMiniNav />
       <div className='mt-44'>
       <Footer />
       </div>

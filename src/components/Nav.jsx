@@ -255,7 +255,7 @@ function Nav() {
 
 
 
-                            <div className='group pointer-cursor h-[80px] lg:w-[25%] md:w-[50%] flex-shrink-0 bg-gray-800 md:flex justify-start items-center hidden'>
+                            <NavLink  to="/contact" className='group pointer-cursor h-[80px] lg:w-[25%] md:w-[50%] flex-shrink-0 bg-gray-800 md:flex justify-start items-center hidden'>
                               {/* Magnetic effect on wrapper div */}
                               <div className='magnetic-btn relative w-full h-full'>
                                 {/* Hover transition on inner span */}
@@ -268,7 +268,7 @@ function Nav() {
                                   <span className='group-hover:animate-bounce-on absolute right-5 top-1/2 -translate-y-1/2'><img src={RocketWhite} alt="" className='w-8 saturate-100' /></span>
                                 </span>
                               </div>
-                            </div>
+                            </NavLink>
 
                           </div>
 
@@ -352,7 +352,7 @@ function Nav() {
               )}
 
 
-            <div className={`group pointer-cursor h-[80px] lg:w-[50%] md:w-[45vw] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 md:flex justify-start items-center hidden relative z-10 ${location.pathname === "/contact" ? 'block lg:hidden' : ''}`}>
+            <NavLink to="/contact" className={`group pointer-cursor h-[80px] lg:w-[50%] md:w-[45vw] flex-shrink-0 border border-blackColor bg-blackColor border-b-0 md:flex justify-start items-center hidden relative z-10 ${location.pathname === "/contact" ? 'block lg:hidden' : ''}`}>
               {/* Magnetic effect on wrapper div */}
               <div className='magnetic-btn relative w-full h-full'>
                 {/* Hover transition on inner span */}
@@ -365,7 +365,7 @@ function Nav() {
                   <span className='group-hover:animate-bounce-on absolute right-5 top-1/2 -translate-y-1/2'><img src={Rocket} alt="" className='w-8' /></span>
                 </span>
               </div>
-            </div>
+            </NavLink>
 
 
 

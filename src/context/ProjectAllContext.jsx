@@ -18,6 +18,8 @@ const items = [
     { name: 'Growing Logistics', route: 'https://lucent-boba-5f2a5f.netlify.app/' },
     { name: 'Julia Noam', route: 'https://grand-jalebi-65aa54.netlify.app/' },
     { name: 'Sukri', route: 'https://prismatic-klepon-2c9dcc.netlify.app/' },
+    { name: 'Doctor', route: 'https://fancy-empanada-211970.netlify.app/' },
+    { name: 'Health-Plus', route: 'https://health-plus-brown.vercel.app/' },
 ];
 
 const items2 = [
@@ -35,6 +37,8 @@ const items3 = [
     { name: 'Growing Logistics', route: 'https://lucent-boba-5f2a5f.netlify.app/' },
     { name: 'Julia Noam', route: 'https://grand-jalebi-65aa54.netlify.app/' },
     { name: 'Sukri', route: 'https://prismatic-klepon-2c9dcc.netlify.app/' },
+    { name: 'Doctor', route: 'https://fancy-empanada-211970.netlify.app/' },
+    { name: 'Health-Plus', route: 'https://health-plus-brown.vercel.app/' },
 ];
 
 export const ProjectAllProvider = ({ children }) => {
