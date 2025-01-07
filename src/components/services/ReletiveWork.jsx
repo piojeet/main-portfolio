@@ -133,7 +133,7 @@ function ReletiveWork() {
                         <div key={index}>
                             <div className=' w-full lg:ml-auto ml-0'>
                                 <div className='w-full'>
-                                    <NavLink className='groups-m bg-blackColor pointer-cursor' to={work.url}>
+                                    <NavLink className='groups-m bg-blackColor pointer-cursor block' to={work.url}>
                                         <div className='w-full video-bg overflow-hidden h-full'>
 
                                                 <img src={work.image} alt='img' className='scal-up  w-full lg:h-[28vw] h-full' /> {/* 8. Displaying dynamic image/video */}
