@@ -39,7 +39,7 @@ function Cards() {
         <>
             <div ref={cardRef} className='xl:flex items-start justify-between md:flex-wrap lg:flex-nowrap grid grid-cols-2 mb-28 md:mb-0'>
 
-                <NavLink to="/branding" className='card relative group lg:w-[100%] border border-blackColor bg-bodyColor border-b-0 md:border-b lg:h-[32vw] sm:h-[50vw] h-[55vw] md:w-[45vw] block'>
+                <NavLink to="/branding" className='card relative group lg:w-[100%] border border-blackColor bg-bodyColor border-b-0 md:border-b lg:h-[32vw] sm:h-[50vw] h-[55vw] md:w-[45vw] block pointer-cursor'>
                     <div className='transition-all duration-300 group-hover:p-2 h-full'>
                         <div className='relative h-full group-hover:bg-blackColor group-hover:rounded-lg overflow-hidden pt-7 flex flex-col justify-between md:block select-none'>
                             <div className='relative'>
@@ -59,7 +59,7 @@ function Cards() {
                     </div>
                 </NavLink>
 
-                <NavLink to="/website-design" className='card relative group lg:w-[100%] border border-blackColor border-b-0 md:border-b bg-bodyColor lg:h-[32vw] sm:h-[50vw] h-[55vw] top-12 lg:mt-16 md:w-[45vw] block'>
+                <NavLink to="/website-design" className='card relative group lg:w-[100%] border border-blackColor border-b-0 md:border-b bg-bodyColor lg:h-[32vw] sm:h-[50vw] h-[55vw] top-12 lg:mt-16 md:w-[45vw] block pointer-cursor'>
                     <div className='transition-all duration-300 group-hover:p-2 h-full'>
                         <div className='relative h-full group-hover:bg-blackColor group-hover:rounded-lg overflow-hidden pt-7 flex flex-col justify-between md:block select-none'>
                             <div className='relative'>
@@ -79,7 +79,7 @@ function Cards() {
                     </div>
                 </NavLink>
 
-                <NavLink to="/frontend-design" className='card relative group lg:w-[100%] border border-blackColor md:border-b bg-bodyColor lg:h-[32vw] sm:h-[50vw] h-[55vw] lg:mt-7 md:w-[45vw] block'>
+                <NavLink to="/frontend-design" className='card relative group lg:w-[100%] border border-blackColor md:border-b bg-bodyColor lg:h-[32vw] sm:h-[50vw] h-[55vw] lg:mt-7 md:w-[45vw] block pointer-cursor'>
                     <div className='transition-all duration-300 group-hover:p-2 h-full'>
                         <div className='relative h-full group-hover:bg-blackColor group-hover:rounded-lg overflow-hidden pt-7 flex flex-col justify-between md:block select-none'>
                             <div className='relative'>
@@ -100,7 +100,7 @@ function Cards() {
                     </div>
                 </NavLink>
 
-                <NavLink to="/design-support" className='card group lg:w-[100%] border border-blackColor relative top-12 bg-bodyColor lg:h-[32vw] sm:h-[50vw] h-[55vw] md:w-[45vw] block'>
+                <NavLink to="/design-support" className='card group lg:w-[100%] border border-blackColor relative top-12 bg-bodyColor lg:h-[32vw] sm:h-[50vw] h-[55vw] md:w-[45vw] block pointer-cursor'>
                     <div className='transition-all duration-300 group-hover:p-2 h-full'>
                         <div className='relative h-full group-hover:bg-blackColor group-hover:rounded-lg overflow-hidden pt-7 flex flex-col justify-between md:block'>
                             <div className='relative select-none'>
