@@ -69,7 +69,7 @@ function ChatGpt() {
           </div>
           <div
             ref={chatContainerRef} // Set ref to the chat container
-            className='md:h-[50vh] h-[76vh] p-4 flex flex-col gap-4 overflow-y-auto chat-gpt'
+            className='md:h-[50vh] h-3/4 p-4 flex flex-col gap-4 overflow-y-auto chat-gpt'
           >
             <div className='flex items-end gap-2 text-sm'>
               <div className='bg-black size-8 p-2 rounded-full flex items-center justify-center'>
