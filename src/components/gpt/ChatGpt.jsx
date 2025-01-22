@@ -62,7 +62,7 @@ function ChatGpt() {
               <div className='bg-white size-10 p-2 rounded-full flex items-center justify-center'>
                 <img src={logo} alt="" className='invert' />
               </div>
-              <button className='size-10 hover:bg-gray-600 flex items-center justify-center text-xl rounded-full' onClick={() => setShowChat(prev => !prev)}>
+              <button className='pointer-cursor size-10 hover:bg-gray-600 flex items-center justify-center text-xl rounded-full' onClick={() => setShowChat(prev => !prev)}>
                 <IoIosArrowDown />
               </button>
             </div>
@@ -87,7 +87,7 @@ function ChatGpt() {
         </div>
 
         <div className='absolute md:-bottom-[3rem] md:right-0 bottom-[2rem] z-10 right-[4vw]'>
-          <button className={`inline-flex items-center justify-center size-10 border-2 border-black rounded-full text-2xl bg-white transition-all duration-300 ${showChat ? 'rotate-180' : 'rotate-0'}`} onClick={() => setShowChat(prev => !prev)}>
+          <button className={`pointer-cursor inline-flex items-center justify-center size-10 border-2 border-black rounded-full text-2xl bg-white transition-all duration-300 ${showChat ? 'rotate-180' : 'rotate-0'}`} onClick={() => setShowChat(prev => !prev)}>
             {showChat ? (
               <IoClose />
 
