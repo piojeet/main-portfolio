@@ -55,10 +55,10 @@ function ChatGpt() {
 
   return (
     <div className={`w-full h-full`}>
-      <div className={`fixed z-[30000] md:bottom-[10vw] md:right-[5vw] right-0 rounded-md md:h-fit h-full bottom-0 ${showChat ? 'md:max-w-[300px] w-full' : 'w-0'}`}>
+      <div className={`fixed z-[30000] md:bottom-[10vw] md:right-[5vw] right-0 rounded-md h-full bottom-0 md:h-[50vh] ${showChat ? 'md:max-w-[300px] w-full' : 'w-0'}`}>
         <div className={`bg-white border border-black rounded-md overflow-hidden shadow-[0px_0px_10px_#000] origin-bottom-right transition-all duration-300 h-full md:h-fit z-20 relative ${showChat ? 'scale-100' : 'scale-0'}`}>
           <div>
-            <div className='flex justify-between items-center p-4 bg-black text-white'>
+            <div className='h-[70px] flex justify-between items-center p-4 bg-black text-white'>
               <div className='bg-white size-10 p-2 rounded-full flex items-center justify-center'>
                 <img src={logo} alt="" className='invert' />
               </div>
@@ -67,9 +67,10 @@ function ChatGpt() {
               </button>
             </div>
           </div>
+          <div className='h-[calc(100%-70px)] flex flex-col justify-between'>
           <div
             ref={chatContainerRef} // Set ref to the chat container
-            className='md:h-[50vh] h-3/4 p-4 flex flex-col gap-4 overflow-y-auto chat-gpt'
+            className='p-4 flex flex-col gap-4 overflow-y-auto chat-gpt'
           >
             <div className='flex items-end gap-2 text-sm'>
               <div className='bg-black size-8 p-2 rounded-full flex items-center justify-center'>
@@ -84,6 +85,7 @@ function ChatGpt() {
             ))}
           </div>
           <ChatForm chatHistory={chatHistory} setChatHistory={setChatHistory} geenrateBotResponse={geenrateBotResponse} />
+          </div>
         </div>
 
         <div className='absolute md:-bottom-[3rem] md:right-0 bottom-[2rem] z-10 right-[4vw]'>
