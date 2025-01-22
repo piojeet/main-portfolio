@@ -67,6 +67,7 @@ function App() {
           <div className='relative z-10 w-full max-w-[90vw] m-auto'>
             <AuthProvider>
               <ProjectAllProvider>
+                
                 <DisableDevTools />
                 <ConfettiCanvas />
                 <Routes>
