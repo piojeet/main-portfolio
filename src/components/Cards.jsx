@@ -51,7 +51,7 @@ function Cards() {
                                 </span>
 
                             </div>
-                            <div className='md:absolute bottom-[0] md:translate-y-[58%] left-0 w-full sm:px-6 px-4 group-hover:px-3 py-3 transition-all duration-500 group-hover:translate-y-[0]'>
+                            <div className='md:absolute bottom-[0] md:translate-y-[58%] xl:translate-y-[65%] left-0 w-full sm:px-6 px-4 group-hover:px-3 py-3 transition-all duration-500 group-hover:translate-y-[0]'>
                                 <h3 className='font-TTCPro md:text-[32px] sm:text-[27px] text-[20px] font-[500] mb-2 group-hover:text-bodyColor'>Branding</h3>
                                 <p className='font-TTCPro md:text-[21px] text-[18px] font[450] group-hover:text-bodyColor md:block hidden'>Create or refine a visual identity to celebrate your unique personality and proposition.</p>
                             </div>
@@ -71,7 +71,7 @@ function Cards() {
                                 </span>
 
                             </div>
-                            <div className='md:absolute bottom-[0] md:translate-y-[65%] left-0 w-full sm:px-6 px-4 group-hover:px-3 py-3 transition-all duration-500 group-hover:translate-y-[0]'>
+                            <div className='md:absolute bottom-[0] md:translate-y-[58%] xl:translate-y-[65%] left-0 w-full sm:px-6 px-4 group-hover:px-3 py-3 transition-all duration-500 group-hover:translate-y-[0]'>
                                 <h3 className='font-TTCPro md:text-[32px] sm:text-[27px] text-[20px] font-[500] mb-2 group-hover:text-bodyColor'>Website Design</h3>
                                 <p className='font-TTCPro md:text-[21px] text-[18px] font[450] group-hover:text-bodyColor md:block hidden'>Amplify your brands presence and engage your audience with an impactful and interactive website.</p>
                             </div>
@@ -92,7 +92,7 @@ function Cards() {
                                 </span>
 
                             </div>
-                            <div className='md:absolute bottom-[0] lg:translate-y-[65%] md:translate-y-[70%] left-0 w-full sm:px-6 px-4 group-hover:px-3 py-3 transition-all duration-500 md:group-hover:translate-y-[0]'>
+                            <div className='md:absolute bottom-[0] xl:translate-y-[65%] md:translate-y-[60%] left-0 w-full sm:px-6 px-4 group-hover:px-3 py-3 transition-all duration-500 md:group-hover:translate-y-[0]'>
                                 <h3 className='font-TTCPro md:text-[32px] sm:text-[27px] text-[20px] font-[500] mb-2 group-hover:text-bodyColor'>Front-End</h3>
                                 <p className='font-TTCPro md:text-[21px] text-[18px] font[450] group-hover:text-bodyColor md:block hidden'>I build efficient, responsive websites using modern web technologies and best design principles.</p>
                             </div>
@@ -113,7 +113,7 @@ function Cards() {
                                 </span>
 
                             </div>
-                            <div className='md:absolute bottom-[0] md:translate-y-[65%] left-0 w-full sm:px-6 px-4 group-hover:px-3 py-3 transition-all duration-500 group-hover:translate-y-[0]'>
+                            <div className='md:absolute bottom-[0] md:translate-y-[60%] xl:translate-y-[65%] left-0 w-full sm:px-6 px-4 group-hover:px-3 py-3 transition-all duration-500 group-hover:translate-y-[0]'>
                                 <h3 className='font-TTCPro md::text-[32px] sm:text-[27px] text-[20px] font-[500] mb-2 group-hover:text-bodyColor select-none'>Design Support</h3>
                                 <p className='font-TTCPro md:text-[21px] text-[18px] font[450] group-hover:text-bodyColor md:block hidden select-none'>An ongoing engagement to help with your regular or ad-hoc creative requirements and output.</p>
                             </div>

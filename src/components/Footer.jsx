@@ -247,7 +247,7 @@ function Footer() {
 
       <div className='lg:flex grid md:grid-cols-2 grid-cols-1'>
 
-        <div className='group pointer-cursor h-[80px] w-[100%] border border-blackColor bg-blackColor flex justify-start items-center relative z-40 md:border-r-0 md:border-t-0'>
+        <NavLink target='blank' to="https://www.linkedin.com/in/priyajeet-majhi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className='group pointer-cursor h-[80px] w-[100%] border border-blackColor bg-blackColor flex justify-start items-center relative z-40 md:border-r-0 md:border-t-0'>
           {/* Magnetic effect on wrapper div */}
           <div className='magnetic-btn relative w-full h-full'>
             {/* Hover transition on inner span */}
@@ -260,9 +260,9 @@ function Footer() {
               <span className='group-hover:animate-bounce-on absolute right-5 top-1/2 -translate-y-1/2'><img src={LinkArrow} alt="" className='w-6' /></span>
             </span>
           </div>
-        </div>
+        </NavLink>
 
-        <div className='group pointer-cursor h-[80px] w-[100%] border border-blackColor bg-blackColor flex justify-start items-center relative z-30 md:border-r-0 border-t-0'>
+        <NavLink target='blank' to="https://x.com/Priyajeet_Majhi?t=dsUWTwxojzvOn5nEVSTS_w&s=09" className='group pointer-cursor h-[80px] w-[100%] border border-blackColor bg-blackColor flex justify-start items-center relative z-30 md:border-r-0 border-t-0'>
           {/* Magnetic effect on wrapper div */}
           <div className='magnetic-btn relative w-full h-full'>
             {/* Hover transition on inner span */}
@@ -275,9 +275,9 @@ function Footer() {
               <span className='group-hover:animate-bounce-on absolute right-5 top-1/2 -translate-y-1/2'><img src={LinkArrow} alt="" className='w-6' /></span>
             </span>
           </div>
-        </div>
+        </NavLink>
 
-        <div className='group pointer-cursor h-[80px] w-[100%] border border-blackColor bg-blackColor flex justify-start items-center relative z-20 md:border-r-0 border-t-0 md:border-t'>
+        <NavLink target='blank' to="https://www.instagram.com/developer_jeet_?igsh=MTl6YnZ6ZG11ZHJjOQ==" className='group pointer-cursor h-[80px] w-[100%] border border-blackColor bg-blackColor flex justify-start items-center relative z-20 md:border-r-0 border-t-0 md:border-t'>
           {/* Magnetic effect on wrapper div */}
           <div className='magnetic-btn relative w-full h-full'>
             {/* Hover transition on inner span */}
@@ -290,7 +290,7 @@ function Footer() {
               <span className='group-hover:animate-bounce-on absolute right-5 top-1/2 -translate-y-1/2'><img src={LinkArrow} alt="" className='w-6' /></span>
             </span>
           </div>
-        </div>
+        </NavLink>
 
         <div className='group pointer-cursor h-[80px] w-[100%] border border-blackColor bg-blackColor flex justify-start items-center relative z-10 border-t-0 md:border-t'>
           {/* Magnetic effect on wrapper div */}

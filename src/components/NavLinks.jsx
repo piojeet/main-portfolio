@@ -116,7 +116,7 @@ function NavLinks() {
             </div>
 
             <div className='flex items-start justify-between lg:flex-row md:flex-col'>
-                <div className='group pointer-cursor h-[80px] md:w-[100%] lg:w-[50%] flex-shrink-0 bg-gray-800 sm:flex justify-start items-center hidden relative z-20'>
+                <NavLink target='blank' to="https://www.linkedin.com/in/priyajeet-majhi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className='group pointer-cursor h-[80px] md:w-[100%] lg:w-[50%] flex-shrink-0 bg-gray-800 sm:flex justify-start items-center hidden relative z-20'>
                     {/* Magnetic effect on wrapper div */}
                     <div className='magnetic-btn relative w-full h-full'>
                         {/* Hover transition on inner span */}
@@ -129,10 +129,10 @@ function NavLinks() {
                             <span className='group-hover:animate-bounce-on absolute right-5 top-1/2 -translate-y-1/2'><img src={LinkArrow} alt="" className='w-8 saturate-100 invert' /></span>
                         </span>
                     </div>
-                </div>
+                </NavLink>
 
 
-                <div className='group pointer-cursor h-[80px] md:w-[100%] lg:w-[50%]  flex-shrink-0 bg-gray-800 sm:flex justify-start items-center hidden relative z-10'>
+                <NavLink target='blank' to="https://www.instagram.com/developer_jeet_?igsh=MTl6YnZ6ZG11ZHJjOQ==" className='group pointer-cursor h-[80px] md:w-[100%] lg:w-[50%]  flex-shrink-0 bg-gray-800 sm:flex justify-start items-center hidden relative z-10'>
                     {/* Magnetic effect on wrapper div */}
                     <div className='magnetic-btn relative w-full h-full'>
                         {/* Hover transition on inner span */}
@@ -145,7 +145,7 @@ function NavLinks() {
                             <span className='group-hover:animate-bounce-on absolute right-5 top-1/2 -translate-y-1/2'><img src={LinkArrow} alt="" className='w-8 saturate-100 invert' /></span>
                         </span>
                     </div>
-                </div>
+                </NavLink>
             </div>
         </>
     );

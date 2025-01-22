@@ -10,9 +10,32 @@
 
 @layer base {
 
-  body::-webkit-scrollbar {
-    display: none;
-  }
+  /* width */
+body::-webkit-scrollbar {
+  width: 10px;
+  /* position: absolute; */
+  
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+  background: #F8F8F8;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+  background: rgb(167, 167, 167); 
+  border-radius: 20px;
+}
+
+/* body.no-scrollbar-thumb::-webkit-scrollbar-thumb {
+  background: #F8F8F8;
+} */
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+  background: #414141; 
+}
 
 
   .normal-point {
@@ -136,4 +159,9 @@
     }
 }
 
+}
+
+.chat-gpt {
+  scrollbar-width: 10px;
+  scrollbar-color: rgb(138, 138, 138) #fff;
 }

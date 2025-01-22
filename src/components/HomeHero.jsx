@@ -6,6 +6,7 @@ import RightArrow from '../assets/right-arrow.svg'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { NavLink } from 'react-router-dom'
+import AnimatedThreeDText from './AnimatedThreeDText'
 
 
 function HomeHero() {
@@ -72,6 +73,7 @@ function HomeHero() {
               <span className='custom-strok inline-block'>n</span>
               <span className='custom-strok inline-block'>d</span>
             </span>
+
             &nbsp;
             <span className='letter inline-block overflow-hidden'>
               <span className='inline-block'>o</span>

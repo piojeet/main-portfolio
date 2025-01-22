@@ -12,6 +12,7 @@ import RightArroWhite from '../assets/right-arrow-white.svg'
 import NavLinks from './NavLinks'
 import { NavLink, useLocation } from 'react-router-dom';
 import { useProjectAllContext } from '../context/ProjectAllContext';
+import ChatGpt from './gpt/ChatGpt'
 
 function Nav() {
 
@@ -73,19 +74,19 @@ function Nav() {
 
   useEffect(() => {
     const isMouseDevice = () => window.matchMedia('(pointer: fine)').matches;
-  
+
     // Function to handle magnetic effect logic
     const handleMagneticEffect = () => {
       if (!isMouseDevice() || window.innerWidth < 1024) {
         const buttons = document.querySelectorAll('.magnetic-btn');
-  
+
         buttons.forEach((button) => {
           let isClicked = false;
-  
+
           const handleMouseEnter = () => {
             if (!isClicked) setIsMagnetic(true);
           };
-  
+
           const handleMouseLeave = () => {
             if (!isClicked) {
               setIsMagnetic(false);
@@ -93,43 +94,43 @@ function Nav() {
               button.style.transform = 'translate(0, 0)'; // Reset position
             }
           };
-  
+
           const handleMouseMove = (e) => {
             if (!isMagnetic || isClicked) return;
-  
+
             const { left, top, width, height } = button.getBoundingClientRect();
             const buttonCenterX = left + width / 2;
             const buttonCenterY = top + height / 2;
-  
+
             const deltaX = e.clientX - buttonCenterX;
             const deltaY = e.clientY - buttonCenterY;
-  
+
             const limitedDeltaX = Math.max(-12, Math.min(12, deltaX * 0.1));
             const limitedDeltaY = Math.max(-12, Math.min(12, deltaY * 0.1));
-  
+
             if (Math.sqrt(deltaX ** 2 + deltaY ** 2) < 150) {
               button.style.transition = 'transform 0.1s ease-out'; // Smooth movement
               button.style.transform = `translate(${limitedDeltaX}px, ${limitedDeltaY}px)`;
             }
           };
-  
+
           const handleMouseDown = () => {
             isClicked = true;
             button.style.transition = 'transform 0.3s ease-out'; // Smooth return on click
             button.style.transform = 'translate(0, 0)'; // Reset position
           };
-  
+
           const handleMouseUp = () => {
             isClicked = false;
             setTimeout(() => setIsMagnetic(true), 300); // Re-enable magnetic effect after a delay
           };
-  
+
           button.addEventListener('mouseenter', handleMouseEnter);
           button.addEventListener('mouseleave', handleMouseLeave);
           button.addEventListener('mousemove', handleMouseMove);
           button.addEventListener('mousedown', handleMouseDown);
           button.addEventListener('mouseup', handleMouseUp);
-  
+
           // Cleanup event listeners on unmount
           return () => {
             button.removeEventListener('mouseenter', handleMouseEnter);
@@ -141,26 +142,26 @@ function Nav() {
         });
       }
     };
-  
+
     // Initial check
     handleMagneticEffect();
-  
+
     // Re-run effect on window resize
     const handleResize = () => {
       handleMagneticEffect();
     };
-  
+
     window.addEventListener('resize', handleResize);
-  
+
     // Cleanup resize event listener
     return () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []); // Dependency array is empty so this will run once on mount
-  
-  
 
-  
+
+
+
 
 
 
@@ -175,10 +176,12 @@ function Nav() {
   useEffect(() => {
     if (isOpen) {
       setMenuPath('inset(-1px -1px -1px -1px)'); // Fully open (visible)
-      document.body.style.overflow = 'hidden'; // Prevent scrolling
+      // document.body.style.overflow = 'hidden'; // Prevent scrolling
+      // document.body.classList.add('no-scrollbar-thumb');
     } else {
       setMenuPath('inset(-1px 100% -1px -1px)'); // Fully closed (hidden)
-      document.body.style.overflow = ''; // Restore scrolling
+      // document.body.style.overflow = ''; // Restore scrolling
+      // document.body.classList.remove('no-scrollbar-thumb');
     }
   }, [isOpen]);
 
@@ -193,11 +196,11 @@ function Nav() {
 
   return (
     <>
+              {!isOpen && <ChatGpt />}
       <div>
         <header className='flex items-center justify-between pt-7'>
           <div className='flex items-center w-full'>
             <div className='fixed top-[1.75rem] flex items-center z-[1000]'>
-
               <div className='relative'>
                 <button
                   className={`group pointer-cursor md:w-[80px] md:h-[80px] h-[70px] w-[70px] flex-shrink-0 bg-blackColor border border-blackColor flex items-center justify-center relative z-[200] ${isOpen ? 'bg-gray-800 border-0' : ''}`} onClick={toggleMenu}
@@ -255,7 +258,7 @@ function Nav() {
 
 
 
-                            <NavLink  to="/contact" className='group pointer-cursor h-[80px] lg:w-[25%] md:w-[50%] flex-shrink-0 bg-gray-800 md:flex justify-start items-center hidden'>
+                            <NavLink to="/contact" className='group pointer-cursor h-[80px] lg:w-[25%] md:w-[50%] flex-shrink-0 bg-gray-800 md:flex justify-start items-center hidden'>
                               {/* Magnetic effect on wrapper div */}
                               <div className='magnetic-btn relative w-full h-full'>
                                 {/* Hover transition on inner span */}
