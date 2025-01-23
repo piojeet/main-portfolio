@@ -74,7 +74,7 @@ function ChatGpt() {
   return (
     <div className="w-full h-full">
       <div
-        className={`fixed z-[30000] md:bottom-[10vw] md:right-[5vw] right-0 rounded-md h-full bottom-0 md:h-[75vh] ${
+        className={`fixed z-[30000] md:bottom-[10vw] md:right-[5vw] right-0 rounded-md h-full bottom-0 md:h-fit ${
           showChat ? 'md:max-w-[300px] w-full' : 'w-0'
         }`}
       >
@@ -96,7 +96,7 @@ function ChatGpt() {
               </button>
             </div>
           </div>
-          <div className="h-[calc(100%-70px)] flex flex-col justify-between">
+          <div className="h-[calc(70vh-70px)] flex flex-col justify-between">
             <div
               ref={chatContainerRef}
               className={`p-4 flex flex-col gap-4 overflow-y-auto chat-gpt ${
