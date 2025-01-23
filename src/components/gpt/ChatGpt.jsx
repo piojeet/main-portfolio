@@ -96,7 +96,7 @@ function ChatGpt() {
               </button>
             </div>
           </div>
-          <div className="h-[calc(70vh-70px)] flex flex-col justify-between">
+          <div className="md:h-[calc(70vh-70px)] h-[calc(100%-70px)] flex flex-col justify-between">
             <div
               ref={chatContainerRef}
               className={`p-4 flex flex-col gap-4 overflow-y-auto chat-gpt ${
