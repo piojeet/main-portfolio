@@ -15,7 +15,6 @@ function ChatGpt() {
   }]);
 
   useEffect(() => {
-    // Scroll to the bottom whenever chatHistory updates
     if (chatContainerRef.current) {
       chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
     }
@@ -50,6 +49,7 @@ function ChatGpt() {
   const [showChat, setShowChat] = useState(false);
   const [isKeyboardVisible, setKeyboardVisible] = useState(false);
   const chatContainerRef = useRef(null);
+  const chatWindowRef = useRef(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -59,16 +59,23 @@ function ChatGpt() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  useEffect(() => {
-    if (chatContainerRef.current) {
-      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+  const adjustChatWindowHeight = () => {
+    if (chatWindowRef.current) {
+      const windowHeight = window.innerHeight;
+      const headerHeight = 70; // height of the header
+      const adjustedHeight = isKeyboardVisible ? windowHeight - headerHeight - 150 : windowHeight - headerHeight;
+      chatWindowRef.current.style.height = `${adjustedHeight}px`;
     }
-  }, [chatHistory]);
+  };
+
+  useEffect(() => {
+    adjustChatWindowHeight();
+  }, [isKeyboardVisible, chatHistory]);
 
   return (
     <div className={`w-full h-full`}>
       <div className={`fixed z-[30000] md:bottom-[10vw] md:right-[5vw] right-0 rounded-md h-full bottom-0 md:h-[75vh] ${showChat ? 'md:max-w-[300px] w-full' : 'w-0'}`}>
-        <div className={`bg-white border border-black rounded-md overflow-hidden shadow-[0px_0px_10px_#000] origin-bottom-right transition-all duration-300 h-full md:h-full z-20 relative ${showChat ? 'scale-100' : 'scale-0'}`}>
+        <div className={`bg-white border border-black rounded-md overflow-hidden shadow-[0px_0px_10px_#000] origin-bottom-right transition-all duration-300 z-20 relative ${showChat ? 'scale-100' : 'scale-0'}`}>
           <div>
             <div className='h-[70px] flex justify-between items-center p-4 bg-black text-white'>
               <div className='bg-white size-10 p-2 rounded-full flex items-center justify-center'>
@@ -79,10 +86,9 @@ function ChatGpt() {
               </button>
             </div>
           </div>
-          <div className='h-[calc(100%-70px)] flex flex-col justify-between'>
+          <div ref={chatWindowRef} className='flex flex-col justify-between'>
             <div
-              className={`p-4 flex flex-col gap-4 overflow-y-auto chat-gpt ${isKeyboardVisible ? 'pb-[150px]' : ''}`} ref={chatContainerRef}
-              style={{ maxHeight: isKeyboardVisible ? 'calc(100vh - 150px)' : '100vh' }} // Adjust height when keyboard is visible
+              className={`p-4 flex flex-col gap-4 overflow-y-auto chat-gpt`} ref={chatContainerRef}
             >
               <div className='flex items-end gap-2 text-sm'>
                 <div className='bg-black size-8 p-2 rounded-full flex items-center justify-center'>
