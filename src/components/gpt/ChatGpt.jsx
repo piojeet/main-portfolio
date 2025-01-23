@@ -96,7 +96,7 @@ function ChatGpt() {
           </div>
           <div
             className={`${isKeyboardVisible ? 'md:h-[calc(50vh-70px)] h-[calc(70%-70px)]' : 'md:h-[calc(70vh-70px)] h-[calc(100%-70px)]'
-              } flex flex-col justify-between relative`}
+              } flex flex-col justify-between relative bg-red-200`}
           >
             <div
               ref={chatContainerRef}
