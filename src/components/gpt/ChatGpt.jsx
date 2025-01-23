@@ -78,7 +78,7 @@ function ChatGpt() {
 
   return (
     <div className={`w-full h-full`}>
-      <div className={`fixed z-[30000] md:bottom-[10vw] md:right-[5vw] right-0 rounded-md h-full bottom-0 md:h-[75vh] ${showChat ? 'md:max-w-[300px] w-full' : 'w-0'}`}>
+      <div className={`fixed z-[30000] md:bottom-[10vw] md:right-[5vw] right-0 rounded-md h-full bottom-0 md:h-[75vh] bg-red-400 ${showChat ? 'md:max-w-[300px] w-full' : 'w-0'}`}>
         <div className={`bg-white border border-black rounded-md overflow-hidden shadow-[0px_0px_10px_#000] origin-bottom-right transition-all duration-300 z-20 relative ${showChat ? 'scale-100' : 'scale-0'}`}>
           <div>
             <div className='h-[70px] flex justify-between items-center p-4 bg-black text-white'>
