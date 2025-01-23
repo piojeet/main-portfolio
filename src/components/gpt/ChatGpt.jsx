@@ -16,14 +16,14 @@ function ChatGpt() {
       text: companyInfo,
     },
   ]);
-  const chatContainerRef = useRef(null);
+  const chatContainerRef = useRef(null); // Ref for chat container
 
   // Detect keyboard visibility
   const [isKeyboardVisible, setKeyboardVisible] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      // Check if viewport height decreased (keyboard likely open)
+      // Detect if viewport height has decreased (keyboard likely open)
       setKeyboardVisible(window.innerHeight < document.documentElement.clientHeight);
     };
 
@@ -34,7 +34,7 @@ function ChatGpt() {
   }, []);
 
   useEffect(() => {
-    // Auto-scroll to the bottom whenever chatHistory updates
+    // Scroll to the bottom whenever chatHistory updates
     if (chatContainerRef.current) {
       chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
     }
@@ -74,12 +74,14 @@ function ChatGpt() {
   return (
     <div className="w-full h-full">
       <div
-        className={`fixed z-[30000] md:bottom-[10vw] md:right-[5vw] right-0 rounded-md h-full bottom-0 md:h-fit ${showChat ? 'md:max-w-[300px] w-full' : 'w-0'
-          }`}
+        className={`fixed z-[30000] md:bottom-[10vw] md:right-[5vw] right-0 rounded-md h-full bottom-0 md:h-[75vh] ${
+          showChat ? 'md:max-w-[300px] w-full' : 'w-0'
+        }`}
       >
         <div
-          className={`bg-white border border-black rounded-md overflow-hidden shadow-[0px_0px_10px_#000] origin-bottom-right transition-all duration-300 h-full md:h-full z-20 relative ${showChat ? 'scale-100' : 'scale-0'
-            }`}
+          className={`bg-white border border-black rounded-md overflow-hidden shadow-[0px_0px_10px_#000] origin-bottom-right transition-all duration-300 h-full md:h-full z-20 relative ${
+            showChat ? 'scale-100' : 'scale-0'
+          }`}
         >
           <div>
             <div className="h-[70px] flex justify-between items-center p-4 bg-black text-white">
@@ -94,14 +96,12 @@ function ChatGpt() {
               </button>
             </div>
           </div>
-          <div
-            className={`${isKeyboardVisible ? 'md:h-[calc(50vh-70px)] h-[calc(70%-70px)]' : 'md:h-[calc(70vh-70px)] h-[calc(100%-70px)]'
-              } flex flex-col justify-between relative bg-red-200`}
-          >
+          <div className="h-[calc(100%-70px)] flex flex-col justify-between">
             <div
               ref={chatContainerRef}
-              className={`p-4 flex-1 flex flex-col gap-4 overflow-y-auto chat-gpt transition-all duration-300 ${isKeyboardVisible ? 'pb-[150px]' : ''
-                }`}
+              className={`p-4 flex flex-col gap-4 overflow-y-auto chat-gpt ${
+                isKeyboardVisible ? 'pb-[150px]' : ''
+              }`}
             >
               <div className="flex items-end gap-2 text-sm">
                 <div className="bg-black size-8 p-2 rounded-full flex items-center justify-center">
@@ -121,13 +121,13 @@ function ChatGpt() {
               geenrateBotResponse={geenrateBotResponse}
             />
           </div>
-
         </div>
 
         <div className="absolute md:-bottom-[3rem] md:right-0 bottom-[2rem] z-10 right-[4vw]">
           <button
-            className={`pointer-cursor inline-flex items-center justify-center size-10 border-2 border-black rounded-full text-2xl bg-white transition-all duration-300 ${showChat ? 'rotate-180' : 'rotate-0'
-              }`}
+            className={`pointer-cursor inline-flex items-center justify-center size-10 border-2 border-black rounded-full text-2xl bg-white transition-all duration-300 ${
+              showChat ? 'rotate-180' : 'rotate-0'
+            }`}
             onClick={() => setShowChat((prev) => !prev)}
           >
             {showChat ? <IoClose /> : <MdOutlineChatBubble />}
