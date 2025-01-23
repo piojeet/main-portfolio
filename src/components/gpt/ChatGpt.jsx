@@ -8,8 +8,6 @@ import { MdOutlineChatBubble } from 'react-icons/md';
 import { IoClose } from 'react-icons/io5';
 
 function ChatGpt() {
-
-
   const [chatHistory, setChatHistory] = useState([{
     hideInChat: true,
     role: 'model',
@@ -24,7 +22,6 @@ function ChatGpt() {
   }, [chatHistory]);
 
   const geenrateBotResponse = async (history) => {
-    console.log(history);
     const updateHistory = (text, isError = false) => {
       setChatHistory(prev => [...prev.filter(msg => msg.text !== "Wait..."), { role: "model", text, isError }])
     }
@@ -41,7 +38,6 @@ function ChatGpt() {
       const response = await fetch(import.meta.env.VITE_API_URL, requestOptions);
       const data = await response.json();
       if (!response.ok) throw new Error(data.error.message || "Something went wrong");
-      console.log(data);
 
       const apiResponseText = data.candidates[0].content.parts[0].text.replace(/\*\*(.*?)\*\*/g, "$1").trim();
 
@@ -50,7 +46,6 @@ function ChatGpt() {
       updateHistory(error.message, true)
     }
   }
-
 
   const [showChat, setShowChat] = useState(false);
   const [isKeyboardVisible, setKeyboardVisible] = useState(false);
@@ -70,7 +65,6 @@ function ChatGpt() {
     }
   }, [chatHistory]);
 
-
   return (
     <div className={`w-full h-full`}>
       <div className={`fixed z-[30000] md:bottom-[10vw] md:right-[5vw] right-0 rounded-md h-full bottom-0 md:h-[75vh] ${showChat ? 'md:max-w-[300px] w-full' : 'w-0'}`}>
@@ -88,6 +82,7 @@ function ChatGpt() {
           <div className='h-[calc(100%-70px)] flex flex-col justify-between'>
             <div
               className={`p-4 flex flex-col gap-4 overflow-y-auto chat-gpt ${isKeyboardVisible ? 'pb-[150px]' : ''}`} ref={chatContainerRef}
+              style={{ maxHeight: isKeyboardVisible ? 'calc(100vh - 150px)' : '100vh' }} // Adjust height when keyboard is visible
             >
               <div className='flex items-end gap-2 text-sm'>
                 <div className='bg-black size-8 p-2 rounded-full flex items-center justify-center'>
@@ -109,9 +104,7 @@ function ChatGpt() {
           <button className={`pointer-cursor inline-flex items-center justify-center size-10 border-2 border-black rounded-full text-2xl bg-white transition-all duration-300 ${showChat ? 'rotate-180' : 'rotate-0'}`} onClick={() => setShowChat(prev => !prev)}>
             {showChat ? (
               <IoClose />
-
             ) : <MdOutlineChatBubble />}
-
           </button>
         </div>
       </div>
