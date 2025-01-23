@@ -53,8 +53,10 @@ function ChatGpt() {
 
   useEffect(() => {
     const handleResize = () => {
-      setKeyboardVisible(window.innerHeight < document.documentElement.clientHeight);
+      setKeyboardVisible(window.visualViewport.height < window.innerHeight);
     };
+
+    // Detect if the keyboard is visible based on viewport height
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -63,7 +65,9 @@ function ChatGpt() {
     if (chatWindowRef.current) {
       const windowHeight = window.innerHeight;
       const headerHeight = 70; // height of the header
-      const adjustedHeight = isKeyboardVisible ? windowHeight - headerHeight - 150 : windowHeight - headerHeight;
+      const keyboardHeight = isKeyboardVisible ? window.innerHeight - window.visualViewport.height : 0;
+      const adjustedHeight = windowHeight - headerHeight - keyboardHeight;
+
       chatWindowRef.current.style.height = `${adjustedHeight}px`;
     }
   };
@@ -89,6 +93,7 @@ function ChatGpt() {
           <div ref={chatWindowRef} className='flex flex-col justify-between'>
             <div
               className={`p-4 flex flex-col gap-4 overflow-y-auto chat-gpt`} ref={chatContainerRef}
+              style={{ overflowY: 'auto', maxHeight: 'calc(100% - 70px)' }}
             >
               <div className='flex items-end gap-2 text-sm'>
                 <div className='bg-black size-8 p-2 rounded-full flex items-center justify-center'>
