@@ -93,6 +93,7 @@ function ChatGpt() {
           <div ref={chatWindowRef} className='flex flex-col justify-between'>
             <div
               className={`p-4 flex flex-col gap-4 overflow-y-auto chat-gpt`} ref={chatContainerRef}
+              style={{ overflowY: 'auto', maxHeight: 'calc(100% - 70px)' }}
             >
               <div className='flex items-end gap-2 text-sm'>
                 <div className='bg-black size-8 p-2 rounded-full flex items-center justify-center'>
