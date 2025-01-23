@@ -16,14 +16,14 @@ function ChatGpt() {
       text: companyInfo,
     },
   ]);
-  const chatContainerRef = useRef(null); // Ref for chat container
+  const chatContainerRef = useRef(null);
 
   // Detect keyboard visibility
   const [isKeyboardVisible, setKeyboardVisible] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      // Detect if viewport height has decreased (keyboard likely open)
+      // Check if viewport height decreased (keyboard likely open)
       setKeyboardVisible(window.innerHeight < document.documentElement.clientHeight);
     };
 
@@ -34,7 +34,7 @@ function ChatGpt() {
   }, []);
 
   useEffect(() => {
-    // Scroll to the bottom whenever chatHistory updates
+    // Auto-scroll to the bottom whenever chatHistory updates
     if (chatContainerRef.current) {
       chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
     }
@@ -96,10 +96,10 @@ function ChatGpt() {
               </button>
             </div>
           </div>
-          <div className="md:h-[calc(70vh-70px)] h-[calc(100%-70px)] flex flex-col justify-between">
+          <div className="md:h-[calc(70vh-70px)] h-[calc(100%-70px)] flex flex-col justify-between relative">
             <div
               ref={chatContainerRef}
-              className={`p-4 flex flex-col gap-4 overflow-y-auto chat-gpt ${
+              className={`p-4 flex-1 flex flex-col gap-4 overflow-y-auto chat-gpt transition-all duration-300 ${
                 isKeyboardVisible ? 'pb-[150px]' : ''
               }`}
             >
