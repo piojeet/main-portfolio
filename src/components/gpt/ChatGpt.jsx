@@ -50,47 +50,52 @@ function ChatGpt() {
   const [isKeyboardVisible, setKeyboardVisible] = useState(false);
   const chatContainerRef = useRef(null);
   const chatWindowRef = useRef(null);
-
+  
   useEffect(() => {
-    const handleResize = () => {
-      setKeyboardVisible(window.visualViewport.height < window.innerHeight);
-    };
-
-    // Detect if the keyboard is visible based on viewport height
-    window.addEventListener('resize', handleResize);
-
-    // Adjust chat window height when keyboard visibility changes
-    const handleVisualViewportResize = () => {
-      setKeyboardVisible(window.visualViewport.height < window.innerHeight);
-      adjustChatWindowHeight();
-    };
-
-    window.visualViewport?.addEventListener('resize', handleVisualViewportResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      window.visualViewport?.removeEventListener('resize', handleVisualViewportResize);
-    };
+    if (window.innerWidth <= 786) {
+      const handleResize = () => {
+        setKeyboardVisible(window.visualViewport.height < window.innerHeight);
+      };
+  
+      // Detect if the keyboard is visible based on viewport height
+      window.addEventListener('resize', handleResize);
+  
+      // Adjust chat window height when keyboard visibility changes
+      const handleVisualViewportResize = () => {
+        setKeyboardVisible(window.visualViewport.height < window.innerHeight);
+        adjustChatWindowHeight();
+      };
+  
+      window.visualViewport?.addEventListener('resize', handleVisualViewportResize);
+  
+      return () => {
+        window.removeEventListener('resize', handleResize);
+        window.visualViewport?.removeEventListener('resize', handleVisualViewportResize);
+      };
+    }
   }, []);
-
+  
   const adjustChatWindowHeight = () => {
     if (chatWindowRef.current) {
       const windowHeight = isKeyboardVisible ? window.visualViewport.height : window.innerHeight;
       const headerHeight = 70; // height of the header
       const adjustedHeight = windowHeight - headerHeight;
-
+  
       chatWindowRef.current.style.height = `${adjustedHeight}px`;
     }
   };
-
+  
   useEffect(() => {
-    adjustChatWindowHeight();
+    if (window.innerWidth <= 786) {
+      adjustChatWindowHeight();
+    }
   }, [isKeyboardVisible, chatHistory]);
+  
 
   return (
     <div className={`w-full h-full`}>
-      <div className={`fixed z-[30000] md:bottom-[10vw] md:right-[5vw] right-0 rounded-md h-full md:h-[70vh] bottom-0 bg-red-400 ${showChat ? 'md:max-w-[300px] w-full' : 'w-0'}`} >
-        <div className={`bg-white border border-black rounded-md shadow-[0px_0px_10px_#000] origin-bottom-right transition-all duration-300 z-20 relative h-full ${showChat ? 'scale-100' : 'scale-0'} bg-green-300`}>
+      <div className={`fixed z-[30000] md:bottom-[10vw] md:right-[5vw] right-0 rounded-md h-full md:h-[70vh] bottom-0 bg-red-400 ${showChat ? 'md:max-w-[300px] w-full' : 'w-0'}`} ref={chatWindowRef}>
+        <div className={`bg-white border border-black rounded-md shadow-[0px_0px_10px_#000] origin-bottom-right transition-all duration-300 z-20 relative h-full ${showChat ? 'scale-100' : 'scale-0'} bg-gray-300`}>
           <div>
             <div className='h-[70px] flex justify-between items-center p-4 bg-black text-white'>
               <div className='bg-white size-10 p-2 rounded-full flex items-center justify-center'>
