@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import logo from '../../assets/shortlogo.svg';
 import { IoIosArrowDown } from 'react-icons/io';
 import ChatForm from './ChatForm';
@@ -14,11 +14,6 @@ function ChatGpt() {
     text: companyInfo,
   }]);
 
-  useEffect(() => {
-    if (chatContainerRef.current) {
-      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
-    }
-  }, [chatHistory]);
 
   const geenrateBotResponse = async (history) => {
     const updateHistory = (text, isError = false) => {
@@ -47,55 +42,13 @@ function ChatGpt() {
   }
 
   const [showChat, setShowChat] = useState(false);
-  const [isKeyboardVisible, setKeyboardVisible] = useState(false);
-  const chatContainerRef = useRef(null);
-  const chatWindowRef = useRef(null);
-  
-  useEffect(() => {
-    if (window.innerWidth <= 786) {
-      const handleResize = () => {
-        setKeyboardVisible(window.visualViewport.height < window.innerHeight);
-      };
-  
-      // Detect if the keyboard is visible based on viewport height
-      window.addEventListener('resize', handleResize);
-  
-      // Adjust chat window height when keyboard visibility changes
-      const handleVisualViewportResize = () => {
-        setKeyboardVisible(window.visualViewport.height < window.innerHeight);
-        adjustChatWindowHeight();
-      };
-  
-      window.visualViewport?.addEventListener('resize', handleVisualViewportResize);
-  
-      return () => {
-        window.removeEventListener('resize', handleResize);
-        window.visualViewport?.removeEventListener('resize', handleVisualViewportResize);
-      };
-    }
-  }, []);
-  
-  const adjustChatWindowHeight = () => {
-    if (chatWindowRef.current) {
-      const windowHeight = isKeyboardVisible ? window.visualViewport.height : window.innerHeight;
-      const headerHeight = 70; // height of the header
-      const adjustedHeight = windowHeight - headerHeight;
-  
-      chatWindowRef.current.style.height = `${adjustedHeight}px`;
-    }
-  };
-  
-  useEffect(() => {
-    if (window.innerWidth <= 786) {
-      adjustChatWindowHeight();
-    }
-  }, [isKeyboardVisible, chatHistory]);
+
   
 
   return (
     <div className={`w-full h-full`}>
-      <div className={`fixed z-[30000] md:bottom-[10vw] md:right-[5vw] right-0 rounded-md h-full md:h-[70vh] bottom-0 bg-red-400 ${showChat ? 'md:max-w-[300px] w-full' : 'w-0'}`} ref={chatWindowRef}>
-        <div className={`bg-white border border-black rounded-md shadow-[0px_0px_10px_#000] origin-bottom-right transition-all duration-300 z-20 relative h-full ${showChat ? 'scale-100' : 'scale-0'} bg-gray-300`}>
+      <div className={`fixed z-[30000] md:bottom-[10vw] md:right-[5vw] right-0 rounded-md h-full md:h-[70vh] bottom-0 ${showChat ? 'md:max-w-[300px] w-full' : 'w-0'}`}>
+        <div className={`bg-white border border-black rounded-md shadow-[0px_0px_10px_#000] origin-bottom-right transition-all duration-300 z-20 relative h-full overflow-hidden ${showChat ? 'scale-100' : 'scale-0'}`}>
           <div>
             <div className='h-[70px] flex justify-between items-center p-4 bg-black text-white'>
               <div className='bg-white size-10 p-2 rounded-full flex items-center justify-center'>
@@ -108,7 +61,7 @@ function ChatGpt() {
           </div>
           <div className='flex flex-col justify-between h-[calc(100%-70px)]'>
             <div
-              className={`p-4 flex flex-col gap-4 overflow-y-auto chat-gpt`} ref={chatContainerRef} 
+              className={`p-4 flex flex-col gap-4 overflow-y-auto chat-gpt`} 
               // style={{ overflowY: 'auto', maxHeight: 'calc(100% - 70px)' }}
             >
               <div className='flex items-end gap-2 text-sm'>
@@ -128,7 +81,7 @@ function ChatGpt() {
         </div>
 
         <div className='absolute md:-bottom-[3rem] md:right-0 bottom-[2rem] z-10 right-[4vw]'>
-          <button className={`pointer-cursor inline-flex items-center justify-center size-10 border-2 border-black rounded-full text-2xl bg-white transition-all duration-300 ${showChat ? 'rotate-180' : 'rotate-0'}`} onClick={() => setShowChat(prev => !prev)}>
+          <button className={`pointer-cursor inline-flex items-center justify-center size-12 border-2 border-black rounded-full text-2xl bg-white transition-all duration-300 ${showChat ? 'rotate-180' : 'rotate-0'}`} onClick={() => setShowChat(prev => !prev)}>
             {showChat ? (
               <IoClose />
             ) : <MdOutlineChatBubble />}
