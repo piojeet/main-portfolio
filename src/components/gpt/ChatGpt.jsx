@@ -58,15 +58,26 @@ function ChatGpt() {
 
     // Detect if the keyboard is visible based on viewport height
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+
+    // Adjust chat window height when keyboard visibility changes
+    const handleVisualViewportResize = () => {
+      setKeyboardVisible(window.visualViewport.height < window.innerHeight);
+      adjustChatWindowHeight();
+    };
+
+    window.visualViewport?.addEventListener('resize', handleVisualViewportResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.visualViewport?.removeEventListener('resize', handleVisualViewportResize);
+    };
   }, []);
 
   const adjustChatWindowHeight = () => {
     if (chatWindowRef.current) {
-      const windowHeight = window.innerHeight;
+      const windowHeight = isKeyboardVisible ? window.visualViewport.height : window.innerHeight;
       const headerHeight = 70; // height of the header
-      const keyboardHeight = isKeyboardVisible ? window.innerHeight - window.visualViewport.height : 0;
-      const adjustedHeight = windowHeight - headerHeight - keyboardHeight;
+      const adjustedHeight = windowHeight - headerHeight;
 
       chatWindowRef.current.style.height = `${adjustedHeight}px`;
     }
