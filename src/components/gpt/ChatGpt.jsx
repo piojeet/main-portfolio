@@ -89,8 +89,8 @@ function ChatGpt() {
 
   return (
     <div className={`w-full h-full`}>
-      <div className={`fixed z-[30000] md:bottom-[10vw] md:right-[5vw] right-0 rounded-md h-full bottom-0 md:h-[75vh] bg-red-400 ${showChat ? 'md:max-w-[300px] w-full' : 'w-0'}`}>
-        <div className={`bg-white border border-black rounded-md overflow-hidden shadow-[0px_0px_10px_#000] origin-bottom-right transition-all duration-300 z-20 relative ${showChat ? 'scale-100' : 'scale-0'}`}>
+      <div className={`fixed z-[30000] md:bottom-[10vw] md:right-[5vw] right-0 rounded-md h-full md:h-[70vh] bottom-0 bg-red-400 ${showChat ? 'md:max-w-[300px] w-full' : 'w-0'}`} >
+        <div className={`bg-white border border-black rounded-md shadow-[0px_0px_10px_#000] origin-bottom-right transition-all duration-300 z-20 relative h-full ${showChat ? 'scale-100' : 'scale-0'} bg-green-300`}>
           <div>
             <div className='h-[70px] flex justify-between items-center p-4 bg-black text-white'>
               <div className='bg-white size-10 p-2 rounded-full flex items-center justify-center'>
@@ -101,10 +101,10 @@ function ChatGpt() {
               </button>
             </div>
           </div>
-          <div ref={chatWindowRef} className='flex flex-col justify-between'>
+          <div className='flex flex-col justify-between h-[calc(100%-70px)]'>
             <div
-              className={`p-4 flex flex-col gap-4 overflow-y-auto chat-gpt`} ref={chatContainerRef}
-              style={{ overflowY: 'auto', maxHeight: 'calc(100% - 70px)' }}
+              className={`p-4 flex flex-col gap-4 overflow-y-auto chat-gpt`} ref={chatContainerRef} 
+              // style={{ overflowY: 'auto', maxHeight: 'calc(100% - 70px)' }}
             >
               <div className='flex items-end gap-2 text-sm'>
                 <div className='bg-black size-8 p-2 rounded-full flex items-center justify-center'>
