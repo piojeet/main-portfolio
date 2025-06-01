@@ -18,6 +18,7 @@ import gsap from 'gsap'
 import { useGSAP } from '@gsap/react';
 import ConfettiCanvas from './components/ConfettiCanvas';
 import DisableDevTools from './components/DisableDevTools';
+import Privacy from './components/privacy/Privacy';
 
 
 function ScrollToTop() {
@@ -69,7 +70,7 @@ function App() {
               <ProjectAllProvider>
                 
                 <DisableDevTools />
-                <ConfettiCanvas />
+                {/* <ConfettiCanvas /> */}
                 <Routes>
                   <Route path='/' element={<Home />} />
                   <Route path='projects' element={<ProjectHome />} />
@@ -80,6 +81,7 @@ function App() {
                   <Route path='website-design' element={<ServicesWebDesignHome />} />
                   <Route path='frontend-design' element={<ServicesFrontEndHome />} />
                   <Route path='design-support' element={<ServicesDesignSupportHome />} />
+                  <Route path='privacy' element={<Privacy />} />
                   <Route path='contact' element={<ContactHome />} />
                 </Routes>
                 

@@ -132,7 +132,7 @@ function ContactGenral() {
                                 <div className='lg:my-10 my-7 flex items-start justify-between gap-x-10 flex-col lg:gap-y-10 gap-y-6 mt-0'>
                                     {inputFields.slice(0, 2).map((field) => (
                                         <div key={field.id} className='w-full relative'>
-                                            <label htmlFor={field.id} className='text-[17px] font-TTCPro text-blackColor font-semibold uppercase tracking-widest w-full cursor-pointer'>
+                                            <label htmlFor={field.id} className='text-[17px] font-TTCPro text-blackColor font-semibold uppercase tracking-widest w-full pointer-cursor'>
                                                 <span className='mb-3 inline-block w-full'>
                                                     {field.label} {field.required && <span>*</span>}
                                                 </span>
@@ -209,7 +209,7 @@ function ContactGenral() {
                                 </div>
 
                                 <div>
-                                    <label htmlFor="agreeg" className='cursor-pointer inline-flex items-center w-full'>
+                                    <label htmlFor="agreeg" className='pointer-cursor inline-flex items-center w-full'>
                                         <input type="checkbox" id='agreeg' className='pree-check appearance-none' />
                                         <span className='group border border-blackColor inline-block lg:w-14 lg:h-14 md:w-[50px] md:h-[50px] h-[40px] w-[40px] relative overflow-hidden hover:bg-gray-200 flex-shrink-0'>
                                             <span className='absolute w-full h-full bg-blackColor -bottom-16 group-hover:-bottom-12 transition-all duration-200 pree-bg'></span>

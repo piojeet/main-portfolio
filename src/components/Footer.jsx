@@ -140,7 +140,7 @@ function Footer() {
             </NavLink>
 
             <NavLink
-              to="projects"
+              to="/projects"
               className={`group block text-[17px] font-semibold font-TTCPro tracking-wider uppercase text-blackColor relative px-7 footer-link w-full h-9 pointer-cursor overflow-hidden active-link ${hoveredIndex === 1 || hoveredIndex === null ? 'text-black' : 'text-gray-500'
                 }`}
               onMouseEnter={() => setHoveredIndex(1)}
@@ -165,7 +165,7 @@ function Footer() {
             </NavLink>
 
             <NavLink
-              to="about"
+              to="/about"
               className={`group block text-[17px] font-semibold font-TTCPro tracking-wider uppercase text-blackColor relative px-7 footer-link w-full h-9 pointer-cursor overflow-hidden active-link ${hoveredIndex === 2 || hoveredIndex === null ? 'text-black' : 'text-gray-500'
                 }`}
               onMouseEnter={() => setHoveredIndex(2)}
@@ -190,7 +190,7 @@ function Footer() {
             </NavLink>
 
             <NavLink
-              to="about"
+              to="/services"
               className={`group block text-[17px] font-semibold font-TTCPro tracking-wider uppercase text-blackColor relative px-7 footer-link w-full h-9 pointer-cursor overflow-hidden active-link ${hoveredIndex === 3 || hoveredIndex === null ? 'text-black' : 'text-gray-500'
                 }`}
               onMouseEnter={() => setHoveredIndex(3)}
@@ -215,7 +215,7 @@ function Footer() {
             </NavLink>
 
             <NavLink
-              to="about"
+              to="/contact"
               className={`group block text-[17px] font-semibold font-TTCPro tracking-wider uppercase text-blackColor relative px-7 footer-link w-full h-9 pointer-cursor overflow-hidden active-link ${hoveredIndex === 4 || hoveredIndex === null ? 'text-black' : 'text-gray-500'
                 }`}
               onMouseEnter={() => setHoveredIndex(4)}
@@ -292,7 +292,7 @@ function Footer() {
           </div>
         </NavLink>
 
-        <div className='group pointer-cursor h-[80px] w-[100%] border border-blackColor bg-blackColor flex justify-start items-center relative z-10 border-t-0 md:border-t'>
+        <NavLink to={'/privacy'} className='group pointer-cursor h-[80px] w-[100%] border border-blackColor bg-blackColor flex justify-start items-center relative z-10 border-t-0 md:border-t'>
           {/* Magnetic effect on wrapper div */}
           <div className='magnetic-btn relative w-full h-full'>
             {/* Hover transition on inner span */}
@@ -320,7 +320,7 @@ function Footer() {
               </span>
             </span>
           </div>
-        </div>
+        </NavLink>
 
       </div>
 

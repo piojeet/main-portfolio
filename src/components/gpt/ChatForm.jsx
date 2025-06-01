@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { IoMdArrowRoundUp } from 'react-icons/io';
 
-function ChatForm({ chatHistory, setChatHistory, geenrateBotResponse }) {
+function ChatForm({ chatHistory, setChatHistory, geenrateBotResponse, isLoading }) {
   const [inputValue, setInputValue] = useState('');
   const inputRef = useRef(null);
 
@@ -20,6 +20,7 @@ function ChatForm({ chatHistory, setChatHistory, geenrateBotResponse }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!inputValue.trim() || isLoading) return;
     const userMessage = inputValue.trim();
     if (!userMessage) return;
     setInputValue(''); // Clear input
@@ -47,10 +48,12 @@ function ChatForm({ chatHistory, setChatHistory, geenrateBotResponse }) {
           />
           <button
             type="submit"
-            className={`p-2 bg-black transition-all duration-200 ${inputValue.trim() ? 'scale-100 rounded-md text-white pointer-events-auto' : 'scale-50 rounded-full text-black pointer-events-none rotate-180'}`}
+            disabled={isLoading} // Disable button when loading
+            className={`p-2 bg-black transition-all duration-200 ${inputValue.trim() && !isLoading ? 'scale-100 rounded-md text-white' : 'scale-50 rounded-full text-black pointer-events-none rotate-180'}`}
           >
             <IoMdArrowRoundUp />
           </button>
+
         </div>
       </form>
     </div>

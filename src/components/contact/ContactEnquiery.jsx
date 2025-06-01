@@ -161,7 +161,7 @@ function ContactEnquiery() {
                                 {[checkboxOptions.slice(0, 3), checkboxOptions.slice(3)].map((group, groupIndex) => (
                                     <div key={groupIndex} className='w-full flex flex-col gap-4'>
                                         {group.map((option) => (
-                                            <label key={option.id} htmlFor={option.id} className='cursor-pointer inline-flex items-center'>
+                                            <label key={option.id} htmlFor={option.id} className='pointer-cursor inline-flex items-center'>
                                                 <input type="checkbox" id={option.id} className='pree-check appearance-none' />
                                                 <span className='group border border-blackColor inline-block lg:w-14 lg:h-14 md:w-[50px] md:h-[50px] h-[40px] w-[40px] relative overflow-hidden hover:bg-gray-200 flex-shrink-0'>
                                                     <span className='absolute w-full h-full bg-blackColor -bottom-16 group-hover:-bottom-12 transition-all duration-200 pree-bg'></span>
@@ -182,7 +182,7 @@ function ContactEnquiery() {
                                 <div className='lg:my-10 my-7 flex items-start justify-between lg:gap-x-10 flex-col lg:gap-y-10 gap-y-6'>
                                     {inputFields.slice(0, 5).map((field) => (
                                         <div key={field.id} className='relative w-full'>
-                                            <label htmlFor={field.id} className='text-[17px] font-TTCPro text-blackColor font-semibold uppercase tracking-widest w-full cursor-pointer'>
+                                            <label htmlFor={field.id} className='text-[17px] font-TTCPro text-blackColor font-semibold uppercase tracking-widest w-full pointer-cursor'>
                                                 <span className='mb-3 inline-block w-full'>{field.label} {field.id === 'name' && <span>*</span>}</span>
                                                 <div className='relative group overflow-hidden'>
                                                     <input
@@ -217,7 +217,7 @@ function ContactEnquiery() {
                                 
 
                                 <div className='lg:my-10 my-7'>
-                                    <label htmlFor="message" className='text-[17px] font-TTCPro text-blackColor font-semibold uppercase tracking-widest w-full cursor-pointer'>
+                                    <label htmlFor="message" className='text-[17px] font-TTCPro text-blackColor font-semibold uppercase tracking-widest w-full pointer-cursor'>
                                         <span className={`mb-3 inline-block w-full transition-all`}>
                                             Tell us about your project <span>*</span>
                                         </span>
@@ -264,7 +264,7 @@ function ContactEnquiery() {
                                 </div>
 
                                 <div>
-                                    <label htmlFor="agree" className='cursor-pointer inline-flex items-center w-full'>
+                                    <label htmlFor="agree" className='pointer-cursor inline-flex items-center w-full'>
                                         <input type="checkbox" id='agree' className='pree-check appearance-none' />
                                         <span className='group border border-blackColor inline-block lg:w-14 lg:h-14 md:w-[50px] md:h-[50px] h-[40px] w-[40px] relative overflow-hidden hover:bg-gray-200 flex-shrink-0'>
                                             <span className='absolute w-full h-full bg-blackColor -bottom-16 group-hover:-bottom-12 transition-all duration-200 pree-bg'></span>

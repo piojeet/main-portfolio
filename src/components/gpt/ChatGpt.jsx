@@ -14,8 +14,15 @@ function ChatGpt() {
     text: companyInfo,
   }]);
 
+  const [isLoading, setIsLoading] = useState(false);
+
 
   const geenrateBotResponse = async (history) => {
+
+    if (isLoading) return;
+
+    setIsLoading(true);
+
     const updateHistory = (text, isError = false) => {
       setChatHistory(prev => [...prev.filter(msg => msg.text !== "Wait..."), { role: "model", text, isError }])
     }
@@ -38,12 +45,14 @@ function ChatGpt() {
       updateHistory(apiResponseText);
     } catch (error) {
       updateHistory(error.message, true)
+    } finally {
+      setIsLoading(false); // ⬅️ Stop loading state
     }
   }
 
   const [showChat, setShowChat] = useState(false);
 
-  
+
 
   return (
     <div className={`w-full h-full`}>
@@ -61,8 +70,8 @@ function ChatGpt() {
           </div>
           <div className='flex flex-col justify-between h-[calc(100%-70px)]'>
             <div
-              className={`p-4 flex flex-col gap-4 overflow-y-auto chat-gpt`} 
-              // style={{ overflowY: 'auto', maxHeight: 'calc(100% - 70px)' }}
+              className={`p-4 flex flex-col gap-4 overflow-y-auto chat-gpt`}
+            // style={{ overflowY: 'auto', maxHeight: 'calc(100% - 70px)' }}
             >
               <div className='flex items-end gap-2 text-sm'>
                 <div className='bg-black size-8 p-2 rounded-full flex items-center justify-center'>
@@ -76,7 +85,7 @@ function ChatGpt() {
                 <ChatMessages key={index} chat={chat} />
               ))}
             </div>
-            <ChatForm chatHistory={chatHistory} setChatHistory={setChatHistory} geenrateBotResponse={geenrateBotResponse} />
+            <ChatForm chatHistory={chatHistory} setChatHistory={setChatHistory} geenrateBotResponse={geenrateBotResponse} isLoading={isLoading} />
           </div>
         </div>
 
