@@ -13,6 +13,7 @@ import ServicesMiniNav from '../ServicesMiniNav'
 function ServicesFrontEndHome() {
   return (
     <div>
+      <h1 className='sr-only'>Frontend Design Services by Priyajeet Majhi</h1>
       <Nav />
       <FrontEndHero />
       <ShowWorksMarquee />

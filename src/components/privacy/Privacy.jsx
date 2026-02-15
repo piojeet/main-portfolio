@@ -18,6 +18,7 @@ function Privacy() {
 
     return (
         <div>
+            <h1 className='sr-only'>Privacy Policy - Priyajeet Majhi</h1>
             <Nav />
             <section className="border border-blackColor mb-40 bg-white bg-opacity-70">
                 <div className=''>

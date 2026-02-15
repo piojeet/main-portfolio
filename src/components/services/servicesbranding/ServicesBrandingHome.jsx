@@ -13,6 +13,7 @@ function ServicesBrandingHome() {
 
   return (
     <>
+    <h1 className='sr-only'>Branding Services by Priyajeet Majhi</h1>
     <Nav />
     <BrandingHero />
     <BrandingStandout />

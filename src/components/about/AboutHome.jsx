@@ -10,6 +10,7 @@ import Footer from '../Footer'
 function AboutHome() {
   return (
     <>
+        <h1 className='sr-only'>About Priyajeet Majhi</h1>
         <Nav />
         <AboutHero />
         <AboutIntro />

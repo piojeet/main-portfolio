@@ -14,6 +14,37 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Cards() {
 
+    const data = [
+        {
+            branding: <BrandingIcon className="sm:size-16 size-10" />,
+            title: "Branding",
+            disc: "Create or refine a visual identity to celebrate your unique personality and proposition.",
+            hrf: "/branding",
+            class: "card relative group lg:w-[100%] border border-blackColor bg-bodyColor border-b-0 md:border-b lg:h-[32vw] sm:h-[50vw] h-[55vw] md:w-[45vw] block pointer-cursor"
+        },
+        {
+            branding: <WebDesignIcon className="sm:size-16 size-10" />,
+            title: "Website Design",
+            disc: "Amplify your brands presence and engage your audience with an impactful and interactive website.",
+            hrf: "/website-design",
+            class: "card relative group lg:w-[100%] border border-blackColor border-b-0 md:border-b bg-bodyColor lg:h-[32vw] sm:h-[50vw] h-[55vw] top-12 lg:mt-16 md:w-[45vw] block pointer-cursor"
+        },
+        {
+            branding: <FronEndIcon className="sm:size-16 size-10" />,
+            title: "Front-End",
+            disc: "I build efficient, responsive websites using modern web technologies and best design principles.",
+            hrf: "/frontend-design",
+            class: "card relative group lg:w-[100%] border border-blackColor md:border-b bg-bodyColor lg:h-[32vw] sm:h-[50vw] h-[55vw] lg:mt-7 md:w-[45vw] block pointer-cursor"
+        },
+        {
+            branding: <DesignSupportIcon className="sm:size-16 size-10" />,
+            title: "Design Support",
+            disc: "An ongoing engagement to help with your regular or ad-hoc creative requirements and output.",
+            hrf: "/design-support",
+            class: "card group lg:w-[100%] border border-blackColor relative top-12 bg-bodyColor lg:h-[32vw] sm:h-[50vw] h-[55vw] md:w-[45vw] block pointer-cursor"
+        }
+    ]
+
 
     const cardRef = useRef(null);
     useGSAP(() => {
@@ -38,8 +69,8 @@ function Cards() {
     return (
         <>
             <div ref={cardRef} className='xl:flex items-start justify-between md:flex-wrap lg:flex-nowrap grid grid-cols-2 mb-28 md:mb-0'>
-
-                <NavLink to="/branding" className='card relative group lg:w-[100%] border border-blackColor bg-bodyColor border-b-0 md:border-b lg:h-[32vw] sm:h-[50vw] h-[55vw] md:w-[45vw] block pointer-cursor'>
+                {data.map((item) => (
+                    <NavLink to={item.hrf} key={item} className={`${item.class}`}>
                     <div className='transition-all duration-300 group-hover:p-2 h-full'>
                         <div className='relative h-full group-hover:bg-blackColor group-hover:rounded-lg overflow-hidden pt-7 flex flex-col justify-between md:block select-none'>
                             <div className='relative'>
@@ -47,79 +78,20 @@ function Cards() {
                                     <RightArrowIcon className="sm:size-16 size-8" />
                                 </span>
                                 <span className='cards-icon relative left-4 sm:group-hover:left-24 group-hover:left-12 transition-left duration-500  group-hover:text-bodyColor'>
-                                    <BrandingIcon className="sm:size-16 size-10" />
+                                    {item.branding}
                                 </span>
 
                             </div>
-                            <div className='md:absolute bottom-[0] md:translate-y-[58%] xl:translate-y-[65%] left-0 w-full sm:px-6 px-4 group-hover:px-3 py-3 transition-all duration-500 group-hover:translate-y-[0]'>
-                                <h3 className='font-TTCPro md:text-[32px] sm:text-[27px] text-[20px] font-[500] mb-2 group-hover:text-bodyColor'>Branding</h3>
-                                <p className='font-TTCPro md:text-[21px] text-[18px] font[450] group-hover:text-bodyColor md:block hidden'>Create or refine a visual identity to celebrate your unique personality and proposition.</p>
+                            <div className='md:absolute bottom-[0] left-0 w-full sm:px-6 px-4 group-hover:px-3 py-3 transition-all duration-500 group-hover:translate-y-[0]'>
+                                <h3 className='font-TTCPro md:text-[32px] sm:text-[27px] text-[18px] font-[500] mb-2 group-hover:text-bodyColor'>{item.title}</h3>
+                                <div className='max-h-0 overflow-hidden group-hover:max-h-[500px] transition-all duration-500'>
+                                    <p className='font-TTCPro md:text-[21px] text-[18px] font[450] group-hover:text-bodyColor md:block hidden'>{item.disc}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </NavLink>
-
-                <NavLink to="/website-design" className='card relative group lg:w-[100%] border border-blackColor border-b-0 md:border-b bg-bodyColor lg:h-[32vw] sm:h-[50vw] h-[55vw] top-12 lg:mt-16 md:w-[45vw] block pointer-cursor'>
-                    <div className='transition-all duration-300 group-hover:p-2 h-full'>
-                        <div className='relative h-full group-hover:bg-blackColor group-hover:rounded-lg overflow-hidden pt-7 flex flex-col justify-between md:block select-none'>
-                            <div className='relative'>
-                                <span className='cards-icon absolute top-0 sm:left-[-25%] left-[-30%] transition-left duration-500 sm:group-hover:left-5 group-hover:text-bodyColor group-hover:left-0'>
-                                    <RightArrowIcon className="sm:size-16 size-8" />
-                                </span>
-                                <span className='cards-icon relative left-4 sm:group-hover:left-24 group-hover:left-12 transition-left duration-500  group-hover:text-bodyColor'>
-                                    <WebDesignIcon className="sm:size-16 size-10" />
-                                </span>
-
-                            </div>
-                            <div className='md:absolute bottom-[0] md:translate-y-[58%] xl:translate-y-[65%] left-0 w-full sm:px-6 px-4 group-hover:px-3 py-3 transition-all duration-500 group-hover:translate-y-[0]'>
-                                <h3 className='font-TTCPro md:text-[32px] sm:text-[27px] text-[20px] font-[500] mb-2 group-hover:text-bodyColor'>Website Design</h3>
-                                <p className='font-TTCPro md:text-[21px] text-[18px] font[450] group-hover:text-bodyColor md:block hidden'>Amplify your brands presence and engage your audience with an impactful and interactive website.</p>
-                            </div>
-                        </div>
-                    </div>
-                </NavLink>
-
-                <NavLink to="/frontend-design" className='card relative group lg:w-[100%] border border-blackColor md:border-b bg-bodyColor lg:h-[32vw] sm:h-[50vw] h-[55vw] lg:mt-7 md:w-[45vw] block pointer-cursor'>
-                    <div className='transition-all duration-300 group-hover:p-2 h-full'>
-                        <div className='relative h-full group-hover:bg-blackColor group-hover:rounded-lg overflow-hidden pt-7 flex flex-col justify-between md:block select-none'>
-                            <div className='relative'>
-                                <span className='cards-icon absolute top-0 sm:left-[-25%] left-[-30%] transition-left duration-500 sm:group-hover:left-5 group-hover:text-bodyColor group-hover:left-0'>
-                                    <RightArrowIcon className="sm:size-16 size-8" />
-                                </span>
-                                <span className='cards-icon relative left-4 sm:group-hover:left-24 group-hover:left-12 transition-left duration-500  group-hover:text-bodyColor'>
-                                    <FronEndIcon className="sm:size-16 size-10" />
-
-                                </span>
-
-                            </div>
-                            <div className='md:absolute bottom-[0] xl:translate-y-[65%] md:translate-y-[60%] left-0 w-full sm:px-6 px-4 group-hover:px-3 py-3 transition-all duration-500 md:group-hover:translate-y-[0]'>
-                                <h3 className='font-TTCPro md:text-[32px] sm:text-[27px] text-[20px] font-[500] mb-2 group-hover:text-bodyColor'>Front-End</h3>
-                                <p className='font-TTCPro md:text-[21px] text-[18px] font[450] group-hover:text-bodyColor md:block hidden'>I build efficient, responsive websites using modern web technologies and best design principles.</p>
-                            </div>
-                        </div>
-                    </div>
-                </NavLink>
-
-                <NavLink to="/design-support" className='card group lg:w-[100%] border border-blackColor relative top-12 bg-bodyColor lg:h-[32vw] sm:h-[50vw] h-[55vw] md:w-[45vw] block pointer-cursor'>
-                    <div className='transition-all duration-300 group-hover:p-2 h-full'>
-                        <div className='relative h-full group-hover:bg-blackColor group-hover:rounded-lg overflow-hidden pt-7 flex flex-col justify-between md:block'>
-                            <div className='relative select-none'>
-                                <span className='cards-icon absolute top-0 sm:left-[-25%] left-[-30%] transition-left duration-500 sm:group-hover:left-5 group-hover:text-bodyColor group-hover:left-0'>
-                                    <RightArrowIcon className="sm:size-16 size-8" />
-                                </span>
-                                <span className='cards-icon relative left-4 sm:group-hover:left-24 group-hover:left-12 transition-left duration-500  group-hover:text-bodyColor'>
-                                    <DesignSupportIcon className="sm:size-16 size-10" />
-
-                                </span>
-
-                            </div>
-                            <div className='md:absolute bottom-[0] md:translate-y-[60%] xl:translate-y-[65%] left-0 w-full sm:px-6 px-4 group-hover:px-3 py-3 transition-all duration-500 group-hover:translate-y-[0]'>
-                                <h3 className='font-TTCPro md::text-[32px] sm:text-[27px] text-[20px] font-[500] mb-2 group-hover:text-bodyColor select-none'>Design Support</h3>
-                                <p className='font-TTCPro md:text-[21px] text-[18px] font[450] group-hover:text-bodyColor md:block hidden select-none'>An ongoing engagement to help with your regular or ad-hoc creative requirements and output.</p>
-                            </div>
-                        </div>
-                    </div>
-                </NavLink>
+                ))}
 
             </div>
         </>

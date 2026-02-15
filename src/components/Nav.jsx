@@ -193,10 +193,9 @@ function Nav() {
   };
 
 
-
   return (
     <>
-              {!isOpen && <ChatGpt />}
+      {!isOpen && <ChatGpt />}
       <div>
         <header className='flex items-center justify-between pt-7'>
           <div className='flex items-center w-full'>
@@ -206,7 +205,7 @@ function Nav() {
                   className={`group pointer-cursor md:w-[80px] md:h-[80px] h-[70px] w-[70px] flex-shrink-0 bg-blackColor border border-blackColor flex items-center justify-center relative z-[200] ${isOpen ? 'bg-gray-800 border-0' : ''}`} onClick={toggleMenu}
                 >
                   {/* Magnetic effect on wrapper */}
-                  <div className="magnetic-btn h-full w-full  flex items-center justify-center relative z-20">
+                  <div className="magnetic-btn h-full w-full  flex items-center justify-center relative z-20" >
                     {/* Hover transition on inner span */}
                     <span
                       className={`h-full w-full bg-blackColor flex items-center justify-center relative left-0 bottom-0 z-20 border lg:group-hover:border-blackColor transition-all duration-300 group-active:left-0 group-active:bottom-0 lg:group-hover:left-2 lg:group-hover:bottom-2 ${isOpen ? 'border-gray-600 group-hover:border-gray-600 border-b-0 group-hover:border-b' : ''}`}

@@ -8,6 +8,7 @@ import Footer from '../Footer'
 function ContactHome() {
   return (
     <>
+    <h1 className='sr-only'>Contact Priyajeet Majhi</h1>
     <Nav />
     <ContactHero />
     {/* <Test /> */}

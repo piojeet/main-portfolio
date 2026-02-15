@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 import Glob from '../assets/glob.svg'
 import GlobC from '../assets/globc.svg'
 import Start from '../assets/starg.svg'
@@ -6,16 +6,12 @@ import RightArrow from '../assets/right-arrow.svg'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { NavLink } from 'react-router-dom'
-import AnimatedThreeDText from './AnimatedThreeDText'
-
 
 function HomeHero() {
 
 
 
-
-  
-  useGSAP(()=> {
+  useGSAP(() => {
     gsap.from(".letter span", {
       y: 100,
       duration: 0.5,
@@ -58,7 +54,7 @@ function HomeHero() {
               <span className='inline-block'>d</span>
               <span className='inline-block'>s</span>
             </span> &nbsp;
-             <br />
+            <br />
             <span className='letter inline-block overflow-hidden'>
               <span className='inline-block'>t</span>
               <span className='inline-block'>h</span>
