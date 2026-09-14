@@ -13,7 +13,7 @@ import ServicesMiniNav from '../ServicesMiniNav'
 function ServicesDesignSupportHome() {
   return (
     <div>
-      <h1 className='sr-only'>Design Support Services by Priyajeet Majhi</h1>
+      <h1 className='sr-only'>Design Support Services by Priyjeet Manjhi</h1>
       <Nav />
       <DesignSupportHero />
       <ShowWorksMarquee />

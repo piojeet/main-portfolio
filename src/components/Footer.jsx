@@ -424,8 +424,8 @@ function Footer() {
         </div>
 
         <div className='lg:absolute xl:top-[40px] lg:top-[10px] md:w-[60%] left-1/2 -translate-x-1/2 flex-shrink-0 block text-[14px] text-center relative lg:p-0 py-14 w-full px-4 md:px-0'>
-          <p className='pb-1'>All work © Priyajeet Majhi 2022-24. All rights reserved</p>
-          <p>Priyajeet Ltd, Registered in England and Wales No. 14713347. 27 Old Gloucester St, Holborn, London WC1N 3AX</p>
+          <p className='pb-1'>All work © Priyjeet Manjhi 2022-24. All rights reserved</p>
+          <p>Priyjeet Ltd, Registered in England and Wales No. 14713347. 27 Old Gloucester St, Holborn, London WC1N 3AX</p>
         </div>
 
       </div>
@@ -435,13 +435,12 @@ function Footer() {
         <span className='inline-block flatter relative'>r</span>
         <span className='inline-block flatter relative'>i</span>
         <span className='inline-block flatter relative'>y</span>
-        <span className='inline-block flatter relative'>a</span>
         <span className='inline-block flatter relative'>j</span>
         <span className='inline-block flatter relative'>e</span>
         <span className='inline-block flatter relative'>e</span>
         <span className='inline-block flatter relative'>t</span>
-        <span className='inline-block flatter relative w-[14vw] h-[14vw] text-blackColor  animate-spiner'>
-          <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="xMidYMin meet" className="--icon --icon-spark-1 inline-block"><path d="M3.4 6.5 9 10.8l-7-1v4.4l7-1-5.7 4.3 3.1 3.1 4.3-5.7-1 7.1h4.4l-1-7.1 4.3 5.7 3.1-3-5.8-4.4 7.2 1V9.8l-7.1 1 5.7-4.3-3-3.1-4.4 5.8 1-7.2H9.8l1 7.2-4.3-5.8Z"></path></svg>
+        <span className='inline-block flatter relative w-[15vw] h-[15vw] text-blackColor top-8'>
+          <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="xMidYMin meet" className="--icon --icon-spark-1 inline-block animate-spiner"><path d="M3.4 6.5 9 10.8l-7-1v4.4l7-1-5.7 4.3 3.1 3.1 4.3-5.7-1 7.1h4.4l-1-7.1 4.3 5.7 3.1-3-5.8-4.4 7.2 1V9.8l-7.1 1 5.7-4.3-3-3.1-4.4 5.8 1-7.2H9.8l1 7.2-4.3-5.8Z"></path></svg>
         </span>
       </div>
     </>

@@ -16,7 +16,7 @@ function Home() {
 
   return (
     <div>
-        <h1 className='sr-only'>Priyajeet Majhi Creative Studio</h1>
+        <h1 className='sr-only'>Priyjeet Manjhi Creative Studio</h1>
         <Nav />
         <HomeHero />
         <Video />

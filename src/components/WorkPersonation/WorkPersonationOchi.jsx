@@ -5,7 +5,7 @@ import Nav from '../Nav'
 function WorkPersonationOchi() {
   return (
     <>
-        <h1 className='sr-only'>Work Personation by Priyajeet Majhi</h1>
+        <h1 className='sr-only'>Work Personation by Priyjeet Manjhi</h1>
         <Nav />
         <PersonationOchiHero />
     </>

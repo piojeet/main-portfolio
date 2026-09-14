@@ -122,12 +122,12 @@ function AboutIntro() {
 
                 <div className='lg:w-[50%] w-full flex-shrink-0 h-full flex items-center justify-center p-6'>
                     <div className='md:w-[30vw] w-[60vw] border border-blackColor overflow-hidden aspect-square'>
-                        <img src={img} alt="Priyajeet Majhi" className='mix-blend-multiply relative z-0' />
+                        <img src={img} alt="Priyjeet Manjhi" className='mix-blend-multiply relative z-0' />
                         
                     </div>
                 </div>
                 <div className='lg:w-[50%] w-full flex-shrink-0 lg:border-l border-blackColor border-t-0 p-4 border-l-0'>
-                    <h3 className='md:text-[40px] text-[25px] font-semibold uppercase'>Priyajeet Majhi</h3>
+                    <h3 className='md:text-[40px] text-[25px] font-semibold uppercase'>Priyjeet Manjhi</h3>
                     <p className='md:text-[20px] text-[16px] text-blackColor'>Front-end Developer with <strong>{experience}</strong> of front-end web development expertise, uniting tech passion & UI/UX mindset for effortless & attractive digital experiences I have experience in developing well-optimized web apps and user-friendly interfaces to make the end-user experience smooth as possible.</p><br />
                     <p className='md:text-[20px] text-[16px] text-blackColor'>I am a fast learner, willing to learn new technology stack with enthusiasm and depth of knowledge, and I always want to be thorough with details. From high-performance websites to novel design solutions and drive more user engagement, I strive to combine technical knowledge with creativity in all the projects where I am involved.</p><br />
                     <p className='md:text-[20px] text-[16px] text-blackColor'>I find I work best in high-pressure environments (everything city), where there is a need quick thinking and on-your-foot adaptability, sectors of operational/project management, and marketing/sales roles. So... how can we work together to make your next project come alive?</p>

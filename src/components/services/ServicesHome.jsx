@@ -11,7 +11,7 @@ import ServicesMiniNav from './ServicesMiniNav'
 function ServicesHome() {
   return (
     <div>
-      <h1 className='sr-only'>Creative Services by Priyajeet Majhi</h1>
+      <h1 className='sr-only'>Creative Services by Priyjeet Manjhi</h1>
       <Nav />
       <ServicesHero />
       <ServicesAbout />

@@ -3,40 +3,40 @@ const DEFAULT_IMAGE = `${SITE_URL}/vite.svg`;
 
 const ROUTE_SEO = {
   "/": {
-    title: "Priyajeet Majhi | Web Design, Frontend & Branding",
+    title: "Priyjeet Manjhi | Web Design, Frontend & Branding",
     description:
-      "Priyajeet Majhi is a digital-first creative studio offering branding, website design, frontend design, and design support for modern brands.",
+      "Priyjeet Manjhi is a digital-first creative studio offering branding, website design, frontend design, and design support for modern brands.",
     jsonLd: {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      name: "Priyajeet Majhi",
+      name: "Priyjeet Manjhi",
       url: `${SITE_URL}/`,
       areaServed: "Worldwide",
       serviceType: ["Branding", "Website Design", "Frontend Design", "Design Support"],
     },
   },
   "/projects": {
-    title: "Projects | Priyajeet Majhi Portfolio",
+    title: "Projects | Priyjeet Manjhi Portfolio",
     description:
-      "Explore selected web design, branding, and frontend projects by Priyajeet Majhi.",
+      "Explore selected web design, branding, and frontend projects by Priyjeet Manjhi.",
   },
   "/work-personation": {
-    title: "Work Personation | Priyajeet Majhi",
+    title: "Work Personation | Priyjeet Manjhi",
     description:
-      "See featured project personation and creative execution by Priyajeet Majhi.",
+      "See featured project personation and creative execution by Priyjeet Manjhi.",
   },
   "/about": {
-    title: "About Priyajeet Majhi | Creative Studio",
+    title: "About Priyjeet Manjhi | Creative Studio",
     description:
-      "Learn about Priyajeet Majhi, a digital-first creative professional focused on branding, web design, and frontend experiences.",
+      "Learn about Priyjeet Manjhi, a digital-first creative professional focused on branding, web design, and frontend experiences.",
   },
   "/services": {
-    title: "Services | Priyajeet Majhi",
+    title: "Services | Priyjeet Manjhi",
     description:
       "Discover branding, website design, frontend design, and ongoing design support services.",
   },
   "/branding": {
-    title: "Branding Services | Priyajeet Majhi",
+    title: "Branding Services | Priyjeet Manjhi",
     description:
       "Brand strategy and visual identity services to help modern brands stand out online.",
     jsonLd: {
@@ -45,13 +45,13 @@ const ROUTE_SEO = {
       serviceType: "Branding",
       provider: {
         "@type": "Person",
-        name: "Priyajeet Majhi",
+        name: "Priyjeet Manjhi",
       },
       areaServed: "Worldwide",
     },
   },
   "/website-design": {
-    title: "Website Design Services | Priyajeet Majhi",
+    title: "Website Design Services | Priyjeet Manjhi",
     description:
       "Responsive, high-performance website design services crafted for growth-focused businesses.",
     jsonLd: {
@@ -60,13 +60,13 @@ const ROUTE_SEO = {
       serviceType: "Website Design",
       provider: {
         "@type": "Person",
-        name: "Priyajeet Majhi",
+        name: "Priyjeet Manjhi",
       },
       areaServed: "Worldwide",
     },
   },
   "/frontend-design": {
-    title: "Frontend Design Services | Priyajeet Majhi",
+    title: "Frontend Design Services | Priyjeet Manjhi",
     description:
       "Frontend design and UI implementation services built for smooth, user-focused web experiences.",
     jsonLd: {
@@ -75,13 +75,13 @@ const ROUTE_SEO = {
       serviceType: "Frontend Design",
       provider: {
         "@type": "Person",
-        name: "Priyajeet Majhi",
+        name: "Priyjeet Manjhi",
       },
       areaServed: "Worldwide",
     },
   },
   "/design-support": {
-    title: "Design Support Services | Priyajeet Majhi",
+    title: "Design Support Services | Priyjeet Manjhi",
     description:
       "Flexible design support for ongoing creative and product needs, from one-off tasks to monthly retainers.",
     jsonLd: {
@@ -90,25 +90,25 @@ const ROUTE_SEO = {
       serviceType: "Design Support",
       provider: {
         "@type": "Person",
-        name: "Priyajeet Majhi",
+        name: "Priyjeet Manjhi",
       },
       areaServed: "Worldwide",
     },
   },
   "/privacy": {
-    title: "Privacy Policy | Priyajeet Majhi",
+    title: "Privacy Policy | Priyjeet Manjhi",
     description:
       "Read the privacy policy and data handling practices for priyajeetmajhi.netlify.app.",
   },
   "/contact": {
-    title: "Contact | Priyajeet Majhi",
+    title: "Contact | Priyjeet Manjhi",
     description:
-      "Get in touch with Priyajeet Majhi for branding, website design, frontend design, and design support enquiries.",
+      "Get in touch with Priyjeet Manjhi for branding, website design, frontend design, and design support enquiries.",
   },
 };
 
 const NOT_FOUND_SEO = {
-  title: "Page Not Found | Priyajeet Majhi",
+  title: "Page Not Found | Priyjeet Manjhi",
   description: "The page you are looking for does not exist.",
   noindex: true,
 };

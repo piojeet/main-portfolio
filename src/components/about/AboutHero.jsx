@@ -48,7 +48,7 @@ function AboutHero() {
             </span>
           </div>
 
-          <p className='md:text-[26px] font-TTCPro font-medium max-w-[600px] w-full m-auto text-center text-[20px] px-8 md:px-0'>Priyajeet brings creativity and technology together to design interactive, user-centered websites that enhance brand presence in the digital and real world.</p>
+          <p className='md:text-[26px] font-TTCPro font-medium max-w-[600px] w-full m-auto text-center text-[20px] px-8 md:px-0'>Priyjeet brings creativity and technology together to design interactive, user-centered websites that enhance brand presence in the digital and real world.</p>
         </div>
 
       </div>

@@ -11,7 +11,7 @@ import AllProjects from './AllProjects'
 function ProjectHome() {
   return (
     <>
-        <h1 className='sr-only'>Projects by Priyajeet Majhi</h1>
+        <h1 className='sr-only'>Projects by Priyjeet Manjhi</h1>
         <Nav />
         <ProjectHero />
         <AllProjects />

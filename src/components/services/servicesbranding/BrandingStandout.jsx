@@ -79,7 +79,7 @@ const BrandingStandout = () => {
           </div>
           <div className='w-full p-6 border border-blackColor border-t-0'>
             <p className='lg:text-[26px] md:text-[24px] text-[21px] font-TTCPro text-blackColor font-medium leading-9'>I craft unique digital identities that set you apart. From responsive design and interactive visuals to cohesive brand experiences, I bring your core values to life online.</p>
-            <p className='lg:text-[21px] md:text-[19px] font-TTCPro text-blackColor font-medium leading-8 mt-8'>As Priyajeet Majhi, I combine creativity with strategy to craft digital experiences that emotionally connect with your audience. By understanding your business goals and challenges, I develop websites that not only stand out in a crowded marketplace but leave a lasting impact.</p>
+            <p className='lg:text-[21px] md:text-[19px] font-TTCPro text-blackColor font-medium leading-8 mt-8'>As Priyjeet Manjhi, I combine creativity with strategy to craft digital experiences that emotionally connect with your audience. By understanding your business goals and challenges, I develop websites that not only stand out in a crowded marketplace but leave a lasting impact.</p>
           </div>
         </div>
 

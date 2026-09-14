@@ -18,7 +18,7 @@ function Privacy() {
 
     return (
         <div>
-            <h1 className='sr-only'>Privacy Policy - Priyajeet Majhi</h1>
+            <h1 className='sr-only'>Privacy Policy - Priyjeet Manjhi</h1>
             <Nav />
             <section className="border border-blackColor mb-40 bg-white bg-opacity-70">
                 <div className=''>
@@ -40,7 +40,7 @@ function Privacy() {
                     </div>
 
                     <div className='font-TTCPro max-w-5xl mx-auto px-6'>
-                        <h2 className='md:text-5xl text-3xl font-bold mb-4'>Welcome to the Priyajeet website!</h2>
+                        <h2 className='md:text-5xl text-3xl font-bold mb-4'>Welcome to the Priyjeet website!</h2>
                         <p className="text-lg mb-4 font-TTCPro">
                             We are committed to protecting your privacy and safeguarding your personal data. This Privacy Policy explains how we collect, use, and protect your information when you visit our website.
                         </p>
@@ -87,7 +87,7 @@ function Privacy() {
 
                         <h2 className="text-2xl font-semibold mt-8 mb-2 font-TTCPro">Conclusion</h2>
                         <p className="mb-6 font-TTCPro">
-                            We respect your privacy and thank you for trusting <strong>priyajeet</strong>. Questions? Visit our{' '}
+                            We respect your privacy and thank you for trusting <strong>priyjeet</strong>. Questions? Visit our{' '}
                             <Link to="/contact" className="border-dotted border-b border-blackColor font-TTCPro pointer-cursor">contact page</Link>.
                         </p>
                     </div>
