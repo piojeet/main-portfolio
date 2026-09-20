@@ -76,7 +76,7 @@ function Footer() {
 
     ScrollTrigger.create({
       trigger: footer.current,
-      start: "0% 70%",
+      start: "0% 90%",
       end: "50% 50%",
       markers: false,
       onEnter: () => timeline.play(), // Jab trigger aaye, animation chale
@@ -257,7 +257,7 @@ function Footer() {
       <div className="lg:flex grid md:grid-cols-2 grid-cols-1">
         <NavLink
           target="blank"
-          to="https://www.linkedin.com/in/priyajeet-majhi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+          to="https://www.linkedin.com/in/priyjeet-manjhi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
           className="group pointer-cursor h-[80px] w-[100%] border border-blackColor bg-blackColor flex justify-start items-center relative z-40 md:border-r-0 md:border-t-0"
         >
           {/* Magnetic effect on wrapper div */}
@@ -285,7 +285,7 @@ function Footer() {
 
         <NavLink
           target="blank"
-          to="https://x.com/Priyajeet_Majhi?t=dsUWTwxojzvOn5nEVSTS_w&s=09"
+          to="https://x.com/Priyjeet_Manjhi?t=dsUWTwxojzvOn5nEVSTS_w&s=09"
           className="group pointer-cursor h-[80px] w-[100%] border border-blackColor bg-blackColor flex justify-start items-center relative z-30 md:border-r-0 border-t-0"
         >
           {/* Magnetic effect on wrapper div */}
@@ -484,9 +484,10 @@ function Footer() {
         </div>
       </div>
 
+      <div ref={footer}>
       <div
-        ref={footer}
-        className="text-[14vw] font-TTCPro uppercase font-black lg:flex items-center leading-3 h-fit hidden overflow-hidden lg:pb-10"
+        
+        className="text-[12vw] font-TTCPro uppercase font-black lg:flex items-center leading-3 h-fit hidden overflow-hidden lg:pb-10"
       >
         <span className="inline-flex flatter relative">p</span>
         <span className="inline-block flatter relative">r</span>
@@ -496,7 +497,7 @@ function Footer() {
         <span className="inline-block flatter relative">e</span>
         <span className="inline-block flatter relative">e</span>
         <span className="inline-block flatter relative">t</span>
-        <span className="inline-block flatter relative w-[15vw] h-[15vw] text-blackColor top-8">
+        <span className="inline-block flatter relative w-[12vw] h-[12vw] text-blackColor top-8">
           <svg
             role="img"
             xmlns="http://www.w3.org/2000/svg"
@@ -507,6 +508,7 @@ function Footer() {
             <path d="M3.4 6.5 9 10.8l-7-1v4.4l7-1-5.7 4.3 3.1 3.1 4.3-5.7-1 7.1h4.4l-1-7.1 4.3 5.7 3.1-3-5.8-4.4 7.2 1V9.8l-7.1 1 5.7-4.3-3-3.1-4.4 5.8 1-7.2H9.8l1 7.2-4.3-5.8Z"></path>
           </svg>
         </span>
+      </div>
       </div>
     </>
   );

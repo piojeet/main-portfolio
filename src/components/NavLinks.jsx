@@ -116,7 +116,7 @@ function NavLinks() {
             </div>
 
             <div className='flex items-start justify-between lg:flex-row md:flex-col'>
-                <NavLink target='blank' to="https://www.linkedin.com/in/priyajeet-majhi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className='group pointer-cursor h-[80px] md:w-[100%] lg:w-[50%] flex-shrink-0 bg-gray-800 sm:flex justify-start items-center hidden relative z-20'>
+                <NavLink target='blank' to="https://www.linkedin.com/in/priyjeet-manjhi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className='group pointer-cursor h-[80px] md:w-[100%] lg:w-[50%] flex-shrink-0 bg-gray-800 sm:flex justify-start items-center hidden relative z-20'>
                     {/* Magnetic effect on wrapper div */}
                     <div className='magnetic-btn relative w-full h-full'>
                         {/* Hover transition on inner span */}

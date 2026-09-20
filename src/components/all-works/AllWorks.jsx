@@ -25,7 +25,7 @@ import { NavLink } from 'react-router-dom';
 
 // Projects ka data ek array mein define kar rahe hain jisme id, title, media, type, buttonText, toggleType aur link hain
 const works = [
-    { id: 0, title: 'Ochi', media: DesignOne, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://redefine-n9wq7itw1-priyajeets-projects.vercel.app/' },
+    { id: 0, title: 'Ochi', media: DesignOne, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://redefine-n9wq7itw1-priyjeets-projects.vercel.app/' },
     { id: 1, title: 'Redefine', media: DesignTwo, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://redefine-three.vercel.app/' },
     { id: 2, title: 'Header Goes', media: DesignThree, type: 'image', buttonText: 'Portfolio', toggleType: 1, link: 'https://magnificent-smakager-29d9e5.netlify.app/' },
     { id: 3, title: 'Sharad Sahu', media: DesignFour, type: 'image', buttonText: 'Business', toggleType: 2, link: 'https://sharadsportfolio.netlify.app/' },

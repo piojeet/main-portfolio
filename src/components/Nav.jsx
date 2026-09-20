@@ -231,9 +231,9 @@ function Nav() {
                   style={{ clipPath: menuPath }} // Correct way to apply clipPath
                 >
                   <div className=''>
-                    <div className='w-[90vw] m-auto whitespace-nowrap relative h-screen'>
-                      <div className='w-full left-1/2 -translate-x-1/2 absolute h-full'>
-                        <div className='absolute top-0 left-0 w-full h-full flex items-start justify-between'>
+                    <div className='w-full max-w-[1440px] m-auto lg:px-8 px-4 whitespace-nowrap relative h-screen'>
+                      <div className='w-full left-1/2 -translate-x-1/2 absolute h-full lg:px-8 px-4'>
+                        <div className='absolute top-0 left-0 w-full h-full flex items-start justify-between lg:px-8 px-4'>
                           <div className='h-full w-[1px] bg-gray-600'></div>
                           <div className='h-full w-[1px] bg-gray-600'></div>
                           <div className='h-full w-[1px] bg-gray-600'></div>
@@ -248,7 +248,7 @@ function Nav() {
 
 
                               {/* Logo Area */}
-                              <NavLink to="/" onClick={handleClick} className='pointer-cursor clip-logo lg:w-[250px] md:w-[100%] md:h-[80px] w-full h-[70px] md:flex-shrink-0 border border-gray-600 border-b-0 bg-blackColor border-l-0 flex items-center justify-center whitespace-nowrap flex-nowrap relative origin-right overflow-hidden z-0'>
+                              <NavLink to="/" onClick={handleClick} className='pointer-cursor clip-logo lg:w-[250px] md:w-[34.57vw] md:h-[80px] w-full h-[70px] md:flex-shrink-0 border border-gray-600 border-b-blackColor bg-blackColor border-l-blackColor flex items-center justify-center whitespace-nowrap flex-nowrap relative origin-right overflow-hidden z-0'>
                                 <span className='block'>
                                   <img src={Logo} className='md:h-[1.5rem] h-[1.3rem]' alt='logo' />
                                 </span>
@@ -257,12 +257,12 @@ function Nav() {
 
 
 
-                            <NavLink to="/contact" className='group pointer-cursor h-[80px] lg:w-[25%] md:w-[50%] flex-shrink-0 bg-gray-800 md:flex justify-start items-center hidden'>
+                            <NavLink to="/contact" className='group pointer-cursor h-[80px] lg:w-[25%] md:w-[44vw] flex-shrink-0 bg-gray-800 md:flex justify-start items-center hidden'>
                               {/* Magnetic effect on wrapper div */}
                               <div className='magnetic-btn relative w-full h-full'>
                                 {/* Hover transition on inner span */}
                                 <span
-                                  className='relative overflow-hidden w-full h-full left-0 bottom-0 lg:group-hover:left-4 lg:group-hover:bottom-2 group-hover:border-l bg-blackColor border border-gray-600 border-l-0 font-TTCPro uppercase text-[15px] tracking-[2px] inline-block font-bold content-center transition-all duration-500'
+                                  className='relative overflow-hidden w-full h-full left-0 bottom-0 lg:group-hover:left-4 lg:group-hover:bottom-2 group-hover:border-l bg-blackColor border border-gray-600 lg:border-l-0 font-TTCPro uppercase text-[15px] tracking-[2px] inline-block font-bold content-center transition-all duration-500'
                                   style={{ position: 'relative', transition: 'left 0.3s ease, bottom 0.3s ease' }}
                                 >
                                   <span className='absolute left-[-1.5rem] w-6 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-5'><img src={RightArroWhite} alt="" className='w-full' /></span>

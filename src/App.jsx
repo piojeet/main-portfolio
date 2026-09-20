@@ -16,7 +16,6 @@ import ServicesDesignSupportHome from './components/services/servicesdesignsuppo
 
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react';
-import ConfettiCanvas from './components/ConfettiCanvas';
 import DisableDevTools from './components/DisableDevTools';
 import Privacy from './components/privacy/Privacy';
 import SeoManager from './components/SeoManager';
@@ -54,7 +53,7 @@ function App() {
       <div className='bg-bodyColor h-full w-full normal-point'>
         <div>
           <div className='fixed w-full h-full top-0 left-0 z-0'>
-            <div ref={linetRef} className='h-full w-full max-w-[2000px] m-auto flex justify-between'>
+            <div ref={linetRef} className='h-full w-full max-w-[1440px] m-auto lg:px-8 px-4 flex justify-between'>
               <div className='lines h-full w-[1px] bg-[#D6D5D2] lg:block hidden'></div>
               <div className='lines h-full w-[1px] bg-[#D6D5D2] lg:block hidden'></div>
               <div className='lines h-full w-[1px] bg-[#D6D5D2]'></div>
@@ -68,7 +67,7 @@ function App() {
         <Router>
           <ScrollToTop /> {/* This will scroll to top on route change */}
           <SeoManager />
-          <div className='relative z-10 w-full max-w-[2000px] m-auto'>
+          <div className='relative z-10 w-full max-w-[1440px] lg:px-8 px-4 m-auto'>
             <AuthProvider>
               <ProjectAllProvider>
                 

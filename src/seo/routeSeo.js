@@ -1,4 +1,4 @@
-const SITE_URL = "https://priyajeetmajhi.netlify.app";
+const SITE_URL = "https://priyjeetmanjhi.netlify.app";
 const DEFAULT_IMAGE = `${SITE_URL}/vite.svg`;
 
 const ROUTE_SEO = {
@@ -98,7 +98,7 @@ const ROUTE_SEO = {
   "/privacy": {
     title: "Privacy Policy | Priyjeet Manjhi",
     description:
-      "Read the privacy policy and data handling practices for priyajeetmajhi.netlify.app.",
+      "Read the privacy policy and data handling practices for priyjeetmanjhi.netlify.app.",
   },
   "/contact": {
     title: "Contact | Priyjeet Manjhi",
