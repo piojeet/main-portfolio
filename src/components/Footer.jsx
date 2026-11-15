@@ -1,9 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import RightArrow from "../assets/right-arrow.svg";
 import { NavLink } from "react-router-dom";
-import LinkArrow from "../assets/link-arrow.svg";
 import SendMessageBox from "./SendMessageBox";
+import ExternalLinkCanvas from "./ExternalLinkCanvas";
+import EyeCanvas from "./EyeCanvas";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -62,6 +63,124 @@ function Footer() {
       };
     });
   }, [isMagnetic]);
+
+  const smileyCanvas = useRef(null);
+
+  useEffect(() => {
+    const canvas = smileyCanvas.current;
+    const ctx = canvas.getContext("2d");
+    const PW = 112;
+    const PH = 128;
+    const OX = 24;
+    const CX = 80.5;
+    const FACE_Y = 63.6;
+    const EYE_DX = 8;
+    const EYE_Y = 54.25;
+    const EYE_RX = 3.3;
+    const EYE_RY = 5.35;
+    const PIVOT_Y = 57.15;
+    const LOOP = 10.1;
+    const BLINKS = [0.097, 0.396, 1.884, 2.889, 3.202, 4.665, 5.854, 8.081, 8.419, 9.862];
+    const KEYS = [[-0.034, 1], [0, 0.65], [0.034, 0.14], [0.067, 0.2], [0.1, 0.75], [0.134, 1]];
+    let k = 1;
+    let frameId;
+    let rotationAnimation;
+    const hoverTarget = canvas.parentElement;
+
+    function resize() {
+      const rect = canvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = Math.round(rect.width * dpr);
+      canvas.height = Math.round(rect.height * dpr);
+      k = canvas.width / PW;
+    }
+
+    function eyeScale(t) {
+      const u = t % LOOP;
+      for (const blink of BLINKS) {
+        const tau = u - blink;
+        if (tau <= KEYS[0][0] || tau >= KEYS[KEYS.length - 1][0]) continue;
+        for (let i = 0; i < KEYS.length - 1; i++) {
+          const [t0, s0] = KEYS[i];
+          const [t1, s1] = KEYS[i + 1];
+          if (tau >= t0 && tau <= t1) {
+            return s0 + (s1 - s0) * (tau - t0) / (t1 - t0);
+          }
+        }
+      }
+      return 1;
+    }
+
+    function draw(ms) {
+      const s = eyeScale(ms / 1000);
+      ctx.setTransform(k, 0, 0, k, -OX * k, 0);
+      ctx.clearRect(OX, 0, PW, PH);
+      ctx.strokeStyle = "#0d0d0d";
+      ctx.fillStyle = "#0d0d0d";
+      ctx.lineCap = "round";
+
+      ctx.lineWidth = 3.6;
+      ctx.beginPath();
+      ctx.ellipse(CX, FACE_Y, 32.7, 32.2, 0, 0, Math.PI * 2);
+      ctx.stroke();
+
+      ctx.lineWidth = 3.5;
+      ctx.beginPath();
+      ctx.arc(CX, 58.56, 19.94, Math.PI / 2 - 0.8517, Math.PI / 2 + 0.8517);
+      ctx.stroke();
+
+      const cy = PIVOT_Y + (EYE_Y - PIVOT_Y) * s;
+      const ry = Math.max(EYE_RY * s, 0.35);
+      for (const dx of [-EYE_DX, EYE_DX]) {
+        ctx.beginPath();
+        ctx.ellipse(CX + dx, cy, EYE_RX, ry, 0, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      frameId = requestAnimationFrame(draw);
+    }
+
+    function handleMouseEnter() {
+      const currentTransform = getComputedStyle(canvas).transform;
+      const startTransform = currentTransform === "none" ? "rotate(0deg)" : currentTransform;
+      canvas.style.transition = "none";
+      canvas.style.transform = startTransform;
+      if (rotationAnimation) rotationAnimation.cancel();
+      rotationAnimation = canvas.animate(
+        [
+          { transform: startTransform },
+          { transform: `${startTransform} rotate(360deg)` },
+        ],
+        { duration: 2000, iterations: Infinity, easing: "linear" }
+      );
+    }
+
+    function handleMouseLeave() {
+      if (!rotationAnimation) return;
+      const currentTransform = getComputedStyle(canvas).transform;
+      canvas.style.transition = "none";
+      canvas.style.transform = currentTransform;
+      rotationAnimation.cancel();
+      rotationAnimation = null;
+      void canvas.offsetWidth;
+      canvas.style.transition = "transform 600ms ease-out";
+      canvas.style.transform = "rotate(0deg)";
+    }
+
+    resize();
+    window.addEventListener("resize", resize);
+    hoverTarget.addEventListener("mouseenter", handleMouseEnter);
+    hoverTarget.addEventListener("mouseleave", handleMouseLeave);
+    frameId = requestAnimationFrame(draw);
+
+    return () => {
+      window.removeEventListener("resize", resize);
+      hoverTarget.removeEventListener("mouseenter", handleMouseEnter);
+      hoverTarget.removeEventListener("mouseleave", handleMouseLeave);
+      if (rotationAnimation) rotationAnimation.cancel();
+      cancelAnimationFrame(frameId);
+    };
+  }, []);
 
   const footer = useRef(null);
 
@@ -276,8 +395,8 @@ function Footer() {
               <span className="absolute left-5 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-14">
                 Linkedin
               </span>
-              <span className="group-hover:animate-bounce-on absolute right-5 top-1/2 -translate-y-1/2">
-                <img src={LinkArrow} alt="" className="w-6" />
+              <span className="absolute right-[-1.25rem] top-1/2 -translate-y-1/2">
+                <ExternalLinkCanvas />
               </span>
             </span>
           </div>
@@ -304,8 +423,8 @@ function Footer() {
               <span className="absolute left-5 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-14">
                 x (Twitter)
               </span>
-              <span className="group-hover:animate-bounce-on absolute right-5 top-1/2 -translate-y-1/2">
-                <img src={LinkArrow} alt="" className="w-6" />
+              <span className="absolute right-[-1.25rem] top-1/2 -translate-y-1/2">
+                <ExternalLinkCanvas />
               </span>
             </span>
           </div>
@@ -332,8 +451,8 @@ function Footer() {
               <span className="absolute left-5 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-14">
                 Instagram
               </span>
-              <span className="group-hover:animate-bounce-on absolute right-5 top-1/2 -translate-y-1/2">
-                <img src={LinkArrow} alt="" className="w-6" />
+              <span className="absolute right-[-1.25rem] top-1/2 -translate-y-1/2">
+                <ExternalLinkCanvas />
               </span>
             </span>
           </div>
@@ -359,21 +478,8 @@ function Footer() {
               <span className="absolute left-5 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-14">
                 privacy
               </span>
-              <span className="group-hover:animate-bounce-on absolute right-5 top-1/2 -translate-y-1/2">
-                <svg
-                  width="25"
-                  height="25"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="1"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                  <path d="M12 9a3 3 0 1 0 0 6 3 3 0 1 0 0-6z"></path>
-                </svg>
+              <span className="absolute right-1 top-1/2 -translate-y-1/2">
+                <EyeCanvas />
               </span>
             </span>
           </div>
@@ -401,23 +507,12 @@ function Footer() {
             </div>
 
             <div className="group md:w-[80px] md:h-[80px] w-[70px] h-[70px] border border-blackColor border-t-0 md:block hidden">
-              <div className=" text-blackColor w-full h-full flex items-center justify-center">
-                <svg
-                  width="54"
-                  height="54"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round" // Changed stroke-linecap to strokeLinecap
-                  strokeLinejoin="round" // Changed stroke-linejoin to strokeLinejoin
-                  strokeWidth="1" // Changed stroke-width to strokeWidth
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"></path>
-                  <path d="M9 10h.01"></path>
-                  <path d="M15 10h.01"></path>
-                  <path d="M9.5 15a3.5 3.5 0 0 0 5 0"></path>
-                </svg>
+              <div className="text-blackColor w-full h-full flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+                <canvas
+                  ref={smileyCanvas}
+                  aria-label="Blinking smiley face"
+                  className="h-full aspect-[112/128]"
+                />
               </div>
             </div>
           </div>
@@ -487,7 +582,7 @@ function Footer() {
       <div ref={footer}>
       <div
         
-        className="text-[12vw] font-TTCPro uppercase font-black lg:flex items-center leading-3 h-fit hidden overflow-hidden lg:pb-10"
+        className="text-[10vw] font-TTCPro uppercase font-black lg:flex items-center leading-3 h-fit hidden overflow-hidden lg:pb-10"
       >
         <span className="inline-flex flatter relative">p</span>
         <span className="inline-block flatter relative">r</span>
@@ -497,7 +592,7 @@ function Footer() {
         <span className="inline-block flatter relative">e</span>
         <span className="inline-block flatter relative">e</span>
         <span className="inline-block flatter relative">t</span>
-        <span className="inline-block flatter relative w-[12vw] h-[12vw] text-blackColor top-8">
+        <span className="inline-block flatter relative w-[10vw] h-[10vw] text-blackColor top-8">
           <svg
             role="img"
             xmlns="http://www.w3.org/2000/svg"

@@ -81,8 +81,8 @@ function WorksDesignHome() {
                     <div className='lg:w-[67.5vw] w-full'>
                         <NavLink to="https://grand-jalebi-65aa54.netlify.app/" className='groups-m pointer-cursor block bg-blackColor'>
                             <div className='border border-black border-b-0'>
-                                <div className='w-full video-bg overflow-hidden'>
-                                    <img src={DesignOne} alt="img" className='scal-up' />
+                                <div className='w-full video-bg overflow-hidden aspect-video h-fit flex items-center justify-center'>
+                                    <img src={DesignOne} alt="img" className='scal-up w-full h-full object-cover' />
                                 </div>
                             </div>
 
@@ -126,8 +126,8 @@ function WorksDesignHome() {
                         <div className='w-full'>
                             <NavLink to="https://sharadsportfolio.netlify.app/" className='groups-m pointer-cursor block bg-blackColor'>
                                 <div className='border border-black border-b-0'>
-                                    <div className='w-full video-bg overflow-hidden lg:h-[28vw] h-full'>
-                                        <img src={DesignTwo} alt="img" className='scal-up h-full' />
+                                    <div className='w-full video-bg overflow-hidden aspect-video h-fit flex items-center justify-center'>
+                                        <img src={DesignTwo} alt="img" className='scal-up w-full h-full object-cover' />
                                     </div>
                                 </div>
 
@@ -159,8 +159,8 @@ function WorksDesignHome() {
                         <div className='w-full'>
                             <NavLink to="https://fancy-empanada-211970.netlify.app/" className='groups-m pointer-cursor block bg-blackColor'>
                                 <div className='border border-black border-b-0'>
-                                    <div className='w-full video-bg overflow-hidden lg:h-[28vw] h-full'>
-                                        <img src={DesignThree} alt="img" className='scal-up w-full h-full' />
+                                    <div className='w-full video-bg overflow-hidden aspect-video h-fit flex items-center justify-center'>
+                                        <img src={DesignThree} alt="img" className='scal-up w-full h-full object-cover' />
                                     </div>
                                 </div>
 
@@ -169,7 +169,7 @@ function WorksDesignHome() {
                                 </div>
                             </NavLink>
 
-                            <div className='group pointer-cursor h-[80px] lg:w-[15vw] md:w-[22.5vw] flex-shrink-0 border border-blackColor bg-blackColor hidden lg:inline-flex justify-start items-center border-t-0 relative z-20 border-r-0' onClick={openTab3}>
+                            <div className='group pointer-cursor h-[80px] lg:w-[14vw] md:w-[22.5vw] flex-shrink-0 border border-blackColor bg-blackColor hidden lg:inline-flex justify-start items-center border-t-0 relative z-20 border-r-0' onClick={openTab3}>
                                 {/* Magnetic effect on wrapper div */}
                                 <div className='magnetic-btn relative w-full h-full'>
                                     {/* Hover transition on inner span */}
@@ -183,7 +183,7 @@ function WorksDesignHome() {
                                 </div>
                             </div>
 
-                            <div className='group pointer-cursor h-[80px] lg:w-[13vw] md:w-[22.5vw] flex-shrink-0 border border-blackColor bg-blackColor hidden lg:inline-flex justify-start items-center border-t-0 relative z-10' onClick={openTab2}>
+                            <div className='group pointer-cursor h-[80px] lg:w-[12vw] md:w-[22.5vw] flex-shrink-0 border border-blackColor bg-blackColor hidden lg:inline-flex justify-start items-center border-t-0 relative z-10' onClick={openTab2}>
                                 {/* Magnetic effect on wrapper div */}
                                 <div className='magnetic-btn relative w-full h-full'>
                                     {/* Hover transition on inner span */}

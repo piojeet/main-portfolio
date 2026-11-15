@@ -31,7 +31,7 @@ function Expertic() {
 
   return (
     <>
-      <div className='md:flex items-center justify-between lg:min-h-[80vh] md:min-h-[60vh] content-center flex-col lg:flex-row py-12'>
+      <div className='md:flex items-center justify-between md:min-h-[600px] content-center flex-col lg:flex-row py-12'>
         <div ref={textRef} className='flex-1 pl-4'>
           {location.pathname !== '/services' && (
             <h2 className='uppercase font-TTCPro font-[900] text-blackColor xl:text-[95px] lg:text-[84px] sm:text-[63px] text-[10vw]'>

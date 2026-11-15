@@ -118,7 +118,7 @@ function ContactHome() {
                             <p className='text-[17px] font-TTCPro text-blackColor font-semibold uppercase tracking-widest mb-4'>What are you looking for?</p>
                             <div className='flex items-start justify-between gap-x-10'>
                                 <div className='w-full flex flex-col gap-4'>
-                                    <label htmlFor="websiteDesign" className='pointer-cursor inline-flex items-center'>
+                                    <label htmlFor="websiteDesign" className='pointer-cursor inline-flex items-center select-none'>
                                         <input type="checkbox" id='websiteDesign' className='pree-check appearance-none' />
                                         <span className='group border border-blackColor inline-block lg:w-14 lg:h-14 md:w-[50px] md:h-[50px] relative overflow-hidden hover:bg-gray-200'>
                                             <span className='absolute w-full h-full bg-blackColor -bottom-16 group-hover:-bottom-12 transition-all duration-200 pree-bg'></span>
@@ -145,7 +145,7 @@ function ContactHome() {
                                         <span className='inline-block ml-6 font-TTCPro text-[17px] font-medium text-blackColor'>Website Design</span>
                                     </label>
 
-                                    <label htmlFor="bdevelop" className='pointer-cursor  inline-flex items-center'>
+                                    <label htmlFor="bdevelop" className='pointer-cursor  inline-flex items-center select-none'>
                                         <input type="checkbox" id='bdevelop' className='pree-check appearance-none' />
                                         <span className='group border border-blackColor inline-block lg:w-14 lg:h-14 md:w-[50px] md:h-[50px] relative overflow-hidden hover:bg-gray-200 flex-shrink-0'>
                                             <span className='absolute w-full h-full bg-blackColor -bottom-16 group-hover:-bottom-12 transition-all duration-200 pree-bg'></span>
@@ -172,7 +172,7 @@ function ContactHome() {
                                         <span className='capitalize inline-block ml-6 font-TTCPro text-[17px] font-medium text-blackColor'>webside development</span>
                                     </label>
 
-                                    <label htmlFor="frontoptmz" className='pointer-cursor  inline-flex items-center'>
+                                    <label htmlFor="frontoptmz" className='pointer-cursor  inline-flex items-center select-none'>
                                         <input type="checkbox" id='frontoptmz' className='pree-check appearance-none' />
                                         <span className='group border border-blackColor inline-block lg:w-14 lg:h-14 md:w-[50px] md:h-[50px] relative overflow-hidden hover:bg-gray-200 flex-shrink-0'>
                                             <span className='absolute w-full h-full bg-blackColor -bottom-16 group-hover:-bottom-12 transition-all duration-200 pree-bg'></span>
@@ -228,7 +228,7 @@ function ContactHome() {
                                         <span className='capitalize inline-block ml-6 font-TTCPro text-[17px] font-medium text-blackColor'>Responsive Design</span>
                                     </label>
 
-                                    <label htmlFor="uiuximplimetion" className='pointer-cursor inline-flex items-center'>
+                                    <label htmlFor="uiuximplimetion" className='pointer-cursor inline-flex items-center select-none'>
                                         <input type="checkbox" id='uiuximplimetion' className='pree-check appearance-none' />
                                         <span className='group border border-blackColor inline-block lg:w-14 lg:h-14 md:w-[50px] md:h-[50px] relative overflow-hidden hover:bg-gray-200 flex-shrink-0'>
                                             <span className='absolute w-full h-full bg-blackColor -bottom-16 group-hover:-bottom-12 transition-all duration-200 pree-bg'></span>
@@ -255,7 +255,7 @@ function ContactHome() {
                                         <span className='capitalize inline-block ml-6 font-TTCPro text-[17px] font-medium text-blackColor'>UI/UX Implementation</span>
                                     </label>
 
-                                    <label htmlFor="something" className='pointer-cursor inline-flex items-center'>
+                                    <label htmlFor="something" className='pointer-cursor inline-flex items-center select-none'>
                                         <input type="checkbox" id='something' className='pree-check appearance-none' />
                                         <span className='group border border-blackColor inline-block lg:w-14 lg:h-14 md:w-[50px] md:h-[50px] relative overflow-hidden hover:bg-gray-200 flex-shrink-0'>
                                             <span className='absolute w-full h-full bg-blackColor -bottom-16 group-hover:-bottom-12 transition-all duration-200 pree-bg'></span>
@@ -286,7 +286,7 @@ function ContactHome() {
 
                             <div>
                                 <div className='my-10 flex items-start justify-between gap-x-10 md:flex-wrap lg:flex-nowrap md:gap-y-10 lg:gap-y-0'>
-                                    <label htmlFor="name" className='text-[17px] font-TTCPro text-blackColor font-semibold uppercase tracking-widest w-full pointer-cursor'><span className='mb-3 inline-block w-full'>What’s your name? <span>*</span></span>
+                                    <label htmlFor="name" className='text-[17px] font-TTCPro text-blackColor font-semibold uppercase tracking-widest w-full pointer-cursor select-none'><span className='mb-3 inline-block w-full'>What’s your name? <span>*</span></span>
                                         <div className='relative group overflow-hidden'>
                                             <input
                                                 type="text"
@@ -305,7 +305,7 @@ function ContactHome() {
                                         </div>
                                     </label>
 
-                                    <label htmlFor="cname" className='text-[17px] font-TTCPro text-blackColor font-semibold uppercase tracking-widest w-full pointer-cursor'><span className='mb-3 inline-block w-full'>What’s your company name?</span>
+                                    <label htmlFor="cname" className='text-[17px] font-TTCPro text-blackColor font-semibold uppercase tracking-widest w-full pointer-cursor select-none'><span className='mb-3 inline-block w-full'>What’s your company name?</span>
                                         <div className='relative group overflow-hidden'>
                                             <input
                                                 type="text"
@@ -327,7 +327,7 @@ function ContactHome() {
                                 <div className='my-10'>
 
 
-                                    <label htmlFor="email" className='text-[17px] font-TTCPro text-blackColor font-semibold uppercase tracking-widest w-full pointer-cursor'><span className='mb-3 inline-block w-full'>What’s your email address? <span>*</span></span>
+                                    <label htmlFor="email" className='text-[17px] font-TTCPro text-blackColor font-semibold uppercase tracking-widest w-full pointer-cursor select-none'><span className='mb-3 inline-block w-full'>What’s your email address? <span>*</span></span>
                                         <div className='relative group overflow-hidden'>
                                             <input
                                                 type="email"
@@ -349,7 +349,7 @@ function ContactHome() {
 
                                 <div className='my-10 flex items-start justify-between gap-x-10 md:flex-wrap md:gap-y-10 lg:gap-y-0 lg:flex-nowrap'>
                                     <div className='w-full'>
-                                    <label htmlFor="timeline" className='text-[17px] font-TTCPro text-blackColor font-semibold uppercase tracking-widest w-full pointer-cursor'><span className='mb-3 inline-block w-full'>What’s your timeline?<span>*</span></span>
+                                    <label htmlFor="timeline" className='text-[17px] font-TTCPro text-blackColor font-semibold uppercase tracking-widest w-full pointer-cursor select-none'><span className='mb-3 inline-block w-full'>What’s your timeline?<span>*</span></span>
                                         <div className='relative group overflow-hidden'>
                                             <input
                                                 type="text"
@@ -371,7 +371,7 @@ function ContactHome() {
                                     </div>
 
                                     <div className='w-full'>
-                                    <label htmlFor="budget" className='text-[17px] font-TTCPro text-blackColor font-semibold uppercase tracking-widest w-full pointer-cursor'><span className='mb-3 inline-block w-full'>What’s your estimated budget?<span>*</span></span>
+                                    <label htmlFor="budget" className='text-[17px] font-TTCPro text-blackColor font-semibold uppercase tracking-widest w-full pointer-cursor select-none'><span className='mb-3 inline-block w-full'>What’s your estimated budget?<span>*</span></span>
                                         <div className='relative group overflow-hidden'>
                                             <input
                                                 type="text"
@@ -396,7 +396,7 @@ function ContactHome() {
                                 <div className='my-10'>
 
 
-                                    <label htmlFor="message" className='text-[17px] font-TTCPro text-blackColor font-semibold uppercase tracking-widest w-full pointer-cursor'>
+                                    <label htmlFor="message" className='text-[17px] font-TTCPro text-blackColor font-semibold uppercase tracking-widest w-full pointer-cursor select-none'>
                                         {/* Conditionally change background based on placeholder focus */}
                                         <span className={`mb-3 inline-block w-full transition-all`}>
                                         Tell us about your project <span>*</span>
@@ -439,7 +439,7 @@ function ContactHome() {
                                 </div>
 
                                 <div>
-                                    <label htmlFor="agree" className='pointer-cursor inline-flex items-center w-full'>
+                                    <label htmlFor="agree" className='pointer-cursor inline-flex items-center w-full select-none'>
                                         <input type="checkbox" id='agree' className='pree-check appearance-none' />
                                         <span className='group border border-blackColor inline-block lg:w-14 lg:h-14 md:w-[50px] md:h-[50px] relative overflow-hidden hover:bg-gray-200 flex-shrink-0'>
                                             <span className='absolute w-full h-full bg-blackColor -bottom-16 group-hover:-bottom-12 transition-all duration-200 pree-bg'></span>
@@ -471,7 +471,7 @@ function ContactHome() {
 
                         <div className='group pointer-cursor h-[80px] w-[22.5vw] flex-shrink-0 border border-blackColor bg-blackColor border-t-0 flex justify-start items-center'>
                             {/* Magnetic effect on wrapper div */}
-                            <div className='magnetic-btn relative w-full h-full'>
+                            <div className='magnetic-btn relative w-full h-full select-none'>
                                 {/* Hover transition on inner span */}
                                 <span
                                     className='relative overflow-hidden w-full h-full left-0 bottom-0 group-hover:left-4 group-hover:bottom-2 group-hover:border group-hover:border-blackColor bg-bodyColor  font-TTCPro uppercase text-[20px] tracking-[2px] inline-flex font-semibold content-center items-center justify-around'
@@ -497,7 +497,7 @@ function ContactHome() {
                     <div className='w-[31vw]'>
                         <div>
                             <div className='p-7 border border-blackColor border-l-0'>
-                                <label htmlFor="hquility1" className='pointer-cursor flex items-center'>
+                                <label htmlFor="hquility1" className='pointer-cursor flex items-center select-none'>
                                     <input
                                         type="checkbox"
                                         id="hquility1"
@@ -548,7 +548,7 @@ function ContactHome() {
                             </div>
 
                             <div className='p-7 border border-blackColor border-l-0 border-t-0'>
-                                <label htmlFor="hquility2" className='pointer-cursor flex items-center'>
+                                <label htmlFor="hquility2" className='pointer-cursor flex items-center select-none'>
                                     <input
                                         type="checkbox"
                                         id="hquility2"
@@ -601,7 +601,7 @@ function ContactHome() {
                             </div>
 
                             <div className='p-7 border border-blackColor border-l-0 border-t-0'>
-                                <label htmlFor="hquility3" className='pointer-cursor flex items-center'>
+                                <label htmlFor="hquility3" className='pointer-cursor flex items-center select-none'>
                                     <input
                                         type="checkbox"
                                         id="hquility3"

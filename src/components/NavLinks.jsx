@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import LinkArrow from '../assets/link-arrow.svg'
 import RightArrow from '../assets/right-arrow.svg'
+import ExternalLinkCanvas from './ExternalLinkCanvas'
 
 function NavLinks() {
     const [hoverDirection, setHoverDirection] = useState({});
@@ -126,7 +126,7 @@ function NavLinks() {
                         >
                             <span className='absolute left-[-1.5rem] w-6 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-5'><img src={RightArrow} alt="" className='w-full invert' /></span>
                             <span className='absolute left-5 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-12'>linkedin</span>
-                            <span className='group-hover:animate-bounce-on absolute right-5 top-1/2 -translate-y-1/2'><img src={LinkArrow} alt="" className='w-8 saturate-100 invert' /></span>
+                            <span className='absolute right-[-1rem] top-1/2 -translate-y-1/2'><ExternalLinkCanvas className='invert' /></span>
                         </span>
                     </div>
                 </NavLink>
@@ -142,7 +142,7 @@ function NavLinks() {
                         >
                             <span className='absolute left-[-1.5rem] w-6 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-5'><img src={RightArrow} alt="" className='w-full invert' /></span>
                             <span className='absolute left-5 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-12'>Instagram</span>
-                            <span className='group-hover:animate-bounce-on absolute right-5 top-1/2 -translate-y-1/2'><img src={LinkArrow} alt="" className='w-8 saturate-100 invert' /></span>
+                            <span className='absolute right-[-1rem] top-1/2 -translate-y-1/2'><ExternalLinkCanvas className='invert' /></span>
                         </span>
                     </div>
                 </NavLink>

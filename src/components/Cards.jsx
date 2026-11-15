@@ -20,28 +20,28 @@ function Cards() {
             title: "Branding",
             disc: "Create or refine a visual identity to celebrate your unique personality and proposition.",
             hrf: "/branding",
-            class: "card relative lg:w-[100%] border border-blackColor bg-bodyColor border-b-0 md:border-b lg:h-[22vw] sm:h-[50vw] h-[55vw] md:w-[45vw] block pointer-cursor"
+            class: "card relative lg:w-[100%] border border-blackColor bg-bodyColor border-b-0 md:border-b lg:h-[400px] sm:h-[50vw] h-[55vw] md:w-[45vw] block pointer-cursor"
         },
         {
             branding: <WebDesignIcon className="sm:size-16 size-10" />,
             title: "Website Design",
             disc: "Amplify your brands presence and engage your audience with an impactful and interactive website.",
             hrf: "/website-design",
-            class: "card relative lg:w-[100%] border border-blackColor border-b-0 md:border-b bg-bodyColor lg:h-[22vw] sm:h-[50vw] h-[55vw] top-12 lg:mt-16 md:w-[45vw] block pointer-cursor"
+            class: "card relative lg:w-[100%] border border-blackColor border-b-0 md:border-b bg-bodyColor lg:h-[400px] sm:h-[50vw] h-[55vw] top-12 lg:mt-16 md:w-[45vw] block pointer-cursor"
         },
         {
             branding: <FronEndIcon className="sm:size-16 size-10" />,
             title: "Front-End",
             disc: "I build efficient, responsive websites using modern web technologies and best design principles.",
             hrf: "/frontend-design",
-            class: "card relative lg:w-[100%] border border-blackColor md:border-b bg-bodyColor lg:h-[22vw] sm:h-[50vw] h-[55vw] lg:mt-7 md:w-[45vw] block pointer-cursor"
+            class: "card relative lg:w-[100%] border border-blackColor md:border-b bg-bodyColor lg:h-[400px] sm:h-[50vw] h-[55vw] lg:mt-7 md:w-[45vw] block pointer-cursor"
         },
         {
             branding: <DesignSupportIcon className="sm:size-16 size-10" />,
             title: "Design Support",
             disc: "An ongoing engagement to help with your regular or ad-hoc creative requirements and output.",
             hrf: "/design-support",
-            class: "card lg:w-[100%] border border-blackColor relative top-12 bg-bodyColor lg:h-[22vw] sm:h-[50vw] h-[55vw] md:w-[45vw] block pointer-cursor"
+            class: "card lg:w-[100%] border border-blackColor relative top-12 bg-bodyColor lg:h-[400px] sm:h-[50vw] h-[55vw] md:w-[45vw] block pointer-cursor"
         }
     ]
 
