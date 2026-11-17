@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import SendMessageBox from "./SendMessageBox";
 import ExternalLinkCanvas from "./ExternalLinkCanvas";
 import EyeCanvas from "./EyeCanvas";
+import ThumbsUpCanvas from "./ThumbsUpCanvas";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -208,19 +209,7 @@ function Footer() {
       <div className="flex items-start justify-between lg:flex-row flex-col">
         <div className="w-full">
           <div className="md:w-[80px] md:h-[80px] w-[70px] h-[70px] border border-blackColor ml-auto border-b-0 flex items-center justify-center">
-            <svg
-              width="46"
-              height="46"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
-            </svg>
+            <ThumbsUpCanvas />
           </div>
 
           <div className="border border-blackColor lg:border-r-0 border-r not-select py-[1.51rem]">

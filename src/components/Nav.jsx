@@ -1,15 +1,14 @@
 /* eslint-disable react/prop-types */
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Logo from '../assets/logo.svg'
 import Menu from '../assets/menu.svg'
 import Close from '../assets/close.svg'
 import ShortLogo from '../assets/shortlogo.svg'
-import Rocket from '../assets/rocket.svg'
 import downArrow from '../assets/chevron-down.svg'
-import RocketWhite from '../assets/rocket-white.svg'
 import RightArrow from '../assets/right-arrow.svg'
 import RightArroWhite from '../assets/right-arrow-white.svg'
 import NavLinks from './NavLinks'
+import RocketCanvas from './RocketCanvas'
 import { NavLink, useLocation } from 'react-router-dom';
 import { useProjectAllContext } from '../context/ProjectAllContext';
 import ChatGpt from './gpt/ChatGpt'
@@ -267,7 +266,7 @@ function Nav() {
                                 >
                                   <span className='absolute left-[-1.5rem] w-6 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-5'><img src={RightArroWhite} alt="" className='w-full' /></span>
                                   <span className='absolute left-5 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-12'>Get Started</span>
-                                  <span className='group-hover:animate-bounce-on absolute right-5 top-1/2 -translate-y-1/2'><img src={RocketWhite} alt="" className='w-8 saturate-100' /></span>
+                                  <span className='absolute right-0 top-0 bottom-0'><RocketCanvas light /></span>
                                 </span>
                               </div>
                             </NavLink>
@@ -364,7 +363,7 @@ function Nav() {
                 >
                   <span className='absolute left-[-1.5rem] w-6 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-5'><img src={RightArrow} alt="" className='w-full' /></span>
                   <span className='absolute left-5 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-12'>Get Started</span>
-                  <span className='group-hover:animate-bounce-on absolute right-5 top-1/2 -translate-y-1/2'><img src={Rocket} alt="" className='w-8' /></span>
+                  <span className='absolute right-0 top-0 bottom-0'><RocketCanvas /></span>
                 </span>
               </div>
             </NavLink>
