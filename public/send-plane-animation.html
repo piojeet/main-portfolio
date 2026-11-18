@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Send button animation</title>
+    <style>
+      :root {
+        box-sizing: border-box;
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      html {
+        scroll-padding-top: env(safe-area-inset-top, 0px);
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      canvas {
+        display: block;
+        width: min(100vw, calc(100vh * 160 / 126));
+        aspect-ratio: 160/126;
+        touch-action: manipulation;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas
+      id="c"
+      aria-label="Send input: on hover the bar lifts and the paper plane loops around and lands back"
+    ></canvas>
+    <script>
+      // Everything is in the recording's pixels; the visible scene is x 150..310, y 44..170.
+      const D = {
+        chains: [
+          [
+            -7.51, 0.45, -7.92, 1.85, -8.29, 2.95, -8.57, 4.05, -9.07, 5.55,
+            -9.38, 6.35, -9.52, 6.85, -9.63, 7.65, -9.73, 9.05, -9.7, 9.24,
+            -9.63, 9.4, -9.43, 9.55, -9.15, 9.57, -7.45, 9.32, -7.15, 9.25,
+            -6.85, 9.14, -2.75, 7.08, 1.75, 5.08, 5.95, 2.98, 8.65, 1.86, 8.95,
+            1.71, 9.24, 1.5, 9.57, 1.15, 9.81, 0.65, 9.88, 0.35, 9.89, 0.15,
+            9.83, -0.15, 9.7, -0.44, 9.5, -0.71, 9.33, -0.87, 8.85, -1.18, 7.35,
+            -1.86, 4.95, -2.84, 3.75, -3.46, 2.65, -3.86, 1.55, -4.32, -0.75,
+            -5.4, -2.15, -5.89, -3.95, -6.76, -5.65, -7.41, -7.25, -8.18, -7.65,
+            -8.31, -8.25, -8.44, -9.35, -8.59, -9.64, -8.59, -9.9, -8.47,
+            -10.02, -8.32, -10.09, -8.14, -10.07, -7.75, -9.87, -6.25, -9.34,
+            -4.85, -8.44, -2.15, -8.06, -1.15, -7.75, -0.11,
+          ],
+          [
+            -1.35, 0.45, -1.76, 0.37, -2.25, 0.35, -3.35, 0.36, -4.45, 0.45,
+            -7.51, 0.45,
+          ],
+        ],
+        F1: {
+          t0: 0.6,
+          dt: 0.011111111111111112,
+          x: [
+            233.68, 234.15, 234.53, 234.81, 234.86, 234.8, 234.99, 235.49,
+            236.16, 236.94, 237.81, 238.74, 239.82, 241.04, 242.33, 243.6,
+            244.74, 245.87, 247.2, 248.7, 250.19, 251.66, 253.1, 254.52, 255.89,
+            257.21, 258.48, 259.67, 260.78, 261.81, 262.73, 263.53, 264.22,
+            264.77, 265.18, 265.44, 265.53, 265.46, 265.19, 264.74, 264.08,
+            263.2, 262.1, 260.77, 259.19, 257.35, 255.26, 252.95, 250.46,
+            247.85, 245.16, 242.44, 239.72, 237.07, 234.52, 232.12, 229.92,
+            227.96, 226.3, 224.96, 224.02, 223.48, 223.35, 223.57, 224.11,
+            224.95, 226.03, 227.34, 228.83, 230.47, 232.23, 234.1, 236.08,
+            238.16, 240.33, 242.61, 244.97, 247.41, 249.94, 252.55, 255.22,
+            257.97, 260.79, 263.67, 266.6, 269.58, 272.52, 275.36, 277.99,
+            280.35, 282.35, 283.91, 284.94, 285.81, 287.9, 292.73,
+          ],
+          y: [
+            107.29, 106.67, 106.34, 106.27, 106.59, 107.12, 107.43, 107.53,
+            107.62, 107.4, 106.99, 106.68, 106.45, 106.27, 106.12, 105.99,
+            105.84, 105.66, 105.42, 105.11, 104.69, 104.15, 103.47, 102.65,
+            101.71, 100.65, 99.5, 98.25, 96.93, 95.53, 94.08, 92.58, 91.05,
+            89.49, 87.92, 86.33, 84.71, 83.06, 81.38, 79.65, 77.87, 76.03,
+            74.14, 72.2, 70.32, 68.63, 67.23, 66.16, 65.38, 64.91, 64.74, 64.85,
+            65.25, 65.92, 66.86, 68.06, 69.52, 71.23, 73.19, 75.39, 77.81,
+            80.46, 83.25, 86.14, 89.04, 91.88, 94.6, 97.12, 99.38, 101.29,
+            102.83, 104.0, 104.87, 105.48, 105.88, 106.12, 106.25, 106.32,
+            106.38, 106.47, 106.58, 106.71, 106.83, 106.95, 107.04, 107.1,
+            107.13, 107.13, 107.11, 107.09, 107.05, 107.01, 106.98, 106.96,
+            106.96, 106.98,
+          ],
+          a: [
+            1.2, 0.4, -0.1, -0.5, -0.8, -0.8, -0.7, -0.4, 0.0, 0.7, 1.6, 2.6,
+            3.8, 5.2, 6.9, 8.7, 10.7, 12.9, 15.4, 18.0, 20.9, 24.0, 27.2, 30.7,
+            34.4, 38.3, 42.4, 46.5, 50.9, 55.3, 59.9, 64.5, 69.2, 74.0, 78.9,
+            83.8, 88.8, 93.9, 99.2, 104.5, 110.0, 115.7, 121.5, 127.5, 133.7,
+            140.2, 146.8, 153.7, 160.8, 168.0, 175.4, 183.0, 190.6, 198.4,
+            206.2, 214.2, 222.1, 230.1, 238.1, 246.0, 254.0, 261.9, 269.6,
+            277.3, 284.8, 292.0, 299.0, 305.6, 311.9, 317.9, 323.3, 328.4,
+            333.0, 337.3, 341.1, 344.6, 347.7, 350.5, 352.9, 355.1, 356.9,
+            358.5, 359.8, 360.8, 361.6, 362.2, 362.5, 362.7, 362.6, 362.4,
+            362.0, 361.5, 360.9, 360.2, 359.3, 358.4,
+          ],
+        },
+        F2: {
+          t0: 1.72,
+          dt: 0.011111111111111112,
+          x: [
+            205.38, 205.17, 204.96, 204.77, 204.6, 204.46, 204.37, 204.32,
+            204.33, 204.4, 204.55, 204.76, 205.06, 205.46, 205.94, 206.52,
+            207.17, 207.89, 208.66, 209.47, 210.31, 211.17, 212.03, 212.88,
+            213.72, 214.55, 215.37, 216.18, 216.97, 217.75, 218.51, 219.26,
+            219.99, 220.7, 221.39, 222.07, 222.73, 223.36, 223.98, 224.57,
+            225.14, 225.69, 226.22, 226.72, 227.2, 227.66, 228.1, 228.52,
+            228.92, 229.3, 229.66, 230.0, 230.32, 230.63, 230.92, 231.19,
+            231.44, 231.68, 231.91, 232.12, 232.31, 232.49, 232.66, 232.81,
+            232.95, 233.08, 233.2, 233.3, 233.4, 233.48, 233.55, 233.62, 233.67,
+            233.72, 233.76, 233.79, 233.82, 233.84, 233.85, 233.85, 233.85,
+            233.85, 233.84, 233.83, 233.81, 233.79, 233.77, 233.75, 233.72,
+          ],
+          y: [
+            163.5, 160.23, 157.22, 154.46, 151.93, 149.6, 147.42, 145.34, 143.3,
+            141.24, 139.12, 136.87, 134.56, 132.26, 130.07, 127.99, 126.03,
+            124.2, 122.48, 120.88, 119.4, 118.03, 116.78, 115.64, 114.61,
+            113.68, 112.84, 112.1, 111.44, 110.86, 110.35, 109.91, 109.53,
+            109.21, 108.93, 108.7, 108.5, 108.33, 108.19, 108.07, 107.96,
+            107.86, 107.77, 107.68, 107.59, 107.51, 107.44, 107.37, 107.31,
+            107.25, 107.2, 107.15, 107.1, 107.06, 107.03, 106.99, 106.97,
+            106.94, 106.92, 106.9, 106.89, 106.87, 106.87, 106.86, 106.86,
+            106.86, 106.86, 106.86, 106.87, 106.88, 106.89, 106.9, 106.91,
+            106.93, 106.94, 106.96, 106.98, 107.0, 107.02, 107.04, 107.06,
+            107.08, 107.1, 107.12, 107.14, 107.16, 107.18, 107.2, 107.22,
+          ],
+          a: [
+            113.3, 111.3, 109.1, 106.7, 104.2, 101.6, 98.9, 96.1, 93.2, 90.2,
+            87.2, 84.1, 81.0, 77.9, 74.7, 71.5, 68.4, 65.3, 62.2, 59.1, 56.2,
+            53.3, 50.4, 47.7, 45.1, 42.5, 40.1, 37.8, 35.5, 33.3, 31.3, 29.3,
+            27.3, 25.5, 23.8, 22.1, 20.5, 18.9, 17.5, 16.1, 14.8, 13.5, 12.4,
+            11.2, 10.2, 9.2, 8.3, 7.4, 6.6, 5.8, 5.1, 4.4, 3.8, 3.2, 2.7, 2.3,
+            1.8, 1.4, 1.1, 0.8, 0.5, 0.3, 0.1, -0.1, -0.2, -0.3, -0.4, -0.4,
+            -0.4, -0.4, -0.4, -0.4, -0.3, -0.2, -0.1, 0.0, 0.1, 0.3, 0.4, 0.6,
+            0.8, 0.9, 1.1, 1.3, 1.5, 1.6, 1.8, 2.0, 2.2,
+          ],
+        },
+        cx: 234.0,
+        cy: 107.0,
+        sw: 1.97,
+      };
+      const VX = 150,
+        VY = 44,
+        VW = 160,
+        VH = 126;
+      const INK = "#111111";
+      const BAR_L = 90,
+        BAR_R = 276,
+        BAR_T = 63,
+        BAR_B = 149; // bar at rest
+      const HOVER_OFF = [0, 0]; // the white bar stays still; only the plane moves
+
+      // ---- monotone cubic interpolation ----
+      function curve(pts) {
+        const n = pts.length,
+          xs = pts.map((p) => p[0]),
+          ys = pts.map((p) => p[1]);
+        const d = [],
+          m = new Array(n);
+        for (let i = 0; i < n - 1; i++)
+          d[i] = (ys[i + 1] - ys[i]) / (xs[i + 1] - xs[i]);
+        m[0] = d[0];
+        m[n - 1] = d[n - 2];
+        for (let i = 1; i < n - 1; i++)
+          m[i] = d[i - 1] * d[i] <= 0 ? 0 : (d[i - 1] + d[i]) / 2;
+        for (let i = 0; i < n - 1; i++) {
+          if (d[i] === 0) {
+            m[i] = 0;
+            m[i + 1] = 0;
+            continue;
+          }
+          const a = m[i] / d[i],
+            b = m[i + 1] / d[i],
+            s = a * a + b * b;
+          if (s > 9) {
+            const t = 3 / Math.sqrt(s);
+            m[i] = t * a * d[i];
+            m[i + 1] = t * b * d[i];
+          }
+        }
+        return (x) => {
+          if (x <= xs[0]) return ys[0];
+          if (x >= xs[n - 1]) return ys[n - 1];
+          let lo = 0,
+            hi = n - 1;
+          while (hi - lo > 1) {
+            const mid = (lo + hi) >> 1;
+            if (xs[mid] <= x) lo = mid;
+            else hi = mid;
+          }
+          const h = xs[hi] - xs[lo],
+            t = (x - xs[lo]) / h,
+            t2 = t * t,
+            t3 = t2 * t;
+          return (
+            (2 * t3 - 3 * t2 + 1) * ys[lo] +
+            (t3 - 2 * t2 + t) * h * m[lo] +
+            (-2 * t3 + 3 * t2) * ys[hi] +
+            (t3 - t2) * h * m[hi]
+          );
+        };
+      }
+      // bar motion while entering / leaving (seconds from the start of each move)
+      const IN_X = () => 0;
+      const IN_Y = () => 0;
+      const OUT_X = () => 0;
+      const OUT_Y = () => 0;
+      const OUT_DUR = 0.3;
+
+      // plane flight tables: F1 (leaves through the right edge), F2 (re-enters from the bottom and lands)
+      function sample(P, t) {
+        const f = (t - P.t0) / P.dt,
+          i = Math.floor(f),
+          u = f - i,
+          n = P.x.length;
+        if (i < 0 || i >= n - 1) return null;
+        return {
+          x: P.x[i] + (P.x[i + 1] - P.x[i]) * u,
+          y: P.y[i] + (P.y[i + 1] - P.y[i]) * u,
+          a: P.a[i] + (P.a[i + 1] - P.a[i]) * u,
+        };
+      }
+      const REST = [D.cx, D.cy]; // plane at rest (bar at rest)
+      const T_F1 = [0.6, 1.66],
+        T_F2 = [1.72, 2.7],
+        T_END = 2.7; // in video time; entering starts at 0.6
+
+      // ---- drawing ----
+      const cv = document.getElementById("c"),
+        ctx = cv.getContext("2d");
+      let k = 1;
+      function resize() {
+        const r = cv.getBoundingClientRect(),
+          dpr = window.devicePixelRatio || 1;
+        cv.width = Math.round(r.width * dpr);
+        cv.height = Math.round(r.height * dpr);
+        k = cv.width / VW;
+      }
+      addEventListener("resize", resize);
+      resize();
+
+      function drawPlane(x, y, aDeg) {
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.rotate((-aDeg * Math.PI) / 180);
+        ctx.strokeStyle = INK;
+        ctx.lineWidth = D.sw;
+        ctx.lineJoin = "round";
+        ctx.lineCap = "round";
+        for (const c of D.chains) {
+          ctx.beginPath();
+          ctx.moveTo(c[0], c[1]);
+          for (let i = 2; i < c.length; i += 2) ctx.lineTo(c[i], c[i + 1]);
+          ctx.stroke();
+        }
+        ctx.restore();
+      }
+
+      // ---- state ----
+      let state = "idle",
+        t = 0,
+        wantHover = false,
+        last = null;
+      let leave = { off: [0, 0], plane: null };
+      let barOff = [0, 0],
+        plane = { x: REST[0], y: REST[1], a: 0, vis: true };
+
+      function setHover(on) {
+        wantHover = on;
+        if (on && state === "idle") {
+          state = "entering";
+          t = 0;
+        } else if (!on && (state === "entering" || state === "hover")) {
+          state = "leaving";
+          t = 0;
+          leave = {
+            off: barOff.slice(),
+            plane: plane.vis
+              ? {
+                  x: plane.x,
+                  y: plane.y,
+                  a: (((plane.a % 360) + 540) % 360) - 180,
+                }
+              : null,
+          };
+        }
+      }
+      cv.addEventListener("pointerenter", () => setHover(true));
+      cv.addEventListener("pointerleave", () => setHover(false));
+      cv.addEventListener("pointercancel", () => setHover(false));
+
+      function frame(ms) {
+        const dt = last === null ? 0 : Math.min((ms - last) / 1000, 0.05);
+        last = ms;
+        if (state === "entering") {
+          t += dt;
+          if (t >= T_END - 0.6) {
+            state = "hover";
+          }
+        } else if (state === "leaving") {
+          t += dt;
+          if (t >= OUT_DUR) {
+            state = "idle";
+            if (wantHover) setHover(true);
+          }
+        }
+
+        if (state === "idle") {
+          barOff = [0, 0];
+          plane = { x: REST[0], y: REST[1], a: 0, vis: true };
+        } else if (state === "entering" || state === "hover") {
+          const tt = Math.min(t, 2.1);
+          barOff = [IN_X(tt), IN_Y(tt)];
+          const vt = 0.6 + tt; // video time
+          let s = null;
+          if (state === "hover" || vt >= T_F2[1])
+            s = { x: REST[0] + HOVER_OFF[0], y: REST[1] + HOVER_OFF[1], a: 0 };
+          else if (vt >= T_F2[0]) s = sample(D.F2, vt);
+          else if (vt <= T_F1[1]) s = sample(D.F1, vt);
+          plane = s
+            ? { x: s.x, y: s.y, a: s.a, vis: true }
+            : { x: 0, y: 0, a: 0, vis: false };
+        } else {
+          // leaving
+          const e = Math.min(t, OUT_DUR);
+          barOff = [(leave.off[0] * OUT_X(e)) / 1, leave.off[1] * OUT_Y(e)];
+          const tx = REST[0] + barOff[0],
+            ty = REST[1] + barOff[1];
+          if (leave.plane) {
+            const p = Math.min(1, t / OUT_DUR),
+              q = p * p * (3 - 2 * p);
+            plane = {
+              x: leave.plane.x + (tx - leave.plane.x) * q,
+              y: leave.plane.y + (ty - leave.plane.y) * q,
+              a: leave.plane.a * (1 - q),
+              vis: true,
+            };
+          } else plane = { x: tx, y: ty, a: 0, vis: t > OUT_DUR * 0.6 };
+        }
+
+        ctx.setTransform(k, 0, 0, k, -VX * k, -VY * k);
+        ctx.clearRect(VX, VY, VW, VH);
+        if (plane.vis) {
+          drawPlane(plane.x, plane.y, plane.a);
+        }
+        requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    </script>
+  </body>
+</html>
