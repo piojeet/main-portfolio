@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import Star from '../../assets/starg.svg'
 import RightArrow from '../../assets/right-arrow.svg'
+import SparklesCanvas from '../SparklesCanvas'
 import { useGSAP } from '@gsap/react';
 import img1 from '../../assets/project2.webp';
 import img2 from '../../assets/img1.webp';
@@ -65,6 +65,8 @@ const images5 = [
 ]
 
 function ServicesOverview() {
+  const [sparklesHovered, setSparklesHovered] = useState(false)
+
   const setupCarousel = (carouselSelector, imagesLength) => {
     const imagesElements = document.querySelectorAll(`${carouselSelector} .carousel-img`);
     let currentIndex = 0;
@@ -330,7 +332,7 @@ function ServicesOverview() {
               <p className='text-[20px] font-TTCPro font-medium text-bodyColor mt-8'>A summary of the tasks we handle and the types of projects they support</p>
             </div>
 
-            <NavLink to="/projects" className='group pointer-cursor md:h-[80px] h-[70px] lg:w-[22.5vw] md:w-[45vw] flex-shrink-0 border border-blackColor bg-blackColor w-full block'>
+            <NavLink to="/projects" className='group pointer-cursor md:h-[80px] h-[70px] lg:w-[22.5vw] md:w-[45vw] flex-shrink-0 border border-blackColor bg-blackColor w-full block' onPointerEnter={() => setSparklesHovered(true)} onPointerLeave={() => setSparklesHovered(false)}>
               <div className='magnetic-btn relative w-full h-full'>
                 <span
                   className='relative overflow-hidden w-full h-full left-0 bottom-0 lg:group-hover:left-4 lg:group-hover:bottom-2 lg:group-hover:border lg:group-hover:border-blackColor bg-bodyColor  font-TTCPro uppercase text-[15px] tracking-[2px] inline-block font-semibold content-center transition-all duration-500'
@@ -338,7 +340,7 @@ function ServicesOverview() {
                 >
                   <span className='absolute left-[-1.5rem] w-6 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-5'><img src={RightArrow} alt="" className='w-full' /></span>
                   <span className='absolute left-5 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-12 font-bold'>View Our Work</span>
-                  <span className='group-hover:animate-bounce-on absolute right-5 top-1/2 -translate-y-1/2'><img src={Star} alt="" className='w-8' /></span>
+                  <span className='absolute right-5 top-1/2 -translate-y-1/2'><SparklesCanvas hovered={sparklesHovered} className='pointer-events-none block h-24 w-24' /></span>
                 </span>
               </div>
             </NavLink>

@@ -27,11 +27,11 @@ function NavLinks() {
                 {/* Work Link */}
                 <NavLink to="/projects" className="block overflow-hidden border border-gray-600 pointer-cursor border-b-0">
                     <div
-                        className="group w-full h-[80px] inline-flex relative"
+                        className="group w-full h-[80px] lg:h-[150px] inline-flex relative"
                         onMouseEnter={(e) => handleMouseEvent(e, 'work')}
                         onMouseLeave={(e) => handleMouseEvent(e, 'work')}
                     >
-                        <span className='relative z-20 text-[50px] text-white w-full text-center group-hover:text-black content-center font-TTCPro font-extrabold'>
+                        <span className='relative z-20 text-[50px] lg:text-[100px] text-white w-full text-center group-hover:text-black content-center font-TTCPro font-extrabold'>
                             Work
                         </span>
                         <span
@@ -48,11 +48,11 @@ function NavLinks() {
                 {/* about Link */}
                 <NavLink to="/about" className="block overflow-hidden border border-gray-600 pointer-cursor border-b-0">
                     <div
-                        className="group w-full h-[80px] inline-flex relative"
+                        className="group w-full h-[80px] lg:h-[150px] inline-flex relative"
                         onMouseEnter={(e) => handleMouseEvent(e, 'about')}
                         onMouseLeave={(e) => handleMouseEvent(e, 'about')}
                     >
-                        <span className='relative z-20 text-[50px] text-white w-full text-center group-hover:text-black content-center font-TTCPro font-extrabold'>
+                        <span className='relative z-20 text-[50px] lg:text-[100px] text-white w-full text-center group-hover:text-black content-center font-TTCPro font-extrabold'>
                             About
                         </span>
                         <span
@@ -71,11 +71,11 @@ function NavLinks() {
                 {/* services Link */}
                 <NavLink to="/services" className="block overflow-hidden border border-gray-600 pointer-cursor border-b-0">
                     <div
-                        className="group w-full h-[80px] inline-flex relative"
+                        className="group w-full h-[80px] lg:h-[150px] inline-flex relative"
                         onMouseEnter={(e) => handleMouseEvent(e, 'services')}
                         onMouseLeave={(e) => handleMouseEvent(e, 'services')}
                     >
-                        <span className='relative z-20 text-[50px] text-white w-full text-center group-hover:text-black content-center font-TTCPro font-extrabold'>
+                        <span className='relative z-20 text-[50px] lg:text-[100px] text-white w-full text-center group-hover:text-black content-center font-TTCPro font-extrabold'>
                             Services
                         </span>
                         <span
@@ -94,11 +94,11 @@ function NavLinks() {
                 {/* contact Link */}
                 <NavLink to="/contact" className="block overflow-hidden uppercase border border-gray-600 pointer-cursor">
                     <div
-                        className="group w-full h-[80px] inline-flex relative"
+                        className="group w-full h-[80px] lg:h-[150px] inline-flex relative"
                         onMouseEnter={(e) => handleMouseEvent(e, 'contact')}
                         onMouseLeave={(e) => handleMouseEvent(e, 'contact')}
                     >
-                        <span className='relative z-20 text-[50px] text-white w-full text-center group-hover:text-black content-center font-TTCPro font-extrabold'>
+                        <span className='relative z-20 text-[50px] lg:text-[100px] text-white w-full text-center group-hover:text-black content-center font-TTCPro font-extrabold'>
                             Contact
                         </span>
                         <span

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import Videos from '../assets/download.mp4'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
@@ -124,7 +124,13 @@ function Video() {
                 </div>
 
                 <div className='border border-blackColor md:p-7 p-3'>
-                    <video autoPlay loop muted className='w-full h-full rounded-xl'>
+                    <video
+                        autoPlay
+                        loop
+                        muted
+                        onLoadedMetadata={() => requestAnimationFrame(() => ScrollTrigger.refresh())}
+                        className='w-full h-full rounded-xl'
+                    >
                         <source src={Videos} />
                     </video>
                 </div>

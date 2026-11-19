@@ -1,15 +1,14 @@
-import React from 'react'
+import { useState } from 'react'
 import Glob from '../assets/glob.svg'
 import GlobC from '../assets/globc.svg'
-import Start from '../assets/starg.svg'
 import RightArrow from '../assets/right-arrow.svg'
+import SparklesCanvas from './SparklesCanvas'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { NavLink } from 'react-router-dom'
 
 function HomeHero() {
-
-
+  const [sparklesHovered, setSparklesHovered] = useState(false)
 
   useGSAP(() => {
     gsap.from(".letter span", {
@@ -84,7 +83,7 @@ function HomeHero() {
       </div>
       <div className='flex items-start lg:justify-between sm:justify-end lg:h-[240px] sm:h-[150px] mb-12 md:mb-0'>
         <span className='lg:block sm:hidden'></span>
-        <NavLink to="/projects" className='group pointer-cursor md:h-[80px] h-[70px] lg:w-[22.5vw] sm:w-[45vw] w-full flex-shrink-0 border border-blackColor border-t-0 bg-blackColor flex justify-start items-center'>
+        <NavLink to="/projects" className='group pointer-cursor md:h-[80px] h-[70px] lg:w-[22.5vw] sm:w-[45vw] w-full flex-shrink-0 border border-blackColor border-t-0 bg-blackColor flex justify-start items-center' onPointerEnter={() => setSparklesHovered(true)} onPointerLeave={() => setSparklesHovered(false)}>
           {/* Magnetic effect on wrapper div */}
           <div className='magnetic-btn relative w-full h-full'>
             {/* Hover transition on inner span */}
@@ -94,7 +93,7 @@ function HomeHero() {
             >
               <span className='absolute left-[-1.5rem] w-6 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-5'><img src={RightArrow} alt="" className='w-full' /></span>
               <span className='absolute left-5 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-12'>View Our Work</span>
-              <span className='group-hover:animate-bounce-on absolute right-5 top-1/2 -translate-y-1/2'><img src={Start} alt="" className='w-8' /></span>
+              <span className='absolute right-5 top-1/2 -translate-y-1/2'><SparklesCanvas hovered={sparklesHovered} className='pointer-events-none block h-24 w-24' /></span>
             </span>
           </div>
         </NavLink>

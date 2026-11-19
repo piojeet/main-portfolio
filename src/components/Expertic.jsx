@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react'
-import Star from '../assets/starg.svg'
+import { useRef, useState } from 'react'
 import RightArrow from '../assets/right-arrow.svg'
+import SparklesCanvas from './SparklesCanvas'
 import { NavLink, useLocation } from 'react-router-dom';
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -9,10 +9,8 @@ import { useGSAP } from '@gsap/react';
 
 
 function Expertic() {
-
-
-
   const location = useLocation()
+  const [sparklesHovered, setSparklesHovered] = useState(false)
 
   const textRef = useRef(null);
   useGSAP(() => {
@@ -95,7 +93,7 @@ function Expertic() {
           <div className='md:flex-1 md:inline-flex md:justify-end pt-8 sm:w-full lg:w-fit w-full'>
             <div className='md:flex items-start lg:justify-between sm:justify-end lg:h-[240px]'>
               <span className='lg:block hidden'></span>
-              <NavLink to="/services" className='group pointer-cursor md:h-[80px] h-[70px] lg:w-[22.5vw] md:w-[45vw] flex-shrink-0 border border-blackColor bg-blackColor inline-flex justify-start items-center w-full'>
+              <NavLink to="/services" className='group pointer-cursor md:h-[80px] h-[70px] lg:w-[22.5vw] md:w-[45vw] flex-shrink-0 border border-blackColor bg-blackColor inline-flex justify-start items-center w-full' onPointerEnter={() => setSparklesHovered(true)} onPointerLeave={() => setSparklesHovered(false)}>
                 {/* Magnetic effect on wrapper div */}
                 <div className='magnetic-btn relative w-full h-full'>
                   {/* Hover transition on inner span */}
@@ -105,7 +103,7 @@ function Expertic() {
                   >
                     <span className='absolute left-[-1.5rem] w-6 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-5'><img src={RightArrow} alt="" className='w-full' /></span>
                     <span className='absolute left-5 top-1/2 -translate-y-1/2 transition-all duration-300 group-hover:left-12 font-bold'>View services</span>
-                    <span className='group-hover:animate-bounce-on absolute right-5 top-1/2 -translate-y-1/2'><img src={Star} alt="" className='w-8' /></span>
+                    <span className='absolute right-5 top-1/2 -translate-y-1/2'><SparklesCanvas hovered={sparklesHovered} className='pointer-events-none block h-24 w-24' /></span>
                   </span>
                 </div>
               </NavLink>
