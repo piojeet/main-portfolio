@@ -36,12 +36,7 @@ function ChatGpt() {
     }
 
     try {
-      const apiUrl = import.meta.env.VITE_API_URL;
-      if (!apiUrl) {
-        throw new Error('Chatbot is not configured. Set VITE_API_URL in .env.local and restart the dev server.');
-      }
-
-      const response = await fetch(apiUrl, requestOptions);
+      const response = await fetch('/.netlify/functions/chat', requestOptions);
       let data;
       try {
         data = await response.json();
