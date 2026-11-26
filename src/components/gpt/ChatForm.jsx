@@ -26,11 +26,12 @@ function ChatForm({ chatHistory, setChatHistory, geenrateBotResponse, isLoading 
     setInputValue(''); // Clear input
 
     setChatHistory((history) => [...history, { role: 'user', text: userMessage }]);
-    setTimeout(() => {
+    const waitTimer = setTimeout(() => {
       setChatHistory((history) => [...history, { role: 'model', text: 'Wait...' }]);
     }, 600);
 
-    geenrateBotResponse([...chatHistory, { role: 'user', text: `${userMessage}` }]);
+    geenrateBotResponse([...chatHistory, { role: 'user', text: `${userMessage}` }])
+      .finally(() => clearTimeout(waitTimer));
   };
 
   return (

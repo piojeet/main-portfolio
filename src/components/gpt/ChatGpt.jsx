@@ -36,11 +36,31 @@ function ChatGpt() {
     }
 
     try {
-      const response = await fetch(import.meta.env.VITE_API_URL, requestOptions);
-      const data = await response.json();
-      if (!response.ok) throw new Error(data.error.message || "Something went wrong");
+      const apiUrl = import.meta.env.VITE_API_URL;
+      if (!apiUrl) {
+        throw new Error('Chatbot is not configured. Set VITE_API_URL in .env.local and restart the dev server.');
+      }
 
-      const apiResponseText = data.candidates[0].content.parts[0].text.replace(/\*\*(.*?)\*\*/g, "$1").trim();
+      const response = await fetch(apiUrl, requestOptions);
+      let data;
+      try {
+        data = await response.json();
+      } catch {
+        throw new Error(`Gemini API returned an empty or invalid response (HTTP ${response.status}). Check VITE_API_URL.`);
+      }
+
+      if (!response.ok) {
+        throw new Error(data.error?.message || `Gemini API request failed (HTTP ${response.status}).`);
+      }
+
+      const responseText = data.candidates?.[0]?.content?.parts?.[0]?.text;
+      if (!responseText) {
+        throw new Error(data.promptFeedback?.blockReason
+          ? `Gemini blocked this request (${data.promptFeedback.blockReason}).`
+          : 'Gemini returned no response text.');
+      }
+
+      const apiResponseText = responseText.replace(/\*\*(.*?)\*\*/g, "$1").trim();
 
       updateHistory(apiResponseText);
     } catch (error) {
